@@ -1,0 +1,16 @@
+[x] Modal for contact
+[x] Make contact form work
+[x] Success page for sending email
+[x] Add contact transition
+[] Add close button on top of modal
+
+[x] Fix bug for mobile view, sticky part
+[x] Fix nav bug mobile view
+[] Replace lorem ipsum in recent work
+[] Search more design
+
+
+[x] Buy domain
+[x] Set up domain
+[] Add captcha (Website should be up)
+[] Add certificate (Need to pay)

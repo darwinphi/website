@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sass/custom.scss",
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url sass/custom.scss css/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bulma": "^0.9.3",
+    "node-sass": "^6.0.0"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bulma-modal-fx": "^1.1.1"
+  }
+}

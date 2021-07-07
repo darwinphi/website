@@ -1,0 +1,150 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+// Brand Colors
+$blue: #00458a;
+$yellow: #f4fb10;
+$white: #fffffe;
+
+// Font
+$family-sans-serif: "DM Sans", sans-serif;
+
+// Custom Global Variables
+$primary: #e44d68;
+$info: #d3e8e1;
+
+$info-dark: #a0dcce;
+
+// Component Variables
+$body-background-color: $white;
+
+@import "../node_modules/bulma/bulma.sass";
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#header-logo {
+  background: url(../img/my-logo-4.png) no-repeat center center;
+  background-size: cover;
+  width: 112px;
+  height: 62px;
+}
+
+.navbar-menu {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-brand {
+    padding: 8px;
+  }
+}
+
+.skill-icon-frontend {
+  background: url(../img/frontend.png) center;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+
+.skill-icon-backend {
+  background: url(../img/backend.png) center;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+
+figure.image {
+  margin: 0 auto 2em;
+}
+
+.skill-column {
+  padding: 70px 45px;
+}
+
+.img-ibakami {
+  background: url(../img/ibakami.png) no-repeat center;
+  background-size: cover;
+}
+
+.img-shoresuite {
+  background: url(../img/shoresuite-banner.png) no-repeat;
+  background-size: cover;
+}
+
+.img-medilink {
+  background: url(../img/medilink-2.png) no-repeat center;
+  background-size: contain;
+}
+
+.footer-my-logo {
+  background: url(../img/d-logo-transparent.png) center no-repeat;
+  background-size: cover;
+  width: 120px;
+  height: 120px;
+}
+
+.section.skills {
+  margin-top: -12em;
+}
+
+.skill-icon {
+  height: 48px;
+  width: 48px;
+}
+
+section.intro {
+  padding-bottom: 9rem;
+}
+
+.list-title {
+  margin-top: 50px;
+  margin-bottom: 8px;
+}
+
+ul.skill-lists {
+  list-style: none;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.subtitle {
+  line-height: 1.5;
+}
+
+.work.columns {
+  margin-top: 4em;
+}
+
+.recent-work-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recent-work-title-column {
+  position: sticky;
+  top: 0;
+  padding: 5em;
+  height: 25vh;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-title {
+  margin-bottom: 1.5em;
+}
+
+.mail-logo {
+  margin-bottom: 48px;
+}
+
+.back-to-home-button {
+  margin-top: 48px;
+}
