@@ -4,18 +4,28 @@
   "description": "",
   "main": "sass/custom.scss",
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/custom.scss css/main.css",
-    "css-watch": "npm run css-build -- --watch",
+    "css-watch": "chokidar ./sass/*.scss --command 'node-sass-chokidar ./sass/custom.scss | postcss --use autoprefixer > ./css/main.css'",
+    "css-build": "node-sass-chokidar ./sass/custom.scss --output-style compressed --quiet | postcss --use autoprefixer --no-map > ./css/main.min.css",
     "start": "npm run css-watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.2.6",
     "bulma": "^0.9.3",
-    "node-sass": "^6.0.0"
+    "chokidar-cli": "^2.1.0",
+    "node-sass": "^6.0.0",
+    "node-sass-chokidar": "^1.5.0",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1"
   },
   "dependencies": {
     "aos": "^2.3.4",
     "bulma-modal-fx": "^1.1.1"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 4 versions",
+    "not dead"
+  ]
 }
