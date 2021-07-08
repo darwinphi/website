@@ -23,7 +23,6 @@ $body-background-color: $white;
 html,
 body {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 #header-logo {
@@ -127,8 +126,17 @@ ul.skill-lists {
 .recent-work-title-column {
   position: sticky;
   top: 0;
-  padding: 5em;
+  padding-top: 10em;
+  padding-right: 3em;
   height: 25vh;
+}
+
+@media only screen and (max-width: 768px) {
+  .recent-work-title-column {
+    position: relative;
+    padding-top: 4em;
+    padding-right: 0;
+  }
 }
 
 .divider {
