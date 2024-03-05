@@ -70,12 +70,27 @@ figure.image {
 }
 
 .img-shoresuite {
-  background: url(../img/shoresuite-banner.png) no-repeat;
-  background-size: cover;
+  background: url(../img/shoresuite.png) no-repeat center;
+  background-size: contain;
 }
 
 .img-medilink {
-  background: url(../img/medilink-2.png) no-repeat center;
+  background: url(../img/medilink.png) no-repeat center;
+  background-size: contain;
+}
+
+.img-kmd {
+  background: url(../img/konsultamd.png) no-repeat center;
+  background-size: contain;
+}
+
+.img-yondu {
+  background: url(../img/yondu.jpeg) no-repeat center;
+  background-size: cover;
+}
+
+.img-healthnow {
+  background: url(../img/healthnow-2.png) no-repeat center;
   background-size: contain;
 }
 
