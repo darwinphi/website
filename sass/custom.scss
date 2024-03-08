@@ -216,7 +216,7 @@ ul.skill-lists {
 //   background-size: contain;
 // }
 
-$skills: "html" "html5.svg" "#FF5F6D" "#ffc371",
+$skills: "html" "html5.png" "#FF5F6D" "#ffc371",
   "css" "css3.svg" "#0D0B88" "#56FFF8", "sass" "sass.svg" "#FDC78D" "#F98FFD";
 
 @each $skill, $image, $to, $from in $skills {
