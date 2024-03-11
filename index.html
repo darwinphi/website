@@ -13,43 +13,28 @@
   </head>
   <body>
     <!-- Start of Navbar -->
+
     <nav
-      class="navbar is-fixed-top is-spaced"
+      class="nav is-spaced is-active"
+      id="navbar-menu"
       role="navigation"
       aria-label="main navigation"
     >
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item is-size-1" id="header-logo" href="/"> </a>
-          <a
-            role="button"
-            class="navbar-burger"
-            id="burger-menu-button"
-            aria-label="menu"
-            aria-expanded="false"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
+      <div
+        class="container is-flex is-justify-content-space-between is-justify-content-center is-align-items-center"
+        style="width: 100vw"
+      >
+        <a class="is-size-1 nav-logo" id="header-logo" href="/"> </a>
 
-        <div class="navbar-menu">
-          <div class="navbar-start"></div>
-
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <a
-                class="button is-size-5 is-primary is-outlined"
-                id="launch-modal"
-              >
-                <strong>Contact</strong>
-              </a>
-            </div>
-          </div>
-        </div>
+        <a
+          class="button nav-item is-size-5 is-primary is-outlined"
+          id="launch-modal"
+        >
+          <strong>Contact</strong>
+        </a>
       </div>
     </nav>
+
     <!-- End of Navbar -->
 
     <!-- Hero Start -->
@@ -526,16 +511,14 @@
     <!-- Start of Modal -->
     <div class="modal modal-fx-slideTop modal-full-screen" id="contact-modal">
       <div class="modal-content">
-        <section class="section">
+        <section class="section" style="margin-top: -2em; margin-left: -0.5em">
           <div class="container">
-            <div class="is-flex is-justify-content-space-between">
+            <div
+              class="is-flex is-justify-content-center is-justify-content-space-between is-align-items-center"
+            >
+              <a class="nav-logo" id="header-logo" href="/"> </a>
               <img
-                alt="logo"
-                src="img/my-logo-4.png"
-                class="contact-modal-my-logo"
-              />
-              <img
-                class="contact-modal-close-button"
+                class="contact-modal-close-button mr-2"
                 id="close-contact-modal-button"
                 src="img/close-button.png"
                 alt="close button"
@@ -569,8 +552,10 @@
                               class="input is-medium is-size-6-mobile"
                               type="text"
                               name="name"
+                              id="name"
                               placeholder="eg. Darwin"
                               required
+                              autocomplete="given-name"
                             />
                           </div>
                         </div>
@@ -583,8 +568,10 @@
                               class="input is-medium is-size-6-mobile"
                               type="text"
                               name="email"
+                              id="email"
                               placeholder="eg. darwin@email.com"
                               required
+                              autocomplete="email"
                             />
                           </div>
                         </div>
@@ -598,6 +585,7 @@
                             <textarea
                               class="textarea is-medium is-size-6-mobile"
                               name="message"
+                              id="message"
                               rows="5"
                               required
                             ></textarea>
@@ -647,31 +635,32 @@
       const closeContactModalBtn = document.getElementById(
         "close-contact-modal-button"
       );
+      const burgerMenuButton = document.getElementById("burger-menu-button");
+      const navBarMenu = document.getElementById("navbar-menu");
 
       launchModal.addEventListener("click", function () {
         console.log("Modal opened");
         contactModal.classList.add("is-active");
+        navBarMenu.classList.add("not-active");
       });
-
-      const burgerMenuButton = document.getElementById("burger-menu-button");
-      const navBarMenu = document.querySelector(".navbar-menu");
 
       closeContactModalBtn.addEventListener("click", function () {
         console.log("Modal closed");
         contactModal.classList.remove("is-active");
-        burgerMenuButton.classList.remove("is-active");
-        navBarMenu.classList.remove("is-active");
+        // burgerMenuButton.classList.remove("is-active");
+        navBarMenu.classList.add("is-active");
+        navBarMenu.classList.remove("not-active");
       });
 
-      burgerMenuButton.addEventListener("click", function () {
-        if (burgerMenuButton.classList.contains("is-active")) {
-          burgerMenuButton.classList.remove("is-active");
-          navBarMenu.classList.remove("is-active");
-        } else {
-          burgerMenuButton.classList.add("is-active");
-          navBarMenu.classList.add("is-active");
-        }
-      });
+      // burgerMenuButton.addEventListener("click", function () {
+      //   if (burgerMenuButton.classList.contains("is-active")) {
+      //     burgerMenuButton.classList.remove("is-active");
+      //     navBarMenu.classList.remove("is-active");
+      //   } else {
+      //     burgerMenuButton.classList.add("is-active");
+      //     navBarMenu.classList.add("is-active");
+      //   }
+      // });
     </script>
   </body>
 </html>

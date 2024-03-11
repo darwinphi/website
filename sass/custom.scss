@@ -149,6 +149,14 @@ ul.skill-lists {
     padding-right: 0;
     margin-bottom: 4em;
   }
+
+  .nav-logo {
+    margin-left: 0.5em;
+  }
+
+  .nav-item {
+    margin-right: 1em;
+  }
 }
 
 .divider {
@@ -203,18 +211,6 @@ ul.skill-lists {
 .skill-column:hover {
   transform: scale(1.1); /* Adjust the scale factor for the zoom effect */
 }
-
-// .skill-content-html {
-//   background: url("../img/html5.svg") no-repeat,
-//     linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113));
-//   background-size: contain;
-// }
-
-// .skill-content-css {
-//   background: url("../img/css3.svg") no-repeat left,
-//   linear-gradient(to right, rgb(260, 915, 109), rgb(260, 123, 113));
-//   background-size: contain;
-// }
 
 $skills: "html" "html5.png" "#FF5F6D" "#ffc371",
   "css" "css3.svg" "#0D0B88" "#56FFF8", "sass" "sass.svg" "#FDC78D" "#F98FFD";
@@ -344,4 +340,19 @@ $skills: "html" "html5.png" "#FF5F6D" "#ffc371",
   background: url("../img/aws.svg") no-repeat,
     linear-gradient(to left, #484848 0%, #f3b458 50%, #f7cf8a 100%);
   background-size: contain;
+}
+
+.nav {
+  position: fixed;
+  background: #fffffe;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.not-active {
+  z-index: -1;
 }
