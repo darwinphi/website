@@ -278,25 +278,21 @@ $skills: "html" "html5.png" "#FF5F6D" "#ffc371",
   background-size: contain;
 }
 
-.skill-content-phoenix {
-  background: url("../img/phoenix.svg") no-repeat,
-    radial-gradient(
-      circle at 10% 20%,
-      rgb(255, 197, 61) 0%,
-      rgb(255, 94, 7) 90%
-    );
+.skill-content-tailwind {
+  background: url("../img/tailwind.svg") no-repeat,
+    linear-gradient(to left, #0284c7 0%, #1a2d5d 100%);
   background-size: contain;
 }
 
-.skill-content-ruby {
-  background: url("../img/ruby.svg") no-repeat,
-    linear-gradient(to left, #ff0844 0%, #ffb199 100%);
+.skill-content-nuxt {
+  background: url("../img/nuxt.svg") no-repeat,
+    linear-gradient(to left, #00dc82 0%, #108775 100%);
   background-size: contain;
 }
 
-.skill-content-php {
-  background: url("../img/laravel.svg") no-repeat,
-    linear-gradient(to left, #f13d2e 0%, #f77760 100%);
+.skill-content-vue {
+  background: url("../img/vue.svg") no-repeat,
+    linear-gradient(to left, #41b883 0%, #34495e 100%);
   background-size: contain;
 }
 
