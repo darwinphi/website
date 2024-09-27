@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/aos.css" />
     <link rel="stylesheet" href="./css/modal-fx.min.css" />
     <link rel="icon" href="img/courier-prime-favicon.png" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <title>Darwin Manalo | Software Engineer</title>
   </head>
@@ -554,6 +555,7 @@
                     action="https://app.99inbound.com/api/e/xnS2ob-B"
                     method="POST"
                     target="_self"
+                    onsubmit="return handleSubmit();"
                   >
                     <div class="columns has-text-centered">
                       <div class="column">
@@ -614,6 +616,14 @@
                     </div>
                     <div class="columns">
                       <div class="column">
+                        <div
+                          class="g-recaptcha"
+                          data-sitekey="6LdrOlAqAAAAAE0Pmoj7QfjLuyRvl9CeguLRBLXk"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="columns">
+                      <div class="column">
                         <button
                           type="submit"
                           class="button is-success is-outlined is-medium is-size-6-mobile is-fullwidth"
@@ -670,6 +680,15 @@
         navBarMenu.classList.add("is-active");
         navBarMenu.classList.remove("not-active");
       });
+
+      function handleSubmit() {
+        const response = grecaptcha.getResponse();
+        if (response.length === 0) {
+          alert("Please complete the CAPTCHA");
+          return false;
+        }
+        return true;
+      }
 
       // burgerMenuButton.addEventListener("click", function () {
       //   if (burgerMenuButton.classList.contains("is-active")) {
