@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 // Brand Colors
 $blue: #00458a;
@@ -7,7 +7,7 @@ $yellow: #f4fb10;
 $white: #fffffe;
 
 // Font
-$family-sans-serif: "DM Sans", sans-serif;
+$family-sans-serif: 'DM Sans', sans-serif;
 
 // Custom Global Variables
 $primary: #e44d68;
@@ -18,7 +18,7 @@ $info-dark: #a0dcce;
 // Component Variables
 $body-background-color: $white;
 
-@import "../node_modules/bulma/bulma.sass";
+@import '../node_modules/bulma/bulma.sass';
 
 html,
 body {
@@ -92,6 +92,16 @@ figure.image {
 
 .img-healthnow {
   background: url(../img/healthnow-2.png) no-repeat center;
+  background-size: contain;
+}
+
+.img-globe {
+  background: url(../img/globe.svg) no-repeat center;
+  background-size: contain;
+}
+
+.img-chh {
+  background: url(../img/chh.png) no-repeat center;
   background-size: contain;
 }
 
@@ -217,42 +227,50 @@ ul.skill-lists {
   transform: scale(1.1); /* Adjust the scale factor for the zoom effect */
 }
 
-$skills: "html" "html5.png" "#FF5F6D" "#ffc371",
-  "css" "css3.svg" "#0D0B88" "#56FFF8", "sass" "sass.svg" "#FDC78D" "#F98FFD";
+$skills:
+  'html' 'html5.png' '#FF5F6D' '#ffc371',
+  'css' 'css3.svg' '#0D0B88' '#56FFF8',
+  'sass' 'sass.svg' '#FDC78D' '#F98FFD';
 
 @each $skill, $image, $to, $from in $skills {
   .skill-content-#{$skill} {
-    background: url("../img/#{$image}") no-repeat,
+    background:
+      url('../img/#{$image}') no-repeat,
       linear-gradient(109.6deg, #{$to} 9.4%, #{$from} 78.4%);
     background-size: contain;
   }
 }
 
 .skill-content-javascript {
-  background: url("../img/javascript.svg") no-repeat left,
+  background:
+    url('../img/javascript.svg') no-repeat left,
     linear-gradient(109.6deg, rgb(255, 219, 47) 11.2%, rgb(244, 253, 0) 100.2%);
 }
 
 .skill-content-typescript {
-  background: url("../img/typescript.svg") no-repeat left,
+  background:
+    url('../img/typescript.svg') no-repeat left,
     linear-gradient(to left, #3074c0, #609ed2);
   background-size: contain;
 }
 
 .skill-content-node {
-  background: url("../img/node-js.png") no-repeat left,
+  background:
+    url('../img/node-js.png') no-repeat left,
     linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
   background-size: contain;
 }
 
 .skill-content-react {
-  background: url("../img/react.svg") no-repeat left,
+  background:
+    url('../img/react.svg') no-repeat left,
     linear-gradient(109.5deg, rgb(13, 11, 136) 9.4%, rgb(86, 255, 248) 78.4%);
   background-size: contain;
 }
 
 .skill-content-next {
-  background: url("../img/next-js.svg") no-repeat left,
+  background:
+    url('../img/next-js.svg') no-repeat left,
     linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.15) 0%,
@@ -268,7 +286,8 @@ $skills: "html" "html5.png" "#FF5F6D" "#ffc371",
 }
 
 .skill-content-graphql {
-  background: url("../img/graphql.svg") no-repeat,
+  background:
+    url('../img/graphql.svg') no-repeat,
     radial-gradient(
       275px at -14% 125%,
       rgb(255, 255, 255) 0%,
@@ -278,67 +297,78 @@ $skills: "html" "html5.png" "#FF5F6D" "#ffc371",
 }
 
 .skill-content-elixir {
-  background: url("../img/elixir.svg") no-repeat,
+  background:
+    url('../img/elixir.svg') no-repeat,
     linear-gradient(to right, #7028e4 0%, #e5b2ca 100%);
   background-size: contain;
 }
 
 .skill-content-tailwind {
-  background: url("../img/tailwind.svg") no-repeat,
+  background:
+    url('../img/tailwind.svg') no-repeat,
     linear-gradient(to left, #0284c7 0%, #1a2d5d 100%);
   background-size: contain;
 }
 
 .skill-content-nuxt {
-  background: url("../img/nuxt.svg") no-repeat,
+  background:
+    url('../img/nuxt.svg') no-repeat,
     linear-gradient(to left, #00dc82 0%, #108775 100%);
   background-size: contain;
 }
 
 .skill-content-vue {
-  background: url("../img/vue.svg") no-repeat,
+  background:
+    url('../img/vue.svg') no-repeat,
     linear-gradient(to left, #41b883 0%, #34495e 100%);
   background-size: contain;
 }
 
 .skill-content-mysql {
-  background: url("../img/mysql.svg") no-repeat,
+  background:
+    url('../img/mysql.svg') no-repeat,
     linear-gradient(to left, #01758f, #f29111);
   background-size: contain;
 }
 
 .skill-content-postgresql {
-  background: url("../img/postgresql.png") no-repeat,
+  background:
+    url('../img/postgresql.png') no-repeat,
     linear-gradient(-225deg, #336790 0%, #87a7d9 100%);
   background-size: contain;
 }
 
 .skill-content-redis {
-  background: url("../img/redis.svg") no-repeat,
+  background:
+    url('../img/redis.svg') no-repeat,
     linear-gradient(to top, #ff0844 0%, #ffb199 100%);
   background-size: contain;
 }
 
 .skill-content-testing {
-  background: url("../img/jest.png") no-repeat,
+  background:
+    url('../img/jest.png') no-repeat,
     linear-gradient(to left, #94405a 0%, #c2a594 100%);
   background-size: contain;
 }
 
 .skill-content-git {
-  background: url("../img/git.svg") no-repeat,
+  background:
+    url('../img/git.svg') no-repeat,
     linear-gradient(to left, #f05033 0%, #e5f2fc 100%);
   background-size: contain;
 }
 
 .skill-content-docker {
-  background: url("../img/docker.svg") no-repeat,
+  background:
+    url('../img/docker.svg') no-repeat,
     linear-gradient(to left, #1d63ed 0%, #e5f2fc 100%);
   background-size: contain;
 }
 
 .skill-content-aws {
-  background: url("../img/aws.svg") no-repeat,
+  background:
+    url('../img/aws.svg') no-repeat,
     linear-gradient(to left, #484848 0%, #f3b458 50%, #f7cf8a 100%);
   background-size: contain;
 }
@@ -378,7 +408,9 @@ $skills: "html" "html5.png" "#FF5F6D" "#ffc371",
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
 }
 
 .tooltip:hover .tooltip-text {

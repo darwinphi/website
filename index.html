@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="has-navbar-fixed-top">
   <head>
     <meta charset="UTF-8" />
@@ -454,11 +454,25 @@
             </h1>
             <h2 class="subtitle is-size-4 is-size-5-mobile has-text-left">
               I bring significant experience in developing technologies for the
-              Health, Hospitality, and Food industries, gained through my past
-              projects and roles.
+              Telecom, Health, Hospitality, and Food industries, gained through
+              my past projects and roles.
             </h2>
           </div>
           <div class="work column">
+            <div class="card" data-aos="zoom-in">
+              <div class="card-image">
+                <a href="https://www.globe.com.ph/" target="_blank">
+                  <figure class="image img-globe is-2by1"></figure>
+                </a>
+              </div>
+            </div>
+            <div class="card" data-aos="zoom-in">
+              <div class="card-image">
+                <a href="https://chonghua.com.ph/" target="_blank">
+                  <figure class="image img-chh is-2by1"></figure>
+                </a>
+              </div>
+            </div>
             <div class="card" data-aos="zoom-in">
               <div class="card-image">
                 <a href="https://www.yondu.com/" target="_blank">
@@ -514,10 +528,10 @@
           <b>Let's connect on</b>
           <a href="https://github.com/darwinphi">Github</a>,
           <a href="https://www.linkedin.com/in/darwinmanalo/">LinkedIn</a> or
-          <a href="https://twitter.com/drwnmnl">Twitter</a>
+          <a href="https://twitter.com/drwnmnl">X</a>
         </h1>
         <p class="is-size-5 is-size-6-mobile tooltip" style="margin-top: 1em">
-          © 2024 Darwin Manalo • Colophon
+          © <span id="copyright-year">2024</span> Darwin Manalo • Colophon
           <span class="tooltip-text has-text-left">
             This website was crafted with love, using Bulma CSS framework, DM
             Sans font and AOS animation. Now comfortably residing on Github like
@@ -658,33 +672,35 @@
     <script type="text/javascript" src="js/modal-fx.min.js"></script>
     <script>
       AOS.init();
+      document.getElementById('copyright-year').textContent =
+        new Date().getFullYear();
 
-      const launchModal = document.getElementById("launch-modal");
-      const contactModal = document.getElementById("contact-modal");
+      const launchModal = document.getElementById('launch-modal');
+      const contactModal = document.getElementById('contact-modal');
       const closeContactModalBtn = document.getElementById(
-        "close-contact-modal-button"
+        'close-contact-modal-button',
       );
-      const burgerMenuButton = document.getElementById("burger-menu-button");
-      const navBarMenu = document.getElementById("navbar-menu");
+      const burgerMenuButton = document.getElementById('burger-menu-button');
+      const navBarMenu = document.getElementById('navbar-menu');
 
-      launchModal.addEventListener("click", function () {
-        console.log("Modal opened");
-        contactModal.classList.add("is-active");
-        navBarMenu.classList.add("not-active");
+      launchModal.addEventListener('click', function () {
+        console.log('Modal opened');
+        contactModal.classList.add('is-active');
+        navBarMenu.classList.add('not-active');
       });
 
-      closeContactModalBtn.addEventListener("click", function () {
-        console.log("Modal closed");
-        contactModal.classList.remove("is-active");
+      closeContactModalBtn.addEventListener('click', function () {
+        console.log('Modal closed');
+        contactModal.classList.remove('is-active');
         // burgerMenuButton.classList.remove("is-active");
-        navBarMenu.classList.add("is-active");
-        navBarMenu.classList.remove("not-active");
+        navBarMenu.classList.add('is-active');
+        navBarMenu.classList.remove('not-active');
       });
 
       function handleSubmit() {
         const response = grecaptcha.getResponse();
         if (response.length === 0) {
-          alert("Please complete the CAPTCHA");
+          alert('Please complete the CAPTCHA');
           return false;
         }
         return true;

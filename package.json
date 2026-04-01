@@ -4,20 +4,15 @@
   "description": "",
   "main": "sass/custom.scss",
   "scripts": {
-    "css-watch": "chokidar ./sass/*.scss --command 'node-sass-chokidar ./sass/custom.scss | postcss --use autoprefixer > ./css/main.css'",
-    "css-build": "node-sass-chokidar ./sass/custom.scss --output-style compressed --quiet | postcss --use autoprefixer --no-map > ./css/main.min.css",
+    "css-watch": "sass --watch sass:css --style=compressed --silence-deprecation=import,global-builtin,color-functions,if-function",
+    "css-build": "sass sass/custom.scss:css/main.min.css --style=compressed --silence-deprecation=import,global-builtin,color-functions,if-function && sass sass/custom.scss:css/main.css --style=expanded --silence-deprecation=import,global-builtin,color-functions,if-function",
     "start": "npm run css-watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
     "bulma": "^0.9.3",
-    "chokidar-cli": "^2.1.0",
-    "node-sass": "^9.0.0",
-    "node-sass-chokidar": "^2.0.0",
-    "postcss": "^8.3.5",
-    "postcss-cli": "^8.3.1"
+    "sass": "^1.77.0"
   },
   "dependencies": {
     "aos": "^2.3.4",
