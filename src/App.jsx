@@ -135,7 +135,7 @@ function App() {
   }, [isMenuOpen]);
 
   return (
-    <div className="min-h-screen flex flex-col px-8">
+    <div className="min-h-screen flex flex-col px-8 max-w-[1280px] mx-auto w-full">
       {/* Navbar */}
       <header className="sticky top-0 z-50 py-6 flex items-center justify-between bg-primary-bg">
         <button
