@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectDetailPage from './components/ProjectDetailPage';
 import AboutPage from './components/AboutPage';
+import AnimatedHeroText from './components/AnimatedHeroText';
 
 const navLinks = [
   { label: 'Projects', href: '#' },
@@ -137,14 +138,33 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col px-8 max-w-[1280px] mx-auto w-full">
       {/* Navbar */}
-      <header className="sticky top-0 z-50 py-6 flex items-center justify-between bg-primary-bg">
+      <motion.header
+        className="sticky top-0 z-50 py-6 flex items-center justify-between bg-primary-bg"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+      >
         <button
           onClick={() => handleNavigation('home')}
           className="text-body font-medium hover:opacity-60 transition-opacity cursor-pointer"
         >
           Darwin Manalo
         </button>
-        <nav className="hidden md:flex items-center gap-6">
+        <motion.nav
+          className="hidden md:flex items-center gap-6"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.3,
+              },
+            },
+          }}
+          initial="hidden"
+          animate="visible"
+        >
           {navLinks.map(({ label, href }) => {
             const isProjects = label === 'Projects';
             const isAbout = label === 'About';
@@ -154,27 +174,36 @@ function App() {
                 ? () => handleNavigation('about')
                 : undefined;
 
+            const linkVariants = {
+              hidden: { opacity: 0, y: -10 },
+              visible: { opacity: 1, y: 0 },
+            };
+
             return isProjects || isAbout ? (
-              <button
+              <motion.button
                 key={label}
                 onClick={handleClick}
                 className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer"
+                variants={linkVariants}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
               >
                 {label}
                 <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-              </button>
+              </motion.button>
             ) : (
-              <a
+              <motion.a
                 key={label}
                 href={href}
                 className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group"
+                variants={linkVariants}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
               >
                 {label}
                 <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-              </a>
+              </motion.a>
             );
           })}
-        </nav>
+        </motion.nav>
         <button
           className="md:hidden text-body leading-none cursor-pointer"
           onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -206,7 +235,7 @@ function App() {
             ))}
           </svg>
         </button>
-      </header>
+      </motion.header>
 
       {/* Content + Drawer container — overflow-hidden clips the drawer to this region */}
       <div className="relative flex-1 overflow-hidden lg:overflow-visible flex flex-col">
@@ -285,12 +314,10 @@ function App() {
                 transition={{ duration: 0.25, ease: 'easeOut' }}
                 className="flex-1 flex items-center justify-center"
               >
-                <p className="text-heading leading-tight font-normal max-w-225">
-                  Based in the Pearl of the Orient Seas (Manila, Philippines).
-                  I&rsquo;m a Full-Stack developer building modern web
-                  experiences. Got an idea and just want to connect? Let&rsquo;s
-                  collaborate.
-                </p>
+                <AnimatedHeroText
+                  text="Based in the Pearl of the Orient Seas (Manila, Philippines). I'm a Full-Stack developer building modern web experiences. Got an idea and just want to connect? Let's collaborate."
+                  className="text-heading leading-tight font-normal max-w-225"
+                />
               </motion.div>
             )}
             {view === 'projects' && (
@@ -341,23 +368,54 @@ function App() {
         </main>
 
         {/* Footer */}
-        <footer className="py-6 flex items-end justify-between">
-          <span className="text-body">© 2026 All rights reserved</span>
-          <div className="flex flex-col items-end gap-1">
+        <motion.footer
+          className="py-6 flex items-end justify-between"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
+        >
+          <motion.span
+            className="text-body"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
+          >
+            © 2026 All rights reserved
+          </motion.span>
+          <motion.div
+            className="flex flex-col items-end gap-1"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.08,
+                  delayChildren: 0.4,
+                },
+              },
+            }}
+            initial="hidden"
+            animate="visible"
+          >
             {socialLinks.map(({ label, href }) => (
-              <a
+              <motion.a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noreferrer"
                 className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group"
+                variants={{
+                  hidden: { opacity: 0, x: 20 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
               >
                 {label}
                 <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-              </a>
+              </motion.a>
             ))}
-          </div>
-        </footer>
+          </motion.div>
+        </motion.footer>
       </div>
     </div>
   );
