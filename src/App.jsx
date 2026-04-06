@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectDetailPage from './components/ProjectDetailPage';
@@ -53,6 +53,40 @@ function App() {
     setIsMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Handle backspace/delete key for back navigation
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      // Only respond to backspace or delete keys
+      if (event.key !== 'Backspace' && event.key !== 'Delete') {
+        return;
+      }
+
+      // Don't interfere with text inputs
+      const activeElement = document.activeElement;
+      if (
+        activeElement &&
+        (activeElement.tagName === 'INPUT' ||
+          activeElement.tagName === 'TEXTAREA' ||
+          activeElement.contentEditable === 'true')
+      ) {
+        return;
+      }
+
+      // Prevent default browser behavior (go back page)
+      event.preventDefault();
+
+      // Navigate based on current view
+      if (view === 'project-detail') {
+        handleNavigation('projects');
+      } else if (view === 'projects') {
+        handleNavigation('home');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [view]);
 
   return (
     <div className="min-h-screen flex flex-col px-8">
