@@ -5,7 +5,7 @@ function AboutPage({ onBack }) {
       <div className="py-4">
         <button
           onClick={onBack}
-          className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer"
+          className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-[#f5f5f5]"
         >
           <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
           Back to Home
@@ -18,13 +18,13 @@ function AboutPage({ onBack }) {
           style={{ maxWidth: 'var(--max-width-reading)' }}
         >
           {/* Heading */}
-          <h1 className="text-heading leading-tight font-normal text-center mb-8">
+          <h1 className="text-heading leading-tight font-normal text-center mb-8 dark:text-[#f5f5f5]">
             About Me
           </h1>
 
           {/* Content */}
           <div className="flex flex-col gap-6">
-            <p className="text-body leading-relaxed opacity-80">
+            <p className="text-body leading-relaxed opacity-80 dark:text-[#d0d0d0]">
               I graduated with a degree on Bachelor of Science in Information
               Technology at Adamson University. I originally started my career
               as a Front-end Developer at Shore Suite, but things took an
@@ -33,7 +33,7 @@ function AboutPage({ onBack }) {
               Full-Stack developer.
             </p>
 
-            <p className="text-body leading-relaxed opacity-80">
+            <p className="text-body leading-relaxed opacity-80 dark:text-[#d0d0d0]">
               Over the past 8+ years, every challenge has been a chance to learn
               something new (sometimes the hard way, but it works!). Through
               this, I've consistently showcased my versatility by building and
@@ -42,13 +42,13 @@ function AboutPage({ onBack }) {
               ability to stay effective even when things get a bit messy.
             </p>
 
-            <p className="text-body leading-relaxed opacity-80">
+            <p className="text-body leading-relaxed opacity-80 dark:text-[#d0d0d0]">
               I'm currently collaborating on external projects with NCS
               Philippines, where I thrive to solve real-world problems and adapt
               to evolving requirements.
             </p>
 
-            <p className="text-body leading-relaxed opacity-80">
+            <p className="text-body leading-relaxed opacity-80 dark:text-[#d0d0d0]">
               Outside of work, I make sure to spend quality time with my loved
               ones. I also enjoy playing mobile games, watching sports
               (especially football!), and occasionally playing pickleball and

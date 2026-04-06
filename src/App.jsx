@@ -4,10 +4,11 @@ import ProjectsPage from './components/ProjectsPage';
 import ProjectDetailPage from './components/ProjectDetailPage';
 import AboutPage from './components/AboutPage';
 import AnimatedHeroText from './components/AnimatedHeroText';
+import DarkModeToggle from './components/DarkModeToggle';
 
 const navLinks = [
   { label: 'Projects', href: '#' },
-  { label: 'Articles', href: '#' },
+  { label: 'Articles', href: '' },
   { label: 'About', href: '#' },
 ];
 
@@ -25,14 +26,14 @@ const navContainerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
       delayChildren: 0.3,
     },
   },
   exit: {
     opacity: 0,
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.12,
       staggerDirection: -1,
     },
   },
@@ -43,12 +44,12 @@ const navItemVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { type: 'tween', duration: 0.3, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 0.8, ease: 'easeInOut' },
   },
   exit: {
     opacity: 0,
     x: 100,
-    transition: { type: 'tween', duration: 0.2, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 0.5, ease: 'easeInOut' },
   },
 };
 
@@ -139,102 +140,101 @@ function App() {
     <div className="min-h-screen flex flex-col px-8 max-w-[1280px] mx-auto w-full">
       {/* Navbar */}
       <motion.header
-        className="sticky top-0 z-50 py-6 flex items-center justify-between bg-primary-bg"
+        className="sticky top-0 z-50 py-6 flex items-center justify-between bg-[#e6e7df] dark:bg-[#1a1a1a] dark:text-[#f5f5f5]"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <button
           onClick={() => handleNavigation('home')}
-          className="text-body font-medium hover:opacity-60 transition-opacity cursor-pointer"
+          className="text-body font-medium hover:opacity-60 transition-opacity cursor-pointer inline-flex items-center"
         >
           Darwin Manalo
         </button>
-        <motion.nav
-          className="hidden md:flex items-center gap-6"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.3,
+
+        {/* Center: Dark Mode Toggle (absolute center) */}
+        <div className="absolute left-1/2 transform -translate-x-1/2">
+          <DarkModeToggle />
+        </div>
+
+        {/* Right: Nav Links (desktop) + Hamburger (mobile) */}
+        <div className="flex items-center gap-6">
+          <motion.nav
+            className="hidden md:flex items-center gap-6"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                  delayChildren: 0.3,
+                },
               },
-            },
-          }}
-          initial="hidden"
-          animate="visible"
-        >
-          {navLinks.map(({ label, href }) => {
-            const isProjects = label === 'Projects';
-            const isAbout = label === 'About';
-            const handleClick = isProjects
-              ? () => handleNavigation('projects')
-              : isAbout
-                ? () => handleNavigation('about')
-                : undefined;
-
-            const linkVariants = {
-              hidden: { opacity: 0, y: -10 },
-              visible: { opacity: 1, y: 0 },
-            };
-
-            return isProjects || isAbout ? (
-              <motion.button
-                key={label}
-                onClick={handleClick}
-                className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer"
-                variants={linkVariants}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
-              >
-                {label}
-                <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-              </motion.button>
-            ) : (
-              <motion.a
-                key={label}
-                href={href}
-                className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group"
-                variants={linkVariants}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
-              >
-                {label}
-                <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-              </motion.a>
-            );
-          })}
-        </motion.nav>
-        <button
-          className="md:hidden text-body leading-none cursor-pointer"
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          aria-expanded={isMenuOpen}
-          aria-label={
-            isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
-          }
-          aria-haspopup="dialog"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
+            }}
+            initial="hidden"
+            animate="visible"
           >
-            {dotLineVariants.map((v) => (
-              <motion.line
-                key={v.id}
-                stroke="currentColor"
-                strokeLinecap="round"
-                x1={v.closed.x1}
-                y1={v.closed.y1}
-                x2={v.closed.x2}
-                y2={v.closed.y2}
-                animate={isMenuOpen ? v.open : v.closed}
-                transition={springTransition}
-              />
-            ))}
-          </svg>
-        </button>
+            {navLinks.map(({ label }) => {
+              const isProjects = label === 'Projects';
+              const isAbout = label === 'About';
+              const handleClick = isProjects
+                ? () => handleNavigation('projects')
+                : isAbout
+                  ? () => handleNavigation('about')
+                  : undefined;
+
+              const linkVariants = {
+                hidden: { opacity: 0, y: -10 },
+                visible: { opacity: 1, y: 0 },
+              };
+
+              return (
+                <motion.button
+                  key={label}
+                  onClick={handleClick}
+                  className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer leading-none"
+                  variants={linkVariants}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                >
+                  {label}
+                  <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
+                </motion.button>
+              );
+            })}
+          </motion.nav>
+
+          <button
+            className="md:hidden text-body leading-none cursor-pointer"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-expanded={isMenuOpen}
+            aria-label={
+              isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
+            }
+            aria-haspopup="dialog"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              {dotLineVariants.map((v) => (
+                <motion.line
+                  key={v.id}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  x1={v.closed.x1}
+                  y1={v.closed.y1}
+                  x2={v.closed.x2}
+                  y2={v.closed.y2}
+                  animate={isMenuOpen ? v.open : v.closed}
+                  transition={springTransition}
+                />
+              ))}
+            </svg>
+          </button>
+        </div>
       </motion.header>
 
       {/* Content + Drawer container — overflow-hidden clips the drawer to this region */}
@@ -246,7 +246,7 @@ function App() {
               role="dialog"
               aria-modal="true"
               aria-label="Navigation menu"
-              className="absolute inset-0 z-40 flex flex-col px-8 py-6 bg-primary-bg"
+              className="absolute inset-0 z-40 flex flex-col px-8 py-6 bg-[#e6e7df] dark:bg-[#1a1a1a] dark:text-[#f5f5f5]"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -274,27 +274,16 @@ function App() {
                       ? () => handleNavigation('about')
                       : () => setIsMenuOpen(false);
 
-                  return isProjects || isAbout ? (
+                  return (
                     <motion.button
                       key={label}
                       onClick={handleClick}
-                      className="text-heading hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer"
+                      className="text-heading hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer leading-none"
                       variants={navItemVariants}
                     >
                       {label}
                       <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
                     </motion.button>
-                  ) : (
-                    <motion.a
-                      key={label}
-                      href={href}
-                      onClick={handleClick}
-                      className="text-heading hover:opacity-60 transition-opacity inline-flex items-center gap-1 group"
-                      variants={navItemVariants}
-                    >
-                      {label}
-                      <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-                    </motion.a>
                   );
                 })}
               </motion.nav>
@@ -316,7 +305,7 @@ function App() {
               >
                 <AnimatedHeroText
                   text="Based in the Pearl of the Orient Seas (Manila, Philippines). I'm a Full-Stack developer building modern web experiences. Got an idea and just want to connect? Let's collaborate."
-                  className="text-heading leading-tight font-normal max-w-225"
+                  className="text-heading leading-tight font-normal max-w-225 dark:text-[#f5f5f5]"
                 />
               </motion.div>
             )}
@@ -375,7 +364,7 @@ function App() {
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
         >
           <motion.span
-            className="text-body"
+            className="text-body dark:text-[#d0d0d0]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
@@ -403,7 +392,7 @@ function App() {
                 href={href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group"
+                className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group dark:text-[#f5f5f5]"
                 variants={{
                   hidden: { opacity: 0, x: 20 },
                   visible: { opacity: 1, x: 0 },
