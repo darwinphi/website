@@ -5,8 +5,8 @@
 @theme {
   --font-sans: 'DM Sans', sans-serif;
   --color-primary-bg: #e6e7df;
-  --text-body: 0.875rem;
-  --text-heading: 2.8125rem;
+  --text-body: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+  --text-heading: clamp(1.75rem, 1.3804rem + 1.8478vw, 2.8125rem);
   --max-width-225: 900px;
   --line-height-tight: 1.15;
 }

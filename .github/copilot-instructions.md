@@ -66,6 +66,12 @@ function App() {
 - **Transitions**: Prefer Tailwind's `transition-opacity` over custom CSS or Framer Motion for simple effects
 - **Dark mode**: Not currently implemented; consider adding via `dark:` utilities if needed
 
+### Typography
+
+- **Fluid type**: Use [Utopia](https://utopia.fyi) to generate `clamp()` values for responsive font sizes
+- **No fixed font sizes**: All `--text-*` custom properties in `index.css` must use `clamp(min, preferred, max)` for fluid scaling
+- **Scale reference**: Min viewport 320px → Max viewport 1240px; derive values from Utopia's type or clamp calculator
+
 ### Animations
 
 - **Framer Motion**: Reserved for complex animations and interactions (via TextPressure.jsx)
