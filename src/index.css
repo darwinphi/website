@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import 'remixicon/fonts/remixicon.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --color-primary-bg: #e6e7df;
+  --text-body: 0.875rem;
+  --text-heading: 2.8125rem;
+  --max-width-225: 900px;
+  --line-height-tight: 1.15;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-primary-bg);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+  }
+}
