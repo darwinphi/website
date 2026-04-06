@@ -28,10 +28,18 @@ function ProjectDetailPage({ projectId, onBack }) {
       <div className="flex-1 flex items-start py-8">
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
           {/* Left column: Project name */}
-          <div className="flex items-start lg:col-span-1">
+          <div className="flex flex-col gap-10 lg:col-span-1">
             <h1 className="text-heading leading-tight font-normal">
               {project.name}
             </h1>
+            {project.logo && (
+              <img
+                src={project.logo}
+                alt={project.name}
+                className="w-32 sm:w-44 md:w-56 h-auto opacity-60"
+                style={{ filter: 'grayscale(1) brightness(1.3)' }}
+              />
+            )}
           </div>
 
           {/* Right column: Case study content */}
