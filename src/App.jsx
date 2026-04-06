@@ -17,6 +17,39 @@ const socialLinks = [
 
 const springTransition = { type: 'spring', stiffness: 400, damping: 30 };
 
+// Drawer nav stagger animation
+const navContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+    },
+  },
+};
+
+const navItemVariants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { type: 'tween', duration: 0.3, ease: 'easeInOut' },
+  },
+  exit: {
+    opacity: 0,
+    x: 100,
+    transition: { type: 'tween', duration: 0.2, ease: 'easeInOut' },
+  },
+};
+
 // 4 dots (closed) → 2 crossing lines (open)
 // Each entry: dot position when closed, line endpoint pair when open
 const dotLineVariants = [
@@ -88,10 +121,22 @@ function App() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [view]);
 
+  // Close drawer on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMenuOpen]);
+
   return (
     <div className="min-h-screen flex flex-col px-8">
       {/* Navbar */}
-      <header className="relative z-10 py-6 flex items-center justify-between">
+      <header className="sticky top-0 z-50 py-6 flex items-center justify-between bg-primary-bg">
         <button
           onClick={() => handleNavigation('home')}
           className="text-body font-medium hover:opacity-60 transition-opacity cursor-pointer"
@@ -168,14 +213,25 @@ function App() {
               role="dialog"
               aria-modal="true"
               aria-label="Navigation menu"
-              className="absolute inset-0 z-5 flex flex-col px-8 py-6 bg-primary-bg"
-              initial={{ y: '-100%' }}
-              animate={{ y: 0 }}
-              exit={{ y: '-100%' }}
-              transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
+              className="absolute inset-0 z-40 flex flex-col px-8 py-6 bg-primary-bg"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{
+                type: 'tween',
+                duration: 0.3,
+                ease: 'easeInOut',
+                delay: 0.25,
+              }}
             >
               {/* Drawer nav links */}
-              <nav className="flex-1 flex flex-col items-start justify-center gap-4">
+              <motion.nav
+                className="flex flex-col items-end justify-start gap-4"
+                variants={navContainerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
                 {navLinks.map(({ label, href }) => {
                   const isProjects = label === 'Projects';
                   const handleClick = isProjects
@@ -183,27 +239,29 @@ function App() {
                     : () => setIsMenuOpen(false);
 
                   return isProjects ? (
-                    <button
+                    <motion.button
                       key={label}
                       onClick={handleClick}
                       className="text-heading hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer"
+                      variants={navItemVariants}
                     >
                       {label}
                       <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-                    </button>
+                    </motion.button>
                   ) : (
-                    <a
+                    <motion.a
                       key={label}
                       href={href}
                       onClick={handleClick}
                       className="text-heading hover:opacity-60 transition-opacity inline-flex items-center gap-1 group"
+                      variants={navItemVariants}
                     >
                       {label}
                       <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-                    </a>
+                    </motion.a>
                   );
                 })}
-              </nav>
+              </motion.nav>
             </motion.div>
           )}
         </AnimatePresence>
