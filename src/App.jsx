@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectDetailPage from './components/ProjectDetailPage';
+import AboutPage from './components/AboutPage';
 
 const navLinks = [
   { label: 'Projects', href: '#' },
@@ -146,11 +147,14 @@ function App() {
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map(({ label, href }) => {
             const isProjects = label === 'Projects';
+            const isAbout = label === 'About';
             const handleClick = isProjects
               ? () => handleNavigation('projects')
-              : undefined;
+              : isAbout
+                ? () => handleNavigation('about')
+                : undefined;
 
-            return isProjects ? (
+            return isProjects || isAbout ? (
               <button
                 key={label}
                 onClick={handleClick}
@@ -205,7 +209,7 @@ function App() {
       </header>
 
       {/* Content + Drawer container — overflow-hidden clips the drawer to this region */}
-      <div className="relative flex-1 overflow-hidden flex flex-col">
+      <div className="relative flex-1 overflow-hidden lg:overflow-visible flex flex-col">
         {/* Mobile Drawer */}
         <AnimatePresence>
           {isMenuOpen && (
@@ -234,11 +238,14 @@ function App() {
               >
                 {navLinks.map(({ label, href }) => {
                   const isProjects = label === 'Projects';
+                  const isAbout = label === 'About';
                   const handleClick = isProjects
                     ? () => handleNavigation('projects')
-                    : () => setIsMenuOpen(false);
+                    : isAbout
+                      ? () => handleNavigation('about')
+                      : () => setIsMenuOpen(false);
 
-                  return isProjects ? (
+                  return isProjects || isAbout ? (
                     <motion.button
                       key={label}
                       onClick={handleClick}
@@ -316,6 +323,18 @@ function App() {
                   projectId={selectedProject}
                   onBack={() => handleNavigation('projects')}
                 />
+              </motion.div>
+            )}
+            {view === 'about' && (
+              <motion.div
+                key="about"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                className="flex-1 flex flex-col"
+              >
+                <AboutPage onBack={() => handleNavigation('home')} />
               </motion.div>
             )}
           </AnimatePresence>

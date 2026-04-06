@@ -26,9 +26,12 @@ function ProjectDetailPage({ projectId, onBack }) {
 
       {/* Main content: two-column layout */}
       <div className="flex-1 flex items-start py-8">
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
+        <div
+          className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mx-auto"
+          style={{ maxWidth: 'calc(var(--max-width-reading) * 1.5)' }}
+        >
           {/* Left column: Project name */}
-          <div className="flex flex-col gap-10 lg:col-span-1">
+          <div className="flex flex-col gap-10 lg:col-span-1 lg:sticky lg:top-24 lg:self-start">
             <h1 className="text-heading leading-tight font-normal">
               {project.name}
             </h1>
@@ -36,53 +39,60 @@ function ProjectDetailPage({ projectId, onBack }) {
 
           {/* Right column: Case study content */}
           <div className="flex flex-col gap-8 lg:col-span-2">
-            {/* About the Client */}
-            <section>
-              <h2 className="text-body font-bold mb-2">About the Client</h2>
-              <p className="text-body">{project.aboutClient}</p>
-            </section>
+            <div
+              style={{ maxWidth: 'var(--max-width-reading)' }}
+              className="flex flex-col gap-8"
+            >
+              {/* About the Client */}
+              <section>
+                <h2 className="text-body font-bold mb-2">About the Client</h2>
+                <p className="text-body">{project.aboutClient}</p>
+              </section>
 
-            {/* Problem */}
-            <section>
-              <h2 className="text-body font-bold mb-2">Problem</h2>
-              <p className="text-body">{project.problem}</p>
-            </section>
+              {/* Problem */}
+              <section>
+                <h2 className="text-body font-bold mb-2">Problem</h2>
+                <p className="text-body">{project.problem}</p>
+              </section>
 
-            {/* Solution */}
-            <section>
-              <h2 className="text-body font-bold mb-2">Solution</h2>
-              <p className="text-body">{project.solution}</p>
-            </section>
+              {/* Solution */}
+              <section>
+                <h2 className="text-body font-bold mb-2">Solution</h2>
+                <p className="text-body">{project.solution}</p>
+              </section>
 
-            {/* Key Contributions */}
-            <section>
-              <h2 className="text-body font-bold mb-2">Key Contributions</h2>
-              <ul className="text-body list-disc list-inside space-y-1">
-                {project.keyContributions.map((contribution, index) => (
-                  <li key={index}>{contribution}</li>
-                ))}
-              </ul>
-            </section>
+              {/* Key Contributions */}
+              <section>
+                <h2 className="text-body font-bold mb-2">Key Contributions</h2>
+                <ul className="text-body list-disc list-inside space-y-1">
+                  {project.keyContributions.map((contribution, index) => (
+                    <li key={index}>{contribution}</li>
+                  ))}
+                </ul>
+              </section>
 
-            {/* Impact */}
-            <section>
-              <h2 className="text-body font-bold mb-2">Impact</h2>
-              <ul className="text-body list-disc list-inside space-y-1">
-                {project.impact.map((impactItem, index) => (
-                  <li key={index}>{impactItem}</li>
-                ))}
-              </ul>
-            </section>
+              {/* Impact */}
+              <section>
+                <h2 className="text-body font-bold mb-2">Impact</h2>
+                <ul className="text-body list-disc list-inside space-y-1">
+                  {project.impact.map((impactItem, index) => (
+                    <li key={index}>{impactItem}</li>
+                  ))}
+                </ul>
+              </section>
 
-            {/* Back to top — mobile only */}
-            <div className="flex justify-end pt-4 pb-8 lg:hidden">
-              <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer"
-              >
-                Back to top
-                <i className="ri-arrow-up-line transition-transform duration-200 group-hover:-translate-y-1 group-active:-translate-y-1" />
-              </button>
+              {/* Back to top — mobile only */}
+              <div className="flex justify-end pt-4 pb-8 lg:hidden">
+                <button
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                  }
+                  className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer"
+                >
+                  Back to top
+                  <i className="ri-arrow-up-line transition-transform duration-200 group-hover:-translate-y-1 group-active:-translate-y-1" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
