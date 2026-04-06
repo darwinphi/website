@@ -34,25 +34,22 @@ export const projects = [
     description:
       'Chong Hua Hospital is a leading private healthcare institution based in Cebu City, Philippines, with over a century of experience in delivering quality medical services. As part of its continuous digital transformation, the hospital invests in technology solutions to improve internal processes and operational efficiency.',
     aboutClient:
-      'Chong Hua Hospital is a leading healthcare institution in the Philippines committed to delivering quality patient care and modernizing its services through technology.',
+      'Chong Hua Hospital is a leading private healthcare institution based in Cebu City, Philippines, with over a century of experience in delivering quality medical services. As part of its continuous digital transformation, the hospital invests in technology solutions to improve internal processes and operational efficiency.',
     problem:
-      'The hospital needed a streamlined digital system to enhance patient management, appointment scheduling, and medical record accessibility. Manual processes were time-consuming and prone to inefficiencies.',
+      'The recruitment process for doctors relied heavily on manual submission and handling of documents. This resulted in slower processing times, increase of administrative workload, and a fragmented experience for both applicants and staff.',
     solution:
-      'As a Full Stack Developer, I contributed to building a comprehensive hospital management system that digitized patient workflows and improved operational efficiency.',
+      'As a Front-End Developer, I contributed by building an online recruitment portal that digitized the document submission process.',
     keyContributions: [
-      'Developed APIs for patient registration, appointment management, and medical records;',
-      'Built a responsive web application for hospital staff and administrators;',
-      'Integrated secure authentication and role-based access control;',
-      'Implemented real-time data synchronization for patient information;',
-      'Designed intuitive interfaces for medical staff to access patient histories; and,',
-      'Collaborated with healthcare professionals to ensure system meets clinical needs.',
+      'Developed user-friendly interfaces for doctor applications;',
+      'Implemented structured document upload and form workflows;',
+      'Improved usability for both applicants and internal staff; and,',
+      'Collaborated with back-end APIs to ensure seamless data handling.',
     ],
     impact: [
-      'Reduced patient wait times through efficient scheduling;',
-      'Improved accuracy of medical records and data management;',
-      'Enhanced security and privacy of patient information;',
-      'Streamlined hospital operations and staff workflows; and,',
-      'Enabled better patient care through accessible digital records.',
+      'Reduced reliance on manual document handling;',
+      'Improved efficiency in processing applications;',
+      'Provided a smoother and more accessible experience for applicants; and,',
+      'Enabled recruitment staff to manage submissions in a centralized system.',
     ],
   },
   {
@@ -61,26 +58,25 @@ export const projects = [
     name: 'Jollibee Kids Party',
     description:
       "Jollibee is the largest fast-food chain in the Philippines and a globally recognized brand known for its family-oriented dining experience. It is primarily recognized for its in-store Kids Party service which allows families to celebrate birthdays and special occasions. As customers' expectations shift toward digital convenience, Jollibee continues to invest in modernizing its customer-facing platforms.",
-    aboutClient:
-      'Jollibee is the largest fast-food chain in the Philippines and a globally recognized brand known for its family-oriented dining experience. The Kids Party service allows families to celebrate special occasions in-store.',
+    aboutClient: `Jollibee is the largest fast-food chain in the Philippines and a globally recognized brand known for its family-oriented dining experience. It is primarily recognized for its in-store Kids Party service which allows families to celebrate birthdays and special occasions. As customers' expectations shift toward digital convenience, Jollibee continues to invest in modernizing its customer-facing platforms.`,
     problem:
-      'The existing party booking system was primarily offline, requiring customers to visit stores or call to make reservations. This created inconvenience and limited booking accessibility.',
+      'The kids party booking process lacked a fully optimized digital experience, with limitations in customization, booking workflows, and content management. This resulted in friction for users trying to plan events and inefficiencies for internal teams managing bookings and configurations.',
     solution:
-      'As a Full Stack Developer, I helped modernize the Kids Party booking system by building a digital platform that allows customers to book, customize, and manage party reservations online.',
+      'As a Full Stack Developer, I played a key role by developing and enhancing both new and existing features across the storefront, CMS, and backend systems.',
     keyContributions: [
-      'Developed a web-based booking platform for party reservations;',
-      'Implemented customization options for party packages and add-ons;',
-      'Built backend APIs to manage bookings, availability, and customer data;',
-      'Integrated payment processing for online transactions;',
-      'Designed a user-friendly interface for seamless booking experience; and,',
-      'Collaborated with the marketing team to align the platform with brand identity.',
+      'Built and enhanced party customization features (themes, packages, add-ons);',
+      'Improved booking workflows to make scheduling and reservations more intuitive;',
+      'Developed and maintained back-end APIs to support booking logic and data flow;',
+      'Optimized CMS capabilities for managing party content and configurations;',
+      'Refined system performance for faster load times and smoother user interactions; and,',
+      'Collaborated across teams to ensure alignment between front-end, back-end, and business requirements.',
     ],
     impact: [
-      'Increased booking convenience for customers;',
-      'Reduced reliance on phone and in-store reservations;',
-      'Improved operational efficiency for party coordinators;',
-      'Enhanced customer satisfaction through digital convenience; and,',
-      'Enabled better tracking and management of party bookings.',
+      'Streamlined the end-to-end party booking experience for customers;',
+      'Improved flexibility in customizing party packages;',
+      'Reduced friction in the booking process, increasing usability and completion rates;',
+      'Enabled internal teams to manage party offerings more efficiently via CMS; and,',
+      'Enhanced overall system performance and reliability across platforms.',
     ],
   },
   {
@@ -90,25 +86,22 @@ export const projects = [
     description:
       'KonsultaMD is a leading Telehealth service in the Philippines that provides 24/7 access to licensed doctors through phone and digital platforms. It aims to make healthcare more accessible, especially for underserved and remote communities. During the COVID-19 pandemic, KonsultaMD experienced rapid growth as demand for remote medical consultations arose.',
     aboutClient:
-      'KonsultaMD is a leading Telehealth service in the Philippines that provides 24/7 access to licensed doctors through phone and digital platforms. It aims to make healthcare more accessible, especially for underserved and remote communities.',
+      'KonsultaMD is a leading Telehealth service in the Philippines that provides 24/7 access to licensed doctors through phone and digital platforms. It aims to make healthcare more accessible, especially for underserved and remote communities. During the COVID-19 pandemic, KonsultaMD experienced rapid growth as demand for remote medical consultations arose.',
     problem:
-      'During the COVID-19 pandemic, KonsultaMD experienced rapid growth as demand for remote medical consultations surged. The platform needed to scale quickly while maintaining reliability and security for sensitive medical data.',
+      'At the peak of the pandemic, healthcare systems were overwhelmed, and patients faced limited access to physical consultations due to lockdowns and safety concerns. KonsultaMD needed to rapidly scale its platform.',
     solution:
-      'As a Full Stack Developer, I contributed to enhancing the telehealth platform to support increased user demand and improve the consultation experience.',
+      'As a Back-End Developer, I contributed to building a scalable and resilient Teleconsultation platform to suffice the demand for virtual healthcare services.',
     keyContributions: [
-      'Developed and optimized APIs for doctor-patient consultations;',
-      'Implemented secure video and chat functionality for remote consultations;',
-      'Built features for prescription management and medical record storage;',
-      'Enhanced system scalability to handle increased traffic;',
-      'Improved user authentication and data encryption for patient privacy; and,',
-      'Collaborated with healthcare providers to ensure compliance with medical regulations.',
+      'Designed and implemented APIs to centralize and optimize data communication;',
+      'Built and optimized back-end services to handle high concurrency and traffic spikes;',
+      'Integrated secure and flexible payment solutions to support various subscription models;',
+      'Improved system performance and reliability for real-time consultation workflows; and,',
+      'Collaborated with front-end teams to ensure efficient API consumption and data flow.',
     ],
     impact: [
-      'Enabled thousands of patients to access medical care remotely;',
-      'Reduced hospital visits during the pandemic;',
-      'Improved platform reliability and performance under high demand;',
-      'Enhanced security and privacy of patient medical data; and,',
-      'Supported healthcare providers in delivering timely medical consultations.',
+      'Enabled large-scale access to remote healthcare services during the pandemic;',
+      'Supported flexible monetization strategies and increased user adoption; and,',
+      'Contributed to the rapid growth of KonsultaMD during a critical period.',
     ],
   },
   {
@@ -118,25 +111,21 @@ export const projects = [
     description:
       'Shore Suite is a hotel management platform designed to streamline hospitality operations which include room bookings, customer management, and day-to-day administrative processes. The system supports hotels in improving operational efficiency and delivering topnotch guest experiences through digital solutions.',
     aboutClient:
-      'Shore Suite is a hotel management platform designed to streamline hospitality operations, including room bookings, customer management, and administrative processes.',
+      'Shore Suite is a hotel management platform designed to streamline hospitality operations which include room bookings, customer management, and day-to-day administrative processes. The system supports hotels in improving operational efficiency and delivering topnotch guest experiences through digital solutions.',
     problem:
-      'Hotels faced challenges with fragmented systems for reservations, guest management, and operations. Manual processes led to inefficiencies, booking errors, and suboptimal guest experiences.',
+      'Traditional hotel management processes often relied on fragmented systems or manual workflows, leading to inconveniences in room reservations, customer data handling, and operational coordination. This resulted in slower booking processes, increased risk of human error, and difficulty scaling operations.',
     solution:
-      'As a Full Stack Developer, I helped build a comprehensive hotel management system that centralizes operations and improves the guest experience.',
+      'As a Junior Back-End Developer, I played a vital role to building the core APIs that powered the hotel management system. This served as my foundation in back-end engineering that helped me gain hands-on experience in modern technologies and architectural patterns.',
     keyContributions: [
-      'Developed APIs for room booking, availability management, and reservations;',
-      'Built a dashboard for hotel staff to manage guests and operations;',
-      'Implemented customer management features for guest profiles and preferences;',
-      'Integrated payment gateways for online booking transactions;',
-      'Designed responsive interfaces for both desktop and mobile use; and,',
-      'Collaborated with hotel managers to identify and address operational pain points.',
+      'Developed robust APIs to support room booking, customer management, and operational workflows;',
+      'Contributed to a MicroServices Architecture setup to improve system modularity and scalability; and,',
+      'Implemented unit and integration tests to ensure system reliability and maintain code quality',
     ],
     impact: [
-      'Streamlined hotel booking and reservation processes;',
-      'Reduced manual errors and improved data accuracy;',
-      'Enhanced guest satisfaction through personalized service capabilities;',
-      'Improved operational efficiency for hotel staff; and,',
-      'Enabled real-time visibility into room availability and bookings.',
+      'Improved efficiency of hotel booking and management operations through reliable API services;',
+      'Enabled scalable system architecture capable of handling growing business needs;',
+      'Reduced system errors and increased confidence in deployments through testing practices; and,',
+      'Built a strong foundation in backend development, particularly in functional programming.',
     ],
   },
 ];

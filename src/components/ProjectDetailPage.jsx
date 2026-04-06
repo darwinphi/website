@@ -32,14 +32,6 @@ function ProjectDetailPage({ projectId, onBack }) {
             <h1 className="text-heading leading-tight font-normal">
               {project.name}
             </h1>
-            {project.logo && (
-              <img
-                src={project.logo}
-                alt={project.name}
-                className="w-32 sm:w-44 md:w-56 h-auto opacity-60"
-                style={{ filter: 'grayscale(1) brightness(1.3)' }}
-              />
-            )}
           </div>
 
           {/* Right column: Case study content */}
