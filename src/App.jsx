@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import ProjectsPage from './components/ProjectsPage';
+import ProjectDetailPage from './components/ProjectDetailPage';
 
 const navLinks = [
   { label: 'Projects', href: '#' },
@@ -42,25 +44,53 @@ const dotLineVariants = [
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [view, setView] = useState('home');
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const handleNavigation = (newView, projectId = null) => {
+    setView(newView);
+    setSelectedProject(projectId);
+    setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen flex flex-col px-8">
       {/* Navbar */}
       <header className="relative z-10 py-6 flex items-center justify-between">
-        <a href="/" className="text-body font-medium">
+        <button
+          onClick={() => handleNavigation('home')}
+          className="text-body font-medium hover:opacity-60 transition-opacity cursor-pointer"
+        >
           Darwin Manalo
-        </a>
+        </button>
         <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
-              className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group"
-            >
-              {label}
-              <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-            </a>
-          ))}
+          {navLinks.map(({ label, href }) => {
+            const isProjects = label === 'Projects';
+            const handleClick = isProjects
+              ? () => handleNavigation('projects')
+              : undefined;
+
+            return isProjects ? (
+              <button
+                key={label}
+                onClick={handleClick}
+                className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer"
+              >
+                {label}
+                <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
+              </button>
+            ) : (
+              <a
+                key={label}
+                href={href}
+                className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group"
+              >
+                {label}
+                <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
+              </a>
+            );
+          })}
         </nav>
         <button
           className="md:hidden text-body leading-none cursor-pointer"
@@ -112,29 +142,91 @@ function App() {
             >
               {/* Drawer nav links */}
               <nav className="flex-1 flex flex-col items-start justify-center gap-4">
-                {navLinks.map(({ label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-heading hover:opacity-60 transition-opacity inline-flex items-center gap-1 group"
-                  >
-                    {label}
-                    <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-                  </a>
-                ))}
+                {navLinks.map(({ label, href }) => {
+                  const isProjects = label === 'Projects';
+                  const handleClick = isProjects
+                    ? () => handleNavigation('projects')
+                    : () => setIsMenuOpen(false);
+
+                  return isProjects ? (
+                    <button
+                      key={label}
+                      onClick={handleClick}
+                      className="text-heading hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer"
+                    >
+                      {label}
+                      <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
+                    </button>
+                  ) : (
+                    <a
+                      key={label}
+                      href={href}
+                      onClick={handleClick}
+                      className="text-heading hover:opacity-60 transition-opacity inline-flex items-center gap-1 group"
+                    >
+                      {label}
+                      <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
+                    </a>
+                  );
+                })}
               </nav>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Hero */}
-        <main className="flex-1 flex items-center justify-center">
-          <p className="text-heading leading-tight font-normal max-w-225">
-            Based in the Pearl of the Orient Seas (Manila, Philippines).
-            I&rsquo;m a Full-Stack developer building modern web experiences.
-            Got an idea and just want to connect? Let&rsquo;s collaborate.
-          </p>
+        {/* Main content - conditionally rendered based on view */}
+        <main className="flex-1 flex flex-col">
+          <AnimatePresence mode="wait">
+            {view === 'home' && (
+              <motion.div
+                key="home"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                className="flex-1 flex items-center justify-center"
+              >
+                <p className="text-heading leading-tight font-normal max-w-225">
+                  Based in the Pearl of the Orient Seas (Manila, Philippines).
+                  I&rsquo;m a Full-Stack developer building modern web
+                  experiences. Got an idea and just want to connect? Let&rsquo;s
+                  collaborate.
+                </p>
+              </motion.div>
+            )}
+            {view === 'projects' && (
+              <motion.div
+                key="projects"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                className="flex-1 flex flex-col"
+              >
+                <ProjectsPage
+                  onSelectProject={(projectId) =>
+                    handleNavigation('project-detail', projectId)
+                  }
+                  onBack={() => handleNavigation('home')}
+                />
+              </motion.div>
+            )}
+            {view === 'project-detail' && (
+              <motion.div
+                key="project-detail"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                className="flex-1 flex flex-col"
+              >
+                <ProjectDetailPage
+                  projectId={selectedProject}
+                  onBack={() => handleNavigation('projects')}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </main>
 
         {/* Footer */}
