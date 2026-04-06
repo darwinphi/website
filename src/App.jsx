@@ -5,8 +5,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { label: 'Github', href: 'https://github.com/darwinmanalo' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/darwinmanalo' },
+  { label: 'Github', href: 'https://github.com/darwinphi' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/darwinmanalo/' },
+  { label: 'Email', href: 'mailto:darwinmanalophi@gmail.com' },
 ];
 
 function App() {
@@ -20,10 +21,10 @@ function App() {
             <a
               key={label}
               href={href}
-              className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5"
+              className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group"
             >
               {label}
-              <i className="ri-arrow-right-up-line" />
+              <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
             </a>
           ))}
         </nav>
@@ -48,10 +49,10 @@ function App() {
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5"
+              className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group"
             >
               {label}
-              <i className="ri-arrow-right-up-line" />
+              <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
             </a>
           ))}
         </div>
