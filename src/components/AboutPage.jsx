@@ -26,15 +26,20 @@ function AboutPage({ onBack }) {
 
   return (
     <div className="flex-1 flex flex-col">
-      {/* Back link */}
-      <div className="py-4">
-        <button
-          onClick={onBack}
-          className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
+      {/* Back button - aligned to about section */}
+      <div className="py-4 flex justify-center">
+        <div
+          className="w-full"
+          style={{ maxWidth: 'var(--max-width-reading)' }}
         >
-          <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
-          {t('buttons.backToHome')}
-        </button>
+          <button
+            onClick={onBack}
+            className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark w-fit"
+          >
+            <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
+            {t('buttons.backToHome')}
+          </button>
+        </div>
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-center py-8">

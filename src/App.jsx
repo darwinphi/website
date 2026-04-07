@@ -34,6 +34,11 @@ function App() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const activeLanguage = i18n.resolvedLanguage || i18n.language || 'en';
+    document.documentElement.lang = activeLanguage;
+  }, [i18n, i18n.language, i18n.resolvedLanguage]);
+
   const handleNavigation = (path) => {
     navigate(path);
     setIsMenuOpen(false);
@@ -112,6 +117,7 @@ function App() {
                   <div className="flex-1 flex items-center justify-center">
                     <AnimatedHeroText
                       text={t('pages.home.heroText')}
+                      lang={i18n.resolvedLanguage || i18n.language}
                       className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
                     />
                   </div>

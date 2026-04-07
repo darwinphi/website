@@ -46,3 +46,18 @@
     color: #f5f5f5;
   }
 }
+
+@layer components {
+  .hero-copy {
+    text-wrap: pretty;
+    hyphens: auto;
+    hanging-punctuation: first last;
+  }
+
+  .hero-copy:lang(ja),
+  .hero-copy:lang(ko),
+  .hero-copy:lang(zh) {
+    hyphens: manual;
+    text-align: start;
+  }
+}
