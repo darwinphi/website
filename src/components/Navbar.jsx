@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import DarkModeToggle from './DarkModeToggle';
+import LanguageSelector from './LanguageSelector';
 
 const springTransition = { type: 'spring', stiffness: 400, damping: 30 };
 
@@ -72,14 +73,14 @@ function Navbar({ handleNavigation, isMenuOpen, setIsMenuOpen }) {
   return (
     <>
       <motion.header
-        className="sticky top-0 z-50 py-6 flex items-center justify-between bg-primary-bg dark:bg-primary-bg-dark dark:text-text-primary-dark"
+        className="sticky top-0 z-50 py-6 flex items-center justify-between gap-6 bg-primary-bg dark:bg-primary-bg-dark dark:text-text-primary-dark"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <button
           onClick={() => handleNavigation('/')}
-          className="text-body font-medium hover:opacity-60 transition-opacity cursor-pointer inline-flex items-center"
+          className="text-body font-medium hover:opacity-60 transition-opacity cursor-pointer inline-flex items-center shrink-0"
         >
           <AnimatePresence mode="wait" initial={false}>
             <motion.span
@@ -94,59 +95,58 @@ function Navbar({ handleNavigation, isMenuOpen, setIsMenuOpen }) {
           </AnimatePresence>
         </button>
 
-        {/* Center: Dark Mode Toggle (absolute center) */}
-        <div className="absolute left-1/2 transform -translate-x-1/2">
-          <DarkModeToggle />
-        </div>
-
-        {/* Right: Nav Links (desktop) + Hamburger (mobile) */}
-        <div className="flex items-center gap-6">
-          <motion.nav
-            className="hidden md:flex items-center gap-6"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.1,
-                  delayChildren: 0.3,
-                },
+        {/* Center: Nav Links (desktop) */}
+        <motion.nav
+          className="hidden md:flex items-center gap-6 flex-1 justify-center"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.3,
               },
-            }}
-            initial="hidden"
-            animate="visible"
-          >
-            {navLinks.map(({ key, path }) => {
-              const label = t(key);
-              const linkVariants = {
-                hidden: { opacity: 0, y: -10 },
-                visible: { opacity: 1, y: 0 },
-              };
+            },
+          }}
+          initial="hidden"
+          animate="visible"
+        >
+          {navLinks.map(({ key, path }) => {
+            const label = t(key);
+            const linkVariants = {
+              hidden: { opacity: 0, y: -10 },
+              visible: { opacity: 1, y: 0 },
+            };
 
-              return (
-                <motion.button
-                  key={key}
-                  onClick={() => handleNavigation(path)}
-                  className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer leading-none"
-                  variants={linkVariants}
-                  transition={{ duration: 0.3, ease: 'easeOut' }}
-                >
-                  <AnimatePresence mode="wait" initial={false}>
-                    <motion.span
-                      key={i18n.language}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.15 }}
-                    >
-                      {label}
-                    </motion.span>
-                  </AnimatePresence>
-                  <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
-                </motion.button>
-              );
-            })}
-          </motion.nav>
+            return (
+              <motion.button
+                key={key}
+                onClick={() => handleNavigation(path)}
+                className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer leading-none"
+                variants={linkVariants}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.span
+                    key={i18n.language}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    {label}
+                  </motion.span>
+                </AnimatePresence>
+                <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
+              </motion.button>
+            );
+          })}
+        </motion.nav>
+
+        {/* Right: Dark Mode Toggle + Language Selector + Hamburger */}
+        <div className="flex items-center gap-2 shrink-0 md:gap-3">
+          <DarkModeToggle />
+          <LanguageSelector />
 
           <button
             className="md:hidden text-body leading-none cursor-pointer"
