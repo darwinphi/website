@@ -3,7 +3,10 @@
     "projects": "Проекты",
     "articles": "Статьи",
     "about": "О себе",
-    "darwinManalo": "Darwin Manalo"
+    "darwinManalo": "Дарвин Манало"
+  },
+  "footer": {
+    "allRightsReserved": "Все права защищены"
   },
   "social": {
     "github": "Github",

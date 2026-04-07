@@ -3,7 +3,10 @@
     "projects": "项目",
     "articles": "文章",
     "about": "关于",
-    "darwinManalo": "Darwin Manalo"
+    "darwinManalo": "达尔文·马纳洛"
+  },
+  "footer": {
+    "allRightsReserved": "版权所有"
   },
   "social": {
     "github": "Github",
@@ -304,9 +307,7 @@
           ]
         },
         "step-2": {
-          "blocks": [
-            "获取 ARM64 原生 llama.cpp 服务器 - 无需仿真："
-          ]
+          "blocks": ["获取 ARM64 原生 llama.cpp 服务器 - 无需仿真："]
         },
         "step-3": {
           "blocks": [

@@ -5,6 +5,9 @@
     "about": "Über",
     "darwinManalo": "Darwin Manalo"
   },
+  "footer": {
+    "allRightsReserved": "Alle Rechte vorbehalten"
+  },
   "social": {
     "github": "Github",
     "linkedin": "LinkedIn",

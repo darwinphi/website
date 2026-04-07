@@ -71,7 +71,7 @@ const dotLineVariants = [
 ];
 
 function App() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [view, setView] = useState('home');
   const [selectedProject, setSelectedProject] = useState(null);
@@ -164,7 +164,17 @@ function App() {
           onClick={() => handleNavigation('home')}
           className="text-body font-medium hover:opacity-60 transition-opacity cursor-pointer inline-flex items-center"
         >
-          {t('nav.darwinManalo')}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={i18n.language}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15 }}
+            >
+              {t('nav.darwinManalo')}
+            </motion.span>
+          </AnimatePresence>
         </button>
 
         {/* Center: Dark Mode Toggle (absolute center) */}
@@ -215,7 +225,17 @@ function App() {
                   variants={linkVariants}
                   transition={{ duration: 0.3, ease: 'easeOut' }}
                 >
-                  {label}
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.span
+                      key={i18n.language}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      {label}
+                    </motion.span>
+                  </AnimatePresence>
                   <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
                 </motion.button>
               );
@@ -319,7 +339,7 @@ function App() {
           <AnimatePresence mode="wait">
             {view === 'home' && (
               <motion.div
-                key="home"
+                key={`home-${i18n.language}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -334,7 +354,7 @@ function App() {
             )}
             {view === 'projects' && (
               <motion.div
-                key="projects"
+                key={`projects-${i18n.language}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -351,7 +371,7 @@ function App() {
             )}
             {view === 'project-detail' && (
               <motion.div
-                key="project-detail"
+                key={`project-detail-${i18n.language}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -366,7 +386,7 @@ function App() {
             )}
             {view === 'about' && (
               <motion.div
-                key="about"
+                key={`about-${i18n.language}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -378,7 +398,7 @@ function App() {
             )}
             {view === 'articles' && (
               <motion.div
-                key="articles"
+                key={`articles-${i18n.language}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -395,7 +415,7 @@ function App() {
             )}
             {view === 'article-detail' && (
               <motion.div
-                key="article-detail"
+                key={`article-detail-${i18n.language}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -424,7 +444,18 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
           >
-            © 2026 All rights reserved
+            © 2026{' '}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={i18n.language}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
+              >
+                {t('footer.allRightsReserved')}
+              </motion.span>
+            </AnimatePresence>
           </motion.span>
 
           <div className="flex justify-center">
@@ -459,7 +490,17 @@ function App() {
                 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
               >
-                {t(key)}
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.span
+                    key={i18n.language}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    {t(key)}
+                  </motion.span>
+                </AnimatePresence>
                 <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
               </motion.a>
             ))}

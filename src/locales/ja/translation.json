@@ -3,7 +3,10 @@
     "projects": "プロジェクト",
     "articles": "記事",
     "about": "について",
-    "darwinManalo": "Darwin Manalo"
+    "darwinManalo": "ダーウィン・マナロ"
+  },
+  "footer": {
+    "allRightsReserved": "全著作権所有"
   },
   "social": {
     "github": "GitHub",
