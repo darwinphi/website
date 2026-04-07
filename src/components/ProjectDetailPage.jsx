@@ -34,9 +34,22 @@ function ProjectDetailPage({ projectId, onBack }) {
         >
           {/* Left column: Project name */}
           <div className="flex flex-col gap-10 lg:col-span-1 lg:sticky lg:top-24 lg:self-start">
-            <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
-              {project.name}
-            </h1>
+            <div className="flex flex-col gap-6">
+              <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
+                {project.name}
+              </h1>
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-3 rounded border border-current text-body hover:opacity-60 transition-opacity dark:text-text-primary-dark w-fit"
+                >
+                  Visit Project
+                  <i className="ri-external-link-line text-sm" />
+                </a>
+              )}
+            </div>
           </div>
 
           {/* Right column: Case study content */}

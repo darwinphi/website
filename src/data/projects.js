@@ -3,6 +3,7 @@ export const projects = [
     id: 'globe-telecom',
     logo: '/img/globe.svg',
     name: `Globe Telecom's Bill Delivery & Storage Platform`,
+    link: null,
     description:
       'Globe Telecom is one of the largest telecommunications providers in the Philippines, offering mobile, broadband, and enterprise services to millions of customers. Globe continuously invests in modernizing its internal systems to improve operational efficiency and service delivery.',
     aboutClient:
@@ -31,6 +32,7 @@ export const projects = [
     id: 'chong-hua-hospital',
     logo: '/img/chh.png',
     name: `Chong Hua Hospital's Doctors Recruitment Portal`,
+    link: 'https://chonghua.com.ph/',
     description:
       'Chong Hua Hospital is a leading private healthcare institution based in Cebu City, Philippines, with over a century of experience in delivering quality medical services. As part of its continuous digital transformation, the hospital invests in technology solutions to improve internal processes and operational efficiency.',
     aboutClient:
@@ -56,6 +58,7 @@ export const projects = [
     id: 'jollibee-kids-party',
     logo: '/img/jollibee.png',
     name: 'Jollibee Kids Party',
+    link: 'https://party.jollibee.com.ph/',
     description:
       "Jollibee is the largest fast-food chain in the Philippines and a globally recognized brand known for its family-oriented dining experience. It is primarily recognized for its in-store Kids Party service which allows families to celebrate birthdays and special occasions. As customers' expectations shift toward digital convenience, Jollibee continues to invest in modernizing its customer-facing platforms.",
     aboutClient: `Jollibee is the largest fast-food chain in the Philippines and a globally recognized brand known for its family-oriented dining experience. It is primarily recognized for its in-store Kids Party service which allows families to celebrate birthdays and special occasions. As customers' expectations shift toward digital convenience, Jollibee continues to invest in modernizing its customer-facing platforms.`,
@@ -83,6 +86,7 @@ export const projects = [
     id: 'konsultamd',
     logo: '/img/konsultamd.png',
     name: 'KonsultaMD',
+    link: 'https://konsulta.md/',
     description:
       'KonsultaMD is a leading Telehealth service in the Philippines that provides 24/7 access to licensed doctors through phone and digital platforms. It aims to make healthcare more accessible, especially for underserved and remote communities. During the COVID-19 pandemic, KonsultaMD experienced rapid growth as demand for remote medical consultations arose.',
     aboutClient:
@@ -108,6 +112,7 @@ export const projects = [
     id: 'shore-suite',
     logo: '/img/shoresuite.png',
     name: 'Shore Suite',
+    link: 'https://web.facebook.com/shoresuite',
     description:
       'Shore Suite is a hotel management platform designed to streamline hospitality operations which include room bookings, customer management, and day-to-day administrative processes. The system supports hotels in improving operational efficiency and delivering topnotch guest experiences through digital solutions.',
     aboutClient:
