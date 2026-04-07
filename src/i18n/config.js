@@ -5,6 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // Import translations
 import enTranslation from '../locales/en/translation.json';
 import jaTranslation from '../locales/ja/translation.json';
+import koTranslation from '../locales/ko/translation.json';
 import zhTranslation from '../locales/zh/translation.json';
 import esTranslation from '../locales/es/translation.json';
 import idTranslation from '../locales/id/translation.json';
@@ -16,6 +17,7 @@ import ptTranslation from '../locales/pt/translation.json';
 const resources = {
   en: { translation: enTranslation },
   ja: { translation: jaTranslation },
+  ko: { translation: koTranslation },
   zh: { translation: zhTranslation },
   es: { translation: esTranslation },
   id: { translation: idTranslation },
@@ -33,7 +35,7 @@ i18n
     fallbackLng: 'en',
 
     // Normalize 'en-US' → 'en', etc.
-    supportedLngs: ['en', 'ja', 'zh', 'es', 'id', 'de', 'ru', 'fr', 'pt'],
+    supportedLngs: ['en', 'ja', 'ko', 'zh', 'es', 'id', 'de', 'ru', 'fr', 'pt'],
     nonExplicitSupportedLngs: true,
 
     // Language detector options
@@ -53,6 +55,7 @@ i18n
 export const supportedLanguages = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
   { code: 'ja', name: '日本語', flag: '🇯🇵' },
+  { code: 'ko', name: '한국어', flag: '🇰🇷' },
   { code: 'zh', name: '中文', flag: '🇨🇳' },
   { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'id', name: 'Bahasa Indonesia', flag: '🇮🇩' },
