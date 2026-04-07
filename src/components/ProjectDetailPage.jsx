@@ -6,7 +6,9 @@ function ProjectDetailPage({ projectId, onBack }) {
   if (!project) {
     return (
       <div className="flex-1 flex items-center justify-center">
-        <p className="text-body dark:text-[#f5f5f5]">Project not found</p>
+        <p className="text-body dark:text-text-primary-dark">
+          Project not found
+        </p>
       </div>
     );
   }
@@ -17,7 +19,7 @@ function ProjectDetailPage({ projectId, onBack }) {
       <div className="py-4">
         <button
           onClick={onBack}
-          className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-[#f5f5f5]"
+          className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
         >
           <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
           Back to Projects
@@ -32,7 +34,7 @@ function ProjectDetailPage({ projectId, onBack }) {
         >
           {/* Left column: Project name */}
           <div className="flex flex-col gap-10 lg:col-span-1 lg:sticky lg:top-24 lg:self-start">
-            <h1 className="text-heading leading-tight font-normal dark:text-[#f5f5f5]">
+            <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
               {project.name}
             </h1>
           </div>
@@ -45,40 +47,40 @@ function ProjectDetailPage({ projectId, onBack }) {
             >
               {/* About the Client */}
               <section>
-                <h2 className="text-body font-bold mb-2 dark:text-[#f5f5f5]">
+                <h2 className="text-body font-bold mb-2 dark:text-text-primary-dark">
                   About the Client
                 </h2>
-                <p className="text-body dark:text-[#d0d0d0]">
+                <p className="text-body dark:text-text-secondary-dark">
                   {project.aboutClient}
                 </p>
               </section>
 
               {/* Problem */}
               <section>
-                <h2 className="text-body font-bold mb-2 dark:text-[#f5f5f5]">
+                <h2 className="text-body font-bold mb-2 dark:text-text-primary-dark">
                   Problem
                 </h2>
-                <p className="text-body dark:text-[#d0d0d0]">
+                <p className="text-body dark:text-text-secondary-dark">
                   {project.problem}
                 </p>
               </section>
 
               {/* Solution */}
               <section>
-                <h2 className="text-body font-bold mb-2 dark:text-[#f5f5f5]">
+                <h2 className="text-body font-bold mb-2 dark:text-text-primary-dark">
                   Solution
                 </h2>
-                <p className="text-body dark:text-[#d0d0d0]">
+                <p className="text-body dark:text-text-secondary-dark">
                   {project.solution}
                 </p>
               </section>
 
               {/* Key Contributions */}
               <section>
-                <h2 className="text-body font-bold mb-2 dark:text-[#f5f5f5]">
+                <h2 className="text-body font-bold mb-2 dark:text-text-primary-dark">
                   Key Contributions
                 </h2>
-                <ul className="text-body list-disc list-inside space-y-1 dark:text-[#d0d0d0]">
+                <ul className="text-body list-disc list-inside space-y-1 dark:text-text-secondary-dark">
                   {project.keyContributions.map((contribution, index) => (
                     <li key={index}>{contribution}</li>
                   ))}
@@ -87,10 +89,10 @@ function ProjectDetailPage({ projectId, onBack }) {
 
               {/* Impact */}
               <section>
-                <h2 className="text-body font-bold mb-2 dark:text-[#f5f5f5]">
+                <h2 className="text-body font-bold mb-2 dark:text-text-primary-dark">
                   Impact
                 </h2>
-                <ul className="text-body list-disc list-inside space-y-1 dark:text-[#d0d0d0]">
+                <ul className="text-body list-disc list-inside space-y-1 dark:text-text-secondary-dark">
                   {project.impact.map((impactItem, index) => (
                     <li key={index}>{impactItem}</li>
                   ))}
@@ -103,7 +105,7 @@ function ProjectDetailPage({ projectId, onBack }) {
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: 'smooth' })
                   }
-                  className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-[#f5f5f5]"
+                  className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
                 >
                   Back to top
                   <i className="ri-arrow-up-line transition-transform duration-200 group-hover:-translate-y-1 group-active:-translate-y-1" />

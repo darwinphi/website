@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectDetailPage from './components/ProjectDetailPage';
 import AboutPage from './components/AboutPage';
+import ArticlesPage from './components/ArticlesPage';
+import ArticleDetailPage from './components/ArticleDetailPage';
 import AnimatedHeroText from './components/AnimatedHeroText';
 import DarkModeToggle from './components/DarkModeToggle';
 
@@ -82,10 +84,12 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [view, setView] = useState('home');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
-  const handleNavigation = (newView, projectId = null) => {
+  const handleNavigation = (newView, itemId = null) => {
     setView(newView);
-    setSelectedProject(projectId);
+    if (newView === 'project-detail') setSelectedProject(itemId);
+    if (newView === 'article-detail') setSelectedArticle(itemId);
     setIsMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -117,6 +121,10 @@ function App() {
         handleNavigation('projects');
       } else if (view === 'projects') {
         handleNavigation('home');
+      } else if (view === 'article-detail') {
+        handleNavigation('articles');
+      } else if (view === 'articles') {
+        handleNavigation('home');
       }
     };
 
@@ -140,7 +148,7 @@ function App() {
     <div className="min-h-screen flex flex-col px-8 max-w-[1280px] mx-auto w-full">
       {/* Navbar */}
       <motion.header
-        className="sticky top-0 z-50 py-6 flex items-center justify-between bg-[#e6e7df] dark:bg-[#1a1a1a] dark:text-[#f5f5f5]"
+        className="sticky top-0 z-50 py-6 flex items-center justify-between bg-primary-bg dark:bg-primary-bg-dark dark:text-text-primary-dark"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -177,11 +185,14 @@ function App() {
             {navLinks.map(({ label }) => {
               const isProjects = label === 'Projects';
               const isAbout = label === 'About';
+              const isArticles = label === 'Articles';
               const handleClick = isProjects
                 ? () => handleNavigation('projects')
                 : isAbout
                   ? () => handleNavigation('about')
-                  : undefined;
+                  : isArticles
+                    ? () => handleNavigation('articles')
+                    : undefined;
 
               const linkVariants = {
                 hidden: { opacity: 0, y: -10 },
@@ -246,7 +257,7 @@ function App() {
               role="dialog"
               aria-modal="true"
               aria-label="Navigation menu"
-              className="absolute inset-0 z-40 flex flex-col px-8 py-6 bg-[#e6e7df] dark:bg-[#1a1a1a] dark:text-[#f5f5f5]"
+              className="absolute inset-0 z-40 flex flex-col px-8 py-6 bg-primary-bg dark:bg-primary-bg-dark dark:text-text-primary-dark"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -268,11 +279,14 @@ function App() {
                 {navLinks.map(({ label, href }) => {
                   const isProjects = label === 'Projects';
                   const isAbout = label === 'About';
+                  const isArticles = label === 'Articles';
                   const handleClick = isProjects
                     ? () => handleNavigation('projects')
                     : isAbout
                       ? () => handleNavigation('about')
-                      : () => setIsMenuOpen(false);
+                      : isArticles
+                        ? () => handleNavigation('articles')
+                        : () => setIsMenuOpen(false);
 
                   return (
                     <motion.button
@@ -305,7 +319,7 @@ function App() {
               >
                 <AnimatedHeroText
                   text="Based in the Pearl of the Orient Seas (Manila, Philippines). I'm a Full-Stack developer building modern web experiences. Got an idea and just want to connect? Let's collaborate."
-                  className="text-heading leading-tight font-normal max-w-225 dark:text-[#f5f5f5]"
+                  className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
                 />
               </motion.div>
             )}
@@ -353,6 +367,38 @@ function App() {
                 <AboutPage onBack={() => handleNavigation('home')} />
               </motion.div>
             )}
+            {view === 'articles' && (
+              <motion.div
+                key="articles"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                className="flex-1 flex flex-col"
+              >
+                <ArticlesPage
+                  onSelectArticle={(articleId) =>
+                    handleNavigation('article-detail', articleId)
+                  }
+                  onBack={() => handleNavigation('home')}
+                />
+              </motion.div>
+            )}
+            {view === 'article-detail' && (
+              <motion.div
+                key="article-detail"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                className="flex-1 flex flex-col"
+              >
+                <ArticleDetailPage
+                  articleId={selectedArticle}
+                  onBack={() => handleNavigation('articles')}
+                />
+              </motion.div>
+            )}
           </AnimatePresence>
         </main>
 
@@ -364,7 +410,7 @@ function App() {
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
         >
           <motion.span
-            className="text-body dark:text-[#d0d0d0]"
+            className="text-body dark:text-text-secondary-dark"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
@@ -392,7 +438,7 @@ function App() {
                 href={href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group dark:text-[#f5f5f5]"
+                className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group dark:text-text-primary-dark"
                 variants={{
                   hidden: { opacity: 0, x: 20 },
                   visible: { opacity: 1, x: 0 },
