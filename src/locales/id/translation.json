@@ -57,103 +57,103 @@
   },
   "projects": {
     "globeTelecom": {
-      "name": "Platform Pengiriman & Penyimpanan Tagihan Globe Telecom",
-      "description": "Globe Telecom adalah salah satu penyedia telekomunikasi terbesar di Filipina, menawarkan layanan seluler, broadband, dan enterprise kepada jutaan pelanggan. Globe terus berinvestasi dalam modernisasi sistem internalnya untuk meningkatkan efisiensi operasional dan kualitas layanan.",
-      "aboutClient": "Globe Telecom adalah salah satu penyedia telekomunikasi terbesar di Filipina, menawarkan layanan seluler, broadband, dan enterprise kepada jutaan pelanggan. Globe terus berinvestasi dalam modernisasi sistem internalnya untuk meningkatkan efisiensi operasional dan kualitas layanan.",
-      "problem": "Sistem penagihan yang ada sangat bergantung pada skrip yang dijalankan secara manual untuk membuat ringkasan tagihan, menyimpan catatan, dan mengirim email. Pendekatan ini menimbulkan inefisiensi, risiko kesalahan manusia, dan membuat sistem sulit untuk diskalakan dan dipelihara.",
-      "solution": "Sebagai Full Stack Developer, saya berkontribusi dalam modernisasi alur kerja penagihan dan membangun alat internal untuk mendukung operasi.",
+      "name": "Platform Pengiriman dan Penyimpanan Tagihan Globe Telecom",
+      "description": "Globe Telecom adalah salah satu penyedia telekomunikasi terbesar di Filipina yang menawarkan layanan seluler, broadband, dan enterprise kepada jutaan pelanggan. Globe terus berinvestasi dalam modernisasi sistem internalnya untuk meningkatkan efisiensi operasional dan kualitas layanan.",
+      "aboutClient": "Globe Telecom adalah salah satu penyedia telekomunikasi terbesar di Filipina yang menawarkan layanan seluler, broadband, dan enterprise kepada jutaan pelanggan. Globe terus berinvestasi dalam modernisasi sistem internalnya untuk meningkatkan efisiensi operasional dan kualitas layanan.",
+      "problem": "Sistem penagihan yang ada sangat bergantung pada skrip yang dijalankan secara manual untuk membuat ringkasan tagihan, menyimpan catatan, dan mengirim email. Pendekatan ini menimbulkan inefisiensi, meningkatkan risiko kesalahan manusia, dan membuat sistem sulit diskalakan serta dipelihara.",
+      "solution": "Sebagai Full Stack Developer, saya menjadi bagian dari solusi dengan memodernisasi alur kerja penagihan dan membangun alat internal untuk mendukung operasional.",
       "keyContributions": [
-        "Peningkatan pembuatan ringkasan tagihan, penyimpanan, dan proses pengiriman email;",
-        "Membantu transisi dari sistem manual berbasis skrip ke arsitektur yang lebih otomatis dan terukur;",
+        "Meningkatkan proses pembuatan ringkasan tagihan, penyimpanan, dan pengiriman email;",
+        "Membantu transisi dari sistem manual berbasis skrip ke arsitektur yang lebih otomatis dan skalabel;",
         "Mengembangkan API backend untuk mendukung operasi penagihan dan fungsi admin;",
         "Membangun portal admin untuk agen penagihan dan tim dukungan;",
-        "Dirancang antarmuka yang ramah pengguna untuk menyederhanakan alur kerja administratif; dan,",
-        "Sistem front-end dan back-end terintegrasi untuk penanganan data yang lancar."
+        "Merancang antarmuka yang ramah pengguna untuk merapikan alur kerja administratif; dan,",
+        "Mengintegrasikan sistem front-end dan back-end untuk penanganan data yang mulus."
       ],
       "impact": [
         "Mengurangi ketergantungan pada proses dan skrip manual;",
-        "Peningkatan keandalan dan skalabilitas sistem;",
+        "Meningkatkan keandalan dan skalabilitas sistem;",
         "Memungkinkan operasi penagihan yang lebih cepat dan efisien;",
         "Menyediakan platform terpusat bagi tim internal untuk mengelola tugas penagihan; dan,",
-        "Meningkatkan pemeliharaan sistem secara keseluruhan."
+        "Meningkatkan kemudahan pemeliharaan sistem secara keseluruhan."
       ]
     },
     "chongHuaHospital": {
-      "name": "Portal Rekrutmen Dokter Rumah Sakit Chong Hua",
-      "description": "Rumah Sakit Chong Hua adalah institusi kesehatan swasta terkemuka yang berbasis di Cebu City, Filipina, dengan pengalaman lebih dari satu abad dalam memberikan layanan medis berkualitas. Sebagai bagian dari transformasi digital yang berkelanjutan, rumah sakit berinvestasi dalam solusi teknologi untuk meningkatkan proses internal dan efisiensi operasional.",
-      "aboutClient": "Rumah Sakit Chong Hua adalah institusi kesehatan swasta terkemuka yang berbasis di Cebu City, Filipina, dengan pengalaman lebih dari satu abad dalam memberikan layanan medis berkualitas. Sebagai bagian dari transformasi digital yang berkelanjutan, rumah sakit berinvestasi dalam solusi teknologi untuk meningkatkan proses internal dan efisiensi operasional.",
-      "problem": "Proses rekrutmen dokter sangat bergantung pada penyerahan dan penanganan dokumen secara manual. Hal ini mengakibatkan waktu pemrosesan yang lebih lambat, peningkatan beban administratif, dan pengalaman yang terfragmentasi bagi pelamar maupun staf.",
-      "solution": "Sebagai Front-End Developer, saya berkontribusi dengan membangun portal rekrutmen online yang mendigitalkan proses pengiriman dokumen.",
+      "name": "Portal Rekrutmen Dokter Chong Hua Hospital",
+      "description": "Chong Hua Hospital adalah institusi layanan kesehatan swasta terkemuka yang berbasis di Cebu City, Filipina, dengan pengalaman lebih dari satu abad dalam memberikan layanan medis berkualitas. Sebagai bagian dari transformasi digital yang berkelanjutan, rumah sakit ini berinvestasi pada solusi teknologi untuk meningkatkan proses internal dan efisiensi operasional.",
+      "aboutClient": "Chong Hua Hospital adalah institusi layanan kesehatan swasta terkemuka yang berbasis di Cebu City, Filipina, dengan pengalaman lebih dari satu abad dalam memberikan layanan medis berkualitas. Sebagai bagian dari transformasi digital yang berkelanjutan, rumah sakit ini berinvestasi pada solusi teknologi untuk meningkatkan proses internal dan efisiensi operasional.",
+      "problem": "Proses rekrutmen dokter sangat bergantung pada pengajuan dan penanganan dokumen secara manual. Hal ini menyebabkan waktu pemrosesan lebih lambat, peningkatan beban administratif, dan pengalaman yang terfragmentasi bagi pelamar maupun staf.",
+      "solution": "Sebagai Front-End Developer, saya berkontribusi dengan membangun portal rekrutmen online yang mendigitalisasi proses pengumpulan dokumen.",
       "keyContributions": [
         "Mengembangkan antarmuka yang ramah pengguna untuk aplikasi dokter;",
-        "Mengimplementasikan pengunggahan dokumen terstruktur dan alur kerja formulir;",
-        "Peningkatan kegunaan bagi pelamar dan staf internal; dan,",
-        "Berkolaborasi dengan API back-end untuk memastikan penanganan data yang lancar."
+        "Menerapkan alur unggah dokumen dan formulir yang terstruktur;",
+        "Meningkatkan kegunaan bagi pelamar maupun staf internal; dan,",
+        "Berkolaborasi dengan API back-end untuk memastikan penanganan data yang mulus."
       ],
       "impact": [
         "Mengurangi ketergantungan pada penanganan dokumen manual;",
-        "Peningkatan efisiensi dalam memproses aplikasi;",
-        "Memberikan pengalaman yang lebih lancar dan lebih mudah diakses bagi pelamar; dan,",
-        "Memungkinkan staf rekrutmen untuk mengelola pengajuan dalam sistem terpusat."
+        "Meningkatkan efisiensi dalam memproses lamaran;",
+        "Memberikan pengalaman yang lebih mulus dan mudah diakses bagi pelamar; dan,",
+        "Memungkinkan tim rekrutmen mengelola pengajuan dalam sistem terpusat."
       ]
     },
     "jollibeeKidsParty": {
-      "name": "Portal Pesta Anak Jollibee",
-      "description": "Jollibee adalah jaringan restoran cepat saji terbesar di Filipina, dikenal dengan menu ikonik dan layanan ramah keluarganya. Sebagai bagian dari perluasan penawaran, Jollibee menyediakan layanan Pesta Anak khusus untuk perayaan.",
-      "aboutClient": "Jollibee adalah jaringan restoran cepat saji terbesar di Filipina, dikenal dengan menu ikonik dan layanan ramah keluarganya. Sebagai bagian dari perluasan penawaran, Jollibee menyediakan layanan Pesta Anak khusus untuk perayaan.",
-      "problem": "Pengelolaan pemesanan Pesta Anak dan koordinasi acara dilakukan melalui sistem terpisah dan proses manual, yang menyebabkan inefisiensi, miskomunikasi, dan pengalaman yang buruk bagi pelanggan.",
-      "solution": "Sebagai Full Stack Developer, saya membantu mengembangkan portal khusus di mana pelanggan dapat menjelajahi paket pesta, memeriksa ketersediaan, dan mengelola pemesanan mereka dengan mudah.",
+      "name": "Jollibee Kids Party",
+      "description": "Jollibee adalah jaringan restoran cepat saji terbesar di Filipina dan merek yang diakui secara global karena pengalaman bersantap yang berorientasi pada keluarga. Jollibee terutama dikenal melalui layanan Kids Party di gerainya yang memungkinkan keluarga merayakan ulang tahun dan momen spesial. Seiring ekspektasi pelanggan bergeser ke kenyamanan digital, Jollibee terus berinvestasi dalam memodernisasi platform yang berhadapan langsung dengan pelanggan.",
+      "aboutClient": "Jollibee adalah jaringan restoran cepat saji terbesar di Filipina dan merek yang diakui secara global karena pengalaman bersantap yang berorientasi pada keluarga. Jollibee terutama dikenal melalui layanan Kids Party di gerainya yang memungkinkan keluarga merayakan ulang tahun dan momen spesial. Seiring ekspektasi pelanggan bergeser ke kenyamanan digital, Jollibee terus berinvestasi dalam memodernisasi platform yang berhadapan langsung dengan pelanggan.",
+      "problem": "Proses pemesanan pesta anak belum memiliki pengalaman digital yang sepenuhnya optimal, dengan keterbatasan pada kustomisasi, alur pemesanan, dan pengelolaan konten. Hal ini menimbulkan friksi bagi pengguna saat merencanakan acara dan ketidakefisienan bagi tim internal yang mengelola pemesanan serta konfigurasi.",
+      "solution": "Sebagai Full Stack Developer, saya memegang peran penting dalam mengembangkan dan meningkatkan fitur-fitur baru maupun yang sudah ada di storefront, CMS, dan sistem backend.",
       "keyContributions": [
-        "Fitur kustomisasi pesta yang dibangun dan ditingkatkan (tema, paket, add-on);",
-        "Peningkatan alur kerja pemesanan untuk membuat penjadwalan dan reservasi lebih intuitif;",
+        "Membangun dan meningkatkan fitur kustomisasi pesta seperti tema, paket, dan add-on;",
+        "Meningkatkan alur pemesanan agar penjadwalan dan reservasi menjadi lebih intuitif;",
         "Mengembangkan dan memelihara API back-end untuk mendukung logika pemesanan dan aliran data;",
-        "Kemampuan CMS yang dioptimalkan untuk mengelola konten dan konfigurasi pihak;",
-        "Performa sistem yang disempurnakan untuk waktu muat yang lebih cepat dan interaksi pengguna yang lebih lancar; dan,",
-        "Berkolaborasi antar tim untuk memastikan keselarasan antara front-end, back-end, dan kebutuhan bisnis."
+        "Mengoptimalkan kemampuan CMS untuk mengelola konten dan konfigurasi pesta;",
+        "Menyempurnakan performa sistem untuk waktu muat yang lebih cepat dan interaksi pengguna yang lebih halus; dan,",
+        "Berkolaborasi lintas tim untuk memastikan keselarasan antara front-end, back-end, dan kebutuhan bisnis."
       ],
       "impact": [
-        "Menyederhanakan pengalaman pemesanan pesta menyeluruh bagi pelanggan;",
-        "Peningkatan fleksibilitas dalam menyesuaikan paket pesta;",
-        "Mengurangi gesekan dalam proses pemesanan, meningkatkan kegunaan dan tingkat penyelesaian;",
-        "Memungkinkan tim internal untuk mengelola penawaran pihak secara lebih efisien melalui CMS; dan,",
-        "Peningkatan kinerja dan keandalan sistem secara keseluruhan di seluruh platform."
+        "Menyederhanakan pengalaman pemesanan pesta end-to-end bagi pelanggan;",
+        "Meningkatkan fleksibilitas dalam mengkustomisasi paket pesta;",
+        "Mengurangi friksi dalam proses pemesanan sehingga meningkatkan kegunaan dan tingkat penyelesaian;",
+        "Memungkinkan tim internal mengelola penawaran pesta dengan lebih efisien melalui CMS; dan,",
+        "Meningkatkan performa dan keandalan sistem secara keseluruhan di berbagai platform."
       ]
     },
     "konsultaMd": {
-      "name": "KonsultaMD - Platform Telemedicine",
-      "description": "KonsultaMD adalah platform telemedicine yang menghubungkan pasien dengan tenaga medis profesional untuk konsultasi jarak jauh, dengan tujuan membuat layanan kesehatan lebih mudah diakses dan lebih praktis.",
-      "aboutClient": "KonsultaMD adalah platform telemedicine yang menghubungkan pasien dengan tenaga medis profesional untuk konsultasi jarak jauh, dengan tujuan membuat layanan kesehatan lebih mudah diakses dan lebih praktis.",
-      "problem": "Antarmuka telemedicine yang ada tidak teratur dan sulit dinavigasi, sehingga pasien kesulitan menjadwalkan konsultasi, menemukan spesialis, dan mengelola rekam medis mereka secara efisien.",
-      "solution": "Sebagai Full Stack Developer, saya bekerja dalam mendesain ulang dan memodernisasi platform untuk meningkatkan pengalaman pengguna dan fungsionalitas.",
+      "name": "KonsultaMD",
+      "description": "KonsultaMD adalah layanan telehealth terkemuka di Filipina yang menyediakan akses 24/7 ke dokter berlisensi melalui telepon dan platform digital. Layanan ini bertujuan membuat layanan kesehatan lebih mudah diakses, terutama bagi komunitas terpencil dan kurang terlayani. Selama pandemi COVID-19, KonsultaMD mengalami pertumbuhan pesat seiring meningkatnya permintaan untuk konsultasi medis jarak jauh.",
+      "aboutClient": "KonsultaMD adalah layanan telehealth terkemuka di Filipina yang menyediakan akses 24/7 ke dokter berlisensi melalui telepon dan platform digital. Layanan ini bertujuan membuat layanan kesehatan lebih mudah diakses, terutama bagi komunitas terpencil dan kurang terlayani. Selama pandemi COVID-19, KonsultaMD mengalami pertumbuhan pesat seiring meningkatnya permintaan untuk konsultasi medis jarak jauh.",
+      "problem": "Pada puncak pandemi, sistem kesehatan kewalahan dan pasien menghadapi keterbatasan akses ke konsultasi fisik akibat lockdown dan kekhawatiran keamanan. KonsultaMD perlu meningkatkan skala platformnya dengan cepat.",
+      "solution": "Sebagai Back-End Developer, saya berkontribusi membangun platform telekonsultasi yang skalabel dan tangguh untuk memenuhi permintaan layanan kesehatan virtual.",
       "keyContributions": [
-        "Dirancang dan diimplementasikan API untuk memusatkan dan mengoptimalkan komunikasi data;",
-        "Membangun dan mengoptimalkan layanan back-end untuk menangani konkurensi tinggi dan lonjakan lalu lintas;",
-        "Solusi pembayaran terintegrasi yang aman dan fleksibel untuk mendukung berbagai model berlangganan;",
-        "Peningkatan kinerja dan keandalan sistem untuk alur kerja konsultasi waktu nyata; dan,",
-        "Berkolaborasi dengan tim front-end untuk memastikan konsumsi API dan aliran data yang efisien."
+        "Merancang dan mengimplementasikan API untuk memusatkan dan mengoptimalkan komunikasi data;",
+        "Membangun dan mengoptimalkan layanan back-end untuk menangani konkurensi tinggi dan lonjakan trafik;",
+        "Mengintegrasikan solusi pembayaran yang aman dan fleksibel untuk mendukung berbagai model langganan;",
+        "Meningkatkan performa dan keandalan sistem untuk alur konsultasi real-time; dan,",
+        "Berkolaborasi dengan tim front-end untuk memastikan konsumsi API yang efisien dan aliran data yang rapi."
       ],
       "impact": [
-        "Memungkinkan akses skala besar terhadap layanan kesehatan jarak jauh selama pandemi;",
+        "Memungkinkan akses skala besar ke layanan kesehatan jarak jauh selama pandemi;",
         "Mendukung strategi monetisasi yang fleksibel dan peningkatan adopsi pengguna; dan,",
-        "Berkontribusi pada pertumbuhan pesat KonsultaMD selama periode kritis."
+        "Berkontribusi pada pertumbuhan cepat KonsultaMD selama periode krusial."
       ]
     },
     "shoreSuite": {
       "name": "Shore Suite - Sistem Manajemen Perhotelan",
-      "description": "Shore Suite adalah sistem manajemen perhotelan komprehensif yang dirancang untuk menyederhanakan operasional hotel, resor, dan penyedia akomodasi lainnya.",
-      "aboutClient": "Shore Suite adalah sistem manajemen perhotelan komprehensif yang dirancang untuk menyederhanakan operasional hotel, resor, dan penyedia akomodasi lainnya.",
-      "problem": "Hotel menghadapi kesulitan dengan sistem yang tersebar untuk manajemen kamar, layanan tamu, penagihan, dan koordinasi staf, yang menyebabkan inefisiensi operasional dan pengalaman tamu yang buruk.",
-      "solution": "Sebagai Full Stack Developer, saya berkontribusi dalam membangun sistem terintegrasi yang menyatukan berbagai fungsi manajemen perhotelan.",
+      "description": "Shore Suite adalah platform manajemen hotel yang dirancang untuk merapikan operasional hospitality seperti pemesanan kamar, pengelolaan pelanggan, dan proses administratif harian. Sistem ini membantu hotel meningkatkan efisiensi operasional dan menghadirkan pengalaman tamu yang unggul melalui solusi digital.",
+      "aboutClient": "Shore Suite adalah platform manajemen hotel yang dirancang untuk merapikan operasional hospitality seperti pemesanan kamar, pengelolaan pelanggan, dan proses administratif harian. Sistem ini membantu hotel meningkatkan efisiensi operasional dan menghadirkan pengalaman tamu yang unggul melalui solusi digital.",
+      "problem": "Proses manajemen hotel tradisional sering bergantung pada sistem yang terfragmentasi atau alur kerja manual, sehingga menimbulkan kendala dalam reservasi kamar, pengelolaan data pelanggan, dan koordinasi operasional. Hal ini menyebabkan proses pemesanan lebih lambat, risiko kesalahan manusia meningkat, dan operasional sulit diskalakan.",
+      "solution": "Sebagai Junior Back-End Developer, saya memegang peran penting dalam membangun API inti yang menggerakkan sistem manajemen hotel. Ini menjadi fondasi saya dalam backend engineering dan membantu saya memperoleh pengalaman langsung dengan teknologi modern serta pola arsitektur.",
       "keyContributions": [
-        "Mengembangkan API yang kuat untuk mendukung pemesanan kamar, manajemen pelanggan, dan alur kerja operasional;",
-        "Berkontribusi pada pengaturan Arsitektur MicroServices untuk meningkatkan modularitas dan skalabilitas sistem; dan,",
-        "Pengujian unit dan integrasi yang diterapkan untuk memastikan keandalan sistem dan menjaga kualitas kode"
+        "Mengembangkan API yang andal untuk mendukung pemesanan kamar, pengelolaan pelanggan, dan alur kerja operasional;",
+        "Berkontribusi pada arsitektur microservices untuk meningkatkan modularitas dan skalabilitas sistem; dan,",
+        "Mengimplementasikan pengujian unit dan integrasi untuk memastikan keandalan sistem dan menjaga kualitas kode"
       ],
       "impact": [
-        "Peningkatan efisiensi operasional pemesanan dan manajemen hotel melalui layanan API yang andal;",
-        "Arsitektur sistem yang dapat diskalakan dan mampu menangani kebutuhan bisnis yang terus berkembang;",
-        "Mengurangi kesalahan sistem dan meningkatkan kepercayaan dalam penerapan melalui praktik pengujian; dan,",
-        "Membangun fondasi yang kuat dalam pengembangan backend, khususnya dalam pemrograman fungsional."
+        "Meningkatkan efisiensi operasi pemesanan dan pengelolaan hotel melalui layanan API yang andal;",
+        "Memungkinkan arsitektur sistem yang skalabel untuk menangani kebutuhan bisnis yang terus berkembang;",
+        "Mengurangi kesalahan sistem dan meningkatkan kepercayaan terhadap deployment melalui praktik pengujian; dan,",
+        "Membangun fondasi yang kuat dalam pengembangan backend, khususnya pemrograman fungsional."
       ]
     }
   },

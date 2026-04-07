@@ -58,102 +58,102 @@
   "projects": {
     "globeTelecom": {
       "name": "Plataforma de Entrega y Almacenamiento de Facturas de Globe Telecom",
-      "description": "Globe Telecom es uno de los mayores proveedores de telecomunicaciones de Filipinas, que ofrece servicios móviles, de banda ancha y empresariales a millones de clientes. Globe invierte continuamente en modernizar sus sistemas internos para mejorar la eficiencia operativa y la prestación de servicios.",
-      "aboutClient": "Globe Telecom es uno de los mayores proveedores de telecomunicaciones de Filipinas, que ofrece servicios móviles, de banda ancha y empresariales a millones de clientes. Globe invierte continuamente en modernizar sus sistemas internos para mejorar la eficiencia operativa y la prestación de servicios.",
-      "problem": "El sistema de facturación existente dependía en gran medida de scripts ejecutados manualmente para generar resúmenes de facturas, almacenar registros y enviar correos electrónicos. Este enfoque introducía ineficiencias, riesgo de error humano, y dificultaba la escalabilidad y el mantenimiento del sistema.",
-      "solution": "Como desarrollador Full Stack, participé en la modernización del flujo de facturación y en la creación de herramientas internas para apoyar las operaciones.",
+      "description": "Globe Telecom es uno de los mayores proveedores de telecomunicaciones de Filipinas y ofrece servicios móviles, de banda ancha y empresariales a millones de clientes. Globe sigue invirtiendo en la modernización de sus sistemas internos para mejorar la eficiencia operativa y la prestación del servicio.",
+      "aboutClient": "Globe Telecom es uno de los mayores proveedores de telecomunicaciones de Filipinas y ofrece servicios móviles, de banda ancha y empresariales a millones de clientes. Globe sigue invirtiendo en la modernización de sus sistemas internos para mejorar la eficiencia operativa y la prestación del servicio.",
+      "problem": "El sistema de facturación existente dependía en gran medida de scripts ejecutados manualmente para generar resúmenes de facturas, almacenar registros y enviar correos electrónicos. Este enfoque introducía ineficiencias, aumentaba el riesgo de error humano y hacía que el sistema fuera difícil de escalar y mantener.",
+      "solution": "Como desarrollador Full Stack, formé parte de la solución al modernizar el flujo de facturación y crear herramientas internas para apoyar las operaciones.",
       "keyContributions": [
-        "Procesos mejorados de generación, almacenamiento y entrega de correo electrónico de resúmenes de facturas;",
-        "Ayudé a la transición de un sistema manual basado en scripts a una arquitectura más automatizada y escalable;",
-        "API de backend desarrolladas para respaldar operaciones de facturación y funcionalidades de administración;",
-        "Creó un portal de administración para agentes de facturación y equipos de soporte;",
-        "Diseñé interfaces fáciles de usar para optimizar los flujos de trabajo administrativos; y,",
-        "Sistemas front-end y back-end integrados para un manejo de datos fluido."
+        "Mejoré los procesos de generación, almacenamiento y envío por correo electrónico de resúmenes de facturas;",
+        "Ayudé en la transición de un sistema manual basado en scripts a una arquitectura más automatizada y escalable;",
+        "Desarrollé APIs de backend para respaldar operaciones de facturación y funcionalidades administrativas;",
+        "Construí un portal administrativo para agentes de facturación y equipos de soporte;",
+        "Diseñé interfaces fáciles de usar para agilizar los flujos de trabajo administrativos; y,",
+        "Integré sistemas de front-end y back-end para un manejo de datos sin fricciones."
       ],
       "impact": [
-        "Reducción de la dependencia de procesos y scripts manuales;",
-        "Mejora de la confiabilidad y escalabilidad del sistema;",
-        "Permitió operaciones de facturación más rápidas y eficientes;",
-        "Proporcionó una plataforma centralizada para que los equipos internos administren las tareas de facturación; y,",
-        "Mantenibilidad general mejorada del sistema."
+        "Reduje la dependencia de procesos y scripts manuales;",
+        "Mejoré la confiabilidad y escalabilidad del sistema;",
+        "Hice posibles operaciones de facturación más rápidas y eficientes;",
+        "Proporcioné una plataforma centralizada para que los equipos internos gestionaran las tareas de facturación; y,",
+        "Mejoré la mantenibilidad general del sistema."
       ]
     },
     "chongHuaHospital": {
       "name": "Portal de Reclutamiento de Médicos del Hospital Chong Hua",
-      "description": "El Hospital Chong Hua es una destacada institución de salud privada con sede en Cebú, Filipinas, con más de un siglo de experiencia en la prestación de servicios médicos de calidad. Como parte de su continua transformación digital, el hospital invierte en soluciones tecnológicas para mejorar los procesos internos y la eficiencia operativa.",
-      "aboutClient": "El Hospital Chong Hua es una destacada institución de salud privada con sede en Cebú, Filipinas, con más de un siglo de experiencia en la prestación de servicios médicos de calidad. Como parte de su continua transformación digital, el hospital invierte en soluciones tecnológicas para mejorar los procesos internos y la eficiencia operativa.",
-      "problem": "El proceso de reclutamiento de médicos dependía en gran medida de la presentación y el manejo manual de documentos. Esto resultó en tiempos de procesamiento más lentos, aumento de la carga administrativa y una experiencia fragmentada tanto para los solicitantes como para el personal.",
+      "description": "El Hospital Chong Hua es una importante institución sanitaria privada ubicada en Cebú, Filipinas, con más de un siglo de experiencia brindando servicios médicos de calidad. Como parte de su transformación digital continua, el hospital invierte en soluciones tecnológicas para mejorar los procesos internos y la eficiencia operativa.",
+      "aboutClient": "El Hospital Chong Hua es una importante institución sanitaria privada ubicada en Cebú, Filipinas, con más de un siglo de experiencia brindando servicios médicos de calidad. Como parte de su transformación digital continua, el hospital invierte en soluciones tecnológicas para mejorar los procesos internos y la eficiencia operativa.",
+      "problem": "El proceso de reclutamiento de médicos dependía en gran medida de la presentación y gestión manual de documentos. Esto provocaba tiempos de procesamiento más lentos, mayor carga administrativa y una experiencia fragmentada tanto para los postulantes como para el personal.",
       "solution": "Como desarrollador Front-End, contribuí construyendo un portal de reclutamiento en línea que digitalizó el proceso de envío de documentos.",
       "keyContributions": [
-        "Se desarrollaron interfaces fáciles de usar para aplicaciones médicas;",
-        "Implementé flujos de trabajo de formularios y carga de documentos estructurados;",
-        "Usabilidad mejorada tanto para los solicitantes como para el personal interno; y,",
-        "Colaboré con API de back-end para garantizar un manejo de datos fluido."
+        "Desarrollé interfaces fáciles de usar para las solicitudes de médicos;",
+        "Implementé flujos de carga de documentos y formularios estructurados;",
+        "Mejoré la usabilidad tanto para los postulantes como para el personal interno; y,",
+        "Colaboré con APIs de back-end para garantizar un manejo de datos sin fricciones."
       ],
       "impact": [
-        "Reducción de la dependencia del manejo manual de documentos;",
-        "Mayor eficiencia en el procesamiento de solicitudes;",
-        "Proporcionó una experiencia más fluida y accesible para los solicitantes; y,",
-        "Permitió al personal de contratación gestionar las presentaciones en un sistema centralizado."
+        "Reduje la dependencia del manejo manual de documentos;",
+        "Mejoré la eficiencia en el procesamiento de solicitudes;",
+        "Ofrecí una experiencia más fluida y accesible para los postulantes; y,",
+        "Permití al equipo de reclutamiento gestionar los envíos en un sistema centralizado."
       ]
     },
     "jollibeeKidsParty": {
-      "name": "Portal de Fiestas Infantiles de Jollibee",
-      "description": "Jollibee es la cadena de restaurantes de comida rápida más grande de Filipinas, conocida por su menú icónico y sus servicios para toda la familia. Como parte de la expansión de sus ofertas, Jollibee ofrece servicios especializados de fiestas infantiles para celebraciones.",
-      "aboutClient": "Jollibee es la cadena de restaurantes de comida rápida más grande de Filipinas, conocida por su menú icónico y sus servicios para toda la familia. Como parte de la expansión de sus ofertas, Jollibee ofrece servicios especializados de fiestas infantiles para celebraciones.",
-      "problem": "La gestión de reservas de fiestas infantiles y la coordinación de eventos se realizaba a través de sistemas separados y procesos manuales, lo que generaba ineficiencias, mala comunicación y una mala experiencia para los clientes.",
-      "solution": "Como desarrollador Full Stack, ayudé a desarrollar un portal dedicado donde los clientes pudieran explorar paquetes de fiestas, verificar disponibilidad y gestionar sus reservas sin complicaciones.",
+      "name": "Jollibee Kids Party",
+      "description": "Jollibee es la cadena de comida rápida más grande de Filipinas y una marca reconocida globalmente por su experiencia gastronómica orientada a la familia. Es especialmente conocida por su servicio Kids Party en tienda, que permite a las familias celebrar cumpleaños y ocasiones especiales. A medida que las expectativas de los clientes evolucionan hacia una mayor comodidad digital, Jollibee continúa invirtiendo en la modernización de sus plataformas de cara al cliente.",
+      "aboutClient": "Jollibee es la cadena de comida rápida más grande de Filipinas y una marca reconocida globalmente por su experiencia gastronómica orientada a la familia. Es especialmente conocida por su servicio Kids Party en tienda, que permite a las familias celebrar cumpleaños y ocasiones especiales. A medida que las expectativas de los clientes evolucionan hacia una mayor comodidad digital, Jollibee continúa invirtiendo en la modernización de sus plataformas de cara al cliente.",
+      "problem": "El proceso de reserva de fiestas infantiles no contaba con una experiencia digital completamente optimizada, con limitaciones en la personalización, los flujos de reserva y la gestión de contenidos. Esto generaba fricción para los usuarios al planificar eventos e ineficiencias para los equipos internos que gestionaban reservas y configuraciones.",
+      "solution": "Como desarrollador Full Stack, desempeñé un papel clave desarrollando y mejorando funciones nuevas y existentes en la tienda, el CMS y los sistemas backend.",
       "keyContributions": [
-        "Funciones de personalización de fiestas integradas y mejoradas (temas, paquetes, complementos);",
-        "Flujos de trabajo de reserva mejorados para que la programación y las reservas sean más intuitivas;",
-        "API de back-end desarrolladas y mantenidas para respaldar la lógica de reservas y el flujo de datos;",
-        "Capacidades de CMS optimizadas para gestionar el contenido y las configuraciones de las partes;",
-        "Rendimiento refinado del sistema para tiempos de carga más rápidos e interacciones de usuario más fluidas; y,",
-        "Colaboré entre equipos para garantizar la alineación entre los requisitos de front-end, back-end y comerciales."
+        "Construí y mejoré funciones de personalización de fiestas, como temas, paquetes y complementos;",
+        "Mejoré los flujos de reserva para que la programación y las reservaciones fueran más intuitivas;",
+        "Desarrollé y mantuve APIs de back-end para respaldar la lógica de reservas y el flujo de datos;",
+        "Optimicé las capacidades del CMS para gestionar contenido y configuraciones de fiestas;",
+        "Perfeccioné el rendimiento del sistema para lograr tiempos de carga más rápidos e interacciones más fluidas; y,",
+        "Colaboré entre equipos para asegurar la alineación entre front-end, back-end y requerimientos del negocio."
       ],
       "impact": [
-        "Simplificó la experiencia de reserva de fiestas de principio a fin para los clientes;",
-        "Flexibilidad mejorada en la personalización de paquetes de fiesta;",
-        "Reduced friction in the booking process, increasing usability and completion rates;",
-        "Permitió a los equipos internos gestionar las ofertas de fiestas de manera más eficiente a través de CMS; y,",
-        "Rendimiento general y confiabilidad mejorados del sistema en todas las plataformas."
+        "Optimicé la experiencia integral de reserva de fiestas para los clientes;",
+        "Mejoré la flexibilidad para personalizar paquetes de fiesta;",
+        "Reduje la fricción en el proceso de reserva, aumentando la usabilidad y las tasas de finalización;",
+        "Permití que los equipos internos gestionaran las ofertas de fiesta de forma más eficiente mediante el CMS; y,",
+        "Mejoré el rendimiento general y la confiabilidad del sistema en todas las plataformas."
       ]
     },
     "konsultaMd": {
-      "name": "KonsultaMD - Plataforma de Telemedicina",
-      "description": "KonsultaMD es una plataforma de telemedicina que conecta a pacientes con profesionales de la salud para consultas remotas, con el objetivo de hacer la atención médica más accesible y conveniente.",
-      "aboutClient": "KonsultaMD es una plataforma de telemedicina que conecta a pacientes con profesionales de la salud para consultas remotas, con el objetivo de hacer la atención médica más accesible y conveniente.",
-      "problem": "La interfaz de telemedicina existente era desordenada y difícil de navegar, lo que dificultaba que los pacientes programaran consultas, encontraran especialistas y gestionaran sus historias médicas de manera eficiente.",
-      "solution": "Como desarrollador Full Stack, trabajé en el rediseño y modernización de la plataforma para mejorar la experiencia del usuario y la funcionalidad.",
+      "name": "KonsultaMD",
+      "description": "KonsultaMD es un servicio líder de telesalud en Filipinas que ofrece acceso 24/7 a médicos acreditados por teléfono y plataformas digitales. Su objetivo es hacer que la atención médica sea más accesible, especialmente para comunidades remotas y con pocos servicios. Durante la pandemia de COVID-19, KonsultaMD experimentó un rápido crecimiento a medida que aumentó la demanda de consultas médicas remotas.",
+      "aboutClient": "KonsultaMD es un servicio líder de telesalud en Filipinas que ofrece acceso 24/7 a médicos acreditados por teléfono y plataformas digitales. Su objetivo es hacer que la atención médica sea más accesible, especialmente para comunidades remotas y con pocos servicios. Durante la pandemia de COVID-19, KonsultaMD experimentó un rápido crecimiento a medida que aumentó la demanda de consultas médicas remotas.",
+      "problem": "En el punto más crítico de la pandemia, los sistemas de salud estaban saturados y los pacientes tenían acceso limitado a consultas presenciales debido a los confinamientos y las preocupaciones de seguridad. KonsultaMD necesitaba escalar su plataforma rápidamente.",
+      "solution": "Como desarrollador Back-End, contribuí a construir una plataforma de teleconsulta escalable y resiliente para responder a la demanda de servicios de salud virtuales.",
       "keyContributions": [
-        "Diseñé e implementé API para centralizar y optimizar la comunicación de datos;",
-        "Servicios back-end creados y optimizados para manejar alta concurrencia y picos de tráfico;",
-        "Soluciones de pago integradas, seguras y flexibles para admitir varios modelos de suscripción;",
-        "Rendimiento y confiabilidad mejorados del sistema para flujos de trabajo de consulta en tiempo real; y,",
-        "Colaboré con equipos de front-end para garantizar un consumo eficiente de API y un flujo de datos."
+        "Diseñé e implementé APIs para centralizar y optimizar la comunicación de datos;",
+        "Construí y optimicé servicios back-end para manejar alta concurrencia y picos de tráfico;",
+        "Integré soluciones de pago seguras y flexibles para distintos modelos de suscripción;",
+        "Mejoré el rendimiento y la confiabilidad del sistema para flujos de consulta en tiempo real; y,",
+        "Colaboré con equipos de front-end para asegurar un consumo eficiente de APIs y un flujo de datos limpio."
       ],
       "impact": [
-        "Permitió el acceso a gran escala a servicios de atención médica remotos durante la pandemia;",
-        "Apoyé estrategias de monetización flexibles y mayor adopción por parte de los usuarios; y,",
-        "Contribuyó al rápido crecimiento de KonsultaMD durante un período crítico."
+        "Hice posible el acceso a gran escala a servicios de salud remotos durante la pandemia;",
+        "Apoyé estrategias flexibles de monetización y una mayor adopción por parte de los usuarios; y,",
+        "Contribuí al rápido crecimiento de KonsultaMD durante un período crítico."
       ]
     },
     "shoreSuite": {
       "name": "Shore Suite - Sistema de Gestión Hotelera",
-      "description": "Shore Suite es un sistema integral de gestión hotelera diseñado para optimizar las operaciones de hoteles, resorts y otros proveedores de alojamiento.",
-      "aboutClient": "Shore Suite es un sistema integral de gestión hotelera diseñado para optimizar las operaciones de hoteles, resorts y otros proveedores de alojamiento.",
-      "problem": "Los hoteles tienen dificultades con sistemas dispersos para la gestión de habitaciones, servicios al huésped, facturación y coordinación del personal, lo que genera ineficiencias operativas y malas experiencias para los huéspedes.",
-      "solution": "Como desarrollador Full Stack, contribuí a construir un sistema integrado que unificó las diversas funciones de gestión hotelera.",
+      "description": "Shore Suite es una plataforma de gestión hotelera diseñada para agilizar operaciones de hospitalidad como reservas de habitaciones, gestión de clientes y procesos administrativos diarios. El sistema ayuda a los hoteles a mejorar la eficiencia operativa y a ofrecer experiencias de primer nivel a sus huéspedes mediante soluciones digitales.",
+      "aboutClient": "Shore Suite es una plataforma de gestión hotelera diseñada para agilizar operaciones de hospitalidad como reservas de habitaciones, gestión de clientes y procesos administrativos diarios. El sistema ayuda a los hoteles a mejorar la eficiencia operativa y a ofrecer experiencias de primer nivel a sus huéspedes mediante soluciones digitales.",
+      "problem": "Los procesos tradicionales de gestión hotelera a menudo dependían de sistemas fragmentados o flujos manuales, lo que generaba inconvenientes en las reservas de habitaciones, el manejo de datos de clientes y la coordinación operativa. Esto se traducía en procesos de reserva más lentos, mayor riesgo de error humano y dificultad para escalar las operaciones.",
+      "solution": "Como desarrollador Junior Back-End, desempeñé un papel importante en la construcción de las APIs centrales que impulsaban el sistema de gestión hotelera. Esto me sirvió de base en ingeniería backend y me ayudó a adquirir experiencia práctica con tecnologías modernas y patrones arquitectónicos.",
       "keyContributions": [
-        "Desarrollé API sólidas para respaldar la reserva de habitaciones, la gestión de clientes y los flujos de trabajo operativos;",
-        "Contribuyó a la configuración de una arquitectura de microservicios para mejorar la modularidad y escalabilidad del sistema; y,",
-        "Implementé pruebas unitarias y de integración para garantizar la confiabilidad del sistema y mantener la calidad del código."
+        "Desarrollé APIs sólidas para respaldar reservas de habitaciones, gestión de clientes y flujos operativos;",
+        "Contribuí a una arquitectura de microservicios para mejorar la modularidad y escalabilidad del sistema; y,",
+        "Implementé pruebas unitarias y de integración para garantizar la confiabilidad del sistema y mantener la calidad del código"
       ],
       "impact": [
-        "Mejora de la eficiencia de las operaciones de gestión y reserva de hoteles a través de servicios API confiables;",
-        "Habilitó una arquitectura de sistema escalable capaz de manejar las crecientes necesidades comerciales;",
-        "Reducción de errores del sistema y mayor confianza en las implementaciones a través de prácticas de prueba; y,",
-        "Construyó una base sólida en el desarrollo backend, particularmente en programación funcional."
+        "Mejoré la eficiencia de las operaciones de reserva y gestión hotelera mediante servicios API confiables;",
+        "Habilité una arquitectura escalable capaz de responder al crecimiento del negocio;",
+        "Reduje errores del sistema y aumenté la confianza en los despliegues mediante prácticas de prueba; y,",
+        "Construí una base sólida en desarrollo backend, particularmente en programación funcional."
       ]
     }
   },

@@ -57,103 +57,103 @@
   },
   "projects": {
     "globeTelecom": {
-      "name": "Globe Telecoms Rechnungszustell- und Speicherplattform",
-      "description": "Globe Telecom ist einer der größten Telekommunikationsanbieter auf den Philippinen und bietet Millionen von Kunden Mobil-, Breitband- und Unternehmensdienste an. Globe investiert kontinuierlich in die Modernisierung seiner internen Systeme, um die betriebliche Effizienz und die Servicebereitstellung zu verbessern.",
-      "aboutClient": "Globe Telecom ist einer der größten Telekommunikationsanbieter auf den Philippinen und bietet Millionen von Kunden Mobil-, Breitband- und Unternehmensdienste an. Globe investiert kontinuierlich in die Modernisierung seiner internen Systeme, um die betriebliche Effizienz und die Servicebereitstellung zu verbessern.",
-      "problem": "Das bestehende Abrechnungssystem war stark von manuell ausgeführten Skripten abhängig, um Rechnungszusammenfassungen zu erstellen, Datensätze zu speichern und E-Mails zu versenden. Dieser Ansatz führte zu Ineffizienzen, dem Risiko menschlicher Fehler und machte das System schwer skalierbar und wartbar.",
-      "solution": "Als Full-Stack-Entwickler war ich an der Modernisierung des Abrechnungsworkflows und dem Aufbau interner Tools zur Unterstützung des Betriebs beteiligt.",
+      "name": "Globe Telecoms Plattform für Rechnungszustellung und -speicherung",
+      "description": "Globe Telecom ist einer der größten Telekommunikationsanbieter auf den Philippinen und bietet Millionen von Kunden Mobilfunk-, Breitband- und Unternehmensdienste an. Globe investiert kontinuierlich in die Modernisierung seiner internen Systeme, um die betriebliche Effizienz und die Servicebereitstellung zu verbessern.",
+      "aboutClient": "Globe Telecom ist einer der größten Telekommunikationsanbieter auf den Philippinen und bietet Millionen von Kunden Mobilfunk-, Breitband- und Unternehmensdienste an. Globe investiert kontinuierlich in die Modernisierung seiner internen Systeme, um die betriebliche Effizienz und die Servicebereitstellung zu verbessern.",
+      "problem": "Das bestehende Abrechnungssystem war stark auf manuell ausgeführte Skripte angewiesen, um Rechnungszusammenfassungen zu erstellen, Datensätze zu speichern und E-Mails zu versenden. Dieser Ansatz führte zu Ineffizienzen, erhöhte das Risiko menschlicher Fehler und machte das System schwer skalierbar und wartbar.",
+      "solution": "Als Full-Stack-Entwickler war ich Teil der Lösung, indem ich den Abrechnungsworkflow modernisierte und interne Tools zur Unterstützung des Betriebs entwickelte.",
       "keyContributions": [
-        "Verbesserte Prozesse zur Erstellung, Speicherung und E-Mail-Zustellung von Rechnungszusammenfassungen;",
-        "Hat beim Übergang von einem manuellen, skriptgesteuerten System zu einer stärker automatisierten und skalierbaren Architektur geholfen;",
-        "Entwicklung von Backend-APIs zur Unterstützung von Abrechnungsvorgängen und Verwaltungsfunktionen;",
-        "Aufbau eines Admin-Portals für Abrechnungsagenten und Supportteams;",
-        "Entworfene benutzerfreundliche Schnittstellen zur Optimierung administrativer Arbeitsabläufe; und,",
-        "Integrierte Front-End- und Back-End-Systeme für eine reibungslose Datenverarbeitung."
+        "Verbesserte Prozesse für die Erstellung, Speicherung und E-Mail-Zustellung von Rechnungszusammenfassungen;",
+        "Unterstützte den Übergang von einem manuellen, skriptgesteuerten System zu einer stärker automatisierten und skalierbaren Architektur;",
+        "Entwickelte Backend-APIs zur Unterstützung von Abrechnungsvorgängen und Administrationsfunktionen;",
+        "Baute ein Admin-Portal für Abrechnungsagenten und Supportteams auf;",
+        "Entwarf benutzerfreundliche Oberflächen zur Optimierung administrativer Arbeitsabläufe; und,",
+        "Integrierte Frontend- und Backend-Systeme für eine nahtlose Datenverarbeitung."
       ],
       "impact": [
-        "Reduzierte Abhängigkeit von manuellen Prozessen und Skripten;",
-        "Verbesserte Systemzuverlässigkeit und Skalierbarkeit;",
-        "Ermöglicht schnellere und effizientere Abrechnungsvorgänge;",
-        "Bereitstellung einer zentralen Plattform für interne Teams zur Verwaltung von Abrechnungsaufgaben; und,",
-        "Verbesserte allgemeine Wartbarkeit des Systems."
+        "Reduzierte die Abhängigkeit von manuellen Prozessen und Skripten;",
+        "Verbesserte die Zuverlässigkeit und Skalierbarkeit des Systems;",
+        "Ermöglichte schnellere und effizientere Abrechnungsvorgänge;",
+        "Stellte internen Teams eine zentrale Plattform zur Verwaltung von Abrechnungsaufgaben bereit; und,",
+        "Verbesserte die allgemeine Wartbarkeit des Systems."
       ]
     },
     "chongHuaHospital": {
-      "name": "Chong Hua Krankenhaus Ärzterekrutierungsportal",
-      "description": "Das Chong Hua Hospital ist eine führende private Gesundheitseinrichtung mit Sitz in Cebu City, Philippinen, mit über einem Jahrhundert Erfahrung in der Bereitstellung hochwertiger medizinischer Dienstleistungen. Als Teil seiner kontinuierlichen digitalen Transformation investiert das Krankenhaus in Technologielösungen zur Verbesserung interner Prozesse und der betrieblichen Effizienz.",
-      "aboutClient": "Das Chong Hua Hospital ist eine führende private Gesundheitseinrichtung mit Sitz in Cebu City, Philippinen, mit über einem Jahrhundert Erfahrung in der Bereitstellung hochwertiger medizinischer Dienstleistungen. Als Teil seiner kontinuierlichen digitalen Transformation investiert das Krankenhaus in Technologielösungen zur Verbesserung interner Prozesse und der betrieblichen Effizienz.",
-      "problem": "Der Rekrutierungsprozess für Ärzte war stark von der manuellen Einreichung und Bearbeitung von Dokumenten abhängig. Dies führte zu langsameren Bearbeitungszeiten, erhöhtem Verwaltungsaufwand und einer fragmentierten Erfahrung für Bewerber und Mitarbeiter.",
-      "solution": "Als Front-End-Entwickler habe ich dazu beigetragen, ein Online-Rekrutierungsportal zu erstellen, das den Dokumenteneinreichungsprozess digitalisiert.",
+      "name": "Ärzte-Rekrutierungsportal des Chong Hua Hospital",
+      "description": "Das Chong Hua Hospital ist eine führende private Gesundheitseinrichtung mit Sitz in Cebu City, Philippinen, und verfügt über mehr als ein Jahrhundert Erfahrung in der Bereitstellung hochwertiger medizinischer Leistungen. Im Zuge seiner fortlaufenden digitalen Transformation investiert das Krankenhaus in Technologielösungen zur Verbesserung interner Prozesse und der betrieblichen Effizienz.",
+      "aboutClient": "Das Chong Hua Hospital ist eine führende private Gesundheitseinrichtung mit Sitz in Cebu City, Philippinen, und verfügt über mehr als ein Jahrhundert Erfahrung in der Bereitstellung hochwertiger medizinischer Leistungen. Im Zuge seiner fortlaufenden digitalen Transformation investiert das Krankenhaus in Technologielösungen zur Verbesserung interner Prozesse und der betrieblichen Effizienz.",
+      "problem": "Der Rekrutierungsprozess für Ärzte war stark von der manuellen Einreichung und Bearbeitung von Dokumenten abhängig. Das führte zu längeren Bearbeitungszeiten, einer höheren administrativen Belastung und einer fragmentierten Erfahrung für Bewerber und Mitarbeitende.",
+      "solution": "Als Frontend-Entwickler trug ich dazu bei, ein Online-Rekrutierungsportal aufzubauen, das den Einreichungsprozess für Dokumente digitalisierte.",
       "keyContributions": [
-        "Entwicklung benutzerfreundlicher Schnittstellen für Arztanwendungen;",
-        "Implementierung strukturierter Dokument-Upload- und Formular-Workflows;",
-        "Verbesserte Benutzerfreundlichkeit sowohl für Bewerber als auch für interne Mitarbeiter; und,",
-        "Zusammenarbeit mit Back-End-APIs, um eine nahtlose Datenverarbeitung zu gewährleisten."
+        "Entwickelte benutzerfreundliche Oberflächen für Arztbewerbungen;",
+        "Implementierte strukturierte Workflows für Dokumenten-Uploads und Formulare;",
+        "Verbesserte die Benutzerfreundlichkeit sowohl für Bewerber als auch für interne Mitarbeitende; und,",
+        "Arbeitete mit Backend-APIs zusammen, um eine nahtlose Datenverarbeitung sicherzustellen."
       ],
       "impact": [
-        "Reduzierte Abhängigkeit von der manuellen Dokumentenbearbeitung;",
-        "Verbesserte Effizienz bei der Bearbeitung von Anträgen;",
-        "Bereitstellung einer reibungsloseren und zugänglicheren Erfahrung für Bewerber; und,",
-        "Ermöglichte den Personalbeschaffungsmitarbeitern die Verwaltung von Einreichungen in einem zentralen System."
+        "Reduzierte die Abhängigkeit von manueller Dokumentenbearbeitung;",
+        "Verbesserte die Effizienz bei der Bearbeitung von Bewerbungen;",
+        "Bot Bewerbern eine reibungslosere und besser zugängliche Erfahrung; und,",
+        "Ermöglichte dem Recruiting-Team, Einreichungen in einem zentralen System zu verwalten."
       ]
     },
     "jollibeeKidsParty": {
-      "name": "Jollibee Kids Party Portal",
-      "description": "Jollibee ist die größte Fast-Food-Restaurantkette der Philippinen, bekannt für ihr ikonisches Menü und familienfreundliche Dienstleistungen. Als Teil der Erweiterung seines Angebots bietet Jollibee spezielle Kids Party-Dienste für Feiern an.",
-      "aboutClient": "Jollibee ist die größte Fast-Food-Restaurantkette der Philippinen, bekannt für ihr ikonisches Menü und familienfreundliche Dienstleistungen. Als Teil der Erweiterung seines Angebots bietet Jollibee spezielle Kids Party-Dienste für Feiern an.",
-      "problem": "Die Verwaltung von Kids Party-Buchungen und die Veranstaltungskoordination erfolgte über separate Systeme und manuelle Prozesse, was zu Ineffizienzen, Missverständnissen und einer schlechten Nutzererfahrung für Kunden führte.",
-      "solution": "Als Full-Stack-Entwickler half ich bei der Entwicklung eines speziellen Portals, über das Kunden Party-Pakete durchsuchen, Verfügbarkeit prüfen und Buchungen nahtlos verwalten können.",
+      "name": "Jollibee Kids Party",
+      "description": "Jollibee ist die größte Fast-Food-Kette der Philippinen und eine weltweit bekannte Marke, die für ihr familienorientiertes Restauranterlebnis bekannt ist. Besonders bekannt ist sie für ihren Kids-Party-Service in den Filialen, mit dem Familien Geburtstage und besondere Anlässe feiern können. Da sich die Erwartungen der Kunden hin zu mehr digitalem Komfort entwickeln, investiert Jollibee weiterhin in die Modernisierung seiner kundenorientierten Plattformen.",
+      "aboutClient": "Jollibee ist die größte Fast-Food-Kette der Philippinen und eine weltweit bekannte Marke, die für ihr familienorientiertes Restauranterlebnis bekannt ist. Besonders bekannt ist sie für ihren Kids-Party-Service in den Filialen, mit dem Familien Geburtstage und besondere Anlässe feiern können. Da sich die Erwartungen der Kunden hin zu mehr digitalem Komfort entwickeln, investiert Jollibee weiterhin in die Modernisierung seiner kundenorientierten Plattformen.",
+      "problem": "Der Buchungsprozess für Kinderpartys bot noch kein vollständig optimiertes digitales Erlebnis und hatte Einschränkungen bei Anpassungsmöglichkeiten, Buchungsabläufen und der Inhaltsverwaltung. Das führte zu Reibung für Nutzer bei der Eventplanung sowie zu Ineffizienzen für interne Teams, die Buchungen und Konfigurationen verwalten.",
+      "solution": "Als Full-Stack-Entwickler spielte ich eine zentrale Rolle bei der Entwicklung und Erweiterung neuer wie bestehender Funktionen im Storefront-, CMS- und Backend-Bereich.",
       "keyContributions": [
-        "Integrierte und erweiterte Funktionen zur Partyanpassung (Themen, Pakete, Add-ons);",
-        "Verbesserte Buchungsabläufe, um Planung und Reservierungen intuitiver zu gestalten;",
-        "Entwicklung und Pflege von Back-End-APIs zur Unterstützung der Buchungslogik und des Datenflusses;",
-        "Optimierte CMS-Funktionen zur Verwaltung von Partyinhalten und -konfigurationen;",
-        "Verbesserte Systemleistung für schnellere Ladezeiten und reibungslosere Benutzerinteraktionen; und,",
-        "Teamübergreifende Zusammenarbeit, um die Abstimmung zwischen Front-End-, Back-End- und Geschäftsanforderungen sicherzustellen."
+        "Baute Funktionen zur Partyanpassung aus und erweiterte sie, darunter Themen, Pakete und Add-ons;",
+        "Verbesserte Buchungsabläufe, damit Terminplanung und Reservierungen intuitiver werden;",
+        "Entwickelte und pflegte Backend-APIs zur Unterstützung von Buchungslogik und Datenfluss;",
+        "Optimierte CMS-Funktionen zur Verwaltung von Party-Inhalten und Konfigurationen;",
+        "Verfeinerte die Systemleistung für schnellere Ladezeiten und flüssigere Nutzerinteraktionen; und,",
+        "Arbeitete teamübergreifend zusammen, um Frontend-, Backend- und Geschäftsanforderungen aufeinander abzustimmen."
       ],
       "impact": [
-        "Optimiertes End-to-End-Partybuchungserlebnis für Kunden;",
-        "Verbesserte Flexibilität beim Anpassen von Partypaketen;",
-        "Reduzierte Reibung im Buchungsprozess, höhere Benutzerfreundlichkeit und Abschlussquoten;",
-        "Ermöglichte internen Teams die effizientere Verwaltung von Partyangeboten über CMS; und,",
-        "Verbesserte Gesamtsystemleistung und Zuverlässigkeit auf allen Plattformen."
+        "Optimierte das End-to-End-Erlebnis der Partybuchung für Kunden;",
+        "Verbesserte die Flexibilität bei der Anpassung von Party-Paketen;",
+        "Reduzierte Reibung im Buchungsprozess und steigerte dadurch Benutzerfreundlichkeit und Abschlussraten;",
+        "Ermöglichte internen Teams, Party-Angebote über das CMS effizienter zu verwalten; und,",
+        "Verbesserte die allgemeine Systemleistung und Zuverlässigkeit über alle Plattformen hinweg."
       ]
     },
     "konsultaMd": {
-      "name": "KonsultaMD - Telemedizin-Plattform",
-      "description": "KonsultaMD ist eine Telemedizin-Plattform, die Patienten mit medizinischen Fachleuten für Fernkonsultationen verbindet und darauf abzielt, die Gesundheitsversorgung zugänglicher und bequemer zu machen.",
-      "aboutClient": "KonsultaMD ist eine Telemedizin-Plattform, die Patienten mit medizinischen Fachleuten für Fernkonsultationen verbindet und darauf abzielt, die Gesundheitsversorgung zugänglicher und bequemer zu machen.",
-      "problem": "Die bestehende Telemedizin-Oberfläche war unübersichtlich und schwer zu navigieren, was es Patienten erschwerte, Konsultationen zu planen, Spezialisten zu finden und ihre Krankenakten effizient zu verwalten.",
-      "solution": "Als Full-Stack-Entwickler arbeitete ich an der Neugestaltung und Modernisierung der Plattform, um die Nutzererfahrung und Funktionalität zu verbessern.",
+      "name": "KonsultaMD",
+      "description": "KonsultaMD ist ein führender Telehealth-Dienst auf den Philippinen, der rund um die Uhr Zugang zu lizenzierten Ärzten per Telefon und über digitale Plattformen bietet. Ziel ist es, die Gesundheitsversorgung zugänglicher zu machen, insbesondere für unterversorgte und abgelegene Gemeinden. Während der COVID-19-Pandemie verzeichnete KonsultaMD ein schnelles Wachstum, als die Nachfrage nach medizinischen Fernkonsultationen anstieg.",
+      "aboutClient": "KonsultaMD ist ein führender Telehealth-Dienst auf den Philippinen, der rund um die Uhr Zugang zu lizenzierten Ärzten per Telefon und über digitale Plattformen bietet. Ziel ist es, die Gesundheitsversorgung zugänglicher zu machen, insbesondere für unterversorgte und abgelegene Gemeinden. Während der COVID-19-Pandemie verzeichnete KonsultaMD ein schnelles Wachstum, als die Nachfrage nach medizinischen Fernkonsultationen anstieg.",
+      "problem": "Auf dem Höhepunkt der Pandemie waren die Gesundheitssysteme überlastet, und Patienten hatten aufgrund von Lockdowns und Sicherheitsbedenken nur eingeschränkten Zugang zu persönlichen Konsultationen. KonsultaMD musste seine Plattform daher schnell skalieren.",
+      "solution": "Als Backend-Entwickler trug ich zum Aufbau einer skalierbaren und resilienten Telekonsultationsplattform bei, um die Nachfrage nach virtuellen Gesundheitsdiensten zu decken.",
       "keyContributions": [
-        "Entworfene und implementierte APIs zur Zentralisierung und Optimierung der Datenkommunikation;",
-        "Entwickelte und optimierte Back-End-Dienste zur Bewältigung hoher Parallelität und Verkehrsspitzen;",
-        "Integrierte sichere und flexible Zahlungslösungen zur Unterstützung verschiedener Abonnementmodelle;",
-        "Verbesserte Systemleistung und Zuverlässigkeit für Echtzeit-Beratungsabläufe; und,",
-        "Zusammenarbeit mit Front-End-Teams, um eine effiziente API-Nutzung und einen effizienten Datenfluss sicherzustellen."
+        "Entwarf und implementierte APIs zur Zentralisierung und Optimierung der Datenkommunikation;",
+        "Entwickelte und optimierte Backend-Dienste für hohe Parallelität und Verkehrsspitzen;",
+        "Integrierte sichere und flexible Zahlungslösungen für verschiedene Abonnementmodelle;",
+        "Verbesserte die Systemleistung und Zuverlässigkeit für Echtzeit-Konsultationsabläufe; und,",
+        "Arbeitete mit Frontend-Teams zusammen, um eine effiziente API-Nutzung und einen sauberen Datenfluss sicherzustellen."
       ],
       "impact": [
-        "Ermöglichte einen groß angelegten Zugang zu Ferngesundheitsdiensten während der Pandemie;",
-        "Unterstützte flexible Monetarisierungsstrategien und erhöhte Benutzerakzeptanz; und,",
-        "Hat zum schnellen Wachstum von KonsultaMD in einer kritischen Zeit beigetragen."
+        "Ermöglichte während der Pandemie einen großflächigen Zugang zu medizinischen Ferndiensten;",
+        "Unterstützte flexible Monetarisierungsstrategien und eine höhere Nutzerakzeptanz; und,",
+        "Trug in einer kritischen Phase zum schnellen Wachstum von KonsultaMD bei."
       ]
     },
     "shoreSuite": {
-      "name": "Shore Suite - Hospitality-Management-System",
-      "description": "Shore Suite ist ein umfassendes Hospitality-Management-System, das darauf ausgelegt ist, den Betrieb von Hotels, Resorts und anderen Unterkunftsanbietern zu rationalisieren.",
-      "aboutClient": "Shore Suite ist ein umfassendes Hospitality-Management-System, das darauf ausgelegt ist, den Betrieb von Hotels, Resorts und anderen Unterkunftsanbietern zu rationalisieren.",
-      "problem": "Hotels kämpften mit verstreuten Systemen für Zimmerverwaltung, Gästeservice, Abrechnung und Personalkoordination, was zu betrieblichen Ineffizienzen und schlechten Gästeerlebnissen führte.",
-      "solution": "Als Full-Stack-Entwickler trug ich zum Aufbau eines integrierten Systems bei, das verschiedene Hospitality-Management-Funktionen vereint.",
+      "name": "Shore Suite - Hospitality Management System",
+      "description": "Shore Suite ist eine Hotelmanagement-Plattform, die Hospitality-Abläufe wie Zimmerbuchungen, Kundenverwaltung und tägliche administrative Prozesse vereinfachen soll. Das System unterstützt Hotels dabei, ihre betriebliche Effizienz zu verbessern und durch digitale Lösungen erstklassige Gästeerlebnisse zu bieten.",
+      "aboutClient": "Shore Suite ist eine Hotelmanagement-Plattform, die Hospitality-Abläufe wie Zimmerbuchungen, Kundenverwaltung und tägliche administrative Prozesse vereinfachen soll. Das System unterstützt Hotels dabei, ihre betriebliche Effizienz zu verbessern und durch digitale Lösungen erstklassige Gästeerlebnisse zu bieten.",
+      "problem": "Traditionelle Hotelmanagement-Prozesse basierten häufig auf fragmentierten Systemen oder manuellen Workflows, was zu Umständlichkeiten bei Zimmerreservierungen, der Verwaltung von Kundendaten und der operativen Koordination führte. Dadurch wurden Buchungsprozesse langsamer, das Risiko menschlicher Fehler höher und die Skalierung des Betriebs erschwert.",
+      "solution": "Als Junior-Backend-Entwickler spielte ich eine wichtige Rolle beim Aufbau der Kern-APIs, die das Hotelmanagementsystem antreiben. Das bildete meine Grundlage im Backend-Engineering und half mir, praktische Erfahrung mit modernen Technologien und Architekturmustern zu sammeln.",
       "keyContributions": [
-        "Entwicklung robuster APIs zur Unterstützung der Raumbuchung, Kundenverwaltung und betrieblichen Arbeitsabläufe;",
-        "Beitrag zum Aufbau einer MicroServices-Architektur zur Verbesserung der Systemmodularität und -skalierbarkeit; und,",
+        "Entwickelte robuste APIs für Zimmerbuchung, Kundenverwaltung und operative Workflows;",
+        "Trug zu einer Microservices-Architektur bei, um Modularität und Skalierbarkeit des Systems zu verbessern; und,",
         "Implementierte Unit- und Integrationstests, um die Systemzuverlässigkeit sicherzustellen und die Codequalität aufrechtzuerhalten"
       ],
       "impact": [
-        "Verbesserte Effizienz der Hotelbuchungs- und Verwaltungsvorgänge durch zuverlässige API-Dienste;",
-        "Aktivierte skalierbare Systemarchitektur, die wachsenden Geschäftsanforderungen gerecht wird;",
-        "Reduzierte Systemfehler und erhöhtes Vertrauen in Bereitstellungen durch Testpraktiken; und,",
-        "Aufbau einer starken Grundlage in der Backend-Entwicklung, insbesondere in der funktionalen Programmierung."
+        "Verbesserte die Effizienz von Hotelbuchungs- und Verwaltungsabläufen durch zuverlässige API-Services;",
+        "Ermöglichte eine skalierbare Systemarchitektur, die wachsende Geschäftsanforderungen bewältigen kann;",
+        "Reduzierte Systemfehler und erhöhte das Vertrauen in Deployments durch Testpraktiken; und,",
+        "Baute eine starke Grundlage in der Backend-Entwicklung auf, insbesondere in der funktionalen Programmierung."
       ]
     }
   },

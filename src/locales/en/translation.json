@@ -586,79 +586,69 @@
         "Collaborated with back-end APIs to ensure seamless data handling."
       ],
       "impact": [
-        "Streamlined the recruitment workflow for HR staff;",
-        "Improved applicant experience with a user-friendly online portal;",
-        "Reduced document handling errors and processing delays;",
-        "Enabled better documentation and record management; and,",
-        "Enhanced overall recruitment efficiency."
+        "Reduced reliance on manual document handling;",
+        "Improved efficiency in processing applications;",
+        "Provided a smoother and more accessible experience for applicants; and,",
+        "Enabled recruitment staff to manage submissions in a centralized system."
       ]
     },
     "jollibeeKidsParty": {
-      "name": "Jollibee Kids Party Portal",
-      "description": "Jollibee is the Philippines' largest quick-service restaurant chain, known for its iconic menu and family-friendly services. As part of expanding its offerings, Jollibee offers specialized Kids Party services for celebrations.",
-      "aboutClient": "Jollibee is the Philippines' largest quick-service restaurant chain, known for its iconic menu and family-friendly services. As part of expanding its offerings, Jollibee offers specialized Kids Party services for celebrations.",
-      "problem": "Managing Kids Party bookings and event coordination was done through separate systems and manual processes, leading to inefficiencies, miscommunication, and a poor user experience for customers trying to book parties.",
-      "solution": "As a Full Stack Developer, I helped develop a dedicated portal where customers could browse party packages, check availability, and manage their bookings seamlessly.",
+      "name": "Jollibee Kids Party",
+      "description": "Jollibee is the largest fast-food chain in the Philippines and a globally recognized brand known for its family-oriented dining experience. It is primarily recognized for its in-store Kids Party service which allows families to celebrate birthdays and special occasions. As customers' expectations shift toward digital convenience, Jollibee continues to invest in modernizing its customer-facing platforms.",
+      "aboutClient": "Jollibee is the largest fast-food chain in the Philippines and a globally recognized brand known for its family-oriented dining experience. It is primarily recognized for its in-store Kids Party service which allows families to celebrate birthdays and special occasions. As customers' expectations shift toward digital convenience, Jollibee continues to invest in modernizing its customer-facing platforms.",
+      "problem": "The kids party booking process lacked a fully optimized digital experience, with limitations in customization, booking workflows, and content management. This resulted in friction for users trying to plan events and inefficiencies for internal teams managing bookings and configurations.",
+      "solution": "As a Full Stack Developer, I played a key role by developing and enhancing both new and existing features across the storefront, CMS, and backend systems.",
       "keyContributions": [
-        "Designed and developed the front-end portal for party browsing and bookings;",
-        "Built backend APIs for managing party packages, availability, and orders;",
-        "Integrated payment processing for secure transactions;",
-        "Implemented automated confirmation emails and notifications;",
-        "Created an admin dashboard for staff to manage bookings; and,",
-        "Optimized user experience for mobile and desktop platforms."
+        "Built and enhanced party customization features (themes, packages, add-ons);",
+        "Improved booking workflows to make scheduling and reservations more intuitive;",
+        "Developed and maintained back-end APIs to support booking logic and data flow;",
+        "Optimized CMS capabilities for managing party content and configurations;",
+        "Refined system performance for faster load times and smoother user interactions; and,",
+        "Collaborated across teams to ensure alignment between front-end, back-end, and business requirements."
       ],
       "impact": [
-        "Increased online party bookings significantly;",
-        "Reduced manual coordination workload for Jollibee staff;",
-        "Improved customer satisfaction with easy booking and tracking;",
-        "Centralized order and event management; and,",
-        "Enabled better data insights into party service performance."
+        "Streamlined the end-to-end party booking experience for customers;",
+        "Improved flexibility in customizing party packages;",
+        "Reduced friction in the booking process, increasing usability and completion rates;",
+        "Enabled internal teams to manage party offerings more efficiently via CMS; and,",
+        "Enhanced overall system performance and reliability across platforms."
       ]
     },
     "konsultaMd": {
-      "name": "KonsultaMD - Telemedicine Platform",
-      "description": "KonsultaMD is a telemedicine platform that connects patients with healthcare professionals for remote consultations, aiming to make healthcare more accessible and convenient.",
-      "aboutClient": "KonsultaMD is a telemedicine platform that connects patients with healthcare professionals for remote consultations, aiming to make healthcare more accessible and convenient.",
-      "problem": "The existing telemedicine interface was cluttered and difficult to navigate, making it hard for patients to schedule consultations, find specialists, and manage their medical records efficiently.",
-      "solution": "As a Full Stack Developer, I worked on redesigning and modernizing the platform to improve user experience and functionality.",
+      "name": "KonsultaMD",
+      "description": "KonsultaMD is a leading Telehealth service in the Philippines that provides 24/7 access to licensed doctors through phone and digital platforms. It aims to make healthcare more accessible, especially for underserved and remote communities. During the COVID-19 pandemic, KonsultaMD experienced rapid growth as demand for remote medical consultations arose.",
+      "aboutClient": "KonsultaMD is a leading Telehealth service in the Philippines that provides 24/7 access to licensed doctors through phone and digital platforms. It aims to make healthcare more accessible, especially for underserved and remote communities. During the COVID-19 pandemic, KonsultaMD experienced rapid growth as demand for remote medical consultations arose.",
+      "problem": "At the peak of the pandemic, healthcare systems were overwhelmed, and patients faced limited access to physical consultations due to lockdowns and safety concerns. KonsultaMD needed to rapidly scale its platform.",
+      "solution": "As a Back-End Developer, I contributed to building a scalable and resilient Teleconsultation platform to suffice the demand for virtual healthcare services.",
       "keyContributions": [
-        "Redesigned the user interface for improved usability;",
-        "Implemented a smooth consultation scheduling system;",
-        "Built doctor directory and search functionality;",
-        "Enhanced patient profile and medical records management;",
-        "Integrated secure messaging between patients and doctors; and,",
-        "Optimized platform performance for faster load times."
+        "Designed and implemented APIs to centralize and optimize data communication;",
+        "Built and optimized back-end services to handle high concurrency and traffic spikes;",
+        "Integrated secure and flexible payment solutions to support various subscription models;",
+        "Improved system performance and reliability for real-time consultation workflows; and,",
+        "Collaborated with front-end teams to ensure efficient API consumption and data flow."
       ],
       "impact": [
-        "Increased user engagement and consultation bookings;",
-        "Improved patient satisfaction with the platform;",
-        "Streamlined doctor-patient interactions;",
-        "Reduced support inquiries due to better UX;",
-        "Enhanced accessibility to healthcare services; and,",
-        "Enabled better tracking of patient health records."
+        "Enabled large-scale access to remote healthcare services during the pandemic;",
+        "Supported flexible monetization strategies and increased user adoption; and,",
+        "Contributed to the rapid growth of KonsultaMD during a critical period."
       ]
     },
     "shoreSuite": {
       "name": "Shore Suite - Hospitality Management System",
-      "description": "Shore Suite is a comprehensive hospitality management system designed to streamline operations for hotels, resorts, and other accommodation providers.",
-      "aboutClient": "Shore Suite is a comprehensive hospitality management system designed to streamline operations for hotels, resorts, and other accommodation providers.",
-      "problem": "Hotels struggled with scattered systems for room management, guest services, billing, and staff coordination, leading to operational inefficiencies and poor guest experiences.",
-      "solution": "As a Full Stack Developer, I contributed to building an integrated system that unified various hospitality management functions.",
+      "description": "Shore Suite is a hotel management platform designed to streamline hospitality operations which include room bookings, customer management, and day-to-day administrative processes. The system supports hotels in improving operational efficiency and delivering topnotch guest experiences through digital solutions.",
+      "aboutClient": "Shore Suite is a hotel management platform designed to streamline hospitality operations which include room bookings, customer management, and day-to-day administrative processes. The system supports hotels in improving operational efficiency and delivering topnotch guest experiences through digital solutions.",
+      "problem": "Traditional hotel management processes often relied on fragmented systems or manual workflows, leading to inconveniences in room reservations, customer data handling, and operational coordination. This resulted in slower booking processes, increased risk of human error, and difficulty scaling operations.",
+      "solution": "As a Junior Back-End Developer, I played a vital role to building the core APIs that powered the hotel management system. This served as my foundation in back-end engineering that helped me gain hands-on experience in modern technologies and architectural patterns.",
       "keyContributions": [
-        "Developed front-end interfaces for room and guest management;",
-        "Built backend APIs for reservation, billing, and operations;",
-        "Implemented real-time room status tracking;",
-        "Created staff management and scheduling features;",
-        "Integrated guest communication and feedback systems; and,",
-        "Designed admin dashboards for operational oversight."
+        "Developed robust APIs to support room booking, customer management, and operational workflows;",
+        "Contributed to a MicroServices Architecture setup to improve system modularity and scalability; and,",
+        "Implemented unit and integration tests to ensure system reliability and maintain code quality"
       ],
       "impact": [
-        "Centralized hospitality operations management;",
-        "Improved guest satisfaction through streamlined services;",
-        "Reduced operational inefficiencies and manual processes;",
-        "Enhanced staff coordination and workflow;",
-        "Enabled better revenue management and reporting; and,",
-        "Provided actionable insights into hotel operations."
+        "Improved efficiency of hotel booking and management operations through reliable API services;",
+        "Enabled scalable system architecture capable of handling growing business needs;",
+        "Reduced system errors and increased confidence in deployments through testing practices; and,",
+        "Built a strong foundation in backend development, particularly in functional programming."
       ]
     }
   }
