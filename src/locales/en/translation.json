@@ -1,0 +1,662 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "articles": "Articles",
+    "about": "About",
+    "darwinManalo": "Darwin Manalo"
+  },
+  "social": {
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  },
+  "buttons": {
+    "backToHome": "Back to Home",
+    "backToProjects": "Back to Projects",
+    "backToArticles": "Back to Articles",
+    "continueReading": "Continue reading",
+    "visitProject": "Visit Project",
+    "backToTop": "Back to top"
+  },
+  "pages": {
+    "home": {
+      "heroText": "Based in the Pearl of the Orient Seas (Manila, Philippines). I'm a Full-Stack developer building modern web experiences. Got an idea and just want to connect? Let's collaborate."
+    },
+    "projects": {
+      "title": "Projects & Case Studies"
+    },
+    "articles": {
+      "title": "Articles, Tutorials & Resources",
+      "tableOfContents": "Contents"
+    },
+    "about": {
+      "title": "About Me",
+      "bio1": "I graduated with a degree on Bachelor of Science in Information Technology at Adamson University. I originally started my career as a Front-end Developer at Shore Suite, but things took an unexpected turn when someone in the team resigned—so I stepped in, picked up back-end work, and that's pretty much how I became a Full-Stack developer.",
+      "bio2": "Over the past 8+ years, every challenge has been a chance to learn something new (sometimes the hard way, but it works!). Through this, I've consistently showcased my versatility by building and maintaining scalable web applications from front-end to back-end. I've also cultivated a strong problem-solving mindset and the ability to stay effective even when things get a bit messy.",
+      "bio3": "I'm currently collaborating on external projects with NCS Philippines, where I thrive to solve real-world problems and adapt to evolving requirements.",
+      "bio4": "Outside of work, I make sure to spend quality time with my loved ones. I also enjoy playing mobile games, watching sports (especially football!), and occasionally playing pickleball and badminton (then eating out afterwards!) to stay active."
+    }
+  },
+  "projectDetail": {
+    "aboutClient": "About the Client",
+    "problem": "Problem",
+    "solution": "Solution",
+    "keyContributions": "Key Contributions",
+    "impact": "Impact",
+    "notFound": "Project not found"
+  },
+  "articleDetail": {
+    "notFound": "Article not found"
+  },
+  "articleContent": {
+    "database-connection-pool": {
+      "title": "What is Database Connection Pool?",
+      "preview": "A database connection pool is a cache of database connections kept ready for your app. Instead of creating new connections per request, borrow from the pool.",
+      "toc": {
+        "intro2": "Introduction",
+        "why-slow": "Why Creating New Connections is Slow?",
+        "how-pool-works": "How a Connection Pool Works",
+        "lifecycle": "The Lifecycle of a Pooled Connection",
+        "common-settings": "Common Pool Settings",
+        "challenges": "Challenges and Solutions",
+        "traffic-spikes": "Traffic Spikes",
+        "oversized": "Oversized Pools",
+        "key-takeaways": "Key Takeaways",
+        "conclusion-pool": "Conclusion"
+      },
+      "headings": {
+        "intro2": "Introduction",
+        "why-slow": "Why Creating New Connections is Slow?",
+        "how-pool-works": "How a Connection Pool Works?",
+        "lifecycle": "The Lifecycle of a Pooled Connection",
+        "common-settings": "Common Pool Settings",
+        "challenges": "Challenges with Connection Pools & Solutions",
+        "traffic-spikes": "Handling Traffic Spikes with Connection Pools",
+        "oversized": "What Happens if the Pool is Too Large?",
+        "key-takeaways": "Key Takeaways",
+        "conclusion-pool": "Conclusion"
+      },
+      "sections": {
+        "intro2": {
+          "blocks": [
+            "In a nutshell, a database connection pool is a cache of database connections that are kept ready for an application to use. Instead of creating a new connection for every single request and then tearing it down, the application can just borrow an existing one from the pool and return it when done. This makes your application much faster and more efficient.",
+            "Think of making a phone call to your database. Before your application can ask the database for any information (like fetching user profiles), it has to establish a formal communication channel. This \"call\" isn't instant; there's a whole setup process: Network Handshake (your app finds the database and they agree to talk), Authentication (the database verifies your credentials), and Resource Allocation (the database sets aside memory and processing power). Only after all these steps can your app send SQL queries."
+          ]
+        },
+        "why-slow": {
+          "blocks": [
+            "Imagine a popular supermarket with hundreds of customers. Now, imagine that for every single customer, the store has to build a brand-new checkout counter, plug in a new cash register, and train a new cashier -- only to tear it all down after that one customer pays. That's incredibly inefficient, right? That's exactly what an application does without a connection pool.",
+            "For every user action that needs data, the application builds the counter (establishes a network connection), trains the cashier (authenticates), does the transaction (runs the SQL query), and tears it down (closes the connection). This process is computationally expensive and consumes significant time, memory, and CPU resources."
+          ]
+        },
+        "how-pool-works": {
+          "blocks": [
+            "Think of it like a taxi stand at an airport. It's much quicker to grab a waiting taxi than to call a brand new one from across town for every single person who needs a ride.",
+            "At the start, the pool manager creates a set number of connections (taxis) and keeps them running and waiting at the stand. When your application needs to talk to the database, it doesn't call the database directly. It just walks over to the taxi stand (the pool) and asks for a ride. The pool manager instantly gives the application a ready-to-go, authenticated connection. The application uses the connection, and when it's done, it simply returns it to the pool, making it available for the next request.",
+            "This way, the costly work of creating connections is only done once, at the beginning. After that, it's just a super-fast process of borrowing and returning."
+          ]
+        },
+        "lifecycle": {
+          "blocks": [
+            "Here's what happens when your app needs data:",
+            "1. Ask: Your code says, \"Hey, Connection Pool, I need a connection.\" 2. Borrow: The pool checks its \"stand\" of available connections and hands one over. This is super fast because the connection is already open and authenticated. 3. Use: Your code executes its database query (e.g., SELECT * FROM users;). 4. Return: When your code is finished, it doesn't close the connection. Instead, it releases the connection back to the pool. The pool wipes it clean and puts it back on the stand, ready for the next request.",
+            "The golden rule of connection pooling is: Borrow, Use, Return. This cycle is incredibly fast and efficient."
+          ]
+        },
+        "common-settings": {
+          "blocks": [
+            "When you set up a connection pool, you'll often see three key settings:",
+            "min connections (or initialSize): The number of connections the pool creates upfront. Think of it as the number of taxis waiting at the stand when it first opens.",
+            "max connections (or maxPoolSize): The absolute maximum number of connections the pool is allowed to create. This is a crucial safety valve that prevents your application from overwhelming the database.",
+            "connection timeout: If all connections are busy, this is how long your application will wait for one to become free before giving up and showing an error.",
+            "Determining the Right Values",
+            "The most important rule is to think from the database's perspective, not the application's. The goal is to give the database a manageable amount of work. A widely recommended formula is: max_connections = (number_of_CPU_cores * 2) + 1",
+            "Example: For a 4-core database, set max_connections to 9. This allows up to 9 queries to run at once. While some are waiting for the disk, others can be actively processed by the CPU cores.",
+            "For min_connections, a great starting point is to set min_connections = max_connections for consistently busy applications (creating a \"fixed-size\" pool), or lower for infrequently used applications to conserve resources.",
+            "For connection_timeout, use 2-5 seconds for user-facing applications (fail fast), and 30-60 seconds for background batch jobs."
+          ]
+        },
+        "challenges": {
+          "blocks": [
+            "Connection Leaks",
+            "A connection leak happens when your application borrows a connection but fails to return it. Over time, all connections can \"leak,\" leaving the pool empty and causing your application to freeze.",
+            "Solution: Place the code that returns the connection into a finally block. A finally block is guaranteed to execute, even if an error happens.",
+            "Stale or Dead Connections",
+            "A connection is stale when it was successfully established but is no longer valid. This can happen if the database server was restarted, a firewall terminated the idle connection, or there was a network glitch.",
+            "Solution: Most connection pool libraries have built-in health check mechanisms. You can configure the pool to run a simple query (like SELECT 1) on a connection before it's given to your application. If the query fails, the pool discards the dead connection and gives you a new one.",
+            "Pool Exhaustion",
+            "Pool exhaustion occurs when your application's demand for connections exceeds the pool's max connections setting. Every new request has to wait until a connection is returned, which can slow your application or cause requests to time out.",
+            "Solutions: Optimize your queries to make them faster, properly tune pool size based on your database's CPU capacity, and set a sensible connection_timeout so the application fails fast instead of hanging indefinitely."
+          ]
+        },
+        "traffic-spikes": {
+          "blocks": [
+            "Let's walk through a scenario: Your database has 4 CPU cores. Your connection pool is configured with max_connections: 10, min_connections: 10, connection_timeout: 5 seconds. Your query takes about 20 milliseconds to run.",
+            "Before users arrive, the connection pool creates 10 connections. These are open, authenticated, and sitting idle in the pool.",
+            "At 5:00 PM, 100 users simultaneously click a link that triggers your query. Milliseconds 0-5: The first 10 requests instantly grab the 10 available connections and send their queries to the database. The pool's available count is now 0. All 10 are active.",
+            "Milliseconds 5-10: The other 90 requests now arrive and ask for a connection. The pool manager tells them, \"You must wait in a queue. I will notify you the instant a connection is returned.\" Crucially, the database is protected. It is only dealing with 10 queries at once.",
+            "Milliseconds 20-25: The database finishes the first batch (20ms later). As each request returns its connection, the pool immediately gives it to the next request in the queue. This \"return-and-borrow\" cycle happens in a flash. Since there are 10 batches of 10 requests, the total time is roughly 200 milliseconds. The first 10 users get 20ms response times, the last user gets 200ms, but all 100 are served in under a quarter second without the system becoming unstable."
+          ]
+        },
+        "oversized": {
+          "blocks": [
+            "Setting your connection pool's min and max to 100 on a 4-core database server will lead to significantly worse performance than a smaller, correctly sized pool.",
+            "Imagine a manager with 4 hands (the 4 CPU cores) who has 100 employees all demanding an immediate answer. The manager will frantically switch between them, spending one second on Employee A, then putting it down; spending one second on Employee B, and so on. The manager spends most energy juggling and switching tasks, not completing any of them. Every employee has to wait much longer than if they had just formed an orderly queue.",
+            "This is exactly what happens to your database: CPU Thrashing (the core problem), Resource Contention for disk I/O and locks, Immediate Memory Bloat, and ultimately, Increased Latency and System Instability.",
+            "In summary, the connection pool's most important job is to act as a gatekeeper that throttles requests to a level the database can handle efficiently."
+          ]
+        },
+        "key-takeaways": {
+          "blocks": [
+            "Always use a connection pool -- opening and closing connections per request is too expensive.",
+            "Tune from the database's perspective -- pool size should reflect CPU cores, not just app demand.",
+            "Avoid leaks -- always return connections, even if errors occur.",
+            "Validate connections -- use health checks to remove stale or dead connections.",
+            "Set sensible timeouts -- fail fast for user-facing apps, allow longer waits for background jobs.",
+            "Don't oversize the pool -- too many connections cause CPU thrashing and degrade performance.",
+            "Monitor and adjust -- start with best-practice defaults, then refine based on real-world metrics."
+          ]
+        },
+        "conclusion-pool": {
+          "blocks": [
+            "Database connection pools are one of the most effective ways to balance performance, scalability, and stability in modern applications. By reusing connections instead of constantly creating and destroying them, pools dramatically reduce latency, improve resource efficiency, and protect your database from traffic spikes. For developers building data-intensive applications, mastering connection pooling is not optional -- it's essential."
+          ]
+        }
+      }
+    },
+    "tiny-llm-potato-computer": {
+      "title": "How to Run a Tiny LLM in a Potato Computer",
+      "preview": "Running large language models locally can feel impossible on an 8 GB Mac M1. Fortunately, TinyLlama (1.1 B parameters) and llama.cpp Docker make it dead simple.",
+      "toc": {
+        "step-1": "Step 1: Download the Model",
+        "step-2": "Step 2: Pull Docker Image",
+        "step-3": "Step 3: Run the Server",
+        "step-4": "Step 4: Query the Model",
+        "troubleshooting": "Troubleshooting Tips",
+        "conclusion": "Conclusion"
+      },
+      "headings": {
+        "step-1": "Step 1: Download the Quantized Model",
+        "step-2": "Step 2: Pull the Docker Image",
+        "step-3": "Step 3: Run the llama.cpp Server",
+        "step-4": "Step 4: Query the Model",
+        "troubleshooting": "Troubleshooting Tips",
+        "conclusion": "Conclusion"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "Running large language models locally can feel like trying to power a cathedral with a single AA battery -- especially on an 8 GB Mac M1. Fortunately, TinyLlama (1.1 B parameters, 4-bit quantized) and the llama.cpp Docker \"server\" make it dead simple.",
+            "In this guide, you'll learn how to download the TinyLlama Q4_0 model, pull the ARM64 llama.cpp server image, mount & run TinyLlama inside Docker, and send your first prompt."
+          ]
+        },
+        "step-1": {
+          "blocks": [
+            "First, grab the 0.6 GB quantized weights from Hugging Face and save them into ~/models:",
+            "If you don't have huggingface-cli installed:",
+            "Once installed, verify with:"
+          ]
+        },
+        "step-2": {
+          "blocks": [
+            "Fetch the ARM64-native llama.cpp server -- no emulation required:"
+          ]
+        },
+        "step-3": {
+          "blocks": [
+            "Assuming you've already placed the quantized TinyLlama model at ~/models/tinyllama-1.1b-chat-v1.0.Q4_0.gguf, launch the container in the foreground:",
+            "--rm -it keeps it clean and interactive. --platform=linux/arm64/v8 forces the native build on M1. -n 512 caps responses to 512 tokens.",
+            "You should see:"
+          ]
+        },
+        "step-4": {
+          "blocks": [
+            "In a second terminal, send an instruction-style prompt to /v1/completions:",
+            "You'll receive a JSON payload with your answer under choices[0].text."
+          ]
+        },
+        "troubleshooting": {
+          "blocks": [
+            "Blank or gibberish responses?",
+            "Wrap your prompt in the ### Instruction:...### Response: template.",
+            "Out-of-memory?",
+            "TinyLlama Q4_0 uses ~0.6 GiB in-container. If you see OOMs on larger models, either bump Docker's memory in Preferences → Resources → Memory or stick to this tiny variant."
+          ]
+        },
+        "conclusion": {
+          "blocks": [
+            "You've just transformed your \"potato computer\" into a local LLM server! With a single Docker command and a quantized TinyLlama model, you're free to experiment with chatbots, integrations in Node.js/Next.js, or offline AI demos -- no cloud GPUs required. Happy hacking!"
+          ]
+        }
+      }
+    },
+    "tdd-pros-and-cons": {
+      "title": "Test First or Regret Later: The Pros and Cons of TDD",
+      "preview": "Let's be honest -- when I first heard about TDD, my reaction was: \"Wait, you want me to write tests before I even write the code? That's like writing a movie review before watching the film.\"",
+      "toc": {
+        "pros": "Pros",
+        "pro-1": "1. Better Functions Through DI",
+        "pro-2": "2. Refactoring Without Fear",
+        "pro-3": "3. Tests as Documentation",
+        "pro-4": "4. Maintainability",
+        "pro-5": "5. Catch Bugs Early",
+        "pro-6": "6. Code Coverage",
+        "cons": "TDD Isn't Perfect",
+        "con-1": "1. Steep Learning Curve",
+        "con-2": "2. Slows You Down at First",
+        "con-3": "3. Hard to Test Everything",
+        "con-4": "4. Test Hell",
+        "con-5": "5. Doesn't Replace QA",
+        "con-6": "6. Overkill for Small Scripts",
+        "con-7": "7. Budget Clients",
+        "final-thoughts": "Final Thoughts"
+      },
+      "headings": {
+        "pros": "Pros",
+        "pro-1": "1. It Forces Your Functions to Be Better -- Like, Actually Better",
+        "pro-2": "2. Refactoring Without Fear",
+        "pro-3": "3. Your Tests Double as Documentation (Seriously)",
+        "pro-4": "4. Maintainability Goes Through the Roof (Hello, Enterprise Projects)",
+        "pro-5": "5. No More \"Oops, That Bug Made It to Production\" Moments",
+        "pro-6": "6. Code Coverage Keeps Everyone Honest",
+        "cons": "But TDD Isn't Perfect",
+        "con-1": "1. TDD Has a Steep Learning Curve for Beginners",
+        "con-2": "2. It Slows You Down at First (And That Can Be Frustrating)",
+        "con-3": "3. Not Everything Is Easy to Test",
+        "con-4": "4. It's Easy to Fall Into \"Test Hell\"",
+        "con-5": "5. It Doesn't Replace Real QA",
+        "con-6": "6. Can Be Overkill for Tiny Scripts or Throwaway Code",
+        "con-7": "7. Clients With Tight Budgets Won't Always Love TDD",
+        "final-thoughts": "Final Thoughts"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "Let's be honest -- when I first heard about Test-Driven Development (TDD), my initial reaction was something like: \"Wait, you want me to write tests... before I even write the code? That's like writing a movie review before watching the film.\" It felt backward, overly rigid, and honestly, like a productivity killer.",
+            "But, as with many things in tech, what started as skepticism eventually turned into something close to obsession.",
+            "These days, TDD has become a core part of my development workflow -- something I reach for not because I have to, but because it genuinely helps me write better, cleaner, more maintainable code. In this post, I want to share my personal (and slightly opinionated) take on why TDD has earned a permanent spot in my toolbox."
+          ]
+        },
+        "pros": {
+          "blocks": [
+            "It's hard to commit to something when you don't know what it's for, why it matters, or if it's even worth your time. That's exactly how I felt about TDD -- until I gave it a real shot. So here are some of the biggest reasons why I keep reaching for TDD every time I build something serious:"
+          ]
+        },
+        "pro-1": {
+          "blocks": [
+            "One of the coolest (and low-key most frustrating at first) things about TDD is that it forces you to write better functions. Cleaner. More independent. Less clingy. If you've heard of Dependency Injection, this is where it starts to make sense.",
+            "Example 1:",
+            "Without Dependency Injection (a tightly coupled mess):",
+            "Looks fine, right? But if you want to test getUserProfile, you now have to deal with a real Database object -- or mock it in weird ways. Yikes.",
+            "With Dependency Injection (TDD-friendly):",
+            "Now, your function is no longer responsible for creating the database -- it just uses it. This makes it super easy to test:",
+            "See? TDD gently pushes (okay, maybe shoves) you toward writing functions that don't rely on global state or hidden dependencies. And once you get used to it, you'll start doing it even when you're not writing tests first.",
+            "Example 2:",
+            "Without Dependency Injection:",
+            "Now you've got a problem: every time you test this function, it might actually send an email (or crash if EmailService isn't mocked right). Not fun.",
+            "With Dependency Injection:",
+            "In your test:",
+            "Now you're not sending real emails -- you're just verifying the logic. Clean and safe."
+          ]
+        },
+        "pro-2": {
+          "blocks": [
+            "You ever try to clean up some messy code and suddenly everything breaks? You move one tiny block, and the whole tower crashes. Refactoring without tests is like operating without a safety harness -- you're just hoping for the best.",
+            "Since your tests already cover the expected behavior, you're free to improve variable names, break functions apart, swap implementations, or go full-on refactor ninja -- without the \"what if I broke something?\" anxiety.",
+            "Let's say you have this working but ugly function:",
+            "You decide to clean it up:",
+            "If you've got tests like:",
+            "You can refactor without holding your breath. If the tests pass, you're good. If they fail, they'll tell you exactly what broke.",
+            "Bonus Scenario: When Someone Else Breaks Your Code",
+            "Here's a spicy one -- ever had a teammate \"clean up\" your utility function and accidentally break three other things that depended on it? Yeah, me too.",
+            "Let's say you wrote a humble little function:",
+            "You've got tests:",
+            "All good. But then someone comes in and decides to \"improve\" it:",
+            "Seems harmless, right? But now toLowerCase() is gone, and other parts of the app relying on lowercase usernames start to break. Because of your test, the break is caught immediately:",
+            "Boom. Now your teammate knows exactly what they broke, and where. No drama. No guessing. No 3 a.m. debugging. This is the magic of TDD: it protects your code from future \"well-meaning\" edits, whether they're by you or someone else."
+          ]
+        },
+        "pro-3": {
+          "blocks": [
+            "One underrated superpower of TDD? Your tests become living documentation. Ever joined a project where you had no idea how a utility function works? With a solid test suite, you can just open the test file and boom -- you get a step-by-step guide on how the function is supposed to behave.",
+            "Instead of guessing what this does:",
+            "You can just look at the test:",
+            "That's basically a how-to. It tells you what the function expects, what it returns, and under what conditions. This is huge for onboarding, debugging, and writing new features that depend on existing code. With good tests, your functions tell their own story."
+          ]
+        },
+        "pro-4": {
+          "blocks": [
+            "If you're building something small, you might get away with spaghetti code and no tests. But in enterprise projects -- where the codebase grows faster than your caffeine tolerance -- maintainability becomes everything.",
+            "TDD naturally leads to code that's easier to maintain, refactor, and extend. Why? Because everything is written with testability in mind. Functions are decoupled. Side effects are controlled. You're thinking ahead instead of duct-taping fixes.",
+            "When that giant enterprise app has 300+ contributors, changing one line of logic doesn't have to feel like defusing a bomb. The tests will tell you immediately if something downstream breaks. TDD turns your codebase from a fragile castle of cards into something that can actually survive growth, turnover, and scale."
+          ]
+        },
+        "pro-5": {
+          "blocks": [
+            "Let's be real: developers forget things. Tests don't.",
+            "Even if someone on the team skips running tests locally, having tests integrated into your CI/CD pipeline acts like an automated gatekeeper. Any commit or pull request that breaks a test? Boom -- pipeline fails. The code doesn't get deployed. Simple as that.",
+            "This is where TDD really shines. Because your tests are written first, they're always ready to catch regressions -- not as an afterthought. So even if your teammate forgets to run npm test, your CI setup won't."
+          ]
+        },
+        "pro-6": {
+          "blocks": [
+            "Just because someone says they wrote tests doesn't always mean they tested everything that matters. That's where code coverage steps in.",
+            "By setting up a minimum test coverage threshold (say, 80% or higher) in your CI/CD pipeline, you're not just checking if tests exist -- you're checking if they actually run through your code. You can configure Jest to fail builds if coverage drops below a threshold:",
+            "This ensures that your TDD discipline doesn't go to waste. Code coverage isn't about hitting 100% for bragging rights -- it's about visibility, accountability, and keeping your codebase clean."
+          ]
+        },
+        "cons": {
+          "blocks": [
+            "I know I've been hyping TDD like it's the best thing since dark mode -- but let's be honest, it's not all smooth sailing. Like any good tool or practice, it comes with trade-offs. These are the moments where TDD can feel like a headache instead of a hero."
+          ]
+        },
+        "con-1": {
+          "blocks": [
+            "If you're just starting out in programming, TDD can feel like learning to drive with a manual transmission -- while also solving a Rubik's cube. You're trying to wrap your head around functions, logic, syntax -- and now you also have to write tests for code you haven't even written yet? It's a lot.",
+            "For beginners, TDD might feel like a roadblock instead of a learning aid. But here's the twist: once you push through the discomfort, TDD can actually accelerate learning. It teaches you to think about code behavior, write modular functions, and debug with more clarity. It's just not exactly beginner-friendly right out of the gate."
+          ]
+        },
+        "con-2": {
+          "blocks": [
+            "When you're new to TDD, it feels like you're coding in slow motion. Write a test. Watch it fail. Write just enough code. Run it again. Refactor. Repeat. Meanwhile, your friend just finished the whole feature in half the time (but also introduced 3 bugs).",
+            "TDD is an investment. It slows you down now to save you time (and stress) later. But it does require patience."
+          ]
+        },
+        "con-3": {
+          "blocks": [
+            "Sometimes you're working with things that are just awkward to test. Think file uploads, external APIs, real-time WebSockets, or stuff that touches hardware. You can mock, stub, and isolate all you want, but some scenarios still feel clunky.",
+            "TDD doesn't always play nicely with messy edge cases or complex dependencies unless you put in extra effort to architect them for testability."
+          ]
+        },
+        "con-4": {
+          "blocks": [
+            "Bad tests are worse than no tests. If your tests are fragile, overly specific, or tightly coupled to implementation details, they break every time you refactor -- even if the actual behavior didn't change.",
+            "This leads to devs muttering \"why are we even doing this?\" and turning off the test suite. Moral of the story: write meaningful tests, not just test coverage filler."
+          ]
+        },
+        "con-5": {
+          "blocks": [
+            "TDD catches logic bugs and regressions, but it won't save you from UI/UX fails, accessibility issues, or confusing user flows. It's not a silver bullet. You still need real users (or QA folks) clicking around and breaking things in creative ways."
+          ]
+        },
+        "con-6": {
+          "blocks": [
+            "Not everything needs full-blown TDD. A one-off script or small personal tool? Writing tests for every line might be more work than it's worth. Use your judgment -- it's okay to break the rules when it makes sense."
+          ]
+        },
+        "con-7": {
+          "blocks": [
+            "When you're working with a client who's on a shoestring budget and wants the app done yesterday, explaining the value of writing tests first can feel like asking them to pay extra for invisible features.",
+            "They don't always see the long-term payoff. They want buttons that work, screens that load, and a launch ASAP. Sometimes it makes sense to skip TDD (or scale it down), especially for MVPs or prototypes. Just be honest with yourself: skipping tests now means you're betting on fixing things later. And later always costs more."
+          ]
+        },
+        "final-thoughts": {
+          "blocks": [
+            "Test-Driven Development isn't magic. It won't write your code for you or stop every bug in its tracks. But it does change the way you think, structure, and maintain your code -- for the better.",
+            "Yes, it can be frustrating. Yes, it takes time to learn. And yes, sometimes you just want to hack something together and skip the tests. I get it. But in my experience, the benefits of TDD almost always outweigh the friction.",
+            "It's not about writing perfect tests -- it's about building code that's easier to trust, change, and grow. Whether you're working solo, in a fast-moving team, or scaling a giant enterprise app, TDD can be the quiet hero that keeps your codebase from imploding. So if you're still on the fence, give it a real shot. Start small. Break things. Test things. You might just end up liking it."
+          ]
+        }
+      }
+    },
+    "elixir-features-not-in-js": {
+      "title": "10 Unique Elixir Language Features Not Present in JavaScript",
+      "preview": "JavaScript is versatile and widely used, but when it comes to functional programming, concurrency, and fault tolerance, Elixir introduces features that JavaScript simply doesn't natively offer.",
+      "toc": {
+        "pipe-operator": "1. Pipe Operator (|>)",
+        "pattern-matching": "2. Pattern Matching",
+        "immutable-data": "3. Immutable Data by Default",
+        "function-clauses": "4. Function Clauses",
+        "guards": "5. Guards in Function Clauses",
+        "with-expression": "6. with Expression",
+        "tco": "7. Tail Call Optimization",
+        "actor-model": "8. Processes & Actor Model",
+        "doc-generation": "9. @doc & Doc Generation",
+        "macros": "10. Declarative Macros",
+        "conclusion": "Conclusion"
+      },
+      "headings": {
+        "pipe-operator": "1. Pipe Operator (|>)",
+        "pattern-matching": "2. Pattern Matching",
+        "immutable-data": "3. Immutable Data by Default",
+        "function-clauses": "4. Function Clauses / Pattern Matching in Function Heads",
+        "guards": "5. Guards in Function Clauses",
+        "with-expression": "6. with Expression for Composable Error Handling",
+        "tco": "7. Tail Call Optimization (TCO)",
+        "actor-model": "8. Processes and the Actor Model",
+        "doc-generation": "9. @doc and Built-in Doc Generation",
+        "macros": "10. First-Class Support for Declarative Macros",
+        "conclusion": "Conclusion"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "JavaScript is a versatile and widely-used language, especially in web development. However, when it comes to functional programming, concurrency, and fault tolerance, Elixir introduces several advanced features that JavaScript simply doesn't natively offer. Built on the Erlang VM, Elixir is designed for scalability, maintainability, and high availability -- making it a compelling choice for developers seeking robust and elegant solutions.",
+            "In this article, we'll explore 10 powerful language features in Elixir that are either missing or poorly supported in JavaScript, along with their advantages and potential workarounds in the JavaScript ecosystem."
+          ]
+        },
+        "pipe-operator": {
+          "blocks": [
+            "The pipe operator allows chaining expressions where the output of one function becomes the input of the next. This creates a clear, readable flow of data transformations without deeply nested function calls.",
+            "Why it's helpful",
+            "Improves readability and composability in functional pipelines, especially when dealing with multiple transformations.",
+            "JavaScript Alternative",
+            "No native pipe operator as of ES2024, but a proposal exists. Can be simulated using method chaining or libraries like Ramda."
+          ]
+        },
+        "pattern-matching": {
+          "blocks": [
+            "Pattern matching is used not only to extract values from data structures but also to control the flow of logic by matching against specific data shapes.",
+            "Why it's helpful",
+            "Eliminates the need for verbose conditionals. Makes the code declarative and self-documenting, especially for handling complex data.",
+            "JavaScript Alternative",
+            "Limited to destructuring -- no true match failure or function-head matching."
+          ]
+        },
+        "immutable-data": {
+          "blocks": [
+            "All data in Elixir is immutable. You don't modify data -- you create new data based on existing structures.",
+            "Why it's helpful",
+            "Leads to safer code, avoids side effects, and makes programs easier to reason about and debug, especially in concurrent environments.",
+            "You never modify the original user; instead, you return a new copy with the changes. All data structures in Elixir are persistent (structural sharing under the hood), making immutability efficient.",
+            "In JavaScript",
+            "JavaScript objects and arrays are mutable by default:",
+            "We can enforce immutability using Object.freeze() or libraries.",
+            "Disadvantage: Object.freeze() is shallow -- it does not freeze nested objects.",
+            "Better Alternative: Deep Freeze",
+            "You can recursively freeze objects:",
+            "Or use pure functions to return new objects instead of mutating:"
+          ]
+        },
+        "function-clauses": {
+          "blocks": [
+            "Elixir",
+            "Advantage: cleaner function logic via declarations.",
+            "JavaScript"
+          ]
+        },
+        "guards": {
+          "blocks": [
+            "You can define multiple versions of the same function, each tailored to specific patterns of input data.",
+            "Why it's helpful",
+            "Keeps logic organized and expressive, especially for handling edge cases or branching logic without long if/else blocks.",
+            "JavaScript Alternative: Early Returns",
+            "JavaScript Alternative: Functional Predicates",
+            "JavaScript Alternative: ts-pattern"
+          ]
+        },
+        "with-expression": {
+          "blocks": [
+            "In Elixir, the with expression is a powerful construct for composable error handling and pattern matching across multiple steps. It allows you to write linear-looking code while gracefully short-circuiting on failure -- very useful for chaining operations that may return {:ok, value} or {:error, reason} tuples.",
+            "Each step returns {:ok, value}. If any step returns {:error, reason}, the with block short-circuits to the else clause. Composable, readable error chains without deep nesting.",
+            "JavaScript Alternative: async/await with early returns",
+            "JavaScript Alternative: Result monads"
+          ]
+        },
+        "tco": {
+          "blocks": [
+            "TCO is an optimization where the compiler or runtime can reuse the current function's stack frame for a recursive call if it's the last action (tail position) in a function.",
+            "It prevents stack overflows in recursive functions and enables recursion as a safe and performant replacement for loops.",
+            "In Elixir (via the BEAM VM), TCO is fully and reliably supported. You can safely write deeply recursive functions without blowing the stack -- as long as the call is in the tail position.",
+            "JavaScript does NOT reliably support TCO despite it being part of the ES6 spec. Most JS engines (e.g., V8 in Chrome, Node.js) do not implement it, so recursive functions can still cause a stack overflow for large inputs.",
+            "Workaround: Manual Loop",
+            "Workaround: Trampolining"
+          ]
+        },
+        "actor-model": {
+          "blocks": [
+            "The Actor Model is a concurrent programming model where actors are independent processes that hold state, communicate only via messages, react to messages using receive blocks (like mailboxes), and can spawn new actors. No shared memory -- actors don't directly modify each other's state.",
+            "Imagine each actor as a person in a chat room: each has their own brain (independent state), they don't share brains -- they talk by sending messages, and they handle one message at a time. In Elixir, each actor is a lightweight process running on the BEAM virtual machine.",
+            "Best use cases: real-time messaging/chat systems, IoT device control, distributed job queues, game servers, and background task systems -- each unit runs as an independently failing and recoverable actor.",
+            "JavaScript Alternative: Web Workers",
+            "Web Workers are isolated and communicate via messages -- but not as lightweight as Elixir processes, with no true process supervision or lightweight spawning.",
+            "JavaScript Alternative: Node.js worker_threads",
+            "Closer in spirit, but still lacks BEAM's built-in fault tolerance and the ability to spawn millions of lightweight processes."
+          ]
+        },
+        "doc-generation": {
+          "blocks": [
+            "@doc adds inline documentation to a function or module, used by Elixir's ExDoc system to generate rich HTML docs. You can also use h Math.add in IEx to see inline docs interactively.",
+            "Run mix docs with ExDoc installed to generate HTML documentation. Use h Math.add in IEx to see inline docs.",
+            "JavaScript Alternative: JSDoc",
+            "JavaScript lacks built-in module/function documentation that integrates with the runtime, but JSDoc achieves similar results:",
+            "Generate HTML docs using tools like JSDoc, TypeDoc, or ESDoc:"
+          ]
+        },
+        "macros": {
+          "blocks": [
+            "In Elixir, macros are a first-class metaprogramming tool that allow you to transform code at compile time, inject or generate code declaratively, and extend the language syntax itself. Metaprogramming is when a program can read, modify, or generate code -- at compile time or runtime.",
+            "This defines a new construct unless which at compile time transforms into:",
+            "Advantage: powerful metaprogramming. Disadvantage: not beginner-friendly.",
+            "JavaScript Alternative: Babel macros",
+            "Limited and tool-dependent, but Babel macros can achieve similar compile-time transforms:"
+          ]
+        },
+        "conclusion": {
+          "blocks": [
+            "Elixir's feature set reflects its focus on clean functional paradigms, reliable concurrency, and developer ergonomics. While JavaScript remains indispensable in web development, it lacks many of Elixir's native capabilities such as pattern matching, lightweight processes, and built-in fault tolerance. Fortunately, with the right tools and patterns, some of these gaps can be bridged in JavaScript -- but often with added complexity.",
+            "If you're a JavaScript developer looking to expand into systems that demand resilience, scalability, or functional purity, Elixir offers a refreshing and powerful alternative.",
+            "Bonus Tip: Want to simulate some of these in JavaScript?",
+            "Try Ramda or Lodash/fp for FP utilities, use ts-pattern for pattern matching, and explore folktale for monads like Result and Maybe."
+          ]
+        }
+      }
+    }
+  },
+  "errors": {
+    "projectNotFound": "Project not found",
+    "articleNotFound": "Article not found"
+  },
+  "projects": {
+    "globeTelecom": {
+      "name": "Globe Telecom's Bill Delivery & Storage Platform",
+      "description": "Globe Telecom is one of the largest telecommunications providers in the Philippines, offering mobile, broadband, and enterprise services to millions of customers. Globe continuously invests in modernizing its internal systems to improve operational efficiency and service delivery.",
+      "aboutClient": "Globe Telecom is one of the largest telecommunications providers in the Philippines that offer mobile, broadband, and enterprise services to millions of customers. Globe continuously invests in modernizing its internal systems to improve operational efficiency and service delivery.",
+      "problem": "The existing billing system relied heavily on manually executed scripts to generate bill summaries, store records, and send emails. Thus, this approach introduced inefficiencies which resulted to risk of human error, and made the system difficult to scale and maintain.",
+      "solution": "As a Full Stack Developer, I became a part of the solution by modernizing the billing workflow and building internal tools to support operations.",
+      "keyContributions": [
+        "Improved bill summary generation, storage, and email delivery processes;",
+        "Helped transition from a manual, script-driven system to a more automated and scalable architecture;",
+        "Developed backend APIs to support billing operations and admin functionalities;",
+        "Built an admin portal for billing agents and support teams;",
+        "Designed user-friendly interfaces to streamline administrative workflows; and,",
+        "Integrated front-end and back-end systems for seamless data handling."
+      ],
+      "impact": [
+        "Reduced reliance on manual processes and scripts;",
+        "Improved system reliability and scalability;",
+        "Enabled faster and more efficient billing operations;",
+        "Provided a centralized platform for internal teams to manage billing tasks; and,",
+        "Enhanced overall maintainability of the system."
+      ]
+    },
+    "chongHuaHospital": {
+      "name": "Chong Hua Hospital's Doctors Recruitment Portal",
+      "description": "Chong Hua Hospital is a leading private healthcare institution based in Cebu City, Philippines, with over a century of experience in delivering quality medical services. As part of its continuous digital transformation, the hospital invests in technology solutions to improve internal processes and operational efficiency.",
+      "aboutClient": "Chong Hua Hospital is a leading private healthcare institution based in Cebu City, Philippines, with over a century of experience in delivering quality medical services. As part of its continuous digital transformation, the hospital invests in technology solutions to improve internal processes and operational efficiency.",
+      "problem": "The recruitment process for doctors relied heavily on manual submission and handling of documents. This resulted in slower processing times, increase of administrative workload, and a fragmented experience for both applicants and staff.",
+      "solution": "As a Front-End Developer, I contributed by building an online recruitment portal that digitized the document submission process.",
+      "keyContributions": [
+        "Developed user-friendly interfaces for doctor applications;",
+        "Implemented structured document upload and form workflows;",
+        "Improved usability for both applicants and internal staff; and,",
+        "Collaborated with back-end APIs to ensure seamless data handling."
+      ],
+      "impact": [
+        "Streamlined the recruitment workflow for HR staff;",
+        "Improved applicant experience with a user-friendly online portal;",
+        "Reduced document handling errors and processing delays;",
+        "Enabled better documentation and record management; and,",
+        "Enhanced overall recruitment efficiency."
+      ]
+    },
+    "jollibeeKidsParty": {
+      "name": "Jollibee Kids Party Portal",
+      "description": "Jollibee is the Philippines' largest quick-service restaurant chain, known for its iconic menu and family-friendly services. As part of expanding its offerings, Jollibee offers specialized Kids Party services for celebrations.",
+      "aboutClient": "Jollibee is the Philippines' largest quick-service restaurant chain, known for its iconic menu and family-friendly services. As part of expanding its offerings, Jollibee offers specialized Kids Party services for celebrations.",
+      "problem": "Managing Kids Party bookings and event coordination was done through separate systems and manual processes, leading to inefficiencies, miscommunication, and a poor user experience for customers trying to book parties.",
+      "solution": "As a Full Stack Developer, I helped develop a dedicated portal where customers could browse party packages, check availability, and manage their bookings seamlessly.",
+      "keyContributions": [
+        "Designed and developed the front-end portal for party browsing and bookings;",
+        "Built backend APIs for managing party packages, availability, and orders;",
+        "Integrated payment processing for secure transactions;",
+        "Implemented automated confirmation emails and notifications;",
+        "Created an admin dashboard for staff to manage bookings; and,",
+        "Optimized user experience for mobile and desktop platforms."
+      ],
+      "impact": [
+        "Increased online party bookings significantly;",
+        "Reduced manual coordination workload for Jollibee staff;",
+        "Improved customer satisfaction with easy booking and tracking;",
+        "Centralized order and event management; and,",
+        "Enabled better data insights into party service performance."
+      ]
+    },
+    "konsultaMd": {
+      "name": "KonsultaMD - Telemedicine Platform",
+      "description": "KonsultaMD is a telemedicine platform that connects patients with healthcare professionals for remote consultations, aiming to make healthcare more accessible and convenient.",
+      "aboutClient": "KonsultaMD is a telemedicine platform that connects patients with healthcare professionals for remote consultations, aiming to make healthcare more accessible and convenient.",
+      "problem": "The existing telemedicine interface was cluttered and difficult to navigate, making it hard for patients to schedule consultations, find specialists, and manage their medical records efficiently.",
+      "solution": "As a Full Stack Developer, I worked on redesigning and modernizing the platform to improve user experience and functionality.",
+      "keyContributions": [
+        "Redesigned the user interface for improved usability;",
+        "Implemented a smooth consultation scheduling system;",
+        "Built doctor directory and search functionality;",
+        "Enhanced patient profile and medical records management;",
+        "Integrated secure messaging between patients and doctors; and,",
+        "Optimized platform performance for faster load times."
+      ],
+      "impact": [
+        "Increased user engagement and consultation bookings;",
+        "Improved patient satisfaction with the platform;",
+        "Streamlined doctor-patient interactions;",
+        "Reduced support inquiries due to better UX;",
+        "Enhanced accessibility to healthcare services; and,",
+        "Enabled better tracking of patient health records."
+      ]
+    },
+    "shoreSuite": {
+      "name": "Shore Suite - Hospitality Management System",
+      "description": "Shore Suite is a comprehensive hospitality management system designed to streamline operations for hotels, resorts, and other accommodation providers.",
+      "aboutClient": "Shore Suite is a comprehensive hospitality management system designed to streamline operations for hotels, resorts, and other accommodation providers.",
+      "problem": "Hotels struggled with scattered systems for room management, guest services, billing, and staff coordination, leading to operational inefficiencies and poor guest experiences.",
+      "solution": "As a Full Stack Developer, I contributed to building an integrated system that unified various hospitality management functions.",
+      "keyContributions": [
+        "Developed front-end interfaces for room and guest management;",
+        "Built backend APIs for reservation, billing, and operations;",
+        "Implemented real-time room status tracking;",
+        "Created staff management and scheduling features;",
+        "Integrated guest communication and feedback systems; and,",
+        "Designed admin dashboards for operational oversight."
+      ],
+      "impact": [
+        "Centralized hospitality operations management;",
+        "Improved guest satisfaction through streamlined services;",
+        "Reduced operational inefficiencies and manual processes;",
+        "Enhanced staff coordination and workflow;",
+        "Enabled better revenue management and reporting; and,",
+        "Provided actionable insights into hotel operations."
+      ]
+    }
+  }
+}

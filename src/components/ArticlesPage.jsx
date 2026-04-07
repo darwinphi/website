@@ -1,6 +1,8 @@
 import { articles } from '../data/articles';
+import { useTranslation } from 'react-i18next';
 
 function ArticlesPage({ onSelectArticle, onBack }) {
+  const { t } = useTranslation();
   return (
     <div className="flex-1 flex flex-col">
       <div className="py-4">
@@ -9,7 +11,7 @@ function ArticlesPage({ onSelectArticle, onBack }) {
           className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
         >
           <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
-          Back to Home
+          {t('buttons.backToHome')}
         </button>
       </div>
 
@@ -21,7 +23,7 @@ function ArticlesPage({ onSelectArticle, onBack }) {
           {/* Left column: Heading */}
           <div className="flex items-start lg:col-span-1 lg:sticky lg:top-24 lg:self-start">
             <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
-              Articles, Tutorials & Resources
+              {t('pages.articles.title')}
             </h1>
           </div>
 
@@ -35,16 +37,20 @@ function ArticlesPage({ onSelectArticle, onBack }) {
                       {article.date}
                     </p>
                     <h2 className="text-body font-medium mb-3 dark:text-text-primary-dark">
-                      {article.title}
+                      {t(`articleContent.${article.id}.title`, {
+                        defaultValue: article.title,
+                      })}
                     </h2>
                     <p className="text-body opacity-60 mb-4 dark:text-text-secondary-dark">
-                      {article.preview}
+                      {t(`articleContent.${article.id}.preview`, {
+                        defaultValue: article.preview,
+                      })}
                     </p>
                     <button
                       onClick={() => onSelectArticle(article.id)}
                       className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer dark:text-text-primary-dark"
                     >
-                      Continue reading
+                      {t('buttons.continueReading')}
                       <i className="ri-arrow-right-line transition-transform duration-200 group-hover:translate-x-1 group-active:translate-x-1" />
                     </button>
                   </div>

@@ -1,13 +1,16 @@
 import { projects } from '../data/projects';
+import { useTranslation } from 'react-i18next';
 
 function ProjectDetailPage({ projectId, onBack }) {
+  const { t } = useTranslation();
   const project = projects.find((p) => p.id === projectId);
+  const tKey = project?.translationKey;
 
   if (!project) {
     return (
       <div className="flex-1 flex items-center justify-center">
         <p className="text-body dark:text-text-primary-dark">
-          Project not found
+          {t('projectDetail.notFound')}
         </p>
       </div>
     );
@@ -22,7 +25,7 @@ function ProjectDetailPage({ projectId, onBack }) {
           className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
         >
           <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
-          Back to Projects
+          {t('buttons.backToProjects')}
         </button>
       </div>
 
@@ -36,7 +39,7 @@ function ProjectDetailPage({ projectId, onBack }) {
           <div className="flex flex-col gap-10 lg:col-span-1 lg:sticky lg:top-24 lg:self-start">
             <div className="flex flex-col gap-6">
               <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
-                {project.name}
+                {t(`projects.${tKey}.name`)}
               </h1>
               {project.link && (
                 <a
@@ -45,7 +48,7 @@ function ProjectDetailPage({ projectId, onBack }) {
                   rel="noopener noreferrer"
                   className="w-full md:w-fit inline-flex items-center justify-center md:justify-start gap-2 px-4 py-4 md:py-3 rounded border border-current text-base md:text-body hover:opacity-60 transition-opacity bg-primary-bg/50 dark:bg-border-dark/50 dark:text-text-primary-dark"
                 >
-                  Visit Project
+                  {t('buttons.visitProject')}
                   <i className="ri-external-link-line text-sm" />
                 </a>
               )}
@@ -61,40 +64,44 @@ function ProjectDetailPage({ projectId, onBack }) {
               {/* About the Client */}
               <section>
                 <h2 className="text-body font-bold mb-2 dark:text-text-primary-dark">
-                  About the Client
+                  {t('projectDetail.aboutClient')}
                 </h2>
                 <p className="text-body dark:text-text-secondary-dark">
-                  {project.aboutClient}
+                  {t(`projects.${tKey}.aboutClient`)}
                 </p>
               </section>
 
               {/* Problem */}
               <section>
                 <h2 className="text-body font-bold mb-2 dark:text-text-primary-dark">
-                  Problem
+                  {t('projectDetail.problem')}
                 </h2>
                 <p className="text-body dark:text-text-secondary-dark">
-                  {project.problem}
+                  {t(`projects.${tKey}.problem`)}
                 </p>
               </section>
 
               {/* Solution */}
               <section>
                 <h2 className="text-body font-bold mb-2 dark:text-text-primary-dark">
-                  Solution
+                  {t('projectDetail.solution')}
                 </h2>
                 <p className="text-body dark:text-text-secondary-dark">
-                  {project.solution}
+                  {t(`projects.${tKey}.solution`)}
                 </p>
               </section>
 
               {/* Key Contributions */}
               <section>
                 <h2 className="text-body font-bold mb-2 dark:text-text-primary-dark">
-                  Key Contributions
+                  {t('projectDetail.keyContributions')}
                 </h2>
                 <ul className="text-body list-disc list-inside space-y-1 dark:text-text-secondary-dark">
-                  {project.keyContributions.map((contribution, index) => (
+                  {(
+                    t(`projects.${tKey}.keyContributions`, {
+                      returnObjects: true,
+                    }) || []
+                  ).map((contribution, index) => (
                     <li key={index}>{contribution}</li>
                   ))}
                 </ul>
@@ -103,10 +110,12 @@ function ProjectDetailPage({ projectId, onBack }) {
               {/* Impact */}
               <section>
                 <h2 className="text-body font-bold mb-2 dark:text-text-primary-dark">
-                  Impact
+                  {t('projectDetail.impact')}
                 </h2>
                 <ul className="text-body list-disc list-inside space-y-1 dark:text-text-secondary-dark">
-                  {project.impact.map((impactItem, index) => (
+                  {(
+                    t(`projects.${tKey}.impact`, { returnObjects: true }) || []
+                  ).map((impactItem, index) => (
                     <li key={index}>{impactItem}</li>
                   ))}
                 </ul>
@@ -120,7 +129,7 @@ function ProjectDetailPage({ projectId, onBack }) {
                   }
                   className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
                 >
-                  Back to top
+                  {t('buttons.backToTop')}
                   <i className="ri-arrow-up-line transition-transform duration-200 group-hover:-translate-y-1 group-active:-translate-y-1" />
                 </button>
               </div>

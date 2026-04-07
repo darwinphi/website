@@ -1,6 +1,8 @@
 import { projects } from '../data/projects';
+import { useTranslation } from 'react-i18next';
 
 function ProjectsPage({ onSelectProject, onBack }) {
+  const { t } = useTranslation();
   return (
     <div className="flex-1 flex flex-col">
       {/* Back link */}
@@ -10,7 +12,7 @@ function ProjectsPage({ onSelectProject, onBack }) {
           className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
         >
           <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
-          Back to Home
+          {t('buttons.backToHome')}
         </button>
       </div>
 
@@ -22,7 +24,7 @@ function ProjectsPage({ onSelectProject, onBack }) {
           {/* Left column: Heading */}
           <div className="flex items-start lg:col-span-1 lg:sticky lg:top-24 lg:self-start">
             <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
-              Projects & Case Studies
+              {t('pages.projects.title')}
             </h1>
           </div>
 
@@ -38,10 +40,10 @@ function ProjectsPage({ onSelectProject, onBack }) {
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <h2 className="text-body font-medium mb-2 group-hover:opacity-60 transition-opacity dark:text-text-primary-dark">
-                          {project.name}
+                          {t(`projects.${project.translationKey}.name`)}
                         </h2>
                         <p className="text-body opacity-60 dark:text-text-secondary-dark">
-                          {project.description}
+                          {t(`projects.${project.translationKey}.description`)}
                         </p>
                       </div>
                       <i className="ri-arrow-right-line text-body shrink-0 transition-transform duration-200 group-hover:translate-x-1 group-active:translate-x-1" />

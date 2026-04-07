@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 function AboutPage({ onBack }) {
+  const { t } = useTranslation();
   const [cursorPos, setCursorPos] = React.useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = React.useState(false);
   const imgRef = React.useRef(null);
@@ -31,7 +33,7 @@ function AboutPage({ onBack }) {
           className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
         >
           <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
-          Back to Home
+          {t('buttons.backToHome')}
         </button>
       </div>
 
@@ -42,7 +44,7 @@ function AboutPage({ onBack }) {
         >
           {/* Heading */}
           <h1 className="text-heading leading-tight font-normal text-center mb-12 dark:text-text-primary-dark">
-            About Me
+            {t('pages.about.title')}
           </h1>
 
           {/* Profile Picture */}
@@ -86,34 +88,19 @@ function AboutPage({ onBack }) {
           {/* Content */}
           <div className="flex flex-col gap-6">
             <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">
-              I graduated with a degree on Bachelor of Science in Information
-              Technology at Adamson University. I originally started my career
-              as a Front-end Developer at Shore Suite, but things took an
-              unexpected turn when someone in the team resigned—so I stepped in,
-              picked up back-end work, and that's pretty much how I became a
-              Full-Stack developer.
+              {t('pages.about.bio1')}
             </p>
 
             <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">
-              Over the past 8+ years, every challenge has been a chance to learn
-              something new (sometimes the hard way, but it works!). Through
-              this, I've consistently showcased my versatility by building and
-              maintaining scalable web applications from front-end to back-end.
-              I've also cultivated a strong problem-solving mindset and the
-              ability to stay effective even when things get a bit messy.
+              {t('pages.about.bio2')}
             </p>
 
             <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">
-              I'm currently collaborating on external projects with NCS
-              Philippines, where I thrive to solve real-world problems and adapt
-              to evolving requirements.
+              {t('pages.about.bio3')}
             </p>
 
             <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">
-              Outside of work, I make sure to spend quality time with my loved
-              ones. I also enjoy playing mobile games, watching sports
-              (especially football!), and occasionally playing pickleball and
-              badminton (then eating out afterwards!) to stay active.
+              {t('pages.about.bio4')}
             </p>
           </div>
         </div>

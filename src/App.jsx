@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectDetailPage from './components/ProjectDetailPage';
 import AboutPage from './components/AboutPage';
@@ -7,18 +8,7 @@ import ArticlesPage from './components/ArticlesPage';
 import ArticleDetailPage from './components/ArticleDetailPage';
 import AnimatedHeroText from './components/AnimatedHeroText';
 import DarkModeToggle from './components/DarkModeToggle';
-
-const navLinks = [
-  { label: 'Projects', href: '#' },
-  { label: 'Articles', href: '' },
-  { label: 'About', href: '#' },
-];
-
-const socialLinks = [
-  { label: 'Github', href: 'https://github.com/darwinphi' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/darwinmanalo/' },
-  { label: 'Email', href: 'mailto:darwinmanalophi@gmail.com' },
-];
+import LanguageSelector from './components/LanguageSelector';
 
 const springTransition = { type: 'spring', stiffness: 400, damping: 30 };
 
@@ -81,10 +71,27 @@ const dotLineVariants = [
 ];
 
 function App() {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [view, setView] = useState('home');
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedArticle, setSelectedArticle] = useState(null);
+
+  // Define nav and social links with translation keys
+  const navLinks = [
+    { key: 'nav.projects', href: '#' },
+    { key: 'nav.articles', href: '' },
+    { key: 'nav.about', href: '#' },
+  ];
+
+  const socialLinks = [
+    { key: 'social.github', href: 'https://github.com/darwinphi' },
+    {
+      key: 'social.linkedin',
+      href: 'https://www.linkedin.com/in/darwinmanalo/',
+    },
+    { key: 'social.email', href: 'mailto:darwinmanalophi@gmail.com' },
+  ];
 
   const handleNavigation = (newView, itemId = null) => {
     setView(newView);
@@ -157,7 +164,7 @@ function App() {
           onClick={() => handleNavigation('home')}
           className="text-body font-medium hover:opacity-60 transition-opacity cursor-pointer inline-flex items-center"
         >
-          Darwin Manalo
+          {t('nav.darwinManalo')}
         </button>
 
         {/* Center: Dark Mode Toggle (absolute center) */}
@@ -182,10 +189,11 @@ function App() {
             initial="hidden"
             animate="visible"
           >
-            {navLinks.map(({ label }) => {
-              const isProjects = label === 'Projects';
-              const isAbout = label === 'About';
-              const isArticles = label === 'Articles';
+            {navLinks.map(({ key }) => {
+              const label = t(key);
+              const isProjects = key === 'nav.projects';
+              const isAbout = key === 'nav.about';
+              const isArticles = key === 'nav.articles';
               const handleClick = isProjects
                 ? () => handleNavigation('projects')
                 : isAbout
@@ -201,7 +209,7 @@ function App() {
 
               return (
                 <motion.button
-                  key={label}
+                  key={key}
                   onClick={handleClick}
                   className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer leading-none"
                   variants={linkVariants}
@@ -276,10 +284,11 @@ function App() {
                 animate="visible"
                 exit="exit"
               >
-                {navLinks.map(({ label, href }) => {
-                  const isProjects = label === 'Projects';
-                  const isAbout = label === 'About';
-                  const isArticles = label === 'Articles';
+                {navLinks.map(({ key }) => {
+                  const label = t(key);
+                  const isProjects = key === 'nav.projects';
+                  const isAbout = key === 'nav.about';
+                  const isArticles = key === 'nav.articles';
                   const handleClick = isProjects
                     ? () => handleNavigation('projects')
                     : isAbout
@@ -290,7 +299,7 @@ function App() {
 
                   return (
                     <motion.button
-                      key={label}
+                      key={key}
                       onClick={handleClick}
                       className="text-heading hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer leading-none"
                       variants={navItemVariants}
@@ -318,7 +327,7 @@ function App() {
                 className="flex-1 flex items-center justify-center"
               >
                 <AnimatedHeroText
-                  text="Based in the Pearl of the Orient Seas (Manila, Philippines). I'm a Full-Stack developer building modern web experiences. Got an idea and just want to connect? Let's collaborate."
+                  text={t('pages.home.heroText')}
                   className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
                 />
               </motion.div>
@@ -404,7 +413,7 @@ function App() {
 
         {/* Footer */}
         <motion.footer
-          className="py-6 flex items-end justify-between"
+          className="py-6 grid grid-cols-3 items-end gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
@@ -417,6 +426,11 @@ function App() {
           >
             © 2026 All rights reserved
           </motion.span>
+
+          <div className="flex justify-center">
+            <LanguageSelector />
+          </div>
+
           <motion.div
             className="flex flex-col items-end gap-1"
             variants={{
@@ -432,9 +446,9 @@ function App() {
             initial="hidden"
             animate="visible"
           >
-            {socialLinks.map(({ label, href }) => (
+            {socialLinks.map(({ key, href }) => (
               <motion.a
-                key={label}
+                key={key}
                 href={href}
                 target="_blank"
                 rel="noreferrer"
@@ -445,7 +459,7 @@ function App() {
                 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
               >
-                {label}
+                {t(key)}
                 <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
               </motion.a>
             ))}

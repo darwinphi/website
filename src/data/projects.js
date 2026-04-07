@@ -1,6 +1,7 @@
 export const projects = [
   {
     id: 'globe-telecom',
+    translationKey: 'globeTelecom',
     logo: '/img/globe.svg',
     name: `Globe Telecom's Bill Delivery & Storage Platform`,
     link: null,
@@ -31,6 +32,7 @@ export const projects = [
   {
     id: 'chong-hua-hospital',
     logo: '/img/chh.png',
+    translationKey: 'chongHuaHospital',
     name: `Chong Hua Hospital's Doctors Recruitment Portal`,
     link: 'https://chonghua.com.ph/',
     description:
@@ -57,6 +59,7 @@ export const projects = [
   {
     id: 'jollibee-kids-party',
     logo: '/img/jollibee.png',
+    translationKey: 'jollibeeKidsParty',
     name: 'Jollibee Kids Party',
     link: 'https://party.jollibee.com.ph/',
     description:
@@ -84,6 +87,7 @@ export const projects = [
   },
   {
     id: 'konsultamd',
+    translationKey: 'konsultaMd',
     logo: '/img/konsultamd.png',
     name: 'KonsultaMD',
     link: 'https://konsulta.md/',
@@ -110,6 +114,7 @@ export const projects = [
   },
   {
     id: 'shore-suite',
+    translationKey: 'shoreSuite',
     logo: '/img/shoresuite.png',
     name: 'Shore Suite',
     link: 'https://web.facebook.com/shoresuite',
