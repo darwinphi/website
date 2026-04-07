@@ -75,6 +75,12 @@ function ArticleDetailPage({ articleId, onBack }) {
                   <a
                     key={item.id}
                     href={`#${item.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document
+                        .getElementById(item.id)
+                        ?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     className={`block leading-snug py-0.5 hover:opacity-60 transition-opacity dark:text-text-secondary-dark ${
                       item.isGroup
                         ? 'font-medium mt-2 dark:text-text-primary-dark'

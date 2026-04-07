@@ -1,4 +1,11 @@
 import { useState, useEffect } from 'react';
+import {
+  Routes,
+  Route,
+  useNavigate,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import ProjectsPage from './components/ProjectsPage';
@@ -9,6 +16,17 @@ import ArticleDetailPage from './components/ArticleDetailPage';
 import AnimatedHeroText from './components/AnimatedHeroText';
 import DarkModeToggle from './components/DarkModeToggle';
 import LanguageSelector from './components/LanguageSelector';
+import NotFoundPage from './components/NotFoundPage';
+
+function ProjectDetailRoute({ onBack }) {
+  const { projectId } = useParams();
+  return <ProjectDetailPage projectId={projectId} onBack={onBack} />;
+}
+
+function ArticleDetailRoute({ onBack }) {
+  const { articleId } = useParams();
+  return <ArticleDetailPage articleId={articleId} onBack={onBack} />;
+}
 
 const springTransition = { type: 'spring', stiffness: 400, damping: 30 };
 
@@ -72,10 +90,9 @@ const dotLineVariants = [
 
 function App() {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [view, setView] = useState('home');
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [selectedArticle, setSelectedArticle] = useState(null);
 
   // Define nav and social links with translation keys
   const navLinks = [
@@ -93,11 +110,14 @@ function App() {
     { key: 'social.email', href: 'mailto:darwinmanalophi@gmail.com' },
   ];
 
-  const handleNavigation = (newView, itemId = null) => {
-    setView(newView);
-    if (newView === 'project-detail') setSelectedProject(itemId);
-    if (newView === 'article-detail') setSelectedArticle(itemId);
+  const handleNavigation = (path) => {
+    navigate(path);
     setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBack = () => {
+    navigate(-1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -123,21 +143,12 @@ function App() {
       // Prevent default browser behavior (go back page)
       event.preventDefault();
 
-      // Navigate based on current view
-      if (view === 'project-detail') {
-        handleNavigation('projects');
-      } else if (view === 'projects') {
-        handleNavigation('home');
-      } else if (view === 'article-detail') {
-        handleNavigation('articles');
-      } else if (view === 'articles') {
-        handleNavigation('home');
-      }
+      navigate(-1);
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [view]);
+  }, [navigate]);
 
   // Close drawer on window resize
   useEffect(() => {
@@ -161,7 +172,7 @@ function App() {
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <button
-          onClick={() => handleNavigation('home')}
+          onClick={() => handleNavigation('/')}
           className="text-body font-medium hover:opacity-60 transition-opacity cursor-pointer inline-flex items-center"
         >
           <AnimatePresence mode="wait" initial={false}>
@@ -205,11 +216,11 @@ function App() {
               const isAbout = key === 'nav.about';
               const isArticles = key === 'nav.articles';
               const handleClick = isProjects
-                ? () => handleNavigation('projects')
+                ? () => handleNavigation('/projects')
                 : isAbout
-                  ? () => handleNavigation('about')
+                  ? () => handleNavigation('/about')
                   : isArticles
-                    ? () => handleNavigation('articles')
+                    ? () => handleNavigation('/articles')
                     : undefined;
 
               const linkVariants = {
@@ -310,11 +321,11 @@ function App() {
                   const isAbout = key === 'nav.about';
                   const isArticles = key === 'nav.articles';
                   const handleClick = isProjects
-                    ? () => handleNavigation('projects')
+                    ? () => handleNavigation('/projects')
                     : isAbout
-                      ? () => handleNavigation('about')
+                      ? () => handleNavigation('/about')
                       : isArticles
-                        ? () => handleNavigation('articles')
+                        ? () => handleNavigation('/articles')
                         : () => setIsMenuOpen(false);
 
                   return (
@@ -334,100 +345,66 @@ function App() {
           )}
         </AnimatePresence>
 
-        {/* Main content - conditionally rendered based on view */}
+        {/* Main content - route-based rendering */}
         <main className="flex-1 flex flex-col">
           <AnimatePresence mode="wait">
-            {view === 'home' && (
-              <motion.div
-                key={`home-${i18n.language}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="flex-1 flex items-center justify-center"
-              >
-                <AnimatedHeroText
-                  text={t('pages.home.heroText')}
-                  className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
-                />
-              </motion.div>
-            )}
-            {view === 'projects' && (
-              <motion.div
-                key={`projects-${i18n.language}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="flex-1 flex flex-col"
-              >
-                <ProjectsPage
-                  onSelectProject={(projectId) =>
-                    handleNavigation('project-detail', projectId)
+            <motion.div
+              key={`${location.pathname}-${i18n.language}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+              className="flex-1 flex flex-col"
+            >
+              <Routes location={location}>
+                <Route
+                  path="/"
+                  element={
+                    <div className="flex-1 flex items-center justify-center">
+                      <AnimatedHeroText
+                        text={t('pages.home.heroText')}
+                        className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
+                      />
+                    </div>
                   }
-                  onBack={() => handleNavigation('home')}
                 />
-              </motion.div>
-            )}
-            {view === 'project-detail' && (
-              <motion.div
-                key={`project-detail-${i18n.language}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="flex-1 flex flex-col"
-              >
-                <ProjectDetailPage
-                  projectId={selectedProject}
-                  onBack={() => handleNavigation('projects')}
-                />
-              </motion.div>
-            )}
-            {view === 'about' && (
-              <motion.div
-                key={`about-${i18n.language}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="flex-1 flex flex-col"
-              >
-                <AboutPage onBack={() => handleNavigation('home')} />
-              </motion.div>
-            )}
-            {view === 'articles' && (
-              <motion.div
-                key={`articles-${i18n.language}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="flex-1 flex flex-col"
-              >
-                <ArticlesPage
-                  onSelectArticle={(articleId) =>
-                    handleNavigation('article-detail', articleId)
+                <Route
+                  path="/projects"
+                  element={
+                    <ProjectsPage
+                      onSelectProject={(projectId) =>
+                        handleNavigation(`/projects/${projectId}`)
+                      }
+                      onBack={handleBack}
+                    />
                   }
-                  onBack={() => handleNavigation('home')}
                 />
-              </motion.div>
-            )}
-            {view === 'article-detail' && (
-              <motion.div
-                key={`article-detail-${i18n.language}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="flex-1 flex flex-col"
-              >
-                <ArticleDetailPage
-                  articleId={selectedArticle}
-                  onBack={() => handleNavigation('articles')}
+                <Route
+                  path="/projects/:projectId"
+                  element={<ProjectDetailRoute onBack={handleBack} />}
                 />
-              </motion.div>
-            )}
+                <Route
+                  path="/about"
+                  element={<AboutPage onBack={handleBack} />}
+                />
+                <Route
+                  path="/articles"
+                  element={
+                    <ArticlesPage
+                      onSelectArticle={(articleId) =>
+                        handleNavigation(`/articles/${articleId}`)
+                      }
+                      onBack={handleBack}
+                    />
+                  }
+                />
+                <Route
+                  path="/articles/:articleId"
+                  element={<ArticleDetailRoute onBack={handleBack} />}
+                />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </motion.div>
           </AnimatePresence>
         </main>
 
