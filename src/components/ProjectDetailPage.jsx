@@ -43,7 +43,7 @@ function ProjectDetailPage({ projectId, onBack }) {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-3 rounded border border-current text-body hover:opacity-60 transition-opacity dark:text-text-primary-dark w-fit"
+                  className="w-full md:w-fit inline-flex items-center justify-center md:justify-start gap-2 px-4 py-4 md:py-3 rounded border border-current text-base md:text-body hover:opacity-60 transition-opacity bg-primary-bg/50 dark:bg-border-dark/50 dark:text-text-primary-dark"
                 >
                   Visit Project
                   <i className="ri-external-link-line text-sm" />
