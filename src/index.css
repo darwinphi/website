@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import 'remixicon/fonts/remixicon.css';
+@import 'tailwindcss';
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --color-primary-bg: #e6e7df;
+  --color-primary-bg-dark: #1a1a1a;
+  --color-text-primary-dark: #f5f5f5;
+  --color-text-secondary-dark: #d0d0d0;
+  --color-border-dark: #333333;
+  --text-body: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+  --text-heading: clamp(1.75rem, 1.3804rem + 1.8478vw, 2.8125rem);
+  --text-project-title: clamp(2.5rem, 1.8rem + 3.5vw, 4.5rem);
+  --max-width-225: 900px;
+  --max-width-reading: 650px;
+  --line-height-tight: 1.15;
+}
+
+@layer base {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-property: color, background-color;
+      transition-duration: 200ms;
+      transition-timing-function: ease-in-out;
+    }
+  }
+
+  body {
+    background-color: #e6e7df;
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: inherit;
+  }
+
+  .dark body {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+  }
+}

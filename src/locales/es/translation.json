@@ -1,0 +1,655 @@
+{
+  "nav": {
+    "projects": "Proyectos",
+    "articles": "Artículos",
+    "about": "Acerca de",
+    "darwinManalo": "Darwin Manalo"
+  },
+  "footer": {
+    "allRightsReserved": "Todos los derechos reservados"
+  },
+  "social": {
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "email": "Correo electrónico"
+  },
+  "buttons": {
+    "backToHome": "Volver a Inicio",
+    "backToProjects": "Volver a Proyectos",
+    "backToArticles": "Volver a Artículos",
+    "continueReading": "Continuar leyendo",
+    "visitProject": "Visitar Proyecto",
+    "backToTop": "Volver arriba"
+  },
+  "pages": {
+    "home": {
+      "heroText": "Basado en la Perla de Oriente (Manila, Filipinas). Soy un desarrollador Full-Stack que construye experiencias web modernas. ¿Tienes una idea y quieres conectar? Colaboremos."
+    },
+    "projects": {
+      "title": "Proyectos y Casos de Estudio"
+    },
+    "articles": {
+      "title": "Artículos, Tutoriales y Recursos",
+      "tableOfContents": "Contenidos"
+    },
+    "about": {
+      "title": "Acerca de Mí",
+      "bio1": "Me gradué con una licenciatura en Tecnología de la Información de la Universidad de Adamson. Comencé mi carrera como Desarrollador Front-end en Shore Suite, pero las cosas tomaron un giro inesperado cuando alguien del equipo renunció, así que asumí el trabajo back-end. Así fue cómo me convertí en desarrollador Full-Stack.",
+      "bio2": "En los más de 8 años, cada desafío ha sido una oportunidad para aprender algo nuevo (¡a veces de la manera difícil, pero funciona!). A través de esto, he demostrado consistentemente mi versatilidad construyendo y manteniendo aplicaciones web escalables de front-end a back-end. También he cultivado una mentalidad fuerte de resolución de problemas y la capacidad de mantenerme efectivo incluso cuando las cosas se ponen desordenadas.",
+      "bio3": "Actualmente estoy colaborando en proyectos externos con NCS Filipinas, donde prospero resolviendo problemas del mundo real y adaptándome a requisitos en evolución.",
+      "bio4": "Fuera del trabajo, me aseguro de pasar tiempo de calidad con mis seres queridos. También disfruto jugando videojuegos móviles, viendo deportes (¡especialmente fútbol!) y ocasionalmente jugando pickleball y bádminton (¡y luego salir a comer!) para mantenerme activo."
+    }
+  },
+  "projectDetail": {
+    "aboutClient": "Acerca del Cliente",
+    "problem": "Problema",
+    "solution": "Solución",
+    "keyContributions": "Contribuciones Clave",
+    "impact": "Impacto",
+    "notFound": "Proyecto no encontrado"
+  },
+  "articleDetail": {
+    "notFound": "Artículo no encontrado"
+  },
+  "errors": {
+    "projectNotFound": "Proyecto no encontrado",
+    "articleNotFound": "Artículo no encontrado"
+  },
+  "projects": {
+    "globeTelecom": {
+      "name": "Plataforma de Entrega y Almacenamiento de Facturas de Globe Telecom",
+      "description": "Globe Telecom es uno de los mayores proveedores de telecomunicaciones de Filipinas, que ofrece servicios móviles, de banda ancha y empresariales a millones de clientes. Globe invierte continuamente en modernizar sus sistemas internos para mejorar la eficiencia operativa y la prestación de servicios.",
+      "aboutClient": "Globe Telecom es uno de los mayores proveedores de telecomunicaciones de Filipinas, que ofrece servicios móviles, de banda ancha y empresariales a millones de clientes. Globe invierte continuamente en modernizar sus sistemas internos para mejorar la eficiencia operativa y la prestación de servicios.",
+      "problem": "El sistema de facturación existente dependía en gran medida de scripts ejecutados manualmente para generar resúmenes de facturas, almacenar registros y enviar correos electrónicos. Este enfoque introducía ineficiencias, riesgo de error humano, y dificultaba la escalabilidad y el mantenimiento del sistema.",
+      "solution": "Como desarrollador Full Stack, participé en la modernización del flujo de facturación y en la creación de herramientas internas para apoyar las operaciones.",
+      "keyContributions": [
+        "Procesos mejorados de generación, almacenamiento y entrega de correo electrónico de resúmenes de facturas;",
+        "Ayudé a la transición de un sistema manual basado en scripts a una arquitectura más automatizada y escalable;",
+        "API de backend desarrolladas para respaldar operaciones de facturación y funcionalidades de administración;",
+        "Creó un portal de administración para agentes de facturación y equipos de soporte;",
+        "Diseñé interfaces fáciles de usar para optimizar los flujos de trabajo administrativos; y,",
+        "Sistemas front-end y back-end integrados para un manejo de datos fluido."
+      ],
+      "impact": [
+        "Reducción de la dependencia de procesos y scripts manuales;",
+        "Mejora de la confiabilidad y escalabilidad del sistema;",
+        "Permitió operaciones de facturación más rápidas y eficientes;",
+        "Proporcionó una plataforma centralizada para que los equipos internos administren las tareas de facturación; y,",
+        "Mantenibilidad general mejorada del sistema."
+      ]
+    },
+    "chongHuaHospital": {
+      "name": "Portal de Reclutamiento de Médicos del Hospital Chong Hua",
+      "description": "El Hospital Chong Hua es una destacada institución de salud privada con sede en Cebú, Filipinas, con más de un siglo de experiencia en la prestación de servicios médicos de calidad. Como parte de su continua transformación digital, el hospital invierte en soluciones tecnológicas para mejorar los procesos internos y la eficiencia operativa.",
+      "aboutClient": "El Hospital Chong Hua es una destacada institución de salud privada con sede en Cebú, Filipinas, con más de un siglo de experiencia en la prestación de servicios médicos de calidad. Como parte de su continua transformación digital, el hospital invierte en soluciones tecnológicas para mejorar los procesos internos y la eficiencia operativa.",
+      "problem": "El proceso de reclutamiento de médicos dependía en gran medida de la presentación y el manejo manual de documentos. Esto resultó en tiempos de procesamiento más lentos, aumento de la carga administrativa y una experiencia fragmentada tanto para los solicitantes como para el personal.",
+      "solution": "Como desarrollador Front-End, contribuí construyendo un portal de reclutamiento en línea que digitalizó el proceso de envío de documentos.",
+      "keyContributions": [
+        "Se desarrollaron interfaces fáciles de usar para aplicaciones médicas;",
+        "Implementé flujos de trabajo de formularios y carga de documentos estructurados;",
+        "Usabilidad mejorada tanto para los solicitantes como para el personal interno; y,",
+        "Colaboré con API de back-end para garantizar un manejo de datos fluido."
+      ],
+      "impact": [
+        "Reducción de la dependencia del manejo manual de documentos;",
+        "Mayor eficiencia en el procesamiento de solicitudes;",
+        "Proporcionó una experiencia más fluida y accesible para los solicitantes; y,",
+        "Permitió al personal de contratación gestionar las presentaciones en un sistema centralizado."
+      ]
+    },
+    "jollibeeKidsParty": {
+      "name": "Portal de Fiestas Infantiles de Jollibee",
+      "description": "Jollibee es la cadena de restaurantes de comida rápida más grande de Filipinas, conocida por su menú icónico y sus servicios para toda la familia. Como parte de la expansión de sus ofertas, Jollibee ofrece servicios especializados de fiestas infantiles para celebraciones.",
+      "aboutClient": "Jollibee es la cadena de restaurantes de comida rápida más grande de Filipinas, conocida por su menú icónico y sus servicios para toda la familia. Como parte de la expansión de sus ofertas, Jollibee ofrece servicios especializados de fiestas infantiles para celebraciones.",
+      "problem": "La gestión de reservas de fiestas infantiles y la coordinación de eventos se realizaba a través de sistemas separados y procesos manuales, lo que generaba ineficiencias, mala comunicación y una mala experiencia para los clientes.",
+      "solution": "Como desarrollador Full Stack, ayudé a desarrollar un portal dedicado donde los clientes pudieran explorar paquetes de fiestas, verificar disponibilidad y gestionar sus reservas sin complicaciones.",
+      "keyContributions": [
+        "Funciones de personalización de fiestas integradas y mejoradas (temas, paquetes, complementos);",
+        "Flujos de trabajo de reserva mejorados para que la programación y las reservas sean más intuitivas;",
+        "API de back-end desarrolladas y mantenidas para respaldar la lógica de reservas y el flujo de datos;",
+        "Capacidades de CMS optimizadas para gestionar el contenido y las configuraciones de las partes;",
+        "Rendimiento refinado del sistema para tiempos de carga más rápidos e interacciones de usuario más fluidas; y,",
+        "Colaboré entre equipos para garantizar la alineación entre los requisitos de front-end, back-end y comerciales."
+      ],
+      "impact": [
+        "Simplificó la experiencia de reserva de fiestas de principio a fin para los clientes;",
+        "Flexibilidad mejorada en la personalización de paquetes de fiesta;",
+        "Reduced friction in the booking process, increasing usability and completion rates;",
+        "Permitió a los equipos internos gestionar las ofertas de fiestas de manera más eficiente a través de CMS; y,",
+        "Rendimiento general y confiabilidad mejorados del sistema en todas las plataformas."
+      ]
+    },
+    "konsultaMd": {
+      "name": "KonsultaMD - Plataforma de Telemedicina",
+      "description": "KonsultaMD es una plataforma de telemedicina que conecta a pacientes con profesionales de la salud para consultas remotas, con el objetivo de hacer la atención médica más accesible y conveniente.",
+      "aboutClient": "KonsultaMD es una plataforma de telemedicina que conecta a pacientes con profesionales de la salud para consultas remotas, con el objetivo de hacer la atención médica más accesible y conveniente.",
+      "problem": "La interfaz de telemedicina existente era desordenada y difícil de navegar, lo que dificultaba que los pacientes programaran consultas, encontraran especialistas y gestionaran sus historias médicas de manera eficiente.",
+      "solution": "Como desarrollador Full Stack, trabajé en el rediseño y modernización de la plataforma para mejorar la experiencia del usuario y la funcionalidad.",
+      "keyContributions": [
+        "Diseñé e implementé API para centralizar y optimizar la comunicación de datos;",
+        "Servicios back-end creados y optimizados para manejar alta concurrencia y picos de tráfico;",
+        "Soluciones de pago integradas, seguras y flexibles para admitir varios modelos de suscripción;",
+        "Rendimiento y confiabilidad mejorados del sistema para flujos de trabajo de consulta en tiempo real; y,",
+        "Colaboré con equipos de front-end para garantizar un consumo eficiente de API y un flujo de datos."
+      ],
+      "impact": [
+        "Permitió el acceso a gran escala a servicios de atención médica remotos durante la pandemia;",
+        "Apoyé estrategias de monetización flexibles y mayor adopción por parte de los usuarios; y,",
+        "Contribuyó al rápido crecimiento de KonsultaMD durante un período crítico."
+      ]
+    },
+    "shoreSuite": {
+      "name": "Shore Suite - Sistema de Gestión Hotelera",
+      "description": "Shore Suite es un sistema integral de gestión hotelera diseñado para optimizar las operaciones de hoteles, resorts y otros proveedores de alojamiento.",
+      "aboutClient": "Shore Suite es un sistema integral de gestión hotelera diseñado para optimizar las operaciones de hoteles, resorts y otros proveedores de alojamiento.",
+      "problem": "Los hoteles tienen dificultades con sistemas dispersos para la gestión de habitaciones, servicios al huésped, facturación y coordinación del personal, lo que genera ineficiencias operativas y malas experiencias para los huéspedes.",
+      "solution": "Como desarrollador Full Stack, contribuí a construir un sistema integrado que unificó las diversas funciones de gestión hotelera.",
+      "keyContributions": [
+        "Desarrollé API sólidas para respaldar la reserva de habitaciones, la gestión de clientes y los flujos de trabajo operativos;",
+        "Contribuyó a la configuración de una arquitectura de microservicios para mejorar la modularidad y escalabilidad del sistema; y,",
+        "Implementé pruebas unitarias y de integración para garantizar la confiabilidad del sistema y mantener la calidad del código."
+      ],
+      "impact": [
+        "Mejora de la eficiencia de las operaciones de gestión y reserva de hoteles a través de servicios API confiables;",
+        "Habilitó una arquitectura de sistema escalable capaz de manejar las crecientes necesidades comerciales;",
+        "Reducción de errores del sistema y mayor confianza en las implementaciones a través de prácticas de prueba; y,",
+        "Construyó una base sólida en el desarrollo backend, particularmente en programación funcional."
+      ]
+    }
+  },
+  "articleContent": {
+    "database-connection-pool": {
+      "title": "¿Qué es un Pool de Conexiones de Base de Datos?",
+      "preview": "Un pool de conexiones de base de datos es una caché de conexiones listas para usar. En lugar de crear nuevas conexiones por cada solicitud, se toman prestadas del pool y se devuelven al terminar.",
+      "toc": {
+        "intro2": "Introducción",
+        "why-slow": "¿Por qué crear nuevas conexiones es lento?",
+        "how-pool-works": "Cómo funciona un pool de conexiones",
+        "lifecycle": "El ciclo de vida de una conexión en el pool",
+        "common-settings": "Configuraciones comunes del pool",
+        "challenges": "Desafíos y soluciones",
+        "traffic-spikes": "Picos de tráfico",
+        "oversized": "Pools sobredimensionados",
+        "key-takeaways": "Puntos clave",
+        "conclusion-pool": "Conclusión"
+      },
+      "headings": {
+        "intro2": "Introducción",
+        "why-slow": "¿Por qué crear nuevas conexiones es lento?",
+        "how-pool-works": "¿Cómo funciona un pool de conexiones?",
+        "lifecycle": "El ciclo de vida de una conexión en el pool",
+        "common-settings": "Configuraciones comunes del pool",
+        "challenges": "Desafíos con los pools de conexiones y soluciones",
+        "traffic-spikes": "Manejo de picos de tráfico con pools de conexiones",
+        "oversized": "¿Qué ocurre si el pool es demasiado grande?",
+        "key-takeaways": "Puntos clave",
+        "conclusion-pool": "Conclusión"
+      },
+      "sections": {
+        "intro2": {
+          "blocks": [
+            "En pocas palabras, un grupo de conexiones de bases de datos es un caché de conexiones de bases de datos que se mantienen listas para que las utilice una aplicación. En lugar de crear una nueva conexión para cada solicitud y luego eliminarla, la aplicación puede simplemente tomar prestada una existente del grupo y devolverla cuando haya terminado. Esto hace que su aplicación sea mucho más rápida y eficiente.",
+            "Piensa en hacer una llamada telefónica a tu base de datos. Antes de que su aplicación pueda solicitar información a la base de datos (como buscar perfiles de usuario), debe establecer un canal de comunicación formal. Esta \"llamada\" no es instantánea; Hay un proceso de configuración completo: Network Handshake (su aplicación encuentra la base de datos y aceptan hablar), Autenticación (la base de datos verifica sus credenciales) y Asignación de recursos (la base de datos reserva memoria y potencia de procesamiento). Solo después de todos estos pasos su aplicación podrá enviar consultas SQL."
+          ]
+        },
+        "why-slow": {
+          "blocks": [
+            "Imagine un supermercado popular con cientos de clientes. Ahora, imagine que para cada cliente, la tienda tiene que construir una nueva caja registradora, conectar una nueva caja registradora y capacitar a un nuevo cajero, solo para derribarlo todo después de que ese cliente pague. Eso es increíblemente ineficiente, ¿verdad? Eso es exactamente lo que hace una aplicación sin un grupo de conexiones.",
+            "Para cada acción del usuario que necesita datos, la aplicación crea el contador (establece una conexión de red), entrena al cajero (se autentica), realiza la transacción (ejecuta la consulta SQL) y la derriba (cierra la conexión). Este proceso es computacionalmente costoso y consume mucho tiempo, memoria y recursos de CPU."
+          ]
+        },
+        "how-pool-works": {
+          "blocks": [
+            "Piense en ello como una parada de taxis en un aeropuerto. Es mucho más rápido tomar un taxi esperando que llamar uno nuevo desde el otro lado de la ciudad para cada persona que necesita transporte.",
+            "Al principio, el administrador de la piscina crea un número determinado de conexiones (taxis) y las mantiene funcionando y esperando en el stand. Cuando su aplicación necesita comunicarse con la base de datos, no llama a la base de datos directamente. Simplemente se acerca a la parada de taxis (la piscina) y pide que lo lleven. El administrador del grupo proporciona instantáneamente a la aplicación una conexión autenticada lista para usar. La aplicación utiliza la conexión y, cuando finaliza, simplemente la devuelve al grupo, dejándola disponible para la siguiente solicitud.",
+            "De esta manera, el costoso trabajo de crear conexiones sólo se realiza una vez, al principio. Después de eso, es simplemente un proceso súper rápido de préstamo y devolución."
+          ]
+        },
+        "lifecycle": {
+          "blocks": [
+            "Esto es lo que sucede cuando tu aplicación necesita datos:",
+            "1. Pregunte: su código dice: \"Oye, grupo de conexiones, necesito una conexión\". 2. Pedir prestado: El pool comprueba su \"stand\" de conexiones disponibles y entrega una. Esto es súper rápido porque la conexión ya está abierta y autenticada. 3. Uso: Su código ejecuta su consulta de base de datos (por ejemplo, SELECCIONAR * DE usuarios;). 4. Regresar: Cuando su código finaliza, no cierra la conexión. En cambio, libera la conexión al grupo. La piscina la limpia y la vuelve a colocar en el soporte, lista para la siguiente solicitud.",
+            "La regla de oro de la agrupación de conexiones es: pedir prestado, usar, devolver. Este ciclo es increíblemente rápido y eficiente."
+          ]
+        },
+        "common-settings": {
+          "blocks": [
+            "Cuando configura un grupo de conexiones, a menudo verá tres configuraciones clave:",
+            "conexiones mínimas (o tamaño inicial): la cantidad de conexiones que el grupo crea por adelantado. Piense en ello como la cantidad de taxis esperando en la parada cuando abre por primera vez.",
+            "conexiones máximas (o maxPoolSize): el número máximo absoluto de conexiones que el grupo puede crear. Esta es una válvula de seguridad crucial que evita que su aplicación sobrecargue la base de datos.",
+            "Tiempo de espera de conexión: si todas las conexiones están ocupadas, este es el tiempo que su aplicación esperará hasta que una quede libre antes de darse por vencida y mostrar un error.",
+            "Determinar los valores correctos",
+            "La regla más importante es pensar desde la perspectiva de la base de datos, no desde la de la aplicación. El objetivo es darle a la base de datos una cantidad de trabajo manejable. Una fórmula ampliamente recomendada es: max_connections = (number_of_CPU_cores * 2) + 1",
+            "Ejemplo: para una base de datos de 4 núcleos, establezca max_connections en 9. Esto permite ejecutar hasta 9 consultas a la vez. Mientras algunos esperan el disco, otros pueden ser procesados ​​activamente por los núcleos de la CPU.",
+            "Para min_connections, un excelente punto de partida es establecer min_connections = max_connections para aplicaciones constantemente ocupadas (creando un grupo de \"tamaño fijo\") o un valor inferior para aplicaciones que se usan con poca frecuencia para conservar recursos.",
+            "Para el tiempo de espera de conexión, utilice entre 2 y 5 segundos para aplicaciones orientadas al usuario (falla rápidamente) y entre 30 y 60 segundos para trabajos por lotes en segundo plano."
+          ]
+        },
+        "challenges": {
+          "blocks": [
+            "Fugas de conexión",
+            "Una pérdida de conexión ocurre cuando su aplicación toma prestada una conexión pero no la devuelve. Con el tiempo, todas las conexiones pueden tener \"fugas\", dejando el grupo vacío y provocando que la aplicación se congele.",
+            "Solución: coloque el código que devuelve la conexión en un bloque finalmente. Se garantiza la ejecución de un bloque finalmente, incluso si ocurre un error.",
+            "Conexiones obsoletas o inactivas",
+            "Una conexión está obsoleta cuando se estableció exitosamente pero ya no es válida. Esto puede suceder si se reinició el servidor de la base de datos, un firewall finalizó la conexión inactiva o hubo un problema de red.",
+            "Solución: la mayoría de las bibliotecas de grupos de conexiones tienen mecanismos de verificación de estado integrados. Puede configurar el grupo para ejecutar una consulta simple (como SELECT 1) en una conexión antes de enviarla a su aplicación. Si la consulta falla, el grupo descarta la conexión inactiva y le proporciona una nueva.",
+            "Agotamiento de la piscina",
+            "El agotamiento del grupo ocurre cuando la demanda de conexiones de su aplicación excede la configuración máxima de conexiones del grupo. Cada nueva solicitud tiene que esperar hasta que se restablezca la conexión, lo que puede ralentizar la aplicación o provocar que se agote el tiempo de espera de las solicitudes.",
+            "Soluciones: Optimice sus consultas para hacerlas más rápidas, ajuste adecuadamente el tamaño del grupo según la capacidad de la CPU de su base de datos y establezca un tiempo de espera de conexión sensato para que la aplicación falle rápidamente en lugar de colgarse indefinidamente."
+          ]
+        },
+        "traffic-spikes": {
+          "blocks": [
+            "Veamos un escenario: su base de datos tiene 4 núcleos de CPU. Su grupo de conexiones está configurado con max_connections: 10, min_connections: 10, connect_timeout: 5 segundos. Su consulta tarda unos 20 milisegundos en ejecutarse.",
+            "Antes de que lleguen los usuarios, el grupo de conexiones crea 10 conexiones. Estos están abiertos, autenticados y inactivos en el grupo.",
+            "A las 5:00 p. m., 100 usuarios hacen clic simultáneamente en un enlace que activa su consulta. Milisegundos 0-5: las primeras 10 solicitudes toman instantáneamente las 10 conexiones disponibles y envían sus consultas a la base de datos. El recuento disponible del grupo ahora es 0. Los 10 están activos.",
+            "Milisegundos 5-10: las otras 90 solicitudes ahora llegan y solicitan una conexión. El administrador del grupo les dice: \"Deben esperar en una cola. Les notificaré en el instante en que se restablezca la conexión\". Fundamentalmente, la base de datos está protegida. Solo trata 10 consultas a la vez.",
+            "Milisegundos 20-25: la base de datos finaliza el primer lote (20 ms después). A medida que cada solicitud devuelve su conexión, el grupo se la entrega inmediatamente a la siguiente solicitud en la cola. Este ciclo de \"devolver y pedir prestado\" ocurre en un instante. Dado que hay 10 lotes de 10 solicitudes, el tiempo total es de aproximadamente 200 milisegundos. Los primeros 10 usuarios obtienen tiempos de respuesta de 20 ms, el último usuario obtiene 200 ms, pero los 100 reciben servicio en menos de un cuarto de segundo sin que el sistema se vuelva inestable."
+          ]
+        },
+        "oversized": {
+          "blocks": [
+            "Establecer el mínimo y el máximo de su grupo de conexiones en 100 en un servidor de base de datos de 4 núcleos conducirá a un rendimiento significativamente peor que un grupo más pequeño y de tamaño correcto.",
+            "Imagine un gerente con 4 manos (los 4 núcleos de CPU) que tiene 100 empleados y todos exigen una respuesta inmediata. El gerente cambiará frenéticamente entre ellos, dedicará un segundo al empleado A y luego lo dejará; dedicando un segundo al empleado B, y así sucesivamente. El gerente gasta la mayor parte de su energía haciendo malabarismos y cambiando tareas, sin completar ninguna de ellas. Cada empleado tiene que esperar mucho más tiempo que si hubiera formado una cola ordenada.",
+            "Esto es exactamente lo que le sucede a su base de datos: CPU Thrashing (el problema central), contención de recursos para E/S y bloqueos de disco, hinchazón inmediata de la memoria y, en última instancia, mayor latencia e inestabilidad del sistema.",
+            "En resumen, el trabajo más importante del grupo de conexiones es actuar como un guardián que acelera las solicitudes a un nivel que la base de datos pueda manejar de manera eficiente."
+          ]
+        },
+        "key-takeaways": {
+          "blocks": [
+            "Utilice siempre un grupo de conexiones: abrir y cerrar conexiones por solicitud es demasiado costoso.",
+            "Ajuste desde la perspectiva de la base de datos: el tamaño del grupo debe reflejar los núcleos de la CPU, no solo la demanda de las aplicaciones.",
+            "Evite fugas: devuelva siempre las conexiones, incluso si se producen errores.",
+            "Valide las conexiones: utilice comprobaciones de estado para eliminar conexiones obsoletas o inactivas.",
+            "Establezca tiempos de espera razonables: falle rápidamente para las aplicaciones orientadas al usuario, permita esperas más largas para trabajos en segundo plano.",
+            "No sobredimensione el grupo: demasiadas conexiones provocan fallos en la CPU y degradan el rendimiento.",
+            "Supervise y ajuste: comience con los valores predeterminados de las mejores prácticas y luego perfeccione en función de métricas del mundo real."
+          ]
+        },
+        "conclusion-pool": {
+          "blocks": [
+            "Los grupos de conexiones de bases de datos son una de las formas más efectivas de equilibrar el rendimiento, la escalabilidad y la estabilidad en las aplicaciones modernas. Al reutilizar conexiones en lugar de crearlas y destruirlas constantemente, los grupos reducen drásticamente la latencia, mejoran la eficiencia de los recursos y protegen su base de datos de picos de tráfico. Para los desarrolladores que crean aplicaciones con uso intensivo de datos, dominar la agrupación de conexiones no es opcional: es esencial."
+          ]
+        }
+      }
+    },
+    "tiny-llm-potato-computer": {
+      "title": "Cómo ejecutar un LLM pequeño en una computadora básica",
+      "preview": "Ejecutar modelos de lenguaje grandes localmente puede parecer imposible en un Mac M1 de 8 GB. Por suerte, TinyLlama (1.1 B de parámetros) y Docker con llama.cpp lo hacen muy sencillo.",
+      "toc": {
+        "step-1": "Paso 1: Descargar el modelo",
+        "step-2": "Paso 2: Descargar imagen Docker",
+        "step-3": "Paso 3: Ejecutar el servidor",
+        "step-4": "Paso 4: Consultar el modelo",
+        "troubleshooting": "Consejos de solución de problemas",
+        "conclusion": "Conclusión"
+      },
+      "headings": {
+        "step-1": "Paso 1: Descargar el modelo cuantizado",
+        "step-2": "Paso 2: Descargar la imagen Docker",
+        "step-3": "Paso 3: Ejecutar el servidor llama.cpp",
+        "step-4": "Paso 4: Consultar el modelo",
+        "troubleshooting": "Consejos de solución de problemas",
+        "conclusion": "Conclusión"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "Ejecutar modelos de idiomas grandes localmente puede parecer como intentar alimentar una catedral con una sola batería AA, especialmente en una Mac M1 de 8 GB. Afortunadamente, TinyLlama (parámetros 1.1 B, cuantificados en 4 bits) y el \"servidor\" Docker llama.cpp lo hacen absolutamente simple.",
+            "En esta guía, aprenderá cómo descargar el modelo TinyLlama Q4_0, extraer la imagen del servidor ARM64 llama.cpp, montar y ejecutar TinyLlama dentro de Docker y enviar su primer mensaje."
+          ]
+        },
+        "step-1": {
+          "blocks": [
+            "Primero, toma los pesos cuantificados de 0,6 GB de Hugging Face y guárdalos en ~/models:",
+            "Si no tienes instalado huggingface-cli:",
+            "Una vez instalado, verifique con:"
+          ]
+        },
+        "step-2": {
+          "blocks": [
+            "Obtenga el servidor llama.cpp nativo de ARM64; no se requiere emulación:"
+          ]
+        },
+        "step-3": {
+          "blocks": [
+            "Suponiendo que ya haya colocado el modelo cuantificado de TinyLlama en ~/models/tinyllama-1.1b-chat-v1.0.Q4_0.gguf, inicie el contenedor en primer plano:",
+            "--rm -lo mantiene limpio e interactivo. --platform=linux/arm64/v8 fuerza la compilación nativa en M1. -n 512 limita las respuestas a 512 tokens.",
+            "Deberías ver:"
+          ]
+        },
+        "step-4": {
+          "blocks": [
+            "En una segunda terminal, envíe un mensaje de estilo instrucción a /v1/completions:",
+            "Recibirás una carga útil JSON con tu respuesta en opciones[0].texto."
+          ]
+        },
+        "troubleshooting": {
+          "blocks": [
+            "¿Respuestas en blanco o galimatías?",
+            "Envuelva su mensaje en la plantilla ### Instrucción:...### Respuesta:.",
+            "¿Sin memoria?",
+            "TinyLlama Q4_0 usa ~0,6 GiB en el contenedor. Si ve OOM en modelos más grandes, aumente la memoria de Docker en Preferencias → Recursos → Memoria o quédese con esta pequeña variante."
+          ]
+        },
+        "conclusion": {
+          "blocks": [
+            "¡Acaba de transformar su \"computadora papa\" en un servidor LLM local! Con un solo comando de Docker y un modelo cuantificado de TinyLlama, puede experimentar con chatbots, integraciones en Node.js/Next.js o demostraciones de IA sin conexión, sin necesidad de GPU en la nube. ¡Feliz pirateo!"
+          ]
+        }
+      }
+    },
+    "tdd-pros-and-cons": {
+      "title": "Prueba primero o arrepiéntete: Los pros y contras del TDD",
+      "preview": "Seamos honestos: cuando escuché por primera vez sobre TDD, mi reacción fue: «¿Me estás diciendo que escriba las pruebas antes del código? Es como escribir una reseña de una película antes de verla.»",
+      "toc": {
+        "pros": "Ventajas",
+        "pro-1": "1. Mejores funciones con DI",
+        "pro-2": "2. Refactorizar sin miedo",
+        "pro-3": "3. Tests como documentación",
+        "pro-4": "4. Mantenibilidad",
+        "pro-5": "5. Detectar bugs pronto",
+        "pro-6": "6. Cobertura de código",
+        "cons": "TDD no es perfecto",
+        "con-1": "1. Curva de aprendizaje pronunciada",
+        "con-2": "2. Ralentiza al principio",
+        "con-3": "3. Difícil probar todo",
+        "con-4": "4. Infierno de tests",
+        "con-5": "5. No reemplaza al QA",
+        "con-6": "6. Excesivo para scripts pequeños",
+        "con-7": "7. Clientes con presupuesto ajustado",
+        "final-thoughts": "Reflexiones finales"
+      },
+      "headings": {
+        "pros": "Ventajas",
+        "pro-1": "1. Obliga a que tus funciones sean mejores — de verdad, mejores",
+        "pro-2": "2. Refactorizar sin miedo",
+        "pro-3": "3. Tus tests también sirven como documentación (en serio)",
+        "pro-4": "4. La mantenibilidad se dispara (hola, proyectos empresariales)",
+        "pro-5": "5. Fin de los «ups, ese bug llegó a producción»",
+        "pro-6": "6. La cobertura de código mantiene la honestidad",
+        "cons": "Pero TDD no es perfecto",
+        "con-1": "1. TDD tiene una curva de aprendizaje pronunciada para principiantes",
+        "con-2": "2. Ralentiza al principio (y eso puede ser frustrante)",
+        "con-3": "3. No todo es fácil de probar",
+        "con-4": "4. Es fácil caer en el «infierno de tests»",
+        "con-5": "5. No reemplaza al QA real",
+        "con-6": "6. Puede ser excesivo para scripts pequeños o código desechable",
+        "con-7": "7. Los clientes con presupuesto ajustado no siempre apreciarán el TDD",
+        "final-thoughts": "Reflexiones finales"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "Seamos honestos: cuando escuché por primera vez sobre el desarrollo basado en pruebas (TDD), mi reacción inicial fue algo como: \"Espera, ¿quieres que escriba pruebas... incluso antes de escribir el código? Eso es como escribir una reseña de una película antes de verla\". Se sentía atrasado, demasiado rígido y, sinceramente, como un asesino de la productividad.",
+            "Pero, como ocurre con muchas cosas en la tecnología, lo que comenzó como escepticismo eventualmente se convirtió en algo cercano a la obsesión.",
+            "Hoy en día, TDD se ha convertido en una parte fundamental de mi flujo de trabajo de desarrollo, algo que utilizo no porque sea necesario, sino porque realmente me ayuda a escribir un código mejor, más limpio y más fácil de mantener. En esta publicación, quiero compartir mi opinión personal (y un poco obstinada) sobre por qué TDD se ha ganado un lugar permanente en mi caja de herramientas."
+          ]
+        },
+        "pros": {
+          "blocks": [
+            "Es difícil comprometerse con algo cuando no sabes para qué sirve, por qué es importante o si siquiera vale la pena dedicarle tiempo. Eso es exactamente lo que sentí acerca de TDD, hasta que le di una oportunidad real. Estas son algunas de las razones más importantes por las que sigo recurriendo a TDD cada vez que construyo algo serio:"
+          ]
+        },
+        "pro-1": {
+          "blocks": [
+            "Una de las cosas más interesantes (y discretamente más frustrante al principio) de TDD es que te obliga a escribir mejores funciones. Limpiador. Más independiente. Menos pegajoso. Si ha oído hablar de la inyección de dependencia, aquí es donde empieza a tener sentido.",
+            "Ejemplo 1:",
+            "Sin inyección de dependencia (un desastre estrechamente acoplado):",
+            "Se ve bien, ¿verdad? Pero si quieres probar getUserProfile, ahora tienes que lidiar con un objeto de base de datos real, o burlarte de él de maneras extrañas. Vaya.",
+            "Con inyección de dependencia (compatible con TDD):",
+            "Ahora, su función ya no es responsable de crear la base de datos, simplemente la usa. Esto hace que sea muy fácil de probar:",
+            "¿Ves? TDD lo empuja suavemente (bueno, tal vez lo empuja) a escribir funciones que no dependan del estado global o de dependencias ocultas. Y una vez que te acostumbres, comenzarás a hacerlo incluso cuando no estés escribiendo exámenes primero.",
+            "Ejemplo 2:",
+            "Sin inyección de dependencia:",
+            "Ahora tienes un problema: cada vez que pruebas esta función, es posible que envíe un correo electrónico (o falle si no se burla correctamente de EmailService). No es divertido.",
+            "Con inyección de dependencia:",
+            "En tu prueba:",
+            "Ahora no estás enviando correos electrónicos reales, solo estás verificando la lógica. Limpio y seguro."
+          ]
+        },
+        "pro-2": {
+          "blocks": [
+            "You ever try to clean up some messy code and suddenly everything breaks? Mueves un pequeño bloque y toda la torre se derrumba. Refactorizar sin pruebas es como operar sin arnés de seguridad: solo esperas lo mejor.",
+            "Dado que sus pruebas ya cubren el comportamiento esperado, usted es libre de mejorar los nombres de las variables, separar funciones, intercambiar implementaciones o refactorizar completamente, sin el \"¿y si rompo algo?\" ansiedad.",
+            "Digamos que tienes esta función funcional pero fea:",
+            "Decides limpiarlo:",
+            "Si tienes pruebas como:",
+            "Puedes refactorizar sin contener la respiración. Si las pruebas pasan, estás bien. Si fallan, le dirán exactamente qué se rompió.",
+            "Escenario adicional: cuando alguien más descifra tu código",
+            "Aquí hay uno picante: ¿alguna vez un compañero de equipo \"limpió\" su función de utilidad y accidentalmente rompió otras tres cosas que dependían de ella? Sí, yo también.",
+            "Digamos que escribiste una pequeña y humilde función:",
+            "Tienes pruebas:",
+            "Todo bien. Pero entonces llega alguien y decide \"mejorarlo\":",
+            "Parece inofensivo, ¿verdad? Pero ahora toLowerCase() desapareció y otras partes de la aplicación que dependen de nombres de usuario en minúsculas comienzan a fallar. Debido a su prueba, la rotura se detecta inmediatamente:",
+            "Auge. Ahora tu compañero de equipo sabe exactamente qué rompieron y dónde. Sin dramatismo. Sin adivinanzas. No hay depuración a las 3 a.m. Ésta es la magia de TDD: protege su código de futuras ediciones \"bien intencionadas\", ya sean realizadas por usted o por otra persona."
+          ]
+        },
+        "pro-3": {
+          "blocks": [
+            "¿Una superpotencia subestimada de TDD? Sus pruebas se convierten en documentación viva. ¿Alguna vez te uniste a un proyecto en el que no tenías idea de cómo funciona una función de utilidad? Con un conjunto de pruebas sólido, puede simplemente abrir el archivo de prueba y boom: obtendrá una guía paso a paso sobre cómo se supone que debe comportarse la función.",
+            "En lugar de adivinar qué hace esto:",
+            "Puedes simplemente mirar la prueba:",
+            "Eso es básicamente un instructivo. Le indica qué espera la función, qué devuelve y bajo qué condiciones. Esto es enorme para incorporar, depurar y escribir nuevas funciones que dependen del código existente. Con buenas pruebas, tus funciones cuentan su propia historia."
+          ]
+        },
+        "pro-4": {
+          "blocks": [
+            "Si está construyendo algo pequeño, es posible que se salga con la suya con código espagueti y sin pruebas. Pero en proyectos empresariales, donde la base del código crece más rápido que la tolerancia a la cafeína, la mantenibilidad lo es todo.",
+            "TDD naturalmente conduce a un código que es más fácil de mantener, refactorizar y ampliar. ¿Por qué? Porque todo está escrito pensando en la capacidad de prueba. Las funciones están desacopladas. Los efectos secundarios están controlados. Estás pensando en el futuro en lugar de arreglar las cosas con cinta adhesiva.",
+            "Cuando esa aplicación empresarial gigante tiene más de 300 contribuyentes, cambiar una línea de lógica no tiene por qué ser como desactivar una bomba. Las pruebas le dirán inmediatamente si algo se rompe aguas abajo. TDD convierte su código base de un frágil castillo de cartas en algo que realmente puede sobrevivir al crecimiento, la rotación y la escala."
+          ]
+        },
+        "pro-5": {
+          "blocks": [
+            "Seamos realistas: los desarrolladores olvidan cosas. Las pruebas no.",
+            "Incluso si alguien del equipo omite la ejecución de pruebas localmente, tener las pruebas integradas en su canal de CI/CD actúa como un guardián automatizado. ¿Alguna solicitud de confirmación o extracción que rompa una prueba? Boom: el oleoducto falla. El código no se implementa. Así de simple.",
+            "Aquí es donde TDD realmente brilla. Debido a que sus pruebas se escriben primero, siempre están listas para detectar regresiones, no como una ocurrencia tardía. Entonces, incluso si su compañero de equipo olvida ejecutar la prueba npm, su configuración de CI no lo hará."
+          ]
+        },
+        "pro-6": {
+          "blocks": [
+            "El hecho de que alguien diga que escribió pruebas no siempre significa que haya probado todo lo que importa. Ahí es donde interviene la cobertura del código.",
+            "Al configurar un umbral mínimo de cobertura de prueba (digamos, 80 % o más) en su proceso de CI/CD, no solo está verificando si existen pruebas, sino que también está verificando si realmente se ejecutan en su código. Puede configurar Jest para que falle en las compilaciones si la cobertura cae por debajo de un umbral:",
+            "Esto asegura que su disciplina TDD no se desperdicie. La cobertura del código no se trata de alcanzar el 100% para poder alardear, sino de visibilidad, responsabilidad y mantener limpia la base de código."
+          ]
+        },
+        "cons": {
+          "blocks": [
+            "Sé que he estado promocionando TDD como si fuera lo mejor desde el modo oscuro, pero seamos honestos, no todo es fácil. Como cualquier buena herramienta o práctica, conlleva compensaciones. Estos son los momentos en los que TDD puede parecer un dolor de cabeza en lugar de un héroe."
+          ]
+        },
+        "con-1": {
+          "blocks": [
+            "Si recién está comenzando a programar, TDD puede parecerle como aprender a conducir con una transmisión manual y, al mismo tiempo, resolver un cubo de Rubik. ¿Estás tratando de entender las funciones, la lógica y la sintaxis, y ahora también tienes que escribir pruebas para código que ni siquiera has escrito todavía? Es mucho.",
+            "Para los principiantes, TDD puede parecer un obstáculo en lugar de una ayuda para el aprendizaje. Pero aquí está el giro: una vez que superas la incomodidad, TDD puede acelerar el aprendizaje. Le enseña a pensar en el comportamiento del código, escribir funciones modulares y depurar con más claridad. Simplemente no es exactamente apto para principiantes desde el principio."
+          ]
+        },
+        "con-2": {
+          "blocks": [
+            "Cuando eres nuevo en TDD, te sientes como si estuvieras codificando en cámara lenta. Escribe una prueba. Míralo fallar. Escribe suficiente código. Ejecútalo de nuevo. Refactorizar. Repetir. Mientras tanto, tu amigo acaba de terminar toda la función en la mitad del tiempo (pero también introdujo 3 errores).",
+            "TDD es una inversión. Te ralentiza ahora para ahorrarte tiempo (y estrés) más adelante. Pero requiere paciencia."
+          ]
+        },
+        "con-3": {
+          "blocks": [
+            "A veces trabajas con cosas que resulta complicado probar. Piense en cargas de archivos, API externas, WebSockets en tiempo real o cosas que afectan al hardware. Puedes burlarte, destruir y aislar todo lo que quieras, pero algunos escenarios aún parecen complicados.",
+            "TDD no siempre funciona bien con casos extremos desordenados o dependencias complejas a menos que haga un esfuerzo adicional para diseñarlos para que sean comprobables."
+          ]
+        },
+        "con-4": {
+          "blocks": [
+            "Las malas pruebas son peores que ninguna prueba. Si sus pruebas son frágiles, demasiado específicas o están estrechamente vinculadas a los detalles de implementación, se rompen cada vez que las refactoriza, incluso si el comportamiento real no cambió.",
+            "Esto lleva a los desarrolladores a murmurar \"¿por qué estamos haciendo esto?\" y apagar el conjunto de pruebas. Moraleja de la historia: escriba pruebas significativas, no solo relleno de cobertura de pruebas."
+          ]
+        },
+        "con-5": {
+          "blocks": [
+            "TDD detecta errores lógicos y regresiones, pero no lo salvará de fallas de UI/UX, problemas de accesibilidad o flujos de usuarios confusos. No es una solución milagrosa. Aún necesitas usuarios reales (o gente de control de calidad) que hagan clic y rompan cosas de manera creativa."
+          ]
+        },
+        "con-6": {
+          "blocks": [
+            "No todo necesita TDD en toda regla. ¿Un guión único o una pequeña herramienta personal? Escribir pruebas para cada línea puede suponer más trabajo de lo que vale. Utilice su criterio: está bien romper las reglas cuando tenga sentido."
+          ]
+        },
+        "con-7": {
+          "blocks": [
+            "Cuando trabajas con un cliente que tiene un presupuesto reducido y quiere que la aplicación esté terminada ayer, explicarle el valor de escribir pruebas primero puede parecer como pedirle que pague más por funciones invisibles.",
+            "No siempre ven la recompensa a largo plazo. Quieren botones que funcionen, pantallas que se carguen y un inicio lo antes posible. A veces tiene sentido omitir TDD (o reducirlo), especialmente para MVP o prototipos. Sea honesto consigo mismo: saltarse las pruebas ahora significa que está apostando a arreglar las cosas más adelante. Y después siempre cuesta más."
+          ]
+        },
+        "final-thoughts": {
+          "blocks": [
+            "El desarrollo basado en pruebas no es mágico. No escribirá su código por usted ni detendrá todos los errores en seco. Pero sí cambia la forma en que piensa, estructura y mantiene su código, para mejor.",
+            "Sí, puede resultar frustrante. Sí, se necesita tiempo para aprender. Y sí, a veces simplemente quieres hackear algo y saltarte las pruebas. Lo entiendo. Pero en mi experiencia, los beneficios de TDD casi siempre superan la fricción.",
+            "No se trata de escribir pruebas perfectas, sino de crear código en el que sea más fácil confiar, cambiar y hacer crecer. Ya sea que esté trabajando solo, en un equipo que se mueve rápidamente o escalando una aplicación empresarial gigante, TDD puede ser el héroe silencioso que evita que su código base implosione. Entonces, si todavía estás indeciso, inténtalo de verdad. Empiece poco a poco. Romper cosas. Probar cosas. Puede que acabe gustándote."
+          ]
+        }
+      }
+    },
+    "elixir-features-not-in-js": {
+      "title": "10 características únicas de Elixir que no están en JavaScript",
+      "preview": "JavaScript es versátil y muy usado, pero en programación funcional, concurrencia y tolerancia a fallos, Elixir introduce características que JavaScript simplemente no ofrece de forma nativa.",
+      "toc": {
+        "pipe-operator": "1. Operador pipe (|>)",
+        "pattern-matching": "2. Coincidencia de patrones",
+        "immutable-data": "3. Datos inmutables por defecto",
+        "function-clauses": "4. Cláusulas de función",
+        "guards": "5. Guards en cláusulas de función",
+        "with-expression": "6. Expresión with",
+        "tco": "7. Optimización de llamadas en cola",
+        "actor-model": "8. Procesos y modelo Actor",
+        "doc-generation": "9. @doc y generación de documentación",
+        "macros": "10. Macros declarativas",
+        "conclusion": "Conclusión"
+      },
+      "headings": {
+        "pipe-operator": "1. Operador pipe (|>)",
+        "pattern-matching": "2. Coincidencia de patrones",
+        "immutable-data": "3. Datos inmutables por defecto",
+        "function-clauses": "4. Cláusulas de función / coincidencia de patrones en cabeceras",
+        "guards": "5. Guards en cláusulas de función",
+        "with-expression": "6. Expresión with para manejo de errores componible",
+        "tco": "7. Optimización de llamadas en cola (TCO)",
+        "actor-model": "8. Procesos y el modelo Actor",
+        "doc-generation": "9. @doc y generación de documentación integrada",
+        "macros": "10. Soporte de primera clase para macros declarativas",
+        "conclusion": "Conclusión"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "JavaScript es un lenguaje versátil y ampliamente utilizado, especialmente en el desarrollo web. Sin embargo, cuando se trata de programación funcional, concurrencia y tolerancia a fallos, Elixir introduce varias características avanzadas que JavaScript simplemente no ofrece de forma nativa. Construido sobre Erlang VM, Elixir está diseñado para brindar escalabilidad, mantenibilidad y alta disponibilidad, lo que lo convierte en una opción convincente para los desarrolladores que buscan soluciones sólidas y elegantes.",
+            "En este artículo, exploraremos 10 potentes funciones del lenguaje en Elixir que faltan o que no son compatibles con JavaScript, junto con sus ventajas y posibles soluciones en el ecosistema de JavaScript."
+          ]
+        },
+        "pipe-operator": {
+          "blocks": [
+            "El operador de tubería permite encadenar expresiones donde la salida de una función se convierte en la entrada de la siguiente. Esto crea un flujo claro y legible de transformaciones de datos sin llamadas a funciones profundamente anidadas.",
+            "Por qué es útil",
+            "Mejora la legibilidad y la componibilidad en canalizaciones funcionales, especialmente cuando se trata de múltiples transformaciones.",
+            "Alternativa de JavaScript",
+            "No hay ningún operador de tuberías nativo a partir de ES2024, pero existe una propuesta. Se puede simular mediante encadenamiento de métodos o bibliotecas como Ramda."
+          ]
+        },
+        "pattern-matching": {
+          "blocks": [
+            "La coincidencia de patrones se utiliza no solo para extraer valores de estructuras de datos, sino también para controlar el flujo de lógica comparando formas de datos específicas.",
+            "Por qué es útil",
+            "Elimina la necesidad de condicionales detallados. Hace que el código sea declarativo y autodocumentado, especialmente para el manejo de datos complejos.",
+            "Alternativa de JavaScript",
+            "Limitado a la desestructuración: no hay fallas de coincidencia verdadera ni coincidencia de cabezales de función."
+          ]
+        },
+        "immutable-data": {
+          "blocks": [
+            "Todos los datos en Elixir son inmutables. No modifica datos: crea nuevos datos basados ​​en estructuras existentes.",
+            "Por qué es útil",
+            "Conduce a un código más seguro, evita efectos secundarios y hace que los programas sean más fáciles de razonar y depurar, especialmente en entornos concurrentes.",
+            "Nunca modificas al usuario original; en su lugar, devuelve una nueva copia con los cambios. Todas las estructuras de datos en Elixir son persistentes (compartición estructural bajo el capó), lo que hace que la inmutabilidad sea eficiente.",
+            "En JavaScript",
+            "Los objetos y matrices de JavaScript son mutables de forma predeterminada:",
+            "Podemos imponer la inmutabilidad usando Object.freeze() o bibliotecas.",
+            "Desventaja: Object.freeze() es superficial: no congela los objetos anidados.",
+            "Mejor alternativa: Deep Freeze",
+            "Puedes congelar objetos de forma recursiva:",
+            "O use funciones puras para devolver nuevos objetos en lugar de mutar:"
+          ]
+        },
+        "function-clauses": {
+          "blocks": [
+            "Elixir",
+            "Ventaja: lógica de funciones más limpia mediante declaraciones.",
+            "javascript"
+          ]
+        },
+        "guards": {
+          "blocks": [
+            "Puede definir varias versiones de la misma función, cada una adaptada a patrones específicos de datos de entrada.",
+            "Por qué es útil",
+            "Mantiene la lógica organizada y expresiva, especialmente para manejar casos extremos o lógica de ramificación sin largos bloques if/else.",
+            "Alternativa de JavaScript: devoluciones anticipadas",
+            "Alternativa de JavaScript: predicados funcionales",
+            "Alternativa de JavaScript: ts-patrón"
+          ]
+        },
+        "with-expression": {
+          "blocks": [
+            "En Elixir, la expresión with es una construcción poderosa para el manejo de errores componibles y la coincidencia de patrones en múltiples pasos. Le permite escribir código de apariencia lineal mientras realiza un cortocircuito elegante en caso de falla, lo que es muy útil para encadenar operaciones que pueden devolver tuplas {:ok, value} o {:error, Reason}.",
+            "Cada paso devuelve {:ok, valor}. Si algún paso devuelve {:error, motivo}, el bloque with hace un cortocircuito con la cláusula else. Cadenas de errores componibles y legibles sin anidamiento profundo.",
+            "Alternativa de JavaScript: async/await con retornos anticipados",
+            "Alternativa de JavaScript: mónadas de resultados"
+          ]
+        },
+        "tco": {
+          "blocks": [
+            "TCO es una optimización en la que el compilador o el tiempo de ejecución pueden reutilizar el marco de pila de la función actual para una llamada recursiva si es la última acción (posición final) de una función.",
+            "Previene los desbordamientos de pila en funciones recursivas y permite la recursividad como un reemplazo seguro y eficaz de los bucles.",
+            "En Elixir (a través de BEAM VM), el TCO es total y confiablemente compatible. Puede escribir de forma segura funciones profundamente recursivas sin arruinar la pila, siempre que la llamada esté en la posición final.",
+            "JavaScript NO admite de manera confiable el TCO a pesar de ser parte de la especificación ES6. La mayoría de los motores JS (por ejemplo, V8 en Chrome, Node.js) no lo implementan, por lo que las funciones recursivas aún pueden causar un desbordamiento de la pila para entradas grandes.",
+            "Solución alternativa: bucle manual",
+            "Solución alternativa: trampolín"
+          ]
+        },
+        "actor-model": {
+          "blocks": [
+            "El modelo de actor es un modelo de programación concurrente en el que los actores son procesos independientes que mantienen el estado, se comunican solo a través de mensajes, reaccionan a los mensajes utilizando bloques de recepción (como buzones de correo) y pueden generar nuevos actores. Sin memoria compartida: los actores no modifican directamente el estado de los demás.",
+            "Imagine a cada actor como una persona en una sala de chat: cada uno tiene su propio cerebro (estado independiente), no comparten cerebro: hablan enviando mensajes y manejan un mensaje a la vez. En Elixir, cada actor es un proceso liviano que se ejecuta en la máquina virtual BEAM.",
+            "Mejores casos de uso: sistemas de mensajería/chat en tiempo real, control de dispositivos IoT, colas de trabajos distribuidas, servidores de juegos y sistemas de tareas en segundo plano: cada unidad se ejecuta como un actor recuperable y que falla de forma independiente.",
+            "Alternativa de JavaScript: trabajadores web",
+            "Los Web Workers están aislados y se comunican a través de mensajes, pero no son tan livianos como los procesos de Elixir, sin una verdadera supervisión del proceso ni generación liviana.",
+            "Alternativa de JavaScript: Node.js work_threads",
+            "Más cercano en espíritu, pero aún carece de la tolerancia a fallas incorporada de BEAM y la capacidad de generar millones de procesos livianos."
+          ]
+        },
+        "doc-generation": {
+          "blocks": [
+            "@doc agrega documentación en línea a una función o módulo, utilizado por el sistema ExDoc de Elixir para generar documentos HTML enriquecidos. También puede usar h Math.add en IEx para ver documentos en línea de forma interactiva.",
+            "Ejecute mix docs con ExDoc instalado para generar documentación HTML. Utilice h Math.add en IEx para ver documentos en línea.",
+            "Alternativa de JavaScript: JSDoc",
+            "JavaScript carece de documentación integrada de módulo/función que se integre con el tiempo de ejecución, pero JSDoc logra resultados similares:",
+            "Genere documentos HTML utilizando herramientas como JSDoc, TypeDoc o ESDoc:"
+          ]
+        },
+        "macros": {
+          "blocks": [
+            "En Elixir, las macros son una herramienta de metaprogramación de primera clase que le permite transformar código en tiempo de compilación, inyectar o generar código de forma declarativa y ampliar la sintaxis del lenguaje. La metaprogramación es cuando un programa puede leer, modificar o generar código, en tiempo de compilación o de ejecución.",
+            "Esto define una nueva construcción a menos que en el momento de la compilación se transforme en:",
+            "Ventaja: potente metaprogramación. Desventaja: no es apto para principiantes.",
+            "Alternativa de JavaScript: macros de Babel",
+            "Limitadas y dependientes de herramientas, pero las macros de Babel pueden lograr transformaciones similares en tiempo de compilación:"
+          ]
+        },
+        "conclusion": {
+          "blocks": [
+            "El conjunto de características de Elixir refleja su enfoque en paradigmas funcionales limpios, concurrencia confiable y ergonomía del desarrollador. Si bien JavaScript sigue siendo indispensable en el desarrollo web, carece de muchas de las capacidades nativas de Elixir, como la coincidencia de patrones, los procesos livianos y la tolerancia a fallas incorporada. Afortunadamente, con las herramientas y patrones adecuados, algunas de estas brechas se pueden salvar en JavaScript, pero a menudo con mayor complejidad.",
+            "Si es un desarrollador de JavaScript que busca expandirse a sistemas que exigen resiliencia, escalabilidad o pureza funcional, Elixir ofrece una alternativa refrescante y poderosa.",
+            "Consejo adicional: ¿quieres simular algunos de estos en JavaScript?",
+            "Pruebe Ramda o Lodash/fp para utilidades FP, use ts-pattern para la coincidencia de patrones y explore cuentos populares en busca de mónadas como Result y Maybe."
+          ]
+        }
+      }
+    }
+  }
+}

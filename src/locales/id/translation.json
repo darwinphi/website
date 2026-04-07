@@ -1,0 +1,655 @@
+{
+  "nav": {
+    "projects": "Proyek",
+    "articles": "Artikel",
+    "about": "Tentang",
+    "darwinManalo": "Darwin Manalo"
+  },
+  "footer": {
+    "allRightsReserved": "Hak cipta dilindungi"
+  },
+  "social": {
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  },
+  "buttons": {
+    "backToHome": "Kembali ke Beranda",
+    "backToProjects": "Kembali ke Proyek",
+    "backToArticles": "Kembali ke Artikel",
+    "continueReading": "Lanjutkan membaca",
+    "visitProject": "Kunjungi Proyek",
+    "backToTop": "Kembali ke atas"
+  },
+  "pages": {
+    "home": {
+      "heroText": "Berbasis di Mutiara Timur (Manila, Filipina). Saya adalah pengembang Full-Stack yang membangun pengalaman web modern. Punya ide dan ingin terhubung? Mari berkolaborasi."
+    },
+    "projects": {
+      "title": "Proyek & Studi Kasus"
+    },
+    "articles": {
+      "title": "Artikel, Tutorial & Sumber Daya",
+      "tableOfContents": "Daftar Isi"
+    },
+    "about": {
+      "title": "Tentang Saya",
+      "bio1": "Saya lulus dengan gelar Sarjana Ilmu Komputer dari Universitas Adamson. Awalnya saya memulai karir sebagai Pengembang Front-end di Shore Suite, tetapi ada kejutan tak terduga ketika seseorang di tim mengundurkan diri—jadi saya mengambil alih pekerjaan back-end. Itulah cara saya menjadi pengembang Full-Stack.",
+      "bio2": "Selama lebih dari 8 tahun, setiap tantangan adalah kesempatan untuk mempelajari sesuatu yang baru (kadang dengan cara yang sulit, tetapi berhasil!). Melalui ini, saya secara konsisten menunjukkan keserbagunaan saya dengan membangun dan memelihara aplikasi web yang dapat diskalakan dari front-end hingga back-end. Saya juga telah mengembangkan pemikiran pemecahan masalah yang kuat dan kemampuan untuk tetap efektif bahkan ketika hal-hal menjadi berantakan.",
+      "bio3": "Saat ini saya berkolaborasi dalam proyek eksternal dengan NCS Filipina, di mana saya berkembang menyelesaikan masalah dunia nyata dan beradaptasi dengan persyaratan yang terus berkembang.",
+      "bio4": "Di luar pekerjaan, saya memastikan untuk menghabiskan waktu berkualitas dengan orang-orang terkasih. Saya juga menyukai bermain game mobile, menonton olahraga (terutama sepak bola!), dan sesekali bermain pikbola dan bulu tangkis (lalu makan di luar!) untuk tetap aktif."
+    }
+  },
+  "projectDetail": {
+    "aboutClient": "Tentang Klien",
+    "problem": "Masalah",
+    "solution": "Solusi",
+    "keyContributions": "Kontribusi Utama",
+    "impact": "Dampak",
+    "notFound": "Proyek tidak ditemukan"
+  },
+  "articleDetail": {
+    "notFound": "Artikel tidak ditemukan"
+  },
+  "errors": {
+    "projectNotFound": "Proyek tidak ditemukan",
+    "articleNotFound": "Artikel tidak ditemukan"
+  },
+  "projects": {
+    "globeTelecom": {
+      "name": "Platform Pengiriman & Penyimpanan Tagihan Globe Telecom",
+      "description": "Globe Telecom adalah salah satu penyedia telekomunikasi terbesar di Filipina, menawarkan layanan seluler, broadband, dan enterprise kepada jutaan pelanggan. Globe terus berinvestasi dalam modernisasi sistem internalnya untuk meningkatkan efisiensi operasional dan kualitas layanan.",
+      "aboutClient": "Globe Telecom adalah salah satu penyedia telekomunikasi terbesar di Filipina, menawarkan layanan seluler, broadband, dan enterprise kepada jutaan pelanggan. Globe terus berinvestasi dalam modernisasi sistem internalnya untuk meningkatkan efisiensi operasional dan kualitas layanan.",
+      "problem": "Sistem penagihan yang ada sangat bergantung pada skrip yang dijalankan secara manual untuk membuat ringkasan tagihan, menyimpan catatan, dan mengirim email. Pendekatan ini menimbulkan inefisiensi, risiko kesalahan manusia, dan membuat sistem sulit untuk diskalakan dan dipelihara.",
+      "solution": "Sebagai Full Stack Developer, saya berkontribusi dalam modernisasi alur kerja penagihan dan membangun alat internal untuk mendukung operasi.",
+      "keyContributions": [
+        "Peningkatan pembuatan ringkasan tagihan, penyimpanan, dan proses pengiriman email;",
+        "Membantu transisi dari sistem manual berbasis skrip ke arsitektur yang lebih otomatis dan terukur;",
+        "Mengembangkan API backend untuk mendukung operasi penagihan dan fungsi admin;",
+        "Membangun portal admin untuk agen penagihan dan tim dukungan;",
+        "Dirancang antarmuka yang ramah pengguna untuk menyederhanakan alur kerja administratif; dan,",
+        "Sistem front-end dan back-end terintegrasi untuk penanganan data yang lancar."
+      ],
+      "impact": [
+        "Mengurangi ketergantungan pada proses dan skrip manual;",
+        "Peningkatan keandalan dan skalabilitas sistem;",
+        "Memungkinkan operasi penagihan yang lebih cepat dan efisien;",
+        "Menyediakan platform terpusat bagi tim internal untuk mengelola tugas penagihan; dan,",
+        "Meningkatkan pemeliharaan sistem secara keseluruhan."
+      ]
+    },
+    "chongHuaHospital": {
+      "name": "Portal Rekrutmen Dokter Rumah Sakit Chong Hua",
+      "description": "Rumah Sakit Chong Hua adalah institusi kesehatan swasta terkemuka yang berbasis di Cebu City, Filipina, dengan pengalaman lebih dari satu abad dalam memberikan layanan medis berkualitas. Sebagai bagian dari transformasi digital yang berkelanjutan, rumah sakit berinvestasi dalam solusi teknologi untuk meningkatkan proses internal dan efisiensi operasional.",
+      "aboutClient": "Rumah Sakit Chong Hua adalah institusi kesehatan swasta terkemuka yang berbasis di Cebu City, Filipina, dengan pengalaman lebih dari satu abad dalam memberikan layanan medis berkualitas. Sebagai bagian dari transformasi digital yang berkelanjutan, rumah sakit berinvestasi dalam solusi teknologi untuk meningkatkan proses internal dan efisiensi operasional.",
+      "problem": "Proses rekrutmen dokter sangat bergantung pada penyerahan dan penanganan dokumen secara manual. Hal ini mengakibatkan waktu pemrosesan yang lebih lambat, peningkatan beban administratif, dan pengalaman yang terfragmentasi bagi pelamar maupun staf.",
+      "solution": "Sebagai Front-End Developer, saya berkontribusi dengan membangun portal rekrutmen online yang mendigitalkan proses pengiriman dokumen.",
+      "keyContributions": [
+        "Mengembangkan antarmuka yang ramah pengguna untuk aplikasi dokter;",
+        "Mengimplementasikan pengunggahan dokumen terstruktur dan alur kerja formulir;",
+        "Peningkatan kegunaan bagi pelamar dan staf internal; dan,",
+        "Berkolaborasi dengan API back-end untuk memastikan penanganan data yang lancar."
+      ],
+      "impact": [
+        "Mengurangi ketergantungan pada penanganan dokumen manual;",
+        "Peningkatan efisiensi dalam memproses aplikasi;",
+        "Memberikan pengalaman yang lebih lancar dan lebih mudah diakses bagi pelamar; dan,",
+        "Memungkinkan staf rekrutmen untuk mengelola pengajuan dalam sistem terpusat."
+      ]
+    },
+    "jollibeeKidsParty": {
+      "name": "Portal Pesta Anak Jollibee",
+      "description": "Jollibee adalah jaringan restoran cepat saji terbesar di Filipina, dikenal dengan menu ikonik dan layanan ramah keluarganya. Sebagai bagian dari perluasan penawaran, Jollibee menyediakan layanan Pesta Anak khusus untuk perayaan.",
+      "aboutClient": "Jollibee adalah jaringan restoran cepat saji terbesar di Filipina, dikenal dengan menu ikonik dan layanan ramah keluarganya. Sebagai bagian dari perluasan penawaran, Jollibee menyediakan layanan Pesta Anak khusus untuk perayaan.",
+      "problem": "Pengelolaan pemesanan Pesta Anak dan koordinasi acara dilakukan melalui sistem terpisah dan proses manual, yang menyebabkan inefisiensi, miskomunikasi, dan pengalaman yang buruk bagi pelanggan.",
+      "solution": "Sebagai Full Stack Developer, saya membantu mengembangkan portal khusus di mana pelanggan dapat menjelajahi paket pesta, memeriksa ketersediaan, dan mengelola pemesanan mereka dengan mudah.",
+      "keyContributions": [
+        "Fitur kustomisasi pesta yang dibangun dan ditingkatkan (tema, paket, add-on);",
+        "Peningkatan alur kerja pemesanan untuk membuat penjadwalan dan reservasi lebih intuitif;",
+        "Mengembangkan dan memelihara API back-end untuk mendukung logika pemesanan dan aliran data;",
+        "Kemampuan CMS yang dioptimalkan untuk mengelola konten dan konfigurasi pihak;",
+        "Performa sistem yang disempurnakan untuk waktu muat yang lebih cepat dan interaksi pengguna yang lebih lancar; dan,",
+        "Berkolaborasi antar tim untuk memastikan keselarasan antara front-end, back-end, dan kebutuhan bisnis."
+      ],
+      "impact": [
+        "Menyederhanakan pengalaman pemesanan pesta menyeluruh bagi pelanggan;",
+        "Peningkatan fleksibilitas dalam menyesuaikan paket pesta;",
+        "Mengurangi gesekan dalam proses pemesanan, meningkatkan kegunaan dan tingkat penyelesaian;",
+        "Memungkinkan tim internal untuk mengelola penawaran pihak secara lebih efisien melalui CMS; dan,",
+        "Peningkatan kinerja dan keandalan sistem secara keseluruhan di seluruh platform."
+      ]
+    },
+    "konsultaMd": {
+      "name": "KonsultaMD - Platform Telemedicine",
+      "description": "KonsultaMD adalah platform telemedicine yang menghubungkan pasien dengan tenaga medis profesional untuk konsultasi jarak jauh, dengan tujuan membuat layanan kesehatan lebih mudah diakses dan lebih praktis.",
+      "aboutClient": "KonsultaMD adalah platform telemedicine yang menghubungkan pasien dengan tenaga medis profesional untuk konsultasi jarak jauh, dengan tujuan membuat layanan kesehatan lebih mudah diakses dan lebih praktis.",
+      "problem": "Antarmuka telemedicine yang ada tidak teratur dan sulit dinavigasi, sehingga pasien kesulitan menjadwalkan konsultasi, menemukan spesialis, dan mengelola rekam medis mereka secara efisien.",
+      "solution": "Sebagai Full Stack Developer, saya bekerja dalam mendesain ulang dan memodernisasi platform untuk meningkatkan pengalaman pengguna dan fungsionalitas.",
+      "keyContributions": [
+        "Dirancang dan diimplementasikan API untuk memusatkan dan mengoptimalkan komunikasi data;",
+        "Membangun dan mengoptimalkan layanan back-end untuk menangani konkurensi tinggi dan lonjakan lalu lintas;",
+        "Solusi pembayaran terintegrasi yang aman dan fleksibel untuk mendukung berbagai model berlangganan;",
+        "Peningkatan kinerja dan keandalan sistem untuk alur kerja konsultasi waktu nyata; dan,",
+        "Berkolaborasi dengan tim front-end untuk memastikan konsumsi API dan aliran data yang efisien."
+      ],
+      "impact": [
+        "Memungkinkan akses skala besar terhadap layanan kesehatan jarak jauh selama pandemi;",
+        "Mendukung strategi monetisasi yang fleksibel dan peningkatan adopsi pengguna; dan,",
+        "Berkontribusi pada pertumbuhan pesat KonsultaMD selama periode kritis."
+      ]
+    },
+    "shoreSuite": {
+      "name": "Shore Suite - Sistem Manajemen Perhotelan",
+      "description": "Shore Suite adalah sistem manajemen perhotelan komprehensif yang dirancang untuk menyederhanakan operasional hotel, resor, dan penyedia akomodasi lainnya.",
+      "aboutClient": "Shore Suite adalah sistem manajemen perhotelan komprehensif yang dirancang untuk menyederhanakan operasional hotel, resor, dan penyedia akomodasi lainnya.",
+      "problem": "Hotel menghadapi kesulitan dengan sistem yang tersebar untuk manajemen kamar, layanan tamu, penagihan, dan koordinasi staf, yang menyebabkan inefisiensi operasional dan pengalaman tamu yang buruk.",
+      "solution": "Sebagai Full Stack Developer, saya berkontribusi dalam membangun sistem terintegrasi yang menyatukan berbagai fungsi manajemen perhotelan.",
+      "keyContributions": [
+        "Mengembangkan API yang kuat untuk mendukung pemesanan kamar, manajemen pelanggan, dan alur kerja operasional;",
+        "Berkontribusi pada pengaturan Arsitektur MicroServices untuk meningkatkan modularitas dan skalabilitas sistem; dan,",
+        "Pengujian unit dan integrasi yang diterapkan untuk memastikan keandalan sistem dan menjaga kualitas kode"
+      ],
+      "impact": [
+        "Peningkatan efisiensi operasional pemesanan dan manajemen hotel melalui layanan API yang andal;",
+        "Arsitektur sistem yang dapat diskalakan dan mampu menangani kebutuhan bisnis yang terus berkembang;",
+        "Mengurangi kesalahan sistem dan meningkatkan kepercayaan dalam penerapan melalui praktik pengujian; dan,",
+        "Membangun fondasi yang kuat dalam pengembangan backend, khususnya dalam pemrograman fungsional."
+      ]
+    }
+  },
+  "articleContent": {
+    "database-connection-pool": {
+      "title": "Apa itu Database Connection Pool?",
+      "preview": "Database connection pool adalah cache dari koneksi database yang siap digunakan oleh aplikasi. Daripada membuat koneksi baru setiap permintaan, pinjam saja dari pool dan kembalikan setelah selesai.",
+      "toc": {
+        "intro2": "Pendahuluan",
+        "why-slow": "Mengapa Membuat Koneksi Baru Itu Lambat?",
+        "how-pool-works": "Bagaimana Connection Pool Bekerja",
+        "lifecycle": "Siklus Hidup Koneksi yang Di-pool",
+        "common-settings": "Pengaturan Pool yang Umum",
+        "challenges": "Tantangan dan Solusi",
+        "traffic-spikes": "Lonjakan Traffic",
+        "oversized": "Pool yang Terlalu Besar",
+        "key-takeaways": "Poin Utama",
+        "conclusion-pool": "Kesimpulan"
+      },
+      "headings": {
+        "intro2": "Pendahuluan",
+        "why-slow": "Mengapa Membuat Koneksi Baru Itu Lambat?",
+        "how-pool-works": "Bagaimana Connection Pool Bekerja?",
+        "lifecycle": "Siklus Hidup Koneksi yang Di-pool",
+        "common-settings": "Pengaturan Pool yang Umum",
+        "challenges": "Tantangan dengan Connection Pool & Solusinya",
+        "traffic-spikes": "Menangani Lonjakan Traffic dengan Connection Pool",
+        "oversized": "Apa yang Terjadi Jika Pool Terlalu Besar?",
+        "key-takeaways": "Poin Utama",
+        "conclusion-pool": "Kesimpulan"
+      },
+      "sections": {
+        "intro2": {
+          "blocks": [
+            "Singkatnya, kumpulan koneksi database adalah cache koneksi database yang disimpan agar siap digunakan oleh aplikasi. Daripada membuat koneksi baru untuk setiap permintaan dan kemudian menghancurkannya, aplikasi hanya dapat meminjam koneksi yang sudah ada dari pool dan mengembalikannya setelah selesai. Ini membuat aplikasi Anda lebih cepat dan efisien.",
+            "Bayangkan melakukan panggilan telepon ke database Anda. Sebelum aplikasi Anda dapat meminta informasi apa pun dari database (seperti mengambil profil pengguna), aplikasi Anda harus membuat saluran komunikasi formal. \"Panggilan\" ini tidak instan; ada seluruh proses penyiapan: Jabat Tangan Jaringan (aplikasi Anda menemukan database dan mereka setuju untuk berbicara), Otentikasi (database memverifikasi kredensial Anda), dan Alokasi Sumber Daya (database mengesampingkan memori dan kekuatan pemrosesan). Hanya setelah semua langkah ini aplikasi Anda dapat mengirim kueri SQL."
+          ]
+        },
+        "why-slow": {
+          "blocks": [
+            "Bayangkan sebuah supermarket populer dengan ratusan pelanggan. Now, imagine that for every single customer, the store has to build a brand-new checkout counter, plug in a new cash register, and train a new cashier -- only to tear it all down after that one customer pays. Itu sangat tidak efisien, bukan? Itulah yang dilakukan aplikasi tanpa kumpulan koneksi.",
+            "For every user action that needs data, the application builds the counter (establishes a network connection), trains the cashier (authenticates), does the transaction (runs the SQL query), and tears it down (closes the connection). Proses ini mahal secara komputasi dan menghabiskan banyak waktu, memori, dan sumber daya CPU."
+          ]
+        },
+        "how-pool-works": {
+          "blocks": [
+            "Anggap saja seperti tempat taksi di bandara. Jauh lebih cepat menggunakan taksi yang menunggu daripada memanggil taksi baru dari seberang kota untuk setiap orang yang membutuhkan tumpangan.",
+            "Pada awalnya, pengelola kolam membuat sejumlah koneksi (taksi) dan menjaganya tetap berjalan dan menunggu di stand. Saat aplikasi Anda perlu berkomunikasi dengan database, aplikasi tidak memanggil database secara langsung. Ia hanya berjalan ke tempat taksi (kolam renang) dan meminta tumpangan. Manajer kumpulan langsung memberikan aplikasi koneksi terautentikasi yang siap digunakan. Aplikasi menggunakan koneksi tersebut, dan setelah selesai, aplikasi akan mengembalikannya ke kumpulan, sehingga tersedia untuk permintaan berikutnya.",
+            "Dengan cara ini, pekerjaan yang mahal dalam menciptakan koneksi hanya dilakukan sekali, di awal. Setelah itu baru proses peminjaman dan pengembalian yang super cepat."
+          ]
+        },
+        "lifecycle": {
+          "blocks": [
+            "Inilah yang terjadi ketika aplikasi Anda memerlukan data:",
+            "1. Tanyakan: Kode Anda mengatakan, \"Hai, Kumpulan Koneksi, saya memerlukan koneksi.\" 2. Pinjam: Kelompok memeriksa \"dudukan\" koneksi yang tersedia dan menyerahkannya. Ini super cepat karena koneksi sudah terbuka dan diautentikasi. 3. Gunakan: Kode Anda mengeksekusi kueri basis datanya (misalnya, SELECT * FROM pengguna;). 4. Kembali: Ketika kode Anda selesai, itu tidak menutup koneksi. Sebaliknya, ia melepaskan koneksi kembali ke pool. Kolam renang menyekanya hingga bersih dan meletakkannya kembali di dudukannya, siap untuk permintaan berikutnya.",
+            "Aturan emas pengumpulan koneksi adalah: Pinjam, Gunakan, Kembalikan. Siklus ini sangat cepat dan efisien."
+          ]
+        },
+        "common-settings": {
+          "blocks": [
+            "Saat menyiapkan kumpulan koneksi, Anda akan sering melihat tiga pengaturan utama:",
+            "koneksi min (atau ukuran awal): Jumlah koneksi yang dibuat kumpulan di muka. Think of it as the number of taxis waiting at the stand when it first opens.",
+            "koneksi maksimal (atau maxPoolSize): Jumlah maksimum absolut koneksi yang boleh dibuat oleh kumpulan. Ini adalah katup pengaman penting yang mencegah aplikasi Anda membebani database.",
+            "waktu koneksi habis: Jika semua koneksi sibuk, ini adalah berapa lama aplikasi Anda akan menunggu hingga koneksi menjadi bebas sebelum menyerah dan menampilkan kesalahan.",
+            "Menentukan Nilai yang Tepat",
+            "Aturan yang paling penting adalah berpikir dari sudut pandang database, bukan dari sudut pandang aplikasi. Tujuannya adalah untuk memberikan database sejumlah pekerjaan yang dapat dikelola. A widely recommended formula is: max_connections = (number_of_CPU_cores * 2) + 1",
+            "Contoh: Untuk database 4 inti, setel max_connections ke 9. Hal ini memungkinkan hingga 9 kueri dijalankan sekaligus. Sementara beberapa menunggu disk, yang lain dapat diproses secara aktif oleh inti CPU.",
+            "For min_connections, a great starting point is to set min_connections = max_connections for consistently busy applications (creating a \"fixed-size\" pool), or lower for infrequently used applications to conserve resources.",
+            "Untuk connection_timeout, gunakan 2-5 detik untuk aplikasi yang dilihat pengguna (cepat gagal), dan 30-60 detik untuk pekerjaan batch di latar belakang."
+          ]
+        },
+        "challenges": {
+          "blocks": [
+            "Kebocoran Koneksi",
+            "Kebocoran koneksi terjadi ketika aplikasi Anda meminjam koneksi namun gagal mengembalikannya. Seiring waktu, semua koneksi bisa \"bocor\", sehingga membuat pool kosong dan menyebabkan aplikasi Anda terhenti.",
+            "Solusi: Tempatkan kode yang mengembalikan koneksi ke blok akhirnya. Blok akhirnya dijamin akan dieksekusi, bahkan jika terjadi kesalahan.",
+            "Koneksi Basi atau Mati",
+            "Koneksi menjadi basi ketika berhasil dibuat tetapi tidak lagi valid. Hal ini dapat terjadi jika server database dihidupkan ulang, firewall menghentikan koneksi yang tidak aktif, atau terjadi kesalahan jaringan.",
+            "Solusi: Sebagian besar pustaka kumpulan koneksi memiliki mekanisme pemeriksaan kesehatan bawaan. Anda dapat mengonfigurasi kumpulan untuk menjalankan kueri sederhana (seperti SELECT 1) pada koneksi sebelum diberikan ke aplikasi Anda. Jika kueri gagal, kumpulan akan membuang koneksi mati dan memberi Anda koneksi baru.",
+            "Kelelahan Kolam Renang",
+            "Kelelahan kumpulan terjadi ketika permintaan koneksi aplikasi Anda melebihi pengaturan koneksi maksimal kumpulan. Setiap permintaan baru harus menunggu hingga koneksi kembali, yang dapat memperlambat aplikasi Anda atau menyebabkan waktu tunggu permintaan habis.",
+            "Solusi: Optimalkan kueri Anda agar lebih cepat, sesuaikan ukuran kumpulan dengan benar berdasarkan kapasitas CPU database Anda, dan tetapkan connection_timeout yang masuk akal sehingga aplikasi gagal dengan cepat alih-alih terhenti tanpa batas waktu."
+          ]
+        },
+        "traffic-spikes": {
+          "blocks": [
+            "Mari kita lihat skenarionya: Basis data Anda memiliki 4 inti CPU. Kumpulan koneksi Anda dikonfigurasi dengan max_connections: 10, min_connections: 10, connection_timeout: 5 detik. Kueri Anda memerlukan waktu sekitar 20 milidetik untuk dijalankan.",
+            "Sebelum pengguna tiba, kumpulan koneksi membuat 10 koneksi. Ini terbuka, diautentikasi, dan tidak digunakan di kolam.",
+            "Pada pukul 17.00, 100 pengguna secara bersamaan mengeklik tautan yang memicu kueri Anda. Milidetik 0-5: 10 permintaan pertama langsung mengambil 10 koneksi yang tersedia dan mengirimkan kuerinya ke database. Jumlah pool yang tersedia sekarang adalah 0. Semua 10 aktif.",
+            "Milidetik 5-10: 90 permintaan lainnya kini tiba dan meminta koneksi. Manajer kolam memberi tahu mereka, \"Anda harus menunggu dalam antrean. Saya akan memberi tahu Anda segera setelah koneksi kembali.\" Yang terpenting, database dilindungi. Itu hanya menangani 10 pertanyaan sekaligus.",
+            "Milidetik 20-25: Basis data menyelesaikan batch pertama (20 ms kemudian). Saat setiap permintaan mengembalikan koneksinya, kumpulan segera memberikannya ke permintaan berikutnya dalam antrian. Siklus “kembali-pinjam” ini terjadi dalam sekejap. Karena ada 10 batch yang terdiri dari 10 permintaan, total waktunya kira-kira 200 milidetik. 10 pengguna pertama mendapat waktu respons 20 md, pengguna terakhir mendapat 200 md, namun 100 pengguna dilayani dalam waktu kurang dari seperempat detik tanpa membuat sistem menjadi tidak stabil."
+          ]
+        },
+        "oversized": {
+          "blocks": [
+            "Menetapkan min dan maks kumpulan koneksi Anda ke 100 pada server database 4-inti akan menghasilkan kinerja yang jauh lebih buruk daripada kumpulan yang lebih kecil dan berukuran tepat.",
+            "Bayangkan seorang manajer dengan 4 tangan (4 inti CPU) yang memiliki 100 karyawan yang semuanya menuntut jawaban segera. Manajer akan dengan panik beralih di antara mereka, menghabiskan satu detik pada Karyawan A, lalu meletakkannya; menghabiskan satu detik untuk Karyawan B, dan seterusnya. Manajer menghabiskan sebagian besar energinya untuk mengatur dan berpindah tugas, tidak menyelesaikan satu pun dari tugas tersebut. Setiap karyawan harus menunggu lebih lama dibandingkan jika mereka baru saja membentuk antrian yang teratur.",
+            "Inilah yang sebenarnya terjadi pada database Anda: CPU Thrashing (masalah inti), Resource Contention untuk disk I/O dan locks, Immediate Memory Bloat, dan pada akhirnya, Peningkatan Latensi dan Ketidakstabilan Sistem.",
+            "Singkatnya, tugas paling penting dari kumpulan koneksi adalah bertindak sebagai penjaga gerbang yang membatasi permintaan ke tingkat yang dapat ditangani database secara efisien."
+          ]
+        },
+        "key-takeaways": {
+          "blocks": [
+            "Selalu gunakan kumpulan koneksi -- membuka dan menutup koneksi per permintaan terlalu mahal.",
+            "Sesuaikan dari perspektif database -- ukuran kumpulan harus mencerminkan inti CPU, bukan hanya permintaan aplikasi.",
+            "Hindari kebocoran -- selalu kembalikan sambungan, meskipun terjadi kesalahan.",
+            "Validasi koneksi -- gunakan pemeriksaan kesehatan untuk menghapus koneksi yang basi atau mati.",
+            "Tetapkan batas waktu yang masuk akal -- gagal dengan cepat untuk aplikasi yang dilihat pengguna, tunggu lebih lama untuk pekerjaan di latar belakang.",
+            "Jangan terlalu besar ukuran kumpulannya -- terlalu banyak koneksi menyebabkan CPU rusak dan menurunkan kinerja.",
+            "Pantau dan sesuaikan -- mulai dengan praktik terbaik default, lalu sempurnakan berdasarkan metrik dunia nyata."
+          ]
+        },
+        "conclusion-pool": {
+          "blocks": [
+            "Kumpulan koneksi database adalah salah satu cara paling efektif untuk menyeimbangkan kinerja, skalabilitas, dan stabilitas dalam aplikasi modern. Dengan menggunakan kembali koneksi alih-alih terus-menerus membuat dan menghancurkannya, kumpulan akan mengurangi latensi secara signifikan, meningkatkan efisiensi sumber daya, dan melindungi database Anda dari lonjakan lalu lintas. Bagi pengembang yang membangun aplikasi intensif data, menguasai pengumpulan koneksi bukanlah suatu pilihan -- ini penting."
+          ]
+        }
+      }
+    },
+    "tiny-llm-potato-computer": {
+      "title": "Cara Menjalankan LLM Kecil di Komputer Spesifikasi Rendah",
+      "preview": "Menjalankan model bahasa besar secara lokal mungkin terasa mustahil di Mac M1 8 GB. Untungnya, TinyLlama (1,1 miliar parameter) dan Docker llama.cpp membuatnya sangat mudah.",
+      "toc": {
+        "step-1": "Langkah 1: Unduh Model",
+        "step-2": "Langkah 2: Tarik Image Docker",
+        "step-3": "Langkah 3: Jalankan Server",
+        "step-4": "Langkah 4: Kueri Model",
+        "troubleshooting": "Tips Pemecahan Masalah",
+        "conclusion": "Kesimpulan"
+      },
+      "headings": {
+        "step-1": "Langkah 1: Unduh Model yang Telah Dikuantisasi",
+        "step-2": "Langkah 2: Tarik Image Docker",
+        "step-3": "Langkah 3: Jalankan Server llama.cpp",
+        "step-4": "Langkah 4: Kueri Model",
+        "troubleshooting": "Tips Pemecahan Masalah",
+        "conclusion": "Kesimpulan"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "Menjalankan model bahasa besar secara lokal terasa seperti mencoba memberi daya pada katedral dengan satu baterai AA -- terutama pada Mac M1 8 GB. Untungnya, TinyLlama (parameter 1,1 B, terkuantisasi 4-bit) dan \"server\" Docker llama.cpp membuatnya sangat sederhana.",
+            "Dalam panduan ini, Anda akan mempelajari cara mengunduh model TinyLlama Q4_0, menarik image server ARM64 llama.cpp, memasang & menjalankan TinyLlama di dalam Docker, dan mengirimkan prompt pertama Anda."
+          ]
+        },
+        "step-1": {
+          "blocks": [
+            "Pertama, ambil bobot terkuantisasi 0,6 GB dari Hugging Face dan simpan ke dalam ~/models:",
+            "Jika Anda belum menginstal huggingface-cli:",
+            "Setelah diinstal, verifikasi dengan:"
+          ]
+        },
+        "step-2": {
+          "blocks": [
+            "Ambil server llama.cpp asli ARM64 -- tidak perlu emulasi:"
+          ]
+        },
+        "step-3": {
+          "blocks": [
+            "Dengan asumsi Anda telah menempatkan model TinyLlama terkuantisasi di ~/models/tinyllama-1.1b-chat-v1.0.Q4_0.gguf, luncurkan container di latar depan:",
+            "--rm -itu membuatnya tetap bersih dan interaktif. --platform=linux/arm64/v8 memaksa build asli di M1. -n 512 membatasi respons terhadap 512 token.",
+            "Anda akan melihat:"
+          ]
+        },
+        "step-4": {
+          "blocks": [
+            "Di terminal kedua, kirimkan prompt bergaya instruksi ke /v1/completions:",
+            "Anda akan menerima payload JSON dengan jawaban Anda di bawah pilihan[0].teks."
+          ]
+        },
+        "troubleshooting": {
+          "blocks": [
+            "Tanggapan kosong atau omong kosong?",
+            "Bungkus prompt Anda dalam ### Instruksi:...### Respon: template.",
+            "Kehabisan memori?",
+            "TinyLlama Q4_0 menggunakan ~0,6 GiB dalam kontainer. Jika Anda melihat OOM pada model yang lebih besar, gunakan memori Docker di Preferensi → Sumber Daya → Memori atau tetap gunakan varian kecil ini."
+          ]
+        },
+        "conclusion": {
+          "blocks": [
+            "Anda baru saja mengubah \"komputer kentang\" Anda menjadi server LLM lokal! Dengan satu perintah Docker dan model TinyLlama yang terkuantisasi, Anda bebas bereksperimen dengan chatbot, integrasi di Node.js/Next.js, atau demo AI offline -- tidak memerlukan GPU cloud. Selamat meretas!"
+          ]
+        }
+      }
+    },
+    "tdd-pros-and-cons": {
+      "title": "Tes Dulu atau Menyesal Nanti: Pro dan Kontra TDD",
+      "preview": "Jujur saja — ketika pertama kali mendengar tentang TDD, reaksi saya adalah: \"Tunggu, kamu mau saya menulis tes sebelum menulis kode? Itu seperti menulis ulasan film sebelum menontonnya.\"",
+      "toc": {
+        "pros": "Kelebihan",
+        "pro-1": "1. Fungsi yang Lebih Baik dengan DI",
+        "pro-2": "2. Refactoring Tanpa Rasa Takut",
+        "pro-3": "3. Tes sebagai Dokumentasi",
+        "pro-4": "4. Kemudahan Pemeliharaan",
+        "pro-5": "5. Tangkap Bug Lebih Awal",
+        "pro-6": "6. Code Coverage",
+        "cons": "TDD Tidak Sempurna",
+        "con-1": "1. Kurva Belajar yang Curam",
+        "con-2": "2. Awalnya Memperlambat Anda",
+        "con-3": "3. Sulit Menguji Segalanya",
+        "con-4": "4. Test Hell",
+        "con-5": "5. Tidak Menggantikan QA",
+        "con-6": "6. Berlebihan untuk Skrip Kecil",
+        "con-7": "7. Klien dengan Anggaran Terbatas",
+        "final-thoughts": "Pikiran Akhir"
+      },
+      "headings": {
+        "pros": "Kelebihan",
+        "pro-1": "1. Memaksa Fungsi Anda Menjadi Lebih Baik — Sungguh Lebih Baik",
+        "pro-2": "2. Refactoring Tanpa Rasa Takut",
+        "pro-3": "3. Tes Anda Juga Berfungsi sebagai Dokumentasi (Serius)",
+        "pro-4": "4. Kemudahan Pemeliharaan Meningkat Drastis (Halo, Proyek Enterprise)",
+        "pro-5": "5. Tidak Ada Lagi Momen \"Aduh, Bug Itu Masuk ke Production\"",
+        "pro-6": "6. Code Coverage Menjaga Kejujuran Semua Orang",
+        "cons": "Tapi TDD Tidak Sempurna",
+        "con-1": "1. TDD Memiliki Kurva Belajar yang Curam bagi Pemula",
+        "con-2": "2. Awalnya Memperlambat Anda (Dan Itu Bisa Membuat Frustasi)",
+        "con-3": "3. Tidak Semua Hal Mudah untuk Diuji",
+        "con-4": "4. Mudah Terjebak dalam \"Test Hell\"",
+        "con-5": "5. Tidak Menggantikan QA Sungguhan",
+        "con-6": "6. Bisa Berlebihan untuk Skrip Kecil atau Kode Sekali Pakai",
+        "con-7": "7. Klien dengan Anggaran Ketat Tidak Selalu Akan Menyukai TDD",
+        "final-thoughts": "Pikiran Akhir"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "Jujur saja -- ketika saya pertama kali mendengar tentang Test-Driven Development (TDD), reaksi awal saya adalah seperti: \"Tunggu, Anda ingin saya menulis tes... bahkan sebelum saya menulis kodenya? Itu seperti menulis review film sebelum menonton filmnya.\" Rasanya terbelakang, terlalu kaku, dan sejujurnya, seperti pembunuh produktivitas.",
+            "Namun, seperti halnya banyak hal di bidang teknologi, apa yang awalnya berupa skeptisisme akhirnya berubah menjadi sesuatu yang mendekati obsesi.",
+            "Saat ini, TDD telah menjadi bagian inti dari alur kerja pengembangan saya -- sesuatu yang saya capai bukan karena saya harus melakukannya, namun karena TDD benar-benar membantu saya menulis kode yang lebih baik, lebih bersih, dan lebih mudah dipelihara. Dalam posting ini, saya ingin berbagi pendapat pribadi saya (dan sedikit pendapat) tentang mengapa TDD mendapatkan tempat permanen di kotak peralatan saya."
+          ]
+        },
+        "pros": {
+          "blocks": [
+            "Sulit untuk berkomitmen pada sesuatu jika Anda tidak tahu untuk apa, mengapa itu penting, atau apakah itu sepadan dengan waktu Anda. Itulah tepatnya yang saya rasakan tentang TDD -- sampai saya mencobanya secara nyata. Jadi, inilah beberapa alasan terbesar mengapa saya terus meraih TDD setiap kali saya membangun sesuatu yang serius:"
+          ]
+        },
+        "pro-1": {
+          "blocks": [
+            "Salah satu hal paling keren (dan paling membuat frustrasi pada awalnya) tentang TDD adalah ia memaksa Anda untuk menulis fungsi yang lebih baik. Pembersih. Lebih mandiri. Kurang lengket. Jika Anda pernah mendengar tentang Injeksi Ketergantungan, di sinilah pengertiannya.",
+            "Contoh 1:",
+            "Tanpa Injeksi Ketergantungan (kekacauan yang sangat erat):",
+            "Kelihatannya baik-baik saja, bukan? Namun jika Anda ingin menguji getUserProfile, Anda sekarang harus berurusan dengan objek Database yang sebenarnya -- atau mengejeknya dengan cara yang aneh. Astaga.",
+            "Dengan Injeksi Ketergantungan (ramah TDD):",
+            "Sekarang, fungsi Anda tidak lagi bertanggung jawab untuk membuat database -- fungsi tersebut hanya menggunakannya. Ini membuatnya sangat mudah untuk diuji:",
+            "Lihat? TDD dengan lembut mendorong (oke, mungkin mendorong) Anda untuk menulis fungsi yang tidak bergantung pada keadaan global atau ketergantungan tersembunyi. Dan begitu Anda terbiasa, Anda akan mulai melakukannya bahkan saat Anda tidak sedang menulis tes terlebih dahulu.",
+            "Contoh 2:",
+            "Tanpa Injeksi Ketergantungan:",
+            "Sekarang Anda mempunyai masalah: setiap kali Anda menguji fungsi ini, fungsi ini mungkin benar-benar mengirim email (atau macet jika EmailService tidak ditiru dengan benar). Tidak menyenangkan.",
+            "Dengan Injeksi Ketergantungan:",
+            "Dalam pengujian Anda:",
+            "Sekarang Anda tidak mengirim email sungguhan -- Anda hanya memverifikasi logikanya. Bersih dan aman."
+          ]
+        },
+        "pro-2": {
+          "blocks": [
+            "Anda pernah mencoba membersihkan beberapa kode yang berantakan dan tiba-tiba semuanya rusak? Anda memindahkan satu blok kecil, dan seluruh menara runtuh. Memfaktorkan ulang tanpa pengujian seperti beroperasi tanpa tali pengaman -- Anda hanya berharap yang terbaik.",
+            "Karena pengujian Anda sudah mencakup perilaku yang diharapkan, Anda bebas memperbaiki nama variabel, memisahkan fungsi, menukar implementasi, atau menggunakan ninja refactor sepenuhnya -- tanpa pertanyaan \"bagaimana jika saya merusak sesuatu?\" kecemasan.",
+            "Katakanlah Anda memiliki fungsi yang berfungsi tetapi jelek ini:",
+            "Anda memutuskan untuk membersihkannya:",
+            "Jika Anda punya tes seperti:",
+            "Anda dapat melakukan refactor tanpa menahan nafas. Jika ujiannya lulus, Anda baik-baik saja. Jika gagal, mereka akan memberi tahu Anda apa yang rusak.",
+            "Skenario Bonus: Ketika Orang Lain Melanggar Kode Anda",
+            "Ini yang menarik -- pernahkah ada rekan satu tim yang \"membersihkan\" fungsi utilitas Anda dan secara tidak sengaja merusak tiga hal lain yang bergantung padanya? Ya, aku juga.",
+            "Katakanlah Anda menulis fungsi kecil yang sederhana:",
+            "Anda punya tes:",
+            "Semuanya baik-baik saja. Namun kemudian seseorang datang dan memutuskan untuk \"memperbaikinya\":",
+            "Tampaknya tidak berbahaya, bukan? Namun sekarang toLowerCase() hilang, dan bagian lain dari aplikasi yang mengandalkan nama pengguna huruf kecil mulai rusak. Karena pengujian Anda, jeda segera diketahui:",
+            "ledakan. Sekarang rekan satu tim Anda tahu persis apa yang mereka pecahkan, dan di mana. Tidak ada drama. Jangan menebak-nebak. Tidak ada proses debug jam 3 pagi. Inilah keajaiban TDD: ia melindungi kode Anda dari pengeditan yang \"berniat baik\" di masa mendatang, baik yang dilakukan oleh Anda atau orang lain."
+          ]
+        },
+        "pro-3": {
+          "blocks": [
+            "Salah satu negara adidaya TDD yang diremehkan? Tes Anda menjadi dokumentasi hidup. Pernah bergabung dengan proyek di mana Anda tidak tahu cara kerja fungsi utilitas? Dengan rangkaian pengujian yang solid, Anda cukup membuka file pengujian dan boom -- Anda mendapatkan panduan langkah demi langkah tentang bagaimana seharusnya fungsi tersebut berperilaku.",
+            "Daripada menebak-nebak apa fungsinya:",
+            "Anda bisa langsung melihat tesnya:",
+            "Itu pada dasarnya adalah bagaimana caranya. Ini memberi tahu Anda apa yang diharapkan oleh fungsi tersebut, apa yang dikembalikannya, dan dalam kondisi apa. Ini sangat besar untuk orientasi, debugging, dan penulisan fitur baru yang bergantung pada kode yang ada. Dengan pengujian yang bagus, fungsi Anda menceritakan kisahnya sendiri."
+          ]
+        },
+        "pro-4": {
+          "blocks": [
+            "Jika Anda membuat sesuatu yang kecil, Anda mungkin bisa lolos dengan kode spageti dan tanpa tes. Namun dalam proyek perusahaan -- di mana basis kode tumbuh lebih cepat daripada toleransi kafein Anda -- kemudahan pemeliharaan menjadi segalanya.",
+            "TDD secara alami menghasilkan kode yang lebih mudah dipelihara, difaktorkan ulang, dan diperluas. Mengapa? Karena semuanya ditulis dengan mempertimbangkan kemampuan pengujian. Fungsi dipisahkan. Efek samping dikendalikan. Anda berpikir ke depan daripada melakukan perbaikan saluran.",
+            "Ketika aplikasi perusahaan raksasa tersebut memiliki 300+ kontributor, mengubah satu logika tidak terasa seperti menjinakkan bom. Pengujian ini akan segera memberi tahu Anda jika ada sesuatu di bagian hilir yang rusak. TDD mengubah basis kode Anda dari sekumpulan kartu yang rapuh menjadi sesuatu yang benar-benar dapat bertahan dalam pertumbuhan, pergantian, dan skala."
+          ]
+        },
+        "pro-5": {
+          "blocks": [
+            "Mari kita menjadi nyata: pengembang melupakan banyak hal. Tes tidak.",
+            "Bahkan jika seseorang dalam tim melewatkan pengujian secara lokal, integrasi pengujian ke dalam pipeline CI/CD Anda akan bertindak seperti penjaga gerbang otomatis. Adakah permintaan komit atau tarik yang merusak pengujian? Boom -- pipeline fails. Kode tidak diterapkan. Sesederhana itu.",
+            "Di sinilah TDD benar-benar bersinar. Karena pengujian Anda ditulis terlebih dahulu, pengujian tersebut selalu siap untuk menangkap regresi -- bukan sebagai renungan. Jadi meskipun rekan satu tim Anda lupa menjalankan npm test, pengaturan CI Anda tidak akan melakukannya."
+          ]
+        },
+        "pro-6": {
+          "blocks": [
+            "Hanya karena seseorang mengatakan mereka menulis tes tidak selalu berarti mereka menguji semua hal yang penting. Di situlah cakupan kode berperan.",
+            "Dengan menetapkan ambang cakupan pengujian minimum (misalnya, 80% atau lebih tinggi) di saluran CI/CD, Anda tidak hanya memeriksa apakah pengujian ada -- Anda juga memeriksa apakah pengujian tersebut benar-benar dijalankan melalui kode Anda. Anda dapat mengonfigurasi Jest agar gagal dalam pembangunan jika cakupannya turun di bawah ambang batas:",
+            "Ini memastikan disiplin TDD Anda tidak sia-sia. Cakupan kode bukan tentang mencapai 100% hak untuk menyombongkan diri -- ini tentang visibilitas, akuntabilitas, dan menjaga basis kode Anda tetap bersih."
+          ]
+        },
+        "cons": {
+          "blocks": [
+            "Saya tahu saya sangat memuji TDD seolah ini adalah yang terbaik sejak mode gelap -- tapi jujur ​​saja, tidak semuanya berjalan mulus. Seperti halnya alat atau praktik yang baik, hal ini juga memiliki konsekuensi. Ini adalah saat-saat di mana TDD bisa terasa seperti sakit kepala, bukannya pahlawan."
+          ]
+        },
+        "con-1": {
+          "blocks": [
+            "Jika Anda baru memulai pemrograman, TDD akan terasa seperti belajar mengemudi dengan transmisi manual -- sekaligus memecahkan kubus Rubik. Anda mencoba memahami fungsi, logika, sintaksis -- dan sekarang Anda juga harus menulis tes untuk kode yang bahkan belum Anda tulis? Itu banyak.",
+            "Bagi pemula, TDD mungkin terasa seperti penghalang, bukan alat bantu belajar. Tapi inilah yang menarik: setelah Anda mengatasi ketidaknyamanan ini, TDD sebenarnya dapat mempercepat pembelajaran. Ini mengajarkan Anda untuk memikirkan tentang perilaku kode, menulis fungsi modular, dan melakukan debug dengan lebih jelas. Ini tidak sepenuhnya ramah bagi pemula."
+          ]
+        },
+        "con-2": {
+          "blocks": [
+            "Saat Anda baru mengenal TDD, Anda merasa seperti sedang melakukan coding dalam gerakan lambat. Tulis tes. Perhatikan itu gagal. Tulis kode secukupnya saja. Jalankan lagi. Refaktorisasi. Mengulang. Sementara itu, teman Anda baru saja menyelesaikan seluruh fitur dalam separuh waktu (tetapi juga menimbulkan 3 bug).",
+            "TDD adalah investasi. Ini memperlambat Anda sekarang untuk menghemat waktu (dan stres) nanti. Namun hal itu memang memerlukan kesabaran."
+          ]
+        },
+        "con-3": {
+          "blocks": [
+            "Terkadang Anda mengerjakan hal-hal yang sulit untuk diuji. Pikirkan unggahan file, API eksternal, WebSockets real-time, atau hal-hal yang berhubungan dengan perangkat keras. Anda dapat mengejek, mematikan, dan mengisolasi semua yang Anda inginkan, namun beberapa skenario masih terasa kikuk.",
+            "TDD tidak selalu berfungsi dengan baik dengan kasus tepi yang berantakan atau ketergantungan yang kompleks kecuali Anda melakukan upaya ekstra untuk merancangnya agar dapat diuji."
+          ]
+        },
+        "con-4": {
+          "blocks": [
+            "Ujian yang buruk lebih buruk daripada tidak ada ujian. Jika pengujian Anda rapuh, terlalu spesifik, atau terkait erat dengan detail implementasi, pengujian tersebut akan rusak setiap kali Anda melakukan refaktorisasi -- meskipun perilaku sebenarnya tidak berubah.",
+            "Hal ini menyebabkan para pengembang bergumam \"mengapa kita melakukan ini?\" dan mematikan rangkaian pengujian. Pesan moral dari cerita ini: tulislah tes yang bermakna, bukan sekedar pengisi cakupan tes."
+          ]
+        },
+        "con-5": {
+          "blocks": [
+            "TDD mendeteksi bug dan regresi logika, namun tidak akan menyelamatkan Anda dari kegagalan UI/UX, masalah aksesibilitas, atau alur pengguna yang membingungkan. Ini bukan solusi jitu. Anda masih memerlukan pengguna nyata (atau orang QA) yang mengklik dan memecahkan berbagai hal dengan cara yang kreatif."
+          ]
+        },
+        "con-6": {
+          "blocks": [
+            "Tidak semuanya membutuhkan TDD yang lengkap. Skrip satu kali atau alat pribadi kecil? Tes menulis untuk setiap baris mungkin lebih sulit daripada manfaatnya. Gunakan penilaian Anda -- tidak apa-apa melanggar aturan jika hal tersebut masuk akal."
+          ]
+        },
+        "con-7": {
+          "blocks": [
+            "Saat Anda bekerja dengan klien yang memiliki anggaran terbatas dan ingin aplikasinya selesai kemarin, menjelaskan nilai tes menulis terlebih dahulu bisa terasa seperti meminta mereka membayar ekstra untuk fitur yang tidak terlihat.",
+            "Mereka tidak selalu melihat hasil jangka panjang. Mereka menginginkan tombol yang berfungsi, layar yang dapat dimuat, dan peluncuran secepatnya. Terkadang masuk akal untuk melewatkan TDD (atau memperkecilnya), terutama untuk MVP atau prototipe. Jujur saja pada diri Anda sendiri: melewatkan tes sekarang berarti Anda bertaruh untuk memperbaikinya nanti. Dan nantinya selalu lebih mahal."
+          ]
+        },
+        "final-thoughts": {
+          "blocks": [
+            "Pengembangan Berbasis Tes bukanlah keajaiban. Itu tidak akan menulis kode untuk Anda atau menghentikan setiap bug yang ada. Namun hal ini mengubah cara Anda berpikir, menyusun, dan memelihara kode Anda -- menjadi lebih baik.",
+            "Ya, ini bisa membuat frustasi. Ya, butuh waktu untuk belajar. Dan ya, terkadang Anda hanya ingin meretas sesuatu dan melewatkan tes. Saya mengerti. Namun menurut pengalaman saya, manfaat TDD hampir selalu lebih besar daripada kerugiannya.",
+            "Ini bukan tentang menulis pengujian yang sempurna -- ini tentang membuat kode yang lebih mudah dipercaya, diubah, dan dikembangkan. Baik Anda bekerja sendiri, dalam tim yang bergerak cepat, atau mengembangkan aplikasi perusahaan raksasa, TDD dapat menjadi pahlawan yang menjaga basis kode Anda agar tidak meledak. Jadi, jika Anda masih ragu, cobalah. Mulailah dari yang kecil. Hancurkan semuanya. Uji sesuatu. Anda mungkin akan menyukainya."
+          ]
+        }
+      }
+    },
+    "elixir-features-not-in-js": {
+      "title": "10 Fitur Unik Bahasa Elixir yang Tidak Ada di JavaScript",
+      "preview": "JavaScript serbaguna dan banyak digunakan, tetapi dalam hal pemrograman fungsional, konkurensi, dan toleransi kesalahan, Elixir memperkenalkan fitur yang tidak dimiliki JavaScript secara native.",
+      "toc": {
+        "pipe-operator": "1. Operator Pipe (|>)",
+        "pattern-matching": "2. Pattern Matching",
+        "immutable-data": "3. Data Immutable secara Default",
+        "function-clauses": "4. Function Clauses",
+        "guards": "5. Guards dalam Function Clauses",
+        "with-expression": "6. Ekspresi with",
+        "tco": "7. Tail Call Optimization",
+        "actor-model": "8. Proses & Model Aktor",
+        "doc-generation": "9. @doc & Pembuatan Dokumentasi",
+        "macros": "10. Makro Deklaratif",
+        "conclusion": "Kesimpulan"
+      },
+      "headings": {
+        "pipe-operator": "1. Operator Pipe (|>)",
+        "pattern-matching": "2. Pattern Matching",
+        "immutable-data": "3. Data Immutable secara Default",
+        "function-clauses": "4. Function Clauses / Pattern Matching pada Kepala Fungsi",
+        "guards": "5. Guards dalam Function Clauses",
+        "with-expression": "6. Ekspresi with untuk Penanganan Error yang Dapat Dikomposis",
+        "tco": "7. Tail Call Optimization (TCO)",
+        "actor-model": "8. Proses dan Model Aktor",
+        "doc-generation": "9. @doc dan Pembuatan Dokumentasi Bawaan",
+        "macros": "10. Dukungan Kelas Satu untuk Makro Deklaratif",
+        "conclusion": "Kesimpulan"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "JavaScript adalah bahasa yang serbaguna dan banyak digunakan, terutama dalam pengembangan web. Namun, jika menyangkut pemrograman fungsional, konkurensi, dan toleransi kesalahan, Elixir memperkenalkan beberapa fitur lanjutan yang tidak ditawarkan oleh JavaScript. Dibangun pada VM Erlang, Elixir dirancang untuk skalabilitas, pemeliharaan, dan ketersediaan tinggi -- menjadikannya pilihan menarik bagi pengembang yang mencari solusi tangguh dan elegan.",
+            "Dalam artikel ini, kita akan menjelajahi 10 fitur bahasa canggih di Elixir yang tidak ada atau kurang didukung di JavaScript, beserta kelebihan dan potensi solusinya dalam ekosistem JavaScript."
+          ]
+        },
+        "pipe-operator": {
+          "blocks": [
+            "Operator pipa memungkinkan ekspresi berantai di mana output dari satu fungsi menjadi input fungsi berikutnya. Hal ini menciptakan alur transformasi data yang jelas dan mudah dibaca tanpa pemanggilan fungsi yang sangat bertumpuk.",
+            "Mengapa ini berguna",
+            "Meningkatkan keterbacaan dan komposisi dalam pipeline fungsional, terutama saat menangani banyak transformasi.",
+            "Alternatif JavaScript",
+            "Tidak ada operator pipa asli pada ES2024, tetapi ada proposal. Dapat disimulasikan menggunakan metode chaining atau perpustakaan seperti Ramda."
+          ]
+        },
+        "pattern-matching": {
+          "blocks": [
+            "Pencocokan pola digunakan tidak hanya untuk mengekstrak nilai dari struktur data tetapi juga untuk mengontrol aliran logika dengan mencocokkan dengan bentuk data tertentu.",
+            "Mengapa ini berguna",
+            "Menghilangkan kebutuhan akan persyaratan verbose. Menjadikan kode deklaratif dan mendokumentasikan diri sendiri, terutama untuk menangani data yang kompleks.",
+            "Alternatif JavaScript",
+            "Terbatas pada destrukturisasi -- tidak ada kegagalan pencocokan sebenarnya atau pencocokan kepala fungsi."
+          ]
+        },
+        "immutable-data": {
+          "blocks": [
+            "Semua data di Elixir tidak dapat diubah. Anda tidak mengubah data -- Anda membuat data baru berdasarkan struktur yang ada.",
+            "Mengapa ini berguna",
+            "Menghasilkan kode yang lebih aman, menghindari efek samping, dan membuat program lebih mudah dipikirkan dan di-debug, terutama di lingkungan bersamaan.",
+            "Anda tidak pernah mengubah pengguna asli; sebagai gantinya, Anda mengembalikan salinan baru dengan perubahannya. Semua struktur data di Elixir bersifat persisten (pembagian struktural tersembunyi), menjadikan kekekalan menjadi efisien.",
+            "Dalam JavaScript",
+            "Objek dan array JavaScript dapat diubah secara default:",
+            "Kita dapat menerapkan kekekalan menggunakan Object.freeze() atau perpustakaan.",
+            "Kerugian: Object.freeze() dangkal -- tidak membekukan objek yang disarangkan.",
+            "Alternatif yang Lebih Baik: Deep Freeze",
+            "Anda dapat membekukan objek secara rekursif:",
+            "Atau gunakan fungsi murni untuk mengembalikan objek baru alih-alih bermutasi:"
+          ]
+        },
+        "function-clauses": {
+          "blocks": [
+            "ramuan",
+            "Keuntungan: logika fungsi yang lebih bersih melalui deklarasi.",
+            "JavaScript"
+          ]
+        },
+        "guards": {
+          "blocks": [
+            "Anda dapat menentukan beberapa versi dari fungsi yang sama, masing-masing disesuaikan dengan pola input data tertentu.",
+            "Mengapa ini berguna",
+            "Menjaga logika tetap teratur dan ekspresif, terutama untuk menangani kasus edge atau logika percabangan tanpa blok if/else yang panjang.",
+            "Alternatif JavaScript: Pengembalian Awal",
+            "Alternatif JavaScript: Predikat Fungsional",
+            "Alternatif JavaScript: ts-pattern"
+          ]
+        },
+        "with-expression": {
+          "blocks": [
+            "Di Elixir, ekspresi with adalah konstruksi yang kuat untuk penanganan kesalahan yang dapat dikomposisi dan pencocokan pola di beberapa langkah. Hal ini memungkinkan Anda untuk menulis kode yang tampak linier sambil melakukan hubungan arus pendek jika terjadi kegagalan -- sangat berguna untuk operasi rangkaian yang dapat mengembalikan tupel {:ok, value} atau {:error, Reason}.",
+            "Setiap langkah mengembalikan {:ok, value}. Jika ada langkah yang mengembalikan {:error, Reason}, blok with akan menyebabkan hubung singkat ke klausa else. Rantai kesalahan yang dapat disusun dan dibaca tanpa penumpukan yang dalam.",
+            "Alternatif JavaScript: async/menunggu dengan pengembalian awal",
+            "Alternatif JavaScript: Hasil monad"
+          ]
+        },
+        "tco": {
+          "blocks": [
+            "TCO adalah pengoptimalan di mana kompiler atau runtime dapat menggunakan kembali bingkai tumpukan fungsi saat ini untuk panggilan rekursif jika itu adalah tindakan terakhir (posisi ekor) dalam suatu fungsi.",
+            "Ini mencegah stack overflow dalam fungsi rekursif dan memungkinkan rekursi sebagai pengganti loop yang aman dan berkinerja baik.",
+            "Di Elixir (melalui BEAM VM), TCO didukung sepenuhnya dan andal. Anda dapat dengan aman menulis fungsi yang sangat rekursif tanpa merusak tumpukan -- selama panggilannya berada di posisi ekor.",
+            "JavaScript TIDAK mendukung TCO secara andal meskipun merupakan bagian dari spesifikasi ES6. Kebanyakan mesin JS (misalnya V8 di Chrome, Node.js) tidak mengimplementasikannya, sehingga fungsi rekursif masih dapat menyebabkan stack overflow untuk input yang besar.",
+            "Solusi: Perulangan Manual",
+            "Solusi: Trampolin"
+          ]
+        },
+        "actor-model": {
+          "blocks": [
+            "Model Aktor adalah model pemrograman konkuren dimana aktor adalah proses independen yang memegang status, berkomunikasi hanya melalui pesan, bereaksi terhadap pesan menggunakan blok penerimaan (seperti kotak surat), dan dapat menghasilkan aktor baru. Tidak ada memori bersama -- aktor tidak secara langsung mengubah keadaan satu sama lain.",
+            "Bayangkan setiap aktor sebagai seseorang dalam sebuah ruang obrolan: masing-masing memiliki otaknya sendiri (keadaan independen), mereka tidak berbagi otak -- mereka berbicara dengan mengirimkan pesan, dan mereka menangani satu pesan dalam satu waktu. Di Elixir, setiap aktor adalah proses ringan yang berjalan di mesin virtual BEAM.",
+            "Kasus penggunaan terbaik: sistem perpesanan/obrolan real-time, kontrol perangkat IoT, antrean tugas terdistribusi, server game, dan sistem tugas latar belakang -- setiap unit berjalan sebagai aktor yang gagal dan dapat dipulihkan secara independen.",
+            "Alternatif JavaScript: Pekerja Web",
+            "Pekerja Web diisolasi dan berkomunikasi melalui pesan -- tetapi tidak seringan proses Elixir, tanpa pengawasan proses yang sebenarnya atau proses yang ringan.",
+            "Alternatif JavaScript: Node.jsworker_threads",
+            "Lebih dekat dalam semangat, tetapi masih kekurangan toleransi kesalahan bawaan BEAM dan kemampuan untuk menghasilkan jutaan proses ringan."
+          ]
+        },
+        "doc-generation": {
+          "blocks": [
+            "@doc menambahkan dokumentasi sebaris ke fungsi atau modul, yang digunakan oleh sistem ExDoc Elixir untuk menghasilkan dokumen HTML yang kaya. Anda juga dapat menggunakan h Math.add di IEx untuk melihat dokumen sebaris secara interaktif.",
+            "Jalankan dokumen campuran dengan ExDoc terinstal untuk menghasilkan dokumentasi HTML. Use h Math.add in IEx to see inline docs.",
+            "Alternatif JavaScript: JSDoc",
+            "JavaScript tidak memiliki dokumentasi modul/fungsi bawaan yang terintegrasi dengan runtime, tetapi JSDoc mencapai hasil yang serupa:",
+            "Hasilkan dokumen HTML menggunakan alat seperti JSDoc, TypeDoc, atau ESDoc:"
+          ]
+        },
+        "macros": {
+          "blocks": [
+            "Di Elixir, makro adalah alat metaprogramming kelas satu yang memungkinkan Anda mengubah kode pada waktu kompilasi, memasukkan atau menghasilkan kode secara deklaratif, dan memperluas sintaks bahasa itu sendiri. Metaprogramming adalah ketika suatu program dapat membaca, memodifikasi, atau menghasilkan kode -- pada waktu kompilasi atau runtime.",
+            "Ini mendefinisikan konstruksi baru kecuali yang pada waktu kompilasi berubah menjadi:",
+            "Keuntungan: metaprogramming yang kuat. Kekurangan: tidak ramah bagi pemula.",
+            "Alternatif JavaScript: Makro Babel",
+            "Terbatas dan bergantung pada alat, tetapi makro Babel dapat mencapai transformasi waktu kompilasi yang serupa:"
+          ]
+        },
+        "conclusion": {
+          "blocks": [
+            "Kumpulan fitur Elixir mencerminkan fokusnya pada paradigma fungsional yang bersih, konkurensi yang andal, dan ergonomi pengembang. Meskipun JavaScript tetap diperlukan dalam pengembangan web, JavaScript tidak memiliki banyak kemampuan asli Elixir seperti pencocokan pola, proses yang ringan, dan toleransi kesalahan bawaan. Untungnya, dengan alat dan pola yang tepat, beberapa kesenjangan ini dapat dijembatani dalam JavaScript -- namun seringkali dengan kerumitan tambahan.",
+            "Jika Anda seorang pengembang JavaScript yang ingin memperluas ke sistem yang menuntut ketahanan, skalabilitas, atau kemurnian fungsional, Elixir menawarkan alternatif yang menyegarkan dan kuat.",
+            "Tip Bonus: Ingin menyimulasikan beberapa di antaranya dalam JavaScript?",
+            "Coba Ramda atau Lodash/fp untuk utilitas FP, gunakan ts-pattern untuk pencocokan pola, dan jelajahi cerita rakyat untuk monad seperti Hasil dan Mungkin."
+          ]
+        }
+      }
+    }
+  }
+}
