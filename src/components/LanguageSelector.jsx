@@ -49,7 +49,7 @@ function LanguageSelector() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 6, scale: 0.97 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-primary-bg dark:bg-primary-bg-dark rounded shadow-lg border border-current dark:border-border-dark z-50 min-w-[180px]"
+            className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-primary-bg dark:bg-primary-bg-dark rounded shadow-lg border border-current dark:border-border-dark z-50 min-w-45"
           >
             {supportedLanguages.map((lang) => (
               <button
