@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { TEXT_PRESSURE } from '../constants/ui';
 
 export default function TextPressure({ text, className = '' }) {
   const containerRef = useRef(null);
@@ -30,13 +31,16 @@ export default function TextPressure({ text, className = '' }) {
         const deltaY = mousePos.current.y - charCenterY;
         const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
-        const maxDistance = 200;
-        const normalizedDistance = Math.min(distance / maxDistance, 1);
+        const normalizedDistance = Math.min(
+          distance / TEXT_PRESSURE.MAX_DISTANCE,
+          1,
+        );
         const proximity = 1 - normalizedDistance;
 
-        const weight = 400 - proximity * 200;
-        const width = 100 + proximity * 25;
-        const slant = proximity * -15;
+        const weight =
+          TEXT_PRESSURE.BASE_WEIGHT - proximity * TEXT_PRESSURE.WEIGHT_RANGE;
+        const width = 100 + proximity * TEXT_PRESSURE.WIDTH_RANGE;
+        const slant = proximity * -TEXT_PRESSURE.SLANT_ANGLE;
 
         char.style.fontVariationSettings = `'wght' ${weight}, 'wdth' ${width}, 'slnt' ${slant}`;
       });

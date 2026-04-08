@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { IMAGE_ZOOM } from '../constants/ui';
 
 function AboutPage({ onBack }) {
   const { t } = useTranslation();
@@ -37,17 +38,21 @@ function AboutPage({ onBack }) {
   const handleMouseMove = (e) => {
     if (!imgRef.current) return;
     const rect = imgRef.current.getBoundingClientRect();
-    const circleRadius = 40;
-    const zoomBuffer = 25; // Extra buffer for zoom effect
 
     // Clamp cursor position to prevent circle from extending beyond image edges
     const x = Math.max(
-      circleRadius + zoomBuffer,
-      Math.min(e.clientX - rect.left, rect.width - circleRadius - zoomBuffer),
+      IMAGE_ZOOM.CIRCLE_RADIUS + IMAGE_ZOOM.ZOOM_BUFFER,
+      Math.min(
+        e.clientX - rect.left,
+        rect.width - IMAGE_ZOOM.CIRCLE_RADIUS - IMAGE_ZOOM.ZOOM_BUFFER,
+      ),
     );
     const y = Math.max(
-      circleRadius + zoomBuffer,
-      Math.min(e.clientY - rect.top, rect.height - circleRadius - zoomBuffer),
+      IMAGE_ZOOM.CIRCLE_RADIUS + IMAGE_ZOOM.ZOOM_BUFFER,
+      Math.min(
+        e.clientY - rect.top,
+        rect.height - IMAGE_ZOOM.CIRCLE_RADIUS - IMAGE_ZOOM.ZOOM_BUFFER,
+      ),
     );
 
     setCursorPos({
@@ -67,22 +72,20 @@ function AboutPage({ onBack }) {
   const handleTouchMove = (e) => {
     if (!imgRef.current || e.touches.length === 0) return;
     const rect = imgRef.current.getBoundingClientRect();
-    const circleRadius = 40;
-    const zoomBuffer = 25; // Extra buffer for zoom effect
     const touch = e.touches[0];
 
     const x = Math.max(
-      circleRadius + zoomBuffer,
+      IMAGE_ZOOM.CIRCLE_RADIUS + IMAGE_ZOOM.ZOOM_BUFFER,
       Math.min(
         touch.clientX - rect.left,
-        rect.width - circleRadius - zoomBuffer,
+        rect.width - IMAGE_ZOOM.CIRCLE_RADIUS - IMAGE_ZOOM.ZOOM_BUFFER,
       ),
     );
     const y = Math.max(
-      circleRadius + zoomBuffer,
+      IMAGE_ZOOM.CIRCLE_RADIUS + IMAGE_ZOOM.ZOOM_BUFFER,
       Math.min(
         touch.clientY - rect.top,
-        rect.height - circleRadius - zoomBuffer,
+        rect.height - IMAGE_ZOOM.CIRCLE_RADIUS - IMAGE_ZOOM.ZOOM_BUFFER,
       ),
     );
 
@@ -160,10 +163,10 @@ function AboutPage({ onBack }) {
                 draggable="false"
                 onContextMenu={(e) => e.preventDefault()}
                 style={{
-                  filter: 'grayscale(100%) opacity(0.85)',
                   backgroundColor: 'rgba(0, 0, 0, 0.03)',
+                  filter: 'grayscale(100%) opacity(0.85)',
                   transform: isHovering
-                    ? 'scale(1.30)'
+                    ? `scale(${IMAGE_ZOOM.ZOOM_SCALE})`
                     : isLoaded
                       ? 'scale(1)'
                       : 'scale(1.2)',
@@ -192,9 +195,11 @@ function AboutPage({ onBack }) {
                   onContextMenu={(e) => e.preventDefault()}
                   style={{
                     backgroundColor: 'rgba(0, 0, 0, 0.03)',
-                    clipPath: `circle(40px at ${cursorPos.x}px ${cursorPos.y}px)`,
+                    clipPath: `circle(${IMAGE_ZOOM.CIRCLE_RADIUS}px at ${cursorPos.x}px ${cursorPos.y}px)`,
                     transform:
-                      isHovering || isTouching ? 'scale(1.30)' : 'scale(1)',
+                      isHovering || isTouching
+                        ? `scale(${IMAGE_ZOOM.ZOOM_SCALE})`
+                        : 'scale(1)',
                     opacity: isLoaded ? 1 : 0,
                     transition: isLoaded
                       ? 'opacity 1.2s ease-out, transform 0.2s ease-out'
