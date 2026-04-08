@@ -5,14 +5,51 @@ function AboutPage({ onBack }) {
   const { t } = useTranslation();
   const [cursorPos, setCursorPos] = React.useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = React.useState(false);
+  const [isTouching, setIsTouching] = React.useState(false);
+  const [isTapped, setIsTapped] = React.useState(false);
+  const [isLoaded, setIsLoaded] = React.useState(false);
   const imgRef = React.useRef(null);
+  const containerRef = React.useRef(null);
+  const touchStartTime = React.useRef(null);
+
+  React.useEffect(() => {
+    // Small delay to ensure animation registers
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 50);
+    return () => clearTimeout(timer);
+  }, []);
+
+  React.useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (containerRef.current && !containerRef.current.contains(e.target)) {
+        setIsTapped(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
 
   const handleMouseMove = (e) => {
     if (!imgRef.current) return;
     const rect = imgRef.current.getBoundingClientRect();
+    const circleRadius = 40;
+    const zoomBuffer = 25; // Extra buffer for zoom effect
+
+    // Clamp cursor position to prevent circle from extending beyond image edges
+    const x = Math.max(
+      circleRadius + zoomBuffer,
+      Math.min(e.clientX - rect.left, rect.width - circleRadius - zoomBuffer),
+    );
+    const y = Math.max(
+      circleRadius + zoomBuffer,
+      Math.min(e.clientY - rect.top, rect.height - circleRadius - zoomBuffer),
+    );
+
     setCursorPos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
+      x,
+      y,
     });
   };
 
@@ -22,6 +59,45 @@ function AboutPage({ onBack }) {
 
   const handleMouseLeave = () => {
     setIsHovering(false);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!imgRef.current || e.touches.length === 0) return;
+    const rect = imgRef.current.getBoundingClientRect();
+    const circleRadius = 40;
+    const zoomBuffer = 25; // Extra buffer for zoom effect
+    const touch = e.touches[0];
+
+    const x = Math.max(
+      circleRadius + zoomBuffer,
+      Math.min(
+        touch.clientX - rect.left,
+        rect.width - circleRadius - zoomBuffer,
+      ),
+    );
+    const y = Math.max(
+      circleRadius + zoomBuffer,
+      Math.min(
+        touch.clientY - rect.top,
+        rect.height - circleRadius - zoomBuffer,
+      ),
+    );
+
+    setIsTouching(true);
+    setCursorPos({ x, y });
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartTime.current = Date.now();
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchDuration = Date.now() - touchStartTime.current;
+    // If touch duration is less than 300ms, consider it a tap
+    if (touchDuration < 300) {
+      setIsTapped(!isTapped);
+    }
+    setIsTouching(false);
   };
 
   return (
@@ -53,37 +129,74 @@ function AboutPage({ onBack }) {
           </h1>
 
           {/* Profile Picture */}
-          <div
-            className="flex justify-center mb-12 cursor-none"
-            onMouseMove={handleMouseMove}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
+          <div className={`flex justify-center mb-12`}>
             <div
-              className="w-48 sm:w-56 md:w-64 relative"
-              style={{ overflow: 'hidden', borderRadius: '0.5rem' }}
+              ref={containerRef}
+              className={`w-48 sm:w-56 md:w-64 relative ${isHovering || isTouching ? 'cursor-none' : ''}`}
+              style={{
+                overflow: 'hidden',
+                borderRadius: '0.5rem',
+                boxShadow:
+                  isHovering || isTouching || isTapped
+                    ? '0 10px 30px rgba(0, 0, 0, 0.15)'
+                    : '0 10px 30px rgba(0, 0, 0, 0.1)',
+                transition: 'box-shadow 0.2s ease-out',
+              }}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              onTouchMove={handleTouchMove}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
             >
               {/* Grayscale base image */}
               <img
-                src="/img/profile-picture.jpg"
+                src="/img/profile-picture-v3.jpg"
                 alt="Profile picture"
-                className="w-full rounded-lg"
+                className={`w-full rounded-lg select-none`}
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
                 style={{
                   filter: 'grayscale(100%) opacity(0.85)',
                   backgroundColor: 'rgba(0, 0, 0, 0.03)',
+                  transform: isHovering
+                    ? 'scale(1.30)'
+                    : isLoaded
+                      ? 'scale(1)'
+                      : 'scale(1.2)',
+                  opacity: isLoaded ? 1 : 0,
+                  transition:
+                    isHovering || isTouching
+                      ? 'transform 0.2s ease-out, opacity 1.2s ease-out'
+                      : !isLoaded
+                        ? 'transform 1.0s ease-out, opacity 1.2s ease-out'
+                        : 'transform 0.3s ease-out, opacity 1.2s ease-out',
+                  transformOrigin:
+                    isLoaded && (isHovering || isTouching)
+                      ? `${cursorPos.x}px ${cursorPos.y}px`
+                      : 'center',
                 }}
               />
 
-              {/* Color reveal on hover */}
-              {isHovering && (
+              {/* Color reveal on hover or touch */}
+              {(isHovering || isTouching || isTapped) && (
                 <img
                   ref={imgRef}
-                  src="/img/profile-picture.jpg"
+                  src="/img/profile-picture-v3.jpg"
                   alt="Profile picture color"
-                  className="w-full rounded-lg absolute inset-0"
+                  className="w-full rounded-lg absolute inset-0 select-none"
+                  draggable="false"
+                  onContextMenu={(e) => e.preventDefault()}
                   style={{
                     backgroundColor: 'rgba(0, 0, 0, 0.03)',
-                    clipPath: `circle(60px at ${cursorPos.x}px ${cursorPos.y}px)`,
+                    clipPath: `circle(40px at ${cursorPos.x}px ${cursorPos.y}px)`,
+                    transform:
+                      isHovering || isTouching ? 'scale(1.30)' : 'scale(1)',
+                    opacity: isLoaded ? 1 : 0,
+                    transition: isLoaded
+                      ? 'opacity 1.2s ease-out, transform 0.2s ease-out'
+                      : 'none',
+                    transformOrigin: `${cursorPos.x}px ${cursorPos.y}px`,
                   }}
                 />
               )}
