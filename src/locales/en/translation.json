@@ -52,6 +52,104 @@
     "notFound": "Article not found"
   },
   "articleContent": {
+    "biggest-misconceptions-about-microservices": {
+      "title": "The 8 Biggest Misconceptions About Microservices",
+      "preview": "Microservices are often chosen for the wrong reasons. Here are the eight most common misconceptions and the pattern that connects them.",
+      "toc": {
+        "my-app-scalable": "#1 Microservices Will Make My App Scalable",
+        "big-companies": "#2 Big Companies Use Microservices",
+        "code-modular": "#3 It Will Make My Code Modular",
+        "team-independence": "#4 Teams Will Be More Independent",
+        "easier-to-maintain": "#5 It's Easier to Maintain",
+        "failures-isolated": "#6 Failures Are Isolated",
+        "any-tech-per-service": "#7 We Can Use Any Tech Per Service",
+        "need-it-eventually": "#8 We'll Need It Eventually Anyway",
+        "pattern-behind-mistakes": "The Pattern Behind All These Mistakes"
+      },
+      "headings": {
+        "my-app-scalable": "#1 Microservices Will Make My App Scalable",
+        "big-companies": "#2 Big Companies Use Microservices",
+        "code-modular": "#3 It Will Make My Code Modular",
+        "team-independence": "#4 Teams Will Be More Independent",
+        "easier-to-maintain": "#5 It's Easier to Maintain",
+        "failures-isolated": "#6 Failures Are Isolated",
+        "any-tech-per-service": "#7 We Can Use Any Tech Per Service",
+        "need-it-eventually": "#8 We'll Need It Eventually Anyway",
+        "pattern-behind-mistakes": "The Pattern Behind All These Mistakes"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "Many developers choose microservices with a strong sense of confidence. The reasoning often sounds solid on the surface, but it usually lacks depth.",
+            "These decisions are rarely based on actual system needs or team constraints. Instead, they are driven by assumptions that do not hold up in practice.",
+            "Let's examine the most common ones."
+          ]
+        },
+        "my-app-scalable": {
+          "blocks": [
+            "Many developers believe that adopting microservices will automatically make their system scalable. This assumption is misleading.",
+            "Scalability is not a direct result of splitting an application into services. A well-structured monolith can scale effectively using horizontal scaling, caching, and database optimization.",
+            "Microservices only become useful when you have identified specific parts of your system that require independent scaling. Without that clarity, introducing services adds complexity without solving any real problem."
+          ]
+        },
+        "big-companies": {
+          "blocks": [
+            "Developers often look at companies like Netflix and Amazon and assume microservices are the reason behind their success.",
+            "This interpretation is incorrect.",
+            "These companies adopted microservices because they reached a scale where a monolith could no longer support their organizational structure. Their architecture evolved as a response to their constraints. Using the same architecture without having the same constraints leads to unnecessary complexity rather than better systems."
+          ]
+        },
+        "code-modular": {
+          "blocks": [
+            "It is common to think that microservices improve modularity. However, microservices do not create good boundaries - they only enforce them.",
+            "If your domain boundaries are unclear, splitting your system into services will expose and amplify those issues. Services will become tightly coupled through APIs, and communication overhead will increase.",
+            "Modularity should first be achieved within a monolith through clear structure and separation of concerns. Only then does it make sense to consider extracting services."
+          ]
+        },
+        "team-independence": {
+          "blocks": [
+            "Many assume that microservices immediately enable team independence. In practice, this is rarely true for small teams.",
+            "Instead of reducing dependencies, microservices introduce new forms of coordination. Developers must align on API contracts, manage versioning, and coordinate deployments across services.",
+            "Independence comes from clear ownership and well-defined boundaries. Without those, microservices increase friction rather than reduce it."
+          ]
+        },
+        "easier-to-maintain": {
+          "blocks": [
+            "It is often argued that microservices are easier to maintain because each service is smaller. While this is true at the service level, it ignores the complexity of the system as a whole.",
+            "Maintaining a microservices architecture involves handling distributed systems concerns such as monitoring, logging, service communication, and deployment pipelines.",
+            "The complexity does not disappear - it shifts from code into infrastructure and operations."
+          ]
+        },
+        "failures-isolated": {
+          "blocks": [
+            "There is a belief that microservices naturally isolate failures. This is only true when the system is designed with resilience in mind.",
+            "Without proper safeguards, failures can cascade across services. A delay or failure in one service can affect others that depend on it, leading to system-wide issues.",
+            "Failure isolation requires deliberate design, not just architectural separation."
+          ]
+        },
+        "any-tech-per-service": {
+          "blocks": [
+            "Microservices allow teams to choose different technologies for each service. While this provides flexibility, it also introduces significant overhead.",
+            "Multiple technologies increase cognitive load, complicate onboarding, and create inconsistencies across the system.",
+            "For most teams, especially smaller ones, maintaining consistency is far more valuable than having flexibility."
+          ]
+        },
+        "need-it-eventually": {
+          "blocks": [
+            "Some teams adopt microservices early because they assume they will need them in the future. This assumption often leads to premature complexity.",
+            "Early architectural decisions can become difficult to reverse. Poor service boundaries and unnecessary distribution make future changes more expensive and time-consuming.",
+            "Starting simple allows systems to evolve naturally based on real needs rather than assumptions."
+          ]
+        },
+        "pattern-behind-mistakes": {
+          "blocks": [
+            "These misconceptions stem from a common misunderstanding. Developers often treat microservices as a way to improve code organization.",
+            "In reality, microservices are primarily an organizational tool. They are designed to support team structure, ownership, and scaling at the organizational level.",
+            "When those conditions are not present, microservices introduce more problems than they solve."
+          ]
+        }
+      }
+    },
     "free-tools-visualize-color-palette-ui-components": {
       "title": "5 Free Tools to Visualize Your Color Palette on Real UI Components (Updated)",
       "preview": "Picking colors in a swatch is one thing. Seeing them on buttons, navbars, alerts, and full layouts is where better UI decisions happen.",

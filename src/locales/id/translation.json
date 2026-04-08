@@ -158,6 +158,104 @@
     }
   },
   "articleContent": {
+    "biggest-misconceptions-about-microservices": {
+      "title": "8 Kesalahpahaman Terbesar Tentang Microservices",
+      "preview": "Microservices sering dipilih karena alasan yang keliru. Berikut delapan kesalahpahaman paling umum dan pola yang menghubungkan semuanya.",
+      "toc": {
+        "my-app-scalable": "#1 Microservices Akan Membuat Aplikasi Saya Skalabel",
+        "big-companies": "#2 Perusahaan Besar Menggunakan Microservices",
+        "code-modular": "#3 Ini Akan Membuat Kode Saya Modular",
+        "team-independence": "#4 Tim Akan Lebih Mandiri",
+        "easier-to-maintain": "#5 Lebih Mudah Dipelihara",
+        "failures-isolated": "#6 Kegagalan Akan Terisolasi",
+        "any-tech-per-service": "#7 Kita Bisa Memakai Teknologi Apa Saja per Service",
+        "need-it-eventually": "#8 Toh Nanti Kita Akan Membutuhkannya",
+        "pattern-behind-mistakes": "Pola di Balik Semua Kesalahan Ini"
+      },
+      "headings": {
+        "my-app-scalable": "#1 Microservices Akan Membuat Aplikasi Saya Skalabel",
+        "big-companies": "#2 Perusahaan Besar Menggunakan Microservices",
+        "code-modular": "#3 Ini Akan Membuat Kode Saya Modular",
+        "team-independence": "#4 Tim Akan Lebih Mandiri",
+        "easier-to-maintain": "#5 Lebih Mudah Dipelihara",
+        "failures-isolated": "#6 Kegagalan Akan Terisolasi",
+        "any-tech-per-service": "#7 Kita Bisa Memakai Teknologi Apa Saja per Service",
+        "need-it-eventually": "#8 Toh Nanti Kita Akan Membutuhkannya",
+        "pattern-behind-mistakes": "Pola di Balik Semua Kesalahan Ini"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "Banyak developer memilih microservices dengan rasa percaya diri yang tinggi. Alasannya sering terdengar masuk akal di permukaan, tetapi biasanya kurang mendalam.",
+            "Keputusan seperti ini jarang didasarkan pada kebutuhan sistem yang nyata atau keterbatasan tim. Sebaliknya, keputusan tersebut didorong oleh asumsi yang tidak bertahan dalam praktik.",
+            "Mari kita lihat yang paling umum."
+          ]
+        },
+        "my-app-scalable": {
+          "blocks": [
+            "Banyak developer percaya bahwa mengadopsi microservices akan otomatis membuat sistem mereka skalabel. Asumsi ini menyesatkan.",
+            "Skalabilitas bukan hasil langsung dari memecah aplikasi menjadi service-service kecil. Monolith yang tersusun dengan baik bisa diskalakan secara efektif dengan horizontal scaling, caching, dan optimasi database.",
+            "Microservices baru berguna ketika Anda sudah mengidentifikasi bagian tertentu dari sistem yang memang perlu diskalakan secara mandiri. Tanpa kejelasan itu, menambahkan service hanya menambah kompleksitas tanpa menyelesaikan masalah nyata."
+          ]
+        },
+        "big-companies": {
+          "blocks": [
+            "Developer sering melihat perusahaan seperti Netflix dan Amazon lalu menganggap microservices adalah alasan di balik kesuksesan mereka.",
+            "Interpretasi ini keliru.",
+            "Perusahaan-perusahaan itu mengadopsi microservices karena mereka mencapai skala di mana monolith tidak lagi mampu mendukung struktur organisasinya. Arsitektur mereka berkembang sebagai respons terhadap keterbatasan tersebut. Menggunakan arsitektur yang sama tanpa memiliki keterbatasan yang sama hanya menghasilkan kompleksitas yang tidak perlu, bukan sistem yang lebih baik."
+          ]
+        },
+        "code-modular": {
+          "blocks": [
+            "Banyak orang mengira microservices akan meningkatkan modularitas. Padahal, microservices tidak menciptakan batas yang baik, mereka hanya memaksakannya.",
+            "Jika batas domain Anda belum jelas, memecah sistem menjadi service-service akan mengekspos dan memperbesar masalah itu. Service akan menjadi saling terikat melalui API, dan biaya komunikasi akan meningkat.",
+            "Modularitas seharusnya dicapai dulu di dalam monolith melalui struktur yang jelas dan pemisahan tanggung jawab. Setelah itu barulah masuk akal untuk mempertimbangkan ekstraksi service."
+          ]
+        },
+        "team-independence": {
+          "blocks": [
+            "Banyak yang berasumsi bahwa microservices langsung membuat tim lebih mandiri. Dalam praktiknya, hal ini jarang benar untuk tim kecil.",
+            "Alih-alih mengurangi ketergantungan, microservices justru memperkenalkan bentuk koordinasi baru. Developer harus menyelaraskan kontrak API, mengelola versioning, dan mengoordinasikan deployment antar service.",
+            "Kemandirian datang dari ownership yang jelas dan batas yang terdefinisi dengan baik. Tanpa itu, microservices menambah friksi alih-alih menguranginya."
+          ]
+        },
+        "easier-to-maintain": {
+          "blocks": [
+            "Sering dikatakan bahwa microservices lebih mudah dipelihara karena tiap service lebih kecil. Walaupun benar di tingkat service, anggapan itu mengabaikan kompleksitas sistem secara keseluruhan.",
+            "Memelihara arsitektur microservices berarti harus menangani persoalan sistem terdistribusi seperti monitoring, logging, komunikasi antar service, dan pipeline deployment.",
+            "Kompleksitasnya tidak hilang, hanya berpindah dari kode ke infrastruktur dan operasional."
+          ]
+        },
+        "failures-isolated": {
+          "blocks": [
+            "Ada anggapan bahwa microservices secara alami mengisolasi kegagalan. Ini hanya benar jika sistem dirancang dengan ketahanan sebagai pertimbangan utama.",
+            "Tanpa perlindungan yang tepat, kegagalan bisa merambat antar service. Keterlambatan atau kegagalan pada satu service dapat memengaruhi service lain yang bergantung padanya dan menyebabkan masalah di seluruh sistem.",
+            "Isolasi kegagalan membutuhkan desain yang disengaja, bukan sekadar pemisahan arsitektur."
+          ]
+        },
+        "any-tech-per-service": {
+          "blocks": [
+            "Microservices memungkinkan tim memilih teknologi yang berbeda untuk setiap service. Walaupun memberi fleksibilitas, hal ini juga menambah overhead yang besar.",
+            "Banyak teknologi meningkatkan beban kognitif, mempersulit onboarding, dan menciptakan inkonsistensi di seluruh sistem.",
+            "Bagi sebagian besar tim, terutama tim kecil, menjaga konsistensi jauh lebih berharga daripada memiliki fleksibilitas semacam itu."
+          ]
+        },
+        "need-it-eventually": {
+          "blocks": [
+            "Sebagian tim mengadopsi microservices lebih awal karena berasumsi mereka akan membutuhkannya di masa depan. Asumsi ini sering berujung pada kompleksitas yang terlalu dini.",
+            "Keputusan arsitektur yang diambil terlalu awal bisa sulit dibalik. Batas service yang buruk dan distribusi yang tidak perlu membuat perubahan di masa depan menjadi lebih mahal dan memakan waktu.",
+            "Memulai dengan sederhana membuat sistem bisa berkembang secara alami berdasarkan kebutuhan nyata, bukan asumsi."
+          ]
+        },
+        "pattern-behind-mistakes": {
+          "blocks": [
+            "Kesalahpahaman ini berasal dari satu miskonsepsi yang sama. Developer sering memperlakukan microservices sebagai cara untuk memperbaiki organisasi kode.",
+            "Padahal, microservices pada dasarnya adalah alat organisasi. Ia dirancang untuk mendukung struktur tim, ownership, dan scaling pada level organisasi.",
+            "Saat kondisi itu tidak ada, microservices justru membawa lebih banyak masalah daripada solusi."
+          ]
+        }
+      }
+    },
     "free-tools-visualize-color-palette-ui-components": {
       "title": "5 Alat Gratis untuk Memvisualisasikan Palet Warna Anda pada Komponen UI Nyata (Diperbarui)",
       "preview": "Memilih warna di swatch adalah satu hal. Melihatnya pada tombol, navbar, alert, dan layout penuh adalah tempat keputusan UI yang lebih baik benar-benar terjadi.",

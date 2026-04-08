@@ -158,6 +158,104 @@
     }
   },
   "articleContent": {
+    "biggest-misconceptions-about-microservices": {
+      "title": "Los 8 mayores conceptos erróneos sobre los microservicios",
+      "preview": "Los microservicios suelen elegirse por las razones equivocadas. Aquí están los ocho conceptos erróneos más comunes y el patrón que los conecta.",
+      "toc": {
+        "my-app-scalable": "#1 Los microservicios harán que mi app sea escalable",
+        "big-companies": "#2 Las grandes empresas usan microservicios",
+        "code-modular": "#3 Hará que mi código sea modular",
+        "team-independence": "#4 Los equipos serán más independientes",
+        "easier-to-maintain": "#5 Es más fácil de mantener",
+        "failures-isolated": "#6 Los fallos están aislados",
+        "any-tech-per-service": "#7 Podemos usar cualquier tecnología por servicio",
+        "need-it-eventually": "#8 De todos modos lo necesitaremos más adelante",
+        "pattern-behind-mistakes": "El patrón detrás de todos estos errores"
+      },
+      "headings": {
+        "my-app-scalable": "#1 Los microservicios harán que mi app sea escalable",
+        "big-companies": "#2 Las grandes empresas usan microservicios",
+        "code-modular": "#3 Hará que mi código sea modular",
+        "team-independence": "#4 Los equipos serán más independientes",
+        "easier-to-maintain": "#5 Es más fácil de mantener",
+        "failures-isolated": "#6 Los fallos están aislados",
+        "any-tech-per-service": "#7 Podemos usar cualquier tecnología por servicio",
+        "need-it-eventually": "#8 De todos modos lo necesitaremos más adelante",
+        "pattern-behind-mistakes": "El patrón detrás de todos estos errores"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "Muchos desarrolladores eligen microservicios con una fuerte sensación de confianza. El razonamiento suele sonar sólido en la superficie, pero por lo general carece de profundidad.",
+            "Estas decisiones rara vez se basan en necesidades reales del sistema o en las limitaciones del equipo. En cambio, están impulsadas por supuestos que no resisten la práctica.",
+            "Veamos los más comunes."
+          ]
+        },
+        "my-app-scalable": {
+          "blocks": [
+            "Muchos desarrolladores creen que adoptar microservicios hará que su sistema sea escalable de forma automática. Esa suposición es engañosa.",
+            "La escalabilidad no es un resultado directo de dividir una aplicación en servicios. Un monolito bien estructurado puede escalar eficazmente mediante escalado horizontal, caché y optimización de la base de datos.",
+            "Los microservicios solo se vuelven útiles cuando ya identificaste partes concretas del sistema que necesitan escalar de forma independiente. Sin esa claridad, introducir servicios añade complejidad sin resolver ningún problema real."
+          ]
+        },
+        "big-companies": {
+          "blocks": [
+            "Los desarrolladores suelen mirar a empresas como Netflix y Amazon y asumir que los microservicios son la razón de su éxito.",
+            "Esa interpretación es incorrecta.",
+            "Estas empresas adoptaron microservicios porque alcanzaron una escala en la que un monolito ya no podía sostener su estructura organizacional. Su arquitectura evolucionó como respuesta a sus restricciones. Usar la misma arquitectura sin tener las mismas restricciones produce complejidad innecesaria en lugar de mejores sistemas."
+          ]
+        },
+        "code-modular": {
+          "blocks": [
+            "Es común pensar que los microservicios mejoran la modularidad. Sin embargo, los microservicios no crean buenos límites, solo los hacen cumplir.",
+            "Si los límites de tu dominio no están claros, dividir tu sistema en servicios expondrá y amplificará esos problemas. Los servicios terminarán fuertemente acoplados por medio de APIs y el costo de comunicación aumentará.",
+            "La modularidad debería lograrse primero dentro de un monolito mediante una estructura clara y una buena separación de responsabilidades. Solo entonces tiene sentido considerar extraer servicios."
+          ]
+        },
+        "team-independence": {
+          "blocks": [
+            "Muchos asumen que los microservicios permiten de inmediato la independencia de los equipos. En la práctica, eso rara vez es cierto para equipos pequeños.",
+            "En lugar de reducir dependencias, los microservicios introducen nuevas formas de coordinación. Los desarrolladores deben alinearse en contratos de API, gestionar versionado y coordinar despliegues entre servicios.",
+            "La independencia viene de una propiedad clara y de límites bien definidos. Sin eso, los microservicios aumentan la fricción en lugar de reducirla."
+          ]
+        },
+        "easier-to-maintain": {
+          "blocks": [
+            "A menudo se argumenta que los microservicios son más fáciles de mantener porque cada servicio es más pequeño. Aunque eso es cierto a nivel de servicio, ignora la complejidad del sistema en su conjunto.",
+            "Mantener una arquitectura de microservicios implica lidiar con preocupaciones de sistemas distribuidos como monitoreo, logging, comunicación entre servicios y pipelines de despliegue.",
+            "La complejidad no desaparece, se desplaza del código hacia la infraestructura y las operaciones."
+          ]
+        },
+        "failures-isolated": {
+          "blocks": [
+            "Existe la creencia de que los microservicios aíslan fallos de manera natural. Eso solo es cierto cuando el sistema está diseñado pensando en resiliencia.",
+            "Sin protecciones adecuadas, los fallos pueden propagarse entre servicios. Un retraso o fallo en un servicio puede afectar a otros que dependen de él y provocar problemas en todo el sistema.",
+            "El aislamiento de fallos requiere diseño deliberado, no solo separación arquitectónica."
+          ]
+        },
+        "any-tech-per-service": {
+          "blocks": [
+            "Los microservicios permiten que los equipos elijan tecnologías distintas para cada servicio. Aunque eso ofrece flexibilidad, también introduce una sobrecarga significativa.",
+            "Múltiples tecnologías aumentan la carga cognitiva, complican el onboarding y generan inconsistencias en todo el sistema.",
+            "Para la mayoría de los equipos, especialmente los más pequeños, mantener consistencia es mucho más valioso que tener flexibilidad."
+          ]
+        },
+        "need-it-eventually": {
+          "blocks": [
+            "Algunos equipos adoptan microservicios temprano porque asumen que los necesitarán en el futuro. Esa suposición suele llevar a complejidad prematura.",
+            "Las decisiones arquitectónicas tempranas pueden volverse difíciles de revertir. Límites de servicio pobres y distribución innecesaria hacen que los cambios futuros sean más costosos y lentos.",
+            "Empezar simple permite que los sistemas evolucionen de manera natural a partir de necesidades reales y no de supuestos."
+          ]
+        },
+        "pattern-behind-mistakes": {
+          "blocks": [
+            "Estos conceptos erróneos nacen de un mismo malentendido. Los desarrolladores suelen tratar los microservicios como una forma de mejorar la organización del código.",
+            "En realidad, los microservicios son principalmente una herramienta organizacional. Están diseñados para apoyar la estructura de equipos, la propiedad y el escalado a nivel organizacional.",
+            "Cuando esas condiciones no existen, los microservicios introducen más problemas de los que resuelven."
+          ]
+        }
+      }
+    },
     "free-tools-visualize-color-palette-ui-components": {
       "title": "5 herramientas gratuitas para visualizar tu paleta de colores en componentes UI reales (Actualizado)",
       "preview": "Elegir colores en una muestra es una cosa. Verlos en botones, barras de navegación, alertas y layouts completos es donde se toman mejores decisiones de UI.",

@@ -158,6 +158,104 @@
     }
   },
   "articleContent": {
+    "biggest-misconceptions-about-microservices": {
+      "title": "Les 8 plus grandes idées reçues sur les microservices",
+      "preview": "Les microservices sont souvent choisis pour de mauvaises raisons. Voici les huit idées reçues les plus fréquentes et le schéma commun qui les relie.",
+      "toc": {
+        "my-app-scalable": "#1 Les microservices rendront mon application scalable",
+        "big-companies": "#2 Les grandes entreprises utilisent des microservices",
+        "code-modular": "#3 Cela rendra mon code modulaire",
+        "team-independence": "#4 Les équipes seront plus indépendantes",
+        "easier-to-maintain": "#5 C'est plus facile à maintenir",
+        "failures-isolated": "#6 Les pannes sont isolées",
+        "any-tech-per-service": "#7 On peut utiliser n'importe quelle techno par service",
+        "need-it-eventually": "#8 On en aura besoin un jour de toute façon",
+        "pattern-behind-mistakes": "Le schéma derrière toutes ces erreurs"
+      },
+      "headings": {
+        "my-app-scalable": "#1 Les microservices rendront mon application scalable",
+        "big-companies": "#2 Les grandes entreprises utilisent des microservices",
+        "code-modular": "#3 Cela rendra mon code modulaire",
+        "team-independence": "#4 Les équipes seront plus indépendantes",
+        "easier-to-maintain": "#5 C'est plus facile à maintenir",
+        "failures-isolated": "#6 Les pannes sont isolées",
+        "any-tech-per-service": "#7 On peut utiliser n'importe quelle techno par service",
+        "need-it-eventually": "#8 On en aura besoin un jour de toute façon",
+        "pattern-behind-mistakes": "Le schéma derrière toutes ces erreurs"
+      },
+      "sections": {
+        "intro": {
+          "blocks": [
+            "Beaucoup de développeurs choisissent les microservices avec une forte confiance. Le raisonnement paraît souvent solide en surface, mais il manque généralement de profondeur.",
+            "Ces décisions sont rarement fondées sur les besoins réels du système ou sur les contraintes de l'équipe. Elles sont plutôt guidées par des hypothèses qui ne tiennent pas en pratique.",
+            "Examinons les plus courantes."
+          ]
+        },
+        "my-app-scalable": {
+          "blocks": [
+            "Beaucoup de développeurs pensent qu'adopter des microservices rendra automatiquement leur système scalable. Cette hypothèse est trompeuse.",
+            "La scalabilité n'est pas une conséquence directe du découpage d'une application en services. Un monolithe bien structuré peut très bien monter en charge grâce au scaling horizontal, au cache et à l'optimisation de la base de données.",
+            "Les microservices ne deviennent utiles que lorsque vous avez identifié des parties précises du système qui doivent être mises à l'échelle indépendamment. Sans cette clarté, introduire des services ajoute de la complexité sans résoudre de vrai problème."
+          ]
+        },
+        "big-companies": {
+          "blocks": [
+            "Les développeurs regardent souvent des entreprises comme Netflix et Amazon et supposent que les microservices sont la raison de leur réussite.",
+            "Cette interprétation est incorrecte.",
+            "Ces entreprises ont adopté les microservices parce qu'elles avaient atteint une taille à laquelle un monolithe ne pouvait plus soutenir leur structure organisationnelle. Leur architecture a évolué en réponse à leurs contraintes. Utiliser la même architecture sans avoir les mêmes contraintes crée une complexité inutile plutôt que de meilleurs systèmes."
+          ]
+        },
+        "code-modular": {
+          "blocks": [
+            "Il est courant de penser que les microservices améliorent la modularité. Pourtant, les microservices ne créent pas de bonnes frontières, ils ne font que les imposer.",
+            "Si les frontières de votre domaine sont floues, découper votre système en services exposera et amplifiera ces problèmes. Les services deviendront fortement couplés via des API, et le coût de communication augmentera.",
+            "La modularité doit d'abord être obtenue dans un monolithe grâce à une structure claire et à une bonne séparation des responsabilités. Ce n'est qu'ensuite qu'il devient pertinent d'extraire des services."
+          ]
+        },
+        "team-independence": {
+          "blocks": [
+            "Beaucoup supposent que les microservices rendent immédiatement les équipes indépendantes. En pratique, c'est rarement vrai pour les petites équipes.",
+            "Au lieu de réduire les dépendances, les microservices introduisent de nouvelles formes de coordination. Les développeurs doivent s'aligner sur les contrats d'API, gérer les versions et coordonner les déploiements entre services.",
+            "L'indépendance vient d'une responsabilité claire et de frontières bien définies. Sans cela, les microservices augmentent les frictions au lieu de les réduire."
+          ]
+        },
+        "easier-to-maintain": {
+          "blocks": [
+            "On affirme souvent que les microservices sont plus faciles à maintenir parce que chaque service est plus petit. Même si c'est vrai à l'échelle d'un service, cela ignore la complexité du système dans son ensemble.",
+            "Maintenir une architecture en microservices implique de gérer des problématiques de systèmes distribués comme la supervision, les logs, la communication entre services et les pipelines de déploiement.",
+            "La complexité ne disparaît pas, elle se déplace du code vers l'infrastructure et les opérations."
+          ]
+        },
+        "failures-isolated": {
+          "blocks": [
+            "Il existe une croyance selon laquelle les microservices isolent naturellement les pannes. Ce n'est vrai que si le système est conçu avec la résilience en tête.",
+            "Sans protections adaptées, les pannes peuvent se propager d'un service à l'autre. Un retard ou une panne sur un service peut affecter les autres qui en dépendent et provoquer des problèmes à l'échelle du système.",
+            "L'isolation des pannes exige une conception intentionnelle, pas seulement une séparation architecturale."
+          ]
+        },
+        "any-tech-per-service": {
+          "blocks": [
+            "Les microservices permettent aux équipes de choisir des technologies différentes pour chaque service. Même si cela apporte de la flexibilité, cela introduit aussi une surcharge importante.",
+            "Multiplier les technologies augmente la charge cognitive, complique l'onboarding et crée des incohérences dans l'ensemble du système.",
+            "Pour la plupart des équipes, surtout les plus petites, la cohérence a bien plus de valeur que la flexibilité."
+          ]
+        },
+        "need-it-eventually": {
+          "blocks": [
+            "Certaines équipes adoptent les microservices très tôt parce qu'elles pensent qu'elles en auront besoin plus tard. Cette hypothèse mène souvent à une complexité prématurée.",
+            "Les décisions d'architecture prises trop tôt peuvent devenir difficiles à inverser. De mauvaises frontières de service et une distribution inutile rendent les changements futurs plus coûteux et plus lents.",
+            "Commencer simple permet aux systèmes d'évoluer naturellement à partir de besoins réels plutôt que d'hypothèses."
+          ]
+        },
+        "pattern-behind-mistakes": {
+          "blocks": [
+            "Ces idées reçues viennent d'un malentendu commun. Les développeurs considèrent souvent les microservices comme un moyen d'améliorer l'organisation du code.",
+            "En réalité, les microservices sont avant tout un outil organisationnel. Ils servent à soutenir la structure des équipes, la responsabilité et le passage à l'échelle au niveau de l'organisation.",
+            "Quand ces conditions ne sont pas réunies, les microservices apportent plus de problèmes qu'ils n'en résolvent."
+          ]
+        }
+      }
+    },
     "free-tools-visualize-color-palette-ui-components": {
       "title": "5 outils gratuits pour visualiser votre palette de couleurs sur de vrais composants UI (Mise à jour)",
       "preview": "Choisir des couleurs sur un nuancier est une chose. Les voir sur des boutons, des barres de navigation, des alertes et des layouts complets, c'est là que les meilleures décisions UI se prennent.",
