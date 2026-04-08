@@ -1,5 +1,6 @@
 import { articles } from '../data/articles';
 import { useTranslation } from 'react-i18next';
+import { SectionRenderer } from './ArticleRenderers';
 
 function ArticleDetailPage({ articleId, onBack }) {
   const { t } = useTranslation();
@@ -112,80 +113,13 @@ function ArticleDetailPage({ articleId, onBack }) {
               className="flex flex-col gap-6"
             >
               {article.sections.map((section, index) => (
-                <section key={index} id={section.id} className="scroll-mt-24">
-                  {section.heading && (
-                    <h2
-                      className={`text-body mb-3 dark:text-text-primary-dark ${
-                        section.isGroupLabel
-                          ? 'font-bold opacity-50'
-                          : 'font-bold'
-                      }`}
-                    >
-                      {t(
-                        `articleContent.${article.id}.headings.${section.id}`,
-                        { defaultValue: section.heading },
-                      )}
-                    </h2>
-                  )}
-                  {section.blocks && (
-                    <div className="flex flex-col gap-3">
-                      {section.blocks.map((block, blockIndex) => {
-                        const translatedBlocks = Array.isArray(
-                          translatedSections?.[section.id]?.blocks,
-                        )
-                          ? translatedSections[section.id].blocks
-                          : [];
-                        const translatedBlockIndex =
-                          section.blocks
-                            .slice(0, blockIndex + 1)
-                            .filter((entry) => entry.type !== 'code').length -
-                          1;
-                        const translatedValue =
-                          block.type === 'code'
-                            ? block.value
-                            : translatedBlocks[translatedBlockIndex] ||
-                              block.value;
-
-                        if (block.type === 'code') {
-                          return (
-                            <pre
-                              key={blockIndex}
-                              className="bg-black/5 dark:bg-white/10 rounded-md p-4 overflow-x-auto"
-                            >
-                              <code
-                                className="font-mono dark:text-text-primary-dark"
-                                style={{
-                                  fontSize:
-                                    'clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)',
-                                }}
-                              >
-                                {translatedValue}
-                              </code>
-                            </pre>
-                          );
-                        }
-                        if (block.type === 'subheading') {
-                          return (
-                            <p
-                              key={blockIndex}
-                              className="text-body font-semibold mt-2 dark:text-text-primary-dark"
-                            >
-                              {translatedValue}
-                            </p>
-                          );
-                        }
-                        return (
-                          <p
-                            key={blockIndex}
-                            className="text-body dark:text-text-secondary-dark"
-                          >
-                            {translatedValue}
-                          </p>
-                        );
-                      })}
-                    </div>
-                  )}
-                </section>
+                <SectionRenderer
+                  key={index}
+                  section={section}
+                  index={index}
+                  article={article}
+                  translatedSections={translatedSections}
+                />
               ))}
 
               {/* Back to top */}
