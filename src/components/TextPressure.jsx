@@ -1,54 +1,62 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 
 export default function TextPressure({ text, className = '' }) {
-  const containerRef = useRef(null)
-  const charsRef = useRef([])
-  const mousePos = useRef({ x: 0, y: 0 })
+  const containerRef = useRef(null);
+  const charsRef = useRef([]);
+  const mousePos = useRef({ x: 0, y: 0 });
+  const isAnimatingRef = useRef(true);
 
   useEffect(() => {
-    const container = containerRef.current
-    if (!container) return
+    const container = containerRef.current;
+    if (!container) return;
+
+    let animationId = null;
 
     const handleMouseMove = (e) => {
-      mousePos.current = { x: e.clientX, y: e.clientY }
-    }
+      mousePos.current = { x: e.clientX, y: e.clientY };
+    };
 
     const animate = () => {
+      if (!isAnimatingRef.current) return;
+
       charsRef.current.forEach((char) => {
-        if (!char) return
+        if (!char) return;
 
-        const rect = char.getBoundingClientRect()
-        const charCenterX = rect.left + rect.width / 2
-        const charCenterY = rect.top + rect.height / 2
+        const rect = char.getBoundingClientRect();
+        const charCenterX = rect.left + rect.width / 2;
+        const charCenterY = rect.top + rect.height / 2;
 
-        const deltaX = mousePos.current.x - charCenterX
-        const deltaY = mousePos.current.y - charCenterY
-        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY)
+        const deltaX = mousePos.current.x - charCenterX;
+        const deltaY = mousePos.current.y - charCenterY;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
-        const maxDistance = 200
-        const normalizedDistance = Math.min(distance / maxDistance, 1)
-        const proximity = 1 - normalizedDistance
+        const maxDistance = 200;
+        const normalizedDistance = Math.min(distance / maxDistance, 1);
+        const proximity = 1 - normalizedDistance;
 
-        const weight = 400 - proximity * 200
-        const width = 100 + proximity * 25
-        const slant = proximity * -15
+        const weight = 400 - proximity * 200;
+        const width = 100 + proximity * 25;
+        const slant = proximity * -15;
 
-        char.style.fontVariationSettings = `'wght' ${weight}, 'wdth' ${width}, 'slnt' ${slant}`
-      })
+        char.style.fontVariationSettings = `'wght' ${weight}, 'wdth' ${width}, 'slnt' ${slant}`;
+      });
 
-      requestAnimationFrame(animate)
-    }
+      animationId = requestAnimationFrame(animate);
+    };
 
-    window.addEventListener('mousemove', handleMouseMove)
-    const animationId = requestAnimationFrame(animate)
+    window.addEventListener('mousemove', handleMouseMove);
+    animationId = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-      cancelAnimationFrame(animationId)
-    }
-  }, [])
+      isAnimatingRef.current = false;
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
+  }, []);
 
-  const chars = text.split('')
+  const chars = text.split('');
 
   return (
     <p ref={containerRef} className={className}>
@@ -65,5 +73,5 @@ export default function TextPressure({ text, className = '' }) {
         </span>
       ))}
     </p>
-  )
+  );
 }

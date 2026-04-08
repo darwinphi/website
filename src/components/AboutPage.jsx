@@ -21,15 +21,18 @@ function AboutPage({ onBack }) {
   }, []);
 
   React.useEffect(() => {
+    if (!isTapped) return;
+
     const handleClickOutside = (e) => {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
         setIsTapped(false);
       }
     };
 
+    // Use 'click' event for better UX (only fires on complete click)
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
-  }, []);
+  }, [isTapped]);
 
   const handleMouseMove = (e) => {
     if (!imgRef.current) return;

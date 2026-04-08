@@ -22,11 +22,19 @@ function LanguageSelector() {
   // Close on click outside
   useEffect(() => {
     if (!isOpen) return;
-    const handleClick = (e) => {
-      if (!e.target.closest('[data-lang-selector]')) setIsOpen(false);
+
+    const handleClickOutside = (e) => {
+      // Get the selector container
+      const selector = document.querySelector('[data-lang-selector]');
+      // Check if click was outside the selector
+      if (selector && !selector.contains(e.target)) {
+        setIsOpen(false);
+      }
     };
-    document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
+
+    // Use 'click' instead of 'mousedown' for better UX
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
   }, [isOpen]);
 
   return (
