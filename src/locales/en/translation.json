@@ -52,6 +52,113 @@
     "notFound": "Article not found"
   },
   "articleContent": {
+    "free-tools-visualize-color-palette-ui-components": {
+      "title": "5 Free Tools to Visualize Your Color Palette on Real UI Components (Updated)",
+      "preview": "Picking colors in a swatch is one thing. Seeing them on buttons, navbars, alerts, and full layouts is where better UI decisions happen.",
+      "toc": {
+        "why-palette-visualization": "Why Palette Visualization Matters",
+        "realtime-colors": "1. Realtime Colors",
+        "palettemaker": "2. PaletteMaker",
+        "material-design-color-tool": "3. Material Design Color Tool",
+        "happy-hues": "4. Happy Hues",
+        "coolors-palette-visualizer": "5. Coolors' Palette Visualizer",
+        "bonus-tip": "Bonus Tip",
+        "wrap-up": "Wrap-up"
+      },
+      "headings": {
+        "why-palette-visualization": "Why Palette Visualization Matters",
+        "realtime-colors": "1. Realtime Colors",
+        "palettemaker": "2. PaletteMaker",
+        "material-design-color-tool": "3. Material Design Color Tool",
+        "happy-hues": "4. Happy Hues",
+        "coolors-palette-visualizer": "5. Coolors' Palette Visualizer",
+        "bonus-tip": "Bonus Tip",
+        "wrap-up": "Wrap-up"
+      },
+      "sections": {
+        "why-palette-visualization": {
+          "blocks": [
+            "Color is a key part of user experience. But picking a palette in Figma or from a color picker isn't enough. You want to see how those colors actually behave in real-world UI elements like buttons, navbars, alerts, and backgrounds.",
+            "Update (June 2025): This post has been updated with new tools and tips for better palette visualization.",
+            "Here are 5 free tools that turn your color palette into real UI components, so you can design faster and smarter without guessing."
+          ]
+        },
+        "realtime-colors": {
+          "blocks": [
+            "What it does",
+            "Lets you edit and preview your color palette live across headings, buttons, cards, and layouts.",
+            "Use it for",
+            "Prototyping a design system and creating accessible color pairs quickly.",
+            "Pros",
+            "Live editing of text, background, primary, and secondary colors. Preview across actual web components. Export as Tailwind config or CSS variables.",
+            "Cons",
+            "Component variety is limited to a basic layout, and there is no dark mode preview out of the box."
+          ]
+        },
+        "palettemaker": {
+          "blocks": [
+            "What it does",
+            "Generates harmonious color palettes and previews them on mock UI, branding, and illustrations.",
+            "Use it for",
+            "Visualizing colors across web and print branding, and exporting palettes into design tools.",
+            "Pros",
+            "Shows real-world previews in branding, UI, and illustration. Supports export formats like Procreate swatches, Adobe ASE, and CSS. Includes AI-enhanced palette generation from keywords.",
+            "Cons",
+            "Some advanced features are behind a login, and the design previews are fixed rather than customizable."
+          ]
+        },
+        "material-design-color-tool": {
+          "blocks": [
+            "What it does",
+            "Google's official tool for generating Material Design 3 color systems with automatically generated light and dark themes.",
+            "Use it for",
+            "Ensuring accessibility and consistency in design systems, especially when working within Material Design specs.",
+            "Pros",
+            "Auto-generates full palettes from a single seed color. Includes built-in contrast checking for WCAG AA and AAA. Exports Material tokens for Android and web.",
+            "Cons",
+            "It is heavily focused on Material Design, so it is less flexible for other UI systems and does not offer arbitrary layout previews."
+          ]
+        },
+        "happy-hues": {
+          "blocks": [
+            "What it does",
+            "Provides a curated set of color palettes applied to a real website layout, which makes it useful for seeing how colors interact in practice.",
+            "Use it for",
+            "Color palette inspiration and learning how colors behave across entire page sections.",
+            "Pros",
+            "Features thoughtfully designed palettes by real designers. Helps you compare text, background, and accent colors in a realistic layout context.",
+            "Cons",
+            "You cannot upload your own colors, and the palettes are fixed and read-only."
+          ]
+        },
+        "coolors-palette-visualizer": {
+          "blocks": [
+            "What it does",
+            "A fast color palette generator with a live visualizer for websites, artboards, and other sample surfaces.",
+            "Use it for",
+            "Quickly generating or refining palettes, then previewing how those colors apply to sample UIs and artboards.",
+            "Pros",
+            "Beautiful and fast interface. Offers UI mockups and artboard previews. Supports exports to PNG, SCSS, SVG, PDF, and more.",
+            "Cons",
+            "The visualizer has limited interactivity, and some features require a login or Pro plan."
+          ]
+        },
+        "bonus-tip": {
+          "blocks": [
+            "If you want to create your own palette and see it in real Tailwind components, you can also try Tailwind Ink.",
+            "For programmatic palette generation, chroma-js is a handy option.",
+            "If you're working inside Figma, plugins like Prism, Color Style Generator, or Hue can speed up experimentation.",
+            "Coolors Visualizer is also worth revisiting if you want another quick way to preview palettes in mock UI."
+          ]
+        },
+        "wrap-up": {
+          "blocks": [
+            "Choosing colors is easy. Applying them meaningfully is the real challenge.",
+            "These tools bridge the gap between color theory and UI implementation, helping you build beautiful, accessible interfaces without reinventing the wheel."
+          ]
+        }
+      }
+    },
     "database-connection-pool": {
       "title": "What is Database Connection Pool?",
       "preview": "A database connection pool is a cache of database connections kept ready for your app. Instead of creating new connections per request, borrow from the pool.",

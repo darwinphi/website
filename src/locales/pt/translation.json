@@ -158,6 +158,113 @@
     }
   },
   "articleContent": {
+    "free-tools-visualize-color-palette-ui-components": {
+      "title": "5 ferramentas gratuitas para visualizar sua paleta de cores em componentes reais de UI (Atualizado)",
+      "preview": "Escolher cores em uma paleta é uma coisa. Vê-las em botões, barras de navegação, alertas e layouts completos é onde surgem decisões melhores de UI.",
+      "toc": {
+        "why-palette-visualization": "Por que visualizar a paleta importa",
+        "realtime-colors": "1. Realtime Colors",
+        "palettemaker": "2. PaletteMaker",
+        "material-design-color-tool": "3. Material Design Color Tool",
+        "happy-hues": "4. Happy Hues",
+        "coolors-palette-visualizer": "5. Visualizador de paletas do Coolors",
+        "bonus-tip": "Dica extra",
+        "wrap-up": "Conclusão"
+      },
+      "headings": {
+        "why-palette-visualization": "Por que visualizar a paleta importa",
+        "realtime-colors": "1. Realtime Colors",
+        "palettemaker": "2. PaletteMaker",
+        "material-design-color-tool": "3. Material Design Color Tool",
+        "happy-hues": "4. Happy Hues",
+        "coolors-palette-visualizer": "5. Visualizador de paletas do Coolors",
+        "bonus-tip": "Dica extra",
+        "wrap-up": "Conclusão"
+      },
+      "sections": {
+        "why-palette-visualization": {
+          "blocks": [
+            "A cor é uma parte essencial da experiência do usuário. Mas escolher uma paleta no Figma ou em um seletor de cores não basta. Você também precisa ver como essas cores realmente se comportam em elementos reais de UI, como botões, barras de navegação, alertas e fundos.",
+            "Atualização (junho de 2025): Este post foi atualizado com novas ferramentas e dicas para melhorar a visualização de paletas.",
+            "Aqui estão 5 ferramentas gratuitas que transformam sua paleta de cores em componentes reais de UI, para que você possa projetar com mais rapidez e inteligência, sem depender de adivinhação."
+          ]
+        },
+        "realtime-colors": {
+          "blocks": [
+            "O que faz",
+            "Permite editar e visualizar sua paleta de cores em tempo real em títulos, botões, cards e layouts.",
+            "Use para",
+            "Prototipar um design system e criar combinações de cores acessíveis com rapidez.",
+            "Pontos fortes",
+            "Edição ao vivo de cores de texto, fundo, primária e secundária. Pré-visualização em componentes web reais. Exportação como configuração do Tailwind ou variáveis CSS.",
+            "Limitações",
+            "A variedade de componentes é limitada a um layout básico, e não há prévia de modo escuro pronta para uso."
+          ]
+        },
+        "palettemaker": {
+          "blocks": [
+            "O que faz",
+            "Gera paletas harmoniosas e as exibe aplicadas em mockups de UI, branding e ilustrações.",
+            "Use para",
+            "Visualizar cores em branding para web e impressão, além de exportar paletas para ferramentas de design.",
+            "Pontos fortes",
+            "Mostra prévias reais em branding, UI e ilustração. Suporta exportação em formatos como swatches do Procreate, Adobe ASE e CSS. Inclui geração de paletas com ajuda de IA a partir de palavras-chave.",
+            "Limitações",
+            "Alguns recursos avançados exigem login, e as prévias de design são fixas e pouco personalizáveis."
+          ]
+        },
+        "material-design-color-tool": {
+          "blocks": [
+            "O que faz",
+            "É a ferramenta oficial do Google para gerar sistemas de cores do Material Design 3 com temas claro e escuro criados automaticamente.",
+            "Use para",
+            "Garantir acessibilidade e consistência em design systems, especialmente se você trabalha dentro das especificações do Material Design.",
+            "Pontos fortes",
+            "Gera paletas completas automaticamente a partir de uma única cor base. Inclui verificação de contraste para WCAG AA e AAA. Exporta tokens do Material para Android e web.",
+            "Limitações",
+            "É fortemente focada em Material Design, então é menos flexível para outros sistemas de UI e não oferece prévias de layouts livres."
+          ]
+        },
+        "happy-hues": {
+          "blocks": [
+            "O que faz",
+            "Oferece uma seleção curada de paletas de cores aplicadas a um layout real de site, o que ajuda a entender como as cores interagem na prática.",
+            "Use para",
+            "Buscar inspiração de paleta e ver como as cores funcionam em seções inteiras de uma página.",
+            "Pontos fortes",
+            "Traz paletas bem elaboradas por designers reais. Ajuda a comparar texto, fundo e cores de destaque em um contexto de layout realista.",
+            "Limitações",
+            "Você não pode enviar suas próprias cores, e as paletas são fixas e somente leitura."
+          ]
+        },
+        "coolors-palette-visualizer": {
+          "blocks": [
+            "O que faz",
+            "É um gerador de paletas rápido com visualizador ao vivo para sites, artboards e outras superfícies de exemplo.",
+            "Use para",
+            "Gerar ou refinar paletas rapidamente e depois ver como essas cores se aplicam a UIs e artboards de exemplo.",
+            "Pontos fortes",
+            "Interface bonita e rápida. Oferece mockups de UI e prévias de artboards. Exporta para PNG, SCSS, SVG, PDF e muito mais.",
+            "Limitações",
+            "O visualizador tem interatividade limitada, e alguns recursos exigem login ou plano Pro."
+          ]
+        },
+        "bonus-tip": {
+          "blocks": [
+            "Se você quer criar sua própria paleta e vê-la em componentes reais do Tailwind, também pode experimentar o Tailwind Ink.",
+            "Para geração programática de paletas, chroma-js é uma opção muito útil.",
+            "Se você trabalha no Figma, plugins como Prism, Color Style Generator ou Hue podem acelerar bastante a experimentação.",
+            "Também vale revisitar o Coolors Visualizer se você quiser outra forma rápida de testar paletas em uma UI simulada."
+          ]
+        },
+        "wrap-up": {
+          "blocks": [
+            "Escolher cores é fácil. Aplicá-las de forma significativa é o verdadeiro desafio.",
+            "Essas ferramentas reduzem a distância entre teoria das cores e implementação de UI, ajudando você a criar interfaces bonitas e acessíveis sem reinventar a roda."
+          ]
+        }
+      }
+    },
     "database-connection-pool": {
       "title": "O que é um Pool de Conexões de Banco de Dados?",
       "preview": "Um pool de conexões de banco de dados é um cache de conexões mantidas prontas para o seu aplicativo. Em vez de criar novas conexões por solicitação, basta emprestar do pool e devolver ao terminar.",

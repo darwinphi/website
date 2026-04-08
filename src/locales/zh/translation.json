@@ -158,6 +158,113 @@
     }
   },
   "articleContent": {
+    "free-tools-visualize-color-palette-ui-components": {
+      "title": "5 个可将你的配色方案可视化到真实 UI 组件上的免费工具（更新版）",
+      "preview": "在色板上挑颜色是一回事，把它们放到按钮、导航栏、提示框和完整布局中查看，则是做出更好 UI 决策的关键。",
+      "toc": {
+        "why-palette-visualization": "为什么配色可视化很重要",
+        "realtime-colors": "1. Realtime Colors",
+        "palettemaker": "2. PaletteMaker",
+        "material-design-color-tool": "3. Material Design Color Tool",
+        "happy-hues": "4. Happy Hues",
+        "coolors-palette-visualizer": "5. Coolors 调色板可视化工具",
+        "bonus-tip": "额外提示",
+        "wrap-up": "总结"
+      },
+      "headings": {
+        "why-palette-visualization": "为什么配色可视化很重要",
+        "realtime-colors": "1. Realtime Colors",
+        "palettemaker": "2. PaletteMaker",
+        "material-design-color-tool": "3. Material Design Color Tool",
+        "happy-hues": "4. Happy Hues",
+        "coolors-palette-visualizer": "5. Coolors 调色板可视化工具",
+        "bonus-tip": "额外提示",
+        "wrap-up": "总结"
+      },
+      "sections": {
+        "why-palette-visualization": {
+          "blocks": [
+            "颜色是用户体验中的关键部分。但仅仅在 Figma 或取色器里挑选一套配色还不够。你还需要看到这些颜色在按钮、导航栏、提示框和背景等真实 UI 元素中的实际表现。",
+            "更新（2025 年 6 月）：本文已更新，加入了新的工具和更好的配色可视化技巧。",
+            "下面这 5 个免费工具可以把你的配色方案直接应用到真实 UI 组件上，帮助你更快、更聪明地完成设计，而不是靠猜。"
+          ]
+        },
+        "realtime-colors": {
+          "blocks": [
+            "它能做什么",
+            "让你在标题、按钮、卡片和布局中实时编辑并预览你的配色方案。",
+            "适合用来做什么",
+            "适合做设计系统原型，以及快速创建更具可访问性的颜色搭配。",
+            "优点",
+            "可以实时编辑文字、背景、主色和辅助色。可在真实网页组件中预览，并可导出为 Tailwind 配置或 CSS 变量。",
+            "缺点",
+            "组件种类相对有限，基本只覆盖简单布局，而且默认不提供深色模式预览。"
+          ]
+        },
+        "palettemaker": {
+          "blocks": [
+            "它能做什么",
+            "生成和谐的配色方案，并将其预览在 UI 模板、品牌设计和插画中。",
+            "适合用来做什么",
+            "适合在网页和印刷品牌场景中可视化颜色，并把配色导出到设计工具中。",
+            "优点",
+            "可在品牌设计、UI 和插画中查看更贴近实际的效果。支持导出为 Procreate 色板、Adobe ASE、CSS 等格式。还提供基于关键词的 AI 配色生成功能。",
+            "缺点",
+            "部分高级功能需要登录，且设计预览布局是固定的，可自定义程度有限。"
+          ]
+        },
+        "material-design-color-tool": {
+          "blocks": [
+            "它能做什么",
+            "这是 Google 官方工具，可基于一个种子颜色生成 Material Design 3 色彩系统，并自动创建浅色和深色主题。",
+            "适合用来做什么",
+            "尤其适合在遵循 Material Design 规范时，确保设计系统的可访问性与一致性。",
+            "优点",
+            "可以从一个基础颜色自动生成完整配色。内置 WCAG AA 与 AAA 对比度检查，并支持导出 Android 和 Web 用的 Material tokens。",
+            "缺点",
+            "它高度聚焦于 Material Design，因此对其他 UI 系统不够灵活，也不支持任意布局的自由预览。"
+          ]
+        },
+        "happy-hues": {
+          "blocks": [
+            "它能做什么",
+            "提供一组经过精心挑选的配色方案，并将其应用到真实网站布局中，帮助你直观理解颜色在实际场景中的相互作用。",
+            "适合用来做什么",
+            "适合寻找配色灵感，以及观察颜色在整页不同区块中的使用方式。",
+            "优点",
+            "配色由真实设计师精心挑选。可以在真实布局语境中比较文字、背景和强调色之间的关系。",
+            "缺点",
+            "不能上传自定义颜色，所有配色都是固定的，只能查看不能编辑。"
+          ]
+        },
+        "coolors-palette-visualizer": {
+          "blocks": [
+            "它能做什么",
+            "一个速度很快的配色生成器，并带有适用于网站、画板等示例载体的实时可视化工具。",
+            "适合用来做什么",
+            "适合快速生成或微调配色，然后查看这些颜色在示例 UI 和画板上的呈现效果。",
+            "优点",
+            "界面美观且速度快。提供 UI mockup 和画板预览，并支持导出为 PNG、SCSS、SVG、PDF 等多种格式。",
+            "缺点",
+            "可视化工具的交互性有限，部分功能需要登录或订阅 Pro 版本。"
+          ]
+        },
+        "bonus-tip": {
+          "blocks": [
+            "如果你想创建自己的配色，并把它应用到真实的 Tailwind 组件上，也可以试试 Tailwind Ink。",
+            "如果你想通过代码来生成配色，chroma-js 是一个很实用的选择。",
+            "如果你在 Figma 中工作，Prism、Color Style Generator 或 Hue 这类插件可以显著加快你的试验速度。",
+            "如果你还想用另一种快速方式在模拟 UI 中预览配色，Coolors Visualizer 也很值得再试一次。"
+          ]
+        },
+        "wrap-up": {
+          "blocks": [
+            "选颜色并不难，真正的挑战在于如何有意义地应用它们。",
+            "这些工具缩短了色彩理论与 UI 落地之间的距离，帮助你在不重复造轮子的前提下构建美观且可访问的界面。"
+          ]
+        }
+      }
+    },
     "database-connection-pool": {
       "title": "什么是数据库连接池？",
       "preview": "数据库连接池是一组预先建立好的数据库连接缓存，供应用程序随时使用。无需为每个请求创建新连接，只需从池中借用并在使用后归还即可。",

@@ -158,6 +158,113 @@
     }
   },
   "articleContent": {
+    "free-tools-visualize-color-palette-ui-components": {
+      "title": "5 Alat Gratis untuk Memvisualisasikan Palet Warna Anda pada Komponen UI Nyata (Diperbarui)",
+      "preview": "Memilih warna di swatch adalah satu hal. Melihatnya pada tombol, navbar, alert, dan layout penuh adalah tempat keputusan UI yang lebih baik benar-benar terjadi.",
+      "toc": {
+        "why-palette-visualization": "Mengapa visualisasi palet itu penting",
+        "realtime-colors": "1. Realtime Colors",
+        "palettemaker": "2. PaletteMaker",
+        "material-design-color-tool": "3. Material Design Color Tool",
+        "happy-hues": "4. Happy Hues",
+        "coolors-palette-visualizer": "5. Visualizer Palet Coolors",
+        "bonus-tip": "Tips bonus",
+        "wrap-up": "Penutup"
+      },
+      "headings": {
+        "why-palette-visualization": "Mengapa visualisasi palet itu penting",
+        "realtime-colors": "1. Realtime Colors",
+        "palettemaker": "2. PaletteMaker",
+        "material-design-color-tool": "3. Material Design Color Tool",
+        "happy-hues": "4. Happy Hues",
+        "coolors-palette-visualizer": "5. Visualizer Palet Coolors",
+        "bonus-tip": "Tips bonus",
+        "wrap-up": "Penutup"
+      },
+      "sections": {
+        "why-palette-visualization": {
+          "blocks": [
+            "Warna adalah bagian penting dari pengalaman pengguna. Namun memilih palet di Figma atau dari color picker saja belum cukup. Anda juga perlu melihat bagaimana warna-warna itu benar-benar bekerja pada elemen UI nyata seperti tombol, navbar, alert, dan latar belakang.",
+            "Pembaruan (Juni 2025): Artikel ini telah diperbarui dengan alat dan tips baru untuk visualisasi palet yang lebih baik.",
+            "Berikut 5 alat gratis yang mengubah palet warna Anda menjadi komponen UI nyata, sehingga Anda bisa mendesain lebih cepat dan lebih cerdas tanpa menebak-nebak."
+          ]
+        },
+        "realtime-colors": {
+          "blocks": [
+            "Apa fungsinya",
+            "Memungkinkan Anda mengedit dan melihat pratinjau palet warna secara langsung pada heading, tombol, kartu, dan layout.",
+            "Gunakan untuk",
+            "Membuat prototipe design system dan membuat pasangan warna yang aksesibel dengan cepat.",
+            "Kelebihan",
+            "Pengeditan langsung untuk warna teks, latar belakang, warna utama, dan warna sekunder. Pratinjau pada komponen web nyata. Bisa diekspor sebagai konfigurasi Tailwind atau variabel CSS.",
+            "Kekurangan",
+            "Variasi komponennya terbatas pada layout dasar, dan belum ada pratinjau mode gelap secara bawaan."
+          ]
+        },
+        "palettemaker": {
+          "blocks": [
+            "Apa fungsinya",
+            "Menghasilkan palet warna yang harmonis dan menampilkannya pada mock UI, branding, dan ilustrasi.",
+            "Gunakan untuk",
+            "Memvisualisasikan warna untuk branding web maupun cetak, serta mengekspor palet ke alat desain.",
+            "Kelebihan",
+            "Menampilkan pratinjau nyata untuk branding, UI, dan ilustrasi. Mendukung format ekspor seperti swatch Procreate, Adobe ASE, dan CSS. Dilengkapi pembuatan palet berbantuan AI dari kata kunci.",
+            "Kekurangan",
+            "Beberapa fitur lanjutan memerlukan login, dan pratinjau desainnya bersifat tetap serta tidak bisa banyak disesuaikan."
+          ]
+        },
+        "material-design-color-tool": {
+          "blocks": [
+            "Apa fungsinya",
+            "Ini adalah alat resmi Google untuk menghasilkan sistem warna Material Design 3 dengan tema terang dan gelap yang dibuat otomatis.",
+            "Gunakan untuk",
+            "Memastikan aksesibilitas dan konsistensi pada design system, terutama jika Anda bekerja dengan spesifikasi Material Design.",
+            "Kelebihan",
+            "Secara otomatis menghasilkan palet lengkap dari satu warna dasar. Menyertakan pemeriksaan kontras untuk WCAG AA dan AAA. Mengekspor token Material untuk Android dan web.",
+            "Kekurangan",
+            "Sangat berfokus pada Material Design, sehingga kurang fleksibel untuk sistem UI lain dan tidak menyediakan pratinjau layout yang bebas."
+          ]
+        },
+        "happy-hues": {
+          "blocks": [
+            "Apa fungsinya",
+            "Menyediakan kumpulan palet warna terkurasi yang diterapkan pada layout situs web nyata, sehingga Anda bisa melihat bagaimana warna saling berinteraksi dalam praktik.",
+            "Gunakan untuk",
+            "Mencari inspirasi palet warna dan memahami bagaimana warna bekerja di seluruh bagian halaman.",
+            "Kelebihan",
+            "Berisi palet yang dirancang dengan baik oleh desainer nyata. Membantu membandingkan warna teks, latar belakang, dan aksen dalam konteks layout yang realistis.",
+            "Kekurangan",
+            "Anda tidak bisa mengunggah warna sendiri, dan palet-paletnya bersifat tetap serta hanya untuk dilihat."
+          ]
+        },
+        "coolors-palette-visualizer": {
+          "blocks": [
+            "Apa fungsinya",
+            "Generator palet yang sangat cepat dengan visualizer langsung untuk situs web, artboard, dan permukaan contoh lainnya.",
+            "Gunakan untuk",
+            "Menghasilkan atau menyempurnakan palet dengan cepat, lalu melihat bagaimana warnanya diterapkan pada UI contoh dan artboard.",
+            "Kelebihan",
+            "Antarmukanya cepat dan menarik. Menyediakan mockup UI dan pratinjau artboard. Mendukung ekspor ke PNG, SCSS, SVG, PDF, dan lainnya.",
+            "Kekurangan",
+            "Visualizernya memiliki interaktivitas terbatas, dan beberapa fitur memerlukan login atau paket Pro."
+          ]
+        },
+        "bonus-tip": {
+          "blocks": [
+            "Jika Anda ingin membuat palet sendiri dan melihatnya pada komponen Tailwind nyata, Anda juga bisa mencoba Tailwind Ink.",
+            "Untuk menghasilkan palet secara terprogram, chroma-js adalah pilihan yang praktis.",
+            "Jika Anda bekerja di Figma, plugin seperti Prism, Color Style Generator, atau Hue bisa sangat mempercepat eksperimen.",
+            "Coolors Visualizer juga layak dicoba lagi jika Anda ingin cara cepat lain untuk melihat palet pada UI tiruan."
+          ]
+        },
+        "wrap-up": {
+          "blocks": [
+            "Memilih warna itu mudah. Menerapkannya dengan bermakna adalah tantangan yang sebenarnya.",
+            "Alat-alat ini menjembatani teori warna dan implementasi UI, membantu Anda membangun antarmuka yang indah dan aksesibel tanpa harus memulai dari nol."
+          ]
+        }
+      }
+    },
     "database-connection-pool": {
       "title": "Apa itu Database Connection Pool?",
       "preview": "Database connection pool adalah cache dari koneksi database yang siap digunakan oleh aplikasi. Daripada membuat koneksi baru setiap permintaan, pinjam saja dari pool dan kembalikan setelah selesai.",
