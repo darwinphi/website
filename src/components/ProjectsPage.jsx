@@ -22,6 +22,7 @@ function ProjectsPage({ onSelectProject, onBack }) {
           <button
             onClick={() => onSelectProject(project.id)}
             className={`w-full text-left ${index === 0 ? '' : 'pt-6'} pb-6 group cursor-pointer`}
+            aria-label={`View project: ${t(`projects.${project.translationKey}.name`)}`}
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">

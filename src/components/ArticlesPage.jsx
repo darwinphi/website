@@ -36,6 +36,7 @@ function ArticlesPage({ onSelectArticle, onBack }) {
             <button
               onClick={() => onSelectArticle(article.id)}
               className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer dark:text-text-primary-dark"
+              aria-label={`Read article: ${t(`articleContent.${article.id}.title`, { defaultValue: article.title })}`}
             >
               {t('buttons.continueReading')}
               <i className="ri-arrow-right-line transition-transform duration-200 group-hover:translate-x-1 group-active:translate-x-1" />

@@ -63,6 +63,7 @@ function Footer() {
             target="_blank"
             rel="noreferrer"
             className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group dark:text-text-primary-dark"
+            aria-label={t(key)}
             variants={{
               hidden: { opacity: 0, x: 20 },
               visible: { opacity: 1, x: 0 },

@@ -17,6 +17,8 @@ function NotFoundPage() {
           src="/img/404.svg"
           alt="404 – Page not found"
           className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 dark:invert"
+          loading="lazy"
+          decoding="async"
           style={{ opacity: 0.85 }}
         />
       </div>

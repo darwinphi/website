@@ -1,19 +1,19 @@
-import React from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IMAGE_ZOOM } from '../constants/ui';
 
 function AboutPage({ onBack }) {
   const { t } = useTranslation();
-  const [cursorPos, setCursorPos] = React.useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = React.useState(false);
-  const [isTouching, setIsTouching] = React.useState(false);
-  const [isTapped, setIsTapped] = React.useState(false);
-  const [isLoaded, setIsLoaded] = React.useState(false);
-  const imgRef = React.useRef(null);
-  const containerRef = React.useRef(null);
-  const touchStartTime = React.useRef(null);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [isTouching, setIsTouching] = useState(false);
+  const [isTapped, setIsTapped] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef(null);
+  const containerRef = useRef(null);
+  const touchStartTime = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Small delay to ensure animation registers
     const timer = setTimeout(() => {
       setIsLoaded(true);
@@ -21,7 +21,7 @@ function AboutPage({ onBack }) {
     return () => clearTimeout(timer);
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isTapped) return;
 
     const handleClickOutside = (e) => {
@@ -161,7 +161,8 @@ function AboutPage({ onBack }) {
                 alt="Profile picture"
                 className={`w-full rounded-lg select-none`}
                 draggable="false"
-                onContextMenu={(e) => e.preventDefault()}
+                loading="lazy"
+                decoding="async"
                 style={{
                   backgroundColor: 'rgba(0, 0, 0, 0.03)',
                   filter: 'grayscale(100%) opacity(0.85)',
@@ -192,7 +193,8 @@ function AboutPage({ onBack }) {
                   alt="Profile picture color"
                   className="w-full rounded-lg absolute inset-0 select-none"
                   draggable="false"
-                  onContextMenu={(e) => e.preventDefault()}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     backgroundColor: 'rgba(0, 0, 0, 0.03)',
                     clipPath: `circle(${IMAGE_ZOOM.CIRCLE_RADIUS}px at ${cursorPos.x}px ${cursorPos.y}px)`,

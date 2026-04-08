@@ -69,6 +69,7 @@ function LanguageSelector() {
                     : 'opacity-80'
                 }`}
                 aria-label={`Switch to ${lang.name}`}
+                aria-current={lang.code === i18n.language ? 'page' : undefined}
               >
                 <span className="mr-2">{lang.flag}</span>
                 {lang.name}
