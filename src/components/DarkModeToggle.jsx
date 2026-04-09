@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 export default function DarkModeToggle() {
   const [isDark, setIsDark] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const THEME_TRANSITION_CLASS = 'theme-transition';
+  const THEME_TRANSITION_DURATION_MS = 280;
 
   useEffect(() => {
     // Initialize: check for stored preference first, then system preference
@@ -30,6 +32,7 @@ export default function DarkModeToggle() {
 
   const handleToggle = () => {
     const newIsDark = !isDark;
+    const root = document.documentElement;
 
     // Update state
     setIsDark(newIsDark);
@@ -37,12 +40,19 @@ export default function DarkModeToggle() {
     // Store the user's preference
     localStorage.setItem('darkMode', String(newIsDark));
 
+    // Animate the global theme color swap
+    root.classList.add(THEME_TRANSITION_CLASS);
+
     // Immediately update DOM
     if (newIsDark) {
-      document.documentElement.classList.add('dark');
+      root.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      root.classList.remove('dark');
     }
+
+    window.setTimeout(() => {
+      root.classList.remove(THEME_TRANSITION_CLASS);
+    }, THEME_TRANSITION_DURATION_MS);
   };
 
   // Prevent hydration mismatch
