@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 /**
  * PageLayout Component
  * Shared layout structure for list pages (Projects, Articles)
@@ -12,6 +14,9 @@ export default function PageLayout({
   children,
   backButtonLabel,
 }) {
+  const { i18n } = useTranslation();
+  const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
+
   return (
     <div className="flex-1 flex flex-col">
       {/* Back button - aligned to left column */}
@@ -24,7 +29,13 @@ export default function PageLayout({
             onClick={onBack}
             className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark w-fit"
           >
-            <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
+            <i
+              className={`transition-transform duration-200 ${
+                isRtl
+                  ? 'ri-arrow-right-line group-hover:translate-x-1 group-active:translate-x-1'
+                  : 'ri-arrow-left-line group-hover:-translate-x-1 group-active:-translate-x-1'
+              }`}
+            />
             {backButtonLabel}
           </button>
         </div>

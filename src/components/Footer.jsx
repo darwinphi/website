@@ -12,6 +12,7 @@ const socialLinks = [
 
 function Footer() {
   const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
 
   return (
     <motion.footer
@@ -81,7 +82,11 @@ function Footer() {
                 {t(key)}
               </motion.span>
             </AnimatePresence>
-            <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
+            <i
+              className={`transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45 ${
+                isRtl ? 'ri-arrow-left-up-line' : 'ri-arrow-right-up-line'
+              }`}
+            />
           </motion.a>
         ))}
       </motion.div>

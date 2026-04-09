@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import MainContent from './components/MainContent';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { getLanguageDirection } from './i18n/config';
 
 function App() {
   const { i18n } = useTranslation();
@@ -12,7 +13,10 @@ function App() {
 
   useEffect(() => {
     const activeLanguage = i18n.resolvedLanguage || i18n.language || 'en';
+    const direction = getLanguageDirection(activeLanguage);
     document.documentElement.lang = activeLanguage;
+    document.documentElement.dir = direction;
+    document.body.dir = direction;
   }, [i18n, i18n.language, i18n.resolvedLanguage]);
 
   const handleNavigation = (path) => {

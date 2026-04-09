@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import PageLayout from './PageLayout';
 
 function ProjectsPage({ onSelectProject, onBack }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
 
   const heading = (
     <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
@@ -21,8 +22,8 @@ function ProjectsPage({ onSelectProject, onBack }) {
         <div key={project.id}>
           <button
             onClick={() => onSelectProject(project.id)}
-            className={`w-full text-left ${index === 0 ? '' : 'pt-6'} pb-6 group cursor-pointer`}
-            aria-label={`View project: ${t(`projects.${project.translationKey}.name`)}`}
+            className={`w-full text-start ${index === 0 ? '' : 'pt-6'} pb-6 group cursor-pointer`}
+            aria-label={`${t('buttons.visitProject')}: ${t(`projects.${project.translationKey}.name`)}`}
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">
@@ -33,7 +34,13 @@ function ProjectsPage({ onSelectProject, onBack }) {
                   {t(`projects.${project.translationKey}.description`)}
                 </p>
               </div>
-              <i className="ri-arrow-right-line text-body shrink-0 transition-transform duration-200 group-hover:translate-x-1 group-active:translate-x-1" />
+              <i
+                className={`text-body shrink-0 transition-transform duration-200 ${
+                  isRtl
+                    ? 'ri-arrow-left-line group-hover:-translate-x-1 group-active:-translate-x-1'
+                    : 'ri-arrow-right-line group-hover:translate-x-1 group-active:translate-x-1'
+                }`}
+              />
             </div>
           </button>
           {index < projects.length - 1 && (

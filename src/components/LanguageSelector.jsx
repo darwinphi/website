@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 function LanguageSelector() {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
 
   const currentLanguage =
     supportedLanguages.find((lang) => lang.code === i18n.language) ??
@@ -13,6 +14,7 @@ function LanguageSelector() {
       i18n.language.toLowerCase().startsWith(lang.code),
     ) ??
     supportedLanguages[0];
+  const activeLanguageCode = currentLanguage.code;
 
   const handleLanguageChange = (langCode) => {
     i18n.changeLanguage(langCode);
@@ -41,7 +43,9 @@ function LanguageSelector() {
     <div className="relative" data-lang-selector>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center gap-1 px-2 py-1 text-sm border border-current rounded hover:opacity-60 transition-opacity dark:text-text-primary-dark"
+        className={`inline-flex items-center gap-1 px-2 py-1 text-sm border border-current rounded hover:opacity-60 transition-opacity dark:text-text-primary-dark ${
+          isRtl ? 'flex-row-reverse' : ''
+        }`}
         aria-label="Language selector"
         aria-expanded={isOpen}
       >
@@ -63,15 +67,15 @@ function LanguageSelector() {
               <button
                 key={lang.code}
                 onClick={() => handleLanguageChange(lang.code)}
-                className={`block w-full text-left px-4 py-2 text-sm hover:opacity-60 transition-opacity dark:text-text-primary-dark ${
-                  lang.code === i18n.language
+                className={`inline-flex w-full items-center justify-start gap-2 text-start px-4 py-2 text-sm hover:opacity-60 transition-opacity dark:text-text-primary-dark ${
+                  lang.code === activeLanguageCode
                     ? 'font-medium opacity-100 dark:bg-border-dark/50'
                     : 'opacity-80'
                 }`}
                 aria-label={`Switch to ${lang.name}`}
-                aria-current={lang.code === i18n.language ? 'page' : undefined}
+                aria-current={lang.code === activeLanguageCode ? 'page' : undefined}
               >
-                <span className="mr-2">{lang.flag}</span>
+                <span aria-hidden="true">{lang.flag}</span>
                 {lang.name}
               </button>
             ))}

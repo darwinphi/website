@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import PageLayout from './PageLayout';
 
 function ArticlesPage({ onSelectArticle, onBack }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
 
   const heading = (
     <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
@@ -36,10 +37,16 @@ function ArticlesPage({ onSelectArticle, onBack }) {
             <button
               onClick={() => onSelectArticle(article.id)}
               className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer dark:text-text-primary-dark"
-              aria-label={`Read article: ${t(`articleContent.${article.id}.title`, { defaultValue: article.title })}`}
+              aria-label={`${t('buttons.continueReading')}: ${t(`articleContent.${article.id}.title`, { defaultValue: article.title })}`}
             >
               {t('buttons.continueReading')}
-              <i className="ri-arrow-right-line transition-transform duration-200 group-hover:translate-x-1 group-active:translate-x-1" />
+              <i
+                className={`transition-transform duration-200 ${
+                  isRtl
+                    ? 'ri-arrow-left-line group-hover:-translate-x-1 group-active:-translate-x-1'
+                    : 'ri-arrow-right-line group-hover:translate-x-1 group-active:translate-x-1'
+                }`}
+              />
             </button>
           </div>
           {index < articles.length - 1 && (

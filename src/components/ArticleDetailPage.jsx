@@ -4,7 +4,8 @@ import { SectionRenderer } from './ArticleRenderers';
 import PageLayout from './PageLayout';
 
 function ArticleDetailPage({ articleId, onBack }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
   const article = articles.find((a) => a.id === articleId);
   const backToArticlesLabel = t('buttons.backToArticles');
   const translatedSections = t(`articleContent.${articleId}.sections`, {
@@ -127,7 +128,13 @@ function ArticleDetailPage({ articleId, onBack }) {
             onClick={onBack}
             className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark w-fit"
           >
-            <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
+            <i
+              className={`transition-transform duration-200 ${
+                isRtl
+                  ? 'ri-arrow-right-line group-hover:translate-x-1 group-active:translate-x-1'
+                  : 'ri-arrow-left-line group-hover:-translate-x-1 group-active:-translate-x-1'
+              }`}
+            />
             {backToArticlesLabel}
           </button>
         </div>

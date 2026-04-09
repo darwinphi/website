@@ -13,6 +13,7 @@ import deTranslation from '../locales/de/translation.json';
 import ruTranslation from '../locales/ru/translation.json';
 import frTranslation from '../locales/fr/translation.json';
 import ptTranslation from '../locales/pt/translation.json';
+import arTranslation from '../locales/ar/translation.json';
 
 const resources = {
   en: { translation: enTranslation },
@@ -25,6 +26,7 @@ const resources = {
   ru: { translation: ruTranslation },
   fr: { translation: frTranslation },
   pt: { translation: ptTranslation },
+  ar: { translation: arTranslation },
 };
 
 i18n
@@ -35,7 +37,7 @@ i18n
     fallbackLng: 'en',
 
     // Normalize 'en-US' → 'en', etc.
-    supportedLngs: ['en', 'ja', 'ko', 'zh', 'es', 'id', 'de', 'ru', 'fr', 'pt'],
+    supportedLngs: ['en', 'ja', 'ko', 'zh', 'es', 'id', 'de', 'ru', 'fr', 'pt', 'ar'],
     nonExplicitSupportedLngs: true,
 
     // Language detector options
@@ -63,6 +65,15 @@ export const supportedLanguages = [
   { code: 'ru', name: 'Русский', flag: '🇷🇺' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'pt', name: 'Português', flag: '🇵🇹' },
+  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
 ];
+
+const RTL_LANGUAGES = new Set(['ar']);
+
+export function getLanguageDirection(languageCode) {
+  const normalized = (languageCode || '').toLowerCase();
+  const baseLanguage = normalized.split('-')[0];
+  return RTL_LANGUAGES.has(baseLanguage) ? 'rtl' : 'ltr';
+}
 
 export default i18n;

@@ -78,12 +78,15 @@ export function BlockRenderer({
       return (
         <pre
           key={blockIndex}
-          className="bg-black/5 dark:bg-white/10 rounded-md p-4 overflow-x-auto"
+          className="bg-black/5 dark:bg-white/10 rounded-md p-4 overflow-x-auto text-left"
+          dir="ltr"
         >
           <code
             className="font-mono dark:text-text-primary-dark"
+            dir="ltr"
             style={{
               fontSize: 'clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)',
+              unicodeBidi: 'isolate',
             }}
           >
             {translatedValue}
@@ -105,9 +108,14 @@ export function BlockRenderer({
       return (
         <p
           key={blockIndex}
-          className="text-body dark:text-text-secondary-dark pl-5 relative"
+          className="text-body dark:text-text-secondary-dark relative"
+          style={{ paddingInlineStart: '1.25rem' }}
         >
-          <span aria-hidden="true" className="absolute left-0 top-0">
+          <span
+            aria-hidden="true"
+            className="absolute top-0"
+            style={{ insetInlineStart: 0 }}
+          >
             •
           </span>
           {renderInlineArticleLinks(translatedValue)}
@@ -118,7 +126,12 @@ export function BlockRenderer({
       return (
         <blockquote
           key={blockIndex}
-          className="text-body italic border-l-2 border-current/40 pl-4 py-1 dark:text-text-secondary-dark"
+          className="text-body italic border-current/40 py-1 dark:text-text-secondary-dark"
+          style={{
+            borderInlineStartWidth: '2px',
+            borderInlineStartStyle: 'solid',
+            paddingInlineStart: '1rem',
+          }}
         >
           {renderInlineArticleLinks(translatedValue)}
         </blockquote>

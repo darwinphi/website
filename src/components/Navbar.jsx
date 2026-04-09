@@ -69,6 +69,7 @@ const navLinks = [
 
 function Navbar({ handleNavigation, isMenuOpen, setIsMenuOpen }) {
   const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
 
   return (
     <>
@@ -137,7 +138,11 @@ function Navbar({ handleNavigation, isMenuOpen, setIsMenuOpen }) {
                     {label}
                   </motion.span>
                 </AnimatePresence>
-                <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
+                <i
+                  className={`transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45 ${
+                    isRtl ? 'ri-arrow-left-up-line' : 'ri-arrow-right-up-line'
+                  }`}
+                />
               </motion.button>
             );
           })}
@@ -201,7 +206,9 @@ function Navbar({ handleNavigation, isMenuOpen, setIsMenuOpen }) {
             }}
           >
             <motion.nav
-              className="flex flex-col items-end justify-start gap-4 mt-16"
+              className={`flex flex-col justify-start gap-4 mt-16 ${
+                isRtl ? 'items-start' : 'items-end'
+              }`}
               variants={navContainerVariants}
               initial="hidden"
               animate="visible"
@@ -221,7 +228,13 @@ function Navbar({ handleNavigation, isMenuOpen, setIsMenuOpen }) {
                     variants={navItemVariants}
                   >
                     {label}
-                    <i className="ri-arrow-right-up-line transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45" />
+                    <i
+                      className={`transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45 ${
+                        isRtl
+                          ? 'ri-arrow-left-up-line'
+                          : 'ri-arrow-right-up-line'
+                      }`}
+                    />
                   </motion.button>
                 );
               })}

@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { IMAGE_ZOOM } from '../constants/ui';
 
 function AboutPage({ onBack }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isTouching, setIsTouching] = useState(false);
@@ -118,7 +119,13 @@ function AboutPage({ onBack }) {
             onClick={onBack}
             className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark w-fit"
           >
-            <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
+            <i
+              className={`transition-transform duration-200 ${
+                isRtl
+                  ? 'ri-arrow-right-line group-hover:translate-x-1 group-active:translate-x-1'
+                  : 'ri-arrow-left-line group-hover:-translate-x-1 group-active:-translate-x-1'
+              }`}
+            />
             {t('buttons.backToHome')}
           </button>
         </div>

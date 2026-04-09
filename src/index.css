@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap');
 @import 'remixicon/fonts/remixicon.css';
 @import 'tailwindcss';
 
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: 'DM Sans', sans-serif;
+  --font-sans: 'DM Sans', 'Noto Sans Arabic', sans-serif;
   --color-primary-bg: #e6e7df;
   --color-primary-bg-dark: #1a1a1a;
   --color-text-primary-dark: #f5f5f5;
@@ -60,6 +61,16 @@
     color: inherit;
   }
 
+  /* Keep code/script content LTR even inside RTL pages. */
+  [dir='rtl'] pre,
+  [dir='rtl'] code,
+  [dir='rtl'] kbd,
+  [dir='rtl'] samp {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: isolate;
+  }
+
   .dark body {
     background-color: #1a1a1a;
     color: #f5f5f5;
@@ -75,7 +86,8 @@
 
   .hero-copy:lang(ja),
   .hero-copy:lang(ko),
-  .hero-copy:lang(zh) {
+  .hero-copy:lang(zh),
+  .hero-copy:lang(ar) {
     hyphens: manual;
     text-align: start;
   }
