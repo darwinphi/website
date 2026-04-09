@@ -986,6 +986,112 @@
           ]
         }
       }
+    },
+    "from-classroom-jokes-to-code-what-being-darwin-taught-me-about-software": {
+      "title": "Von Klassenwitzen zu Code: Was mir der Name „Darwin“ über Software beigebracht hat",
+      "preview": "Mit dem Namen Darwin aufzuwachsen hat mir eine klare Engineering-Lektion gegeben: Gute Entwickler beseitigen Unsicherheit nicht, sie gestalten Systeme, die damit sicher umgehen.",
+      "toc": {
+        "from-name-to-mindset": "Vom Namen zum Mindset",
+        "software-is-built-on-unknowns": "Software basiert auf Unbekanntem",
+        "what-senior-developers-actually-do": "Was Senior-Entwickler wirklich tun",
+        "real-world-scenarios": "5 reale Szenarien",
+        "legacy-code-you-didnt-write": "1. Legacy-Code, den du nicht geschrieben hast",
+        "debugging-distributed-systems": "2. Debugging verteilter Systeme",
+        "third-party-api-uncertainty": "3. Unsicherheit bei Drittanbieter-APIs",
+        "rolling-out-risky-features-safely": "4. Riskante Features sicher ausrollen",
+        "idempotent-webhooks": "5. Idempotente Webhooks",
+        "final-thought": "Abschließender Gedanke"
+      },
+      "headings": {
+        "from-name-to-mindset": "Vom Namen zum Mindset",
+        "software-is-built-on-unknowns": "Software basiert auf Unbekanntem",
+        "what-senior-developers-actually-do": "Was Senior-Entwickler wirklich tun",
+        "real-world-scenarios": "5 reale Szenarien",
+        "legacy-code-you-didnt-write": "1. Legacy-Code, den du nicht geschrieben hast",
+        "debugging-distributed-systems": "2. Debugging verteilter Systeme",
+        "third-party-api-uncertainty": "3. Unsicherheit bei Drittanbieter-APIs",
+        "rolling-out-risky-features-safely": "4. Riskante Features sicher ausrollen",
+        "idempotent-webhooks": "5. Idempotente Webhooks",
+        "final-thought": "Abschließender Gedanke"
+      },
+      "sections": {
+        "from-name-to-mindset": {
+          "blocks": [
+            "Als jemand, der mit dem Namen Darwin aufgewachsen ist, hatte ich nicht wirklich eine Wahl - der Name brachte seine eigenen Witze mit. Immer wenn Charles Darwin im Unterricht erwähnt wurde, wusste ich schon, was gleich passiert. Die Köpfe drehten sich langsam zu mir, als hätte ich persönlich etwas mit der Evolutionstheorie zu tun.",
+            "Von der Grundschule bis zur Oberstufe war das ein Running Gag. Irgendwann habe ich gelernt, es anzunehmen.",
+            "Ironischerweise ist eine seiner Ideen bei mir hängen geblieben. Nicht wegen Biologie, sondern weil sie dem Entwickleralltag erstaunlich ähnlich ist.",
+            "„Das Rätsel des Anfangs ist für uns unlösbar; ich für meinen Teil muss mich damit begnügen, Agnostiker zu bleiben.“",
+            "Am Anfang klingt das philosophisch. In der Softwareentwicklung fühlt es sich aber sehr praktisch an. Fast jeden Tag."
+          ]
+        },
+        "software-is-built-on-unknowns": {
+          "blocks": [
+            "In der Theorie sind Systeme logisch und deterministisch. In der Realität sind sie voller Unbekannter. Wir arbeiten mit:",
+            "Code, den wir nicht selbst geschrieben haben.",
+            "Entscheidungen, deren Kontext wir nicht vollständig verstehen.",
+            "Systemen, die über Jahre gewachsen sind.",
+            "Verhalten, das nur in Production auftaucht.",
+            "Man bekommt nicht immer einen sauberen Anfang. Oft übernimmt man die Geschichte mitten im Verlauf."
+          ]
+        },
+        "what-senior-developers-actually-do": {
+          "blocks": [
+            "Es gibt den Irrtum, Senior Engineers würden „alles wissen“. Tun sie nicht. Was sie wirklich tun, ist:",
+            "Unsicherheit dort reduzieren, wo es möglich ist.",
+            "Systeme so entwerfen, dass sie Unbekanntes tolerieren.",
+            "Annahmen durch Tests und Observability validieren.",
+            "Nicht so tun, als würden sie alles verstehen, was sie nicht verstehen.",
+            "Senior Engineering bedeutet nicht Gewissheit.",
+            "Es bedeutet, auch ohne Gewissheit sicher zu arbeiten."
+          ]
+        },
+        "real-world-scenarios": {
+          "blocks": [
+            "Hier sind fünf Praxisfälle, in denen Unsicherheit normal ist - und gutes Engineering den Unterschied macht."
+          ]
+        },
+        "legacy-code-you-didnt-write": {
+          "blocks": [
+            "Ein klassischer Fall ist übernommene Preis-, Billing- oder Payroll-Logik, die niemand mehr vollständig versteht.",
+            "Der sichere Schritt ist nicht sofortiges Neuschreiben. Der sichere Schritt ist, bestehendes Verhalten mit Tests zu sichern und dann schrittweise zu verbessern.",
+            "Praxisbezug: E-Commerce-Rabatte, Gehaltsregeln, Rechnungssysteme."
+          ]
+        },
+        "debugging-distributed-systems": {
+          "blocks": [
+            "In Production kann eine einzelne Anfrage durch API-Gateway, Auth, Order-Service, Payment-Service und Datenbank laufen.",
+            "Oft reicht ein einzelner Blickpunkt nicht, um zu verstehen, was passiert ist. Genau deshalb ist Observability so wichtig.",
+            "Praxisbezug: langsame APIs, Fehlertracing, Debugging von Microservices."
+          ]
+        },
+        "third-party-api-uncertainty": {
+          "blocks": [
+            "Shipping-APIs, Payment-Gateways, SMS-Provider und Wechselkursdienste liegen außerhalb deiner Kontrolle.",
+            "Du kennst ihr internes Verhalten nicht vollständig, deshalb musst du defensiv programmieren.",
+            "Praxisbezug: Logistik, Payments, Benachrichtigungen, Auth-Provider."
+          ]
+        },
+        "rolling-out-risky-features-safely": {
+          "blocks": [
+            "Manchmal ist unklar, wie sich ein neuer Checkout-Flow, ein Recommendation Engine oder eine Suchlogik in Production verhält.",
+            "Statt alles auf Gewissheit zu setzen, rollt man mit Feature Flags kontrolliert aus.",
+            "Praxisbezug: gestaffelte Rollouts, A/B-Tests, Redesign-Launches, riskante Backend-Migrationen."
+          ]
+        },
+        "idempotent-webhooks": {
+          "blocks": [
+            "In realen Systemen kann derselbe Webhook doppelt ankommen, oder Events kommen in falscher Reihenfolge.",
+            "Wenn dein System ideale Bedingungen voraussetzt, wird es irgendwann brechen.",
+            "Gute Systeme akzeptieren diese Unsicherheit und bauen Schutzmechanismen ein.",
+            "Praxisbezug: Zahlungsabwicklung, Abonnements, Fulfillment, eventgetriebene Workflows."
+          ]
+        },
+        "final-thought": {
+          "blocks": [
+            "Für jemanden, der ständig mit Darwin verglichen wurde, hätte ich nie gedacht, dass seine Sichtweise so gut zu meiner Arbeit als Entwickler passt. Und doch arbeite ich heute mit Systemen, die ich nicht gestartet habe, löse Probleme, die ich nicht immer vollständig erklären kann, und komme trotzdem weiter. Was starke Entwickler auszeichnet, ist genau das: Systeme so zu entwerfen, dass sie beobachtbar, testbar und resilient sind. In diesem Sinne gilt Darwins Perspektive weiterhin - Fortschritt entsteht nicht aus vollständigem Verstehen, sondern aus disziplinierter Iteration innerhalb dessen, was wir wissen."
+          ]
+        }
+      }
     }
   }
 }

@@ -37,7 +37,7 @@ export default function PageLayout({
           style={{ maxWidth: 'calc(var(--max-width-reading) * 1.5)' }}
         >
           {/* Left column: Heading (sticky on desktop) */}
-          <div className="flex flex-col gap-4 items-start md:col-span-1 lg:col-span-1 md:sticky md:top-24 lg:sticky lg:top-24 md:self-start lg:self-start">
+          <div className="flex flex-col gap-4 items-start md:col-span-1 lg:col-span-1 md:sticky md:top-24 lg:sticky lg:top-24 md:self-start lg:self-start md:max-h-[calc(100vh-7rem)] md:overflow-y-auto md:pr-2">
             {heading}
           </div>
 

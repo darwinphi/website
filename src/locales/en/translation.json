@@ -880,6 +880,112 @@
           ]
         }
       }
+    },
+    "from-classroom-jokes-to-code-what-being-darwin-taught-me-about-software": {
+      "title": "From Classroom Jokes to Code: What Being \"Darwin\" Taught Me About Software",
+      "preview": "Growing up with the name Darwin taught me a practical software lesson: strong engineers do not remove uncertainty, they learn to design safely around it.",
+      "toc": {
+        "from-name-to-mindset": "From a Name to a Mindset",
+        "software-is-built-on-unknowns": "Software is Built on Unknowns",
+        "what-senior-developers-actually-do": "What Senior Developers Actually Do",
+        "real-world-scenarios": "5 Real-World Scenarios",
+        "legacy-code-you-didnt-write": "1. Legacy Code You Didn't Write",
+        "debugging-distributed-systems": "2. Debugging Distributed Systems",
+        "third-party-api-uncertainty": "3. Third-Party API Uncertainty",
+        "rolling-out-risky-features-safely": "4. Rolling out risky features safely",
+        "idempotent-webhooks": "5. Idempotent Webhooks",
+        "final-thought": "Final Thought"
+      },
+      "headings": {
+        "from-name-to-mindset": "From a Name to a Mindset",
+        "software-is-built-on-unknowns": "Software is Built on Unknowns",
+        "what-senior-developers-actually-do": "What Senior Developers Actually Do",
+        "real-world-scenarios": "5 Real-World Scenarios",
+        "legacy-code-you-didnt-write": "1. Legacy Code You Didn't Write",
+        "debugging-distributed-systems": "2. Debugging Distributed Systems",
+        "third-party-api-uncertainty": "3. Third-Party API Uncertainty",
+        "rolling-out-risky-features-safely": "4. Rolling out risky features safely",
+        "idempotent-webhooks": "5. Idempotent Webhooks",
+        "final-thought": "Final Thought"
+      },
+      "sections": {
+        "from-name-to-mindset": {
+          "blocks": [
+            "As someone who grew up with the name Darwin, I didn't really have a choice - my name came with built-in jokes. Every time Charles Darwin was mentioned in class, I could already feel it coming. Heads would slowly turn, and my classmates would look straight at me like I had something to do with the theory of evolution.",
+            "It became a running joke from elementary to high school. At some point, I just learned to own it.",
+            "Ironically, one of his ideas stayed with me - not because of biology, but because of how closely it mirrors life as a developer:",
+            "\"The mystery of beginning is insoluble by us; I for one must be content to remain agnostic.\"",
+            "At first, it sounds philosophical. But in software engineering, it feels practical. Almost daily."
+          ]
+        },
+        "software-is-built-on-unknowns": {
+          "blocks": [
+            "In theory, systems are logical and deterministic. In reality, they are full of unknowns. We work with:",
+            "Code we didn't write.",
+            "Decisions we don't fully understand.",
+            "Systems that evolved over years.",
+            "Behaviors that only show up in production.",
+            "You don't always get a clean beginning. Sometimes, you just inherit the middle of the story."
+          ]
+        },
+        "what-senior-developers-actually-do": {
+          "blocks": [
+            "There is a misconception that senior engineers \"know everything.\" They do not. What they actually do is:",
+            "Reduce uncertainty where possible.",
+            "Design systems that tolerate unknowns.",
+            "Validate assumptions through testing and observability.",
+            "Avoid pretending they fully understand things they don't.",
+            "Senior engineering is not about certainty.",
+            "It's about operating safely without it."
+          ]
+        },
+        "real-world-scenarios": {
+          "blocks": [
+            "Here are five real-world scenarios where uncertainty is part of the job, and good engineering makes the difference."
+          ]
+        },
+        "legacy-code-you-didnt-write": {
+          "blocks": [
+            "A common real-world case is inheriting pricing, billing, or payroll logic that nobody fully understands anymore.",
+            "The safe move is not to rewrite immediately. The safe move is to preserve current behavior with tests, then improve around it.",
+            "Real-life application: e-commerce discounts, payroll rules, invoicing systems."
+          ]
+        },
+        "debugging-distributed-systems": {
+          "blocks": [
+            "In production, one user request might touch an API gateway, auth service, order service, payment service, and database.",
+            "You often cannot know what happened by checking only one place. That is why observability matters.",
+            "Real-life application: slow APIs, tracing request failures, debugging microservices."
+          ]
+        },
+        "third-party-api-uncertainty": {
+          "blocks": [
+            "Shipping APIs, payment gateways, SMS providers, and exchange-rate services are outside your control.",
+            "You do not fully know how they behave internally, so you code defensively.",
+            "Real-life application: logistics, payments, notifications, auth providers."
+          ]
+        },
+        "rolling-out-risky-features-safely": {
+          "blocks": [
+            "Sometimes you are not fully certain how a new checkout flow, recommendation engine, or search logic will behave in production.",
+            "Instead of betting everything on certainty, you use feature flags.",
+            "Real-life application: staged rollouts, A/B tests, redesign launches, risky backend migrations."
+          ]
+        },
+        "idempotent-webhooks": {
+          "blocks": [
+            "In real systems, the same webhook may be delivered twice, or events may arrive out of order.",
+            "If your system assumes ideal conditions, it will eventually break.",
+            "Good systems accept that uncertainty and guard against it.",
+            "Real-life application: payment processing, subscriptions, order fulfillment, event-driven workflows."
+          ]
+        },
+        "final-thought": {
+          "blocks": [
+            "For someone who grew up being compared to Darwin, I never expected his ideas to resonate with my work as a developer. Yet here I am, working with systems I did not start, solving problems I cannot always fully explain, and still moving forward. What defines a strong developer is the ability to design with that in mind: to make systems observable, testable, and resilient. In that sense, Darwin's perspective still applies - progress comes not from complete understanding, but from disciplined iteration within the limits of what we know."
+          ]
+        }
+      }
     }
   },
   "errors": {

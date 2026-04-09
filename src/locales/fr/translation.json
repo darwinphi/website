@@ -986,6 +986,112 @@
           ]
         }
       }
+    },
+    "from-classroom-jokes-to-code-what-being-darwin-taught-me-about-software": {
+      "title": "Des blagues de classe au code: ce que le fait de m’appeler « Darwin » m’a appris sur le logiciel",
+      "preview": "Grandir avec le prénom Darwin m’a appris une leçon simple: un bon ingénieur ne supprime pas l’incertitude, il conçoit des systèmes sûrs malgré elle.",
+      "toc": {
+        "from-name-to-mindset": "D’un nom à un état d’esprit",
+        "software-is-built-on-unknowns": "Le logiciel est construit sur l’inconnu",
+        "what-senior-developers-actually-do": "Ce que font réellement les développeurs seniors",
+        "real-world-scenarios": "5 scénarios concrets",
+        "legacy-code-you-didnt-write": "1. Du legacy code que vous n’avez pas écrit",
+        "debugging-distributed-systems": "2. Déboguer des systèmes distribués",
+        "third-party-api-uncertainty": "3. L’incertitude des API tierces",
+        "rolling-out-risky-features-safely": "4. Déployer des fonctionnalités risquées en sécurité",
+        "idempotent-webhooks": "5. Webhooks idempotents",
+        "final-thought": "Dernière réflexion"
+      },
+      "headings": {
+        "from-name-to-mindset": "D’un nom à un état d’esprit",
+        "software-is-built-on-unknowns": "Le logiciel est construit sur l’inconnu",
+        "what-senior-developers-actually-do": "Ce que font réellement les développeurs seniors",
+        "real-world-scenarios": "5 scénarios concrets",
+        "legacy-code-you-didnt-write": "1. Du legacy code que vous n’avez pas écrit",
+        "debugging-distributed-systems": "2. Déboguer des systèmes distribués",
+        "third-party-api-uncertainty": "3. L’incertitude des API tierces",
+        "rolling-out-risky-features-safely": "4. Déployer des fonctionnalités risquées en sécurité",
+        "idempotent-webhooks": "5. Webhooks idempotents",
+        "final-thought": "Dernière réflexion"
+      },
+      "sections": {
+        "from-name-to-mindset": {
+          "blocks": [
+            "En grandissant avec le prénom Darwin, je n’avais pas vraiment le choix: mon nom venait avec ses blagues intégrées. Chaque fois que Charles Darwin était mentionné en classe, je sentais déjà venir la suite. Les têtes se tournaient lentement vers moi, comme si j’avais quelque chose à voir avec la théorie de l’évolution.",
+            "C’est devenu une blague récurrente de l’école primaire au lycée. À un moment, j’ai simplement appris à l’assumer.",
+            "Ironiquement, une de ses idées m’est restée. Pas pour la biologie, mais parce qu’elle ressemble énormément à la vie d’un développeur.",
+            "« Le mystère des origines nous est insoluble; pour ma part, je dois me contenter de rester agnostique. »",
+            "Au début, cela sonne philosophique. Mais en ingénierie logicielle, c’est très concret. Presque tous les jours."
+          ]
+        },
+        "software-is-built-on-unknowns": {
+          "blocks": [
+            "En théorie, les systèmes sont logiques et déterministes. En pratique, ils sont pleins d’inconnues. Nous travaillons avec:",
+            "Du code que nous n’avons pas écrit.",
+            "Des décisions dont nous ne comprenons pas entièrement le contexte.",
+            "Des systèmes qui ont évolué pendant des années.",
+            "Des comportements qui n’apparaissent qu’en production.",
+            "On n’obtient pas toujours un début propre. Souvent, on hérite du milieu de l’histoire."
+          ]
+        },
+        "what-senior-developers-actually-do": {
+          "blocks": [
+            "Il existe une idée reçue selon laquelle les seniors « savent tout ». Ce n’est pas vrai. Ce qu’ils font réellement, c’est:",
+            "Réduire l’incertitude quand c’est possible.",
+            "Concevoir des systèmes tolérants à l’inconnu.",
+            "Valider les hypothèses via les tests et l’observabilité.",
+            "Ne pas faire semblant de comprendre ce qu’ils ne comprennent pas.",
+            "L’ingénierie senior n’est pas une affaire de certitude.",
+            "C’est la capacité d’opérer en sécurité même sans certitude."
+          ]
+        },
+        "real-world-scenarios": {
+          "blocks": [
+            "Voici cinq cas réels où l’incertitude fait partie du quotidien, et où une bonne ingénierie change tout."
+          ]
+        },
+        "legacy-code-you-didnt-write": {
+          "blocks": [
+            "Un cas classique est d’hériter d’une logique de pricing, de facturation ou de paie que plus personne ne comprend totalement.",
+            "Le choix sûr n’est pas de tout réécrire immédiatement. Le choix sûr est de figer le comportement actuel avec des tests, puis d’améliorer autour.",
+            "Application réelle: remises e-commerce, règles de paie, systèmes de facturation."
+          ]
+        },
+        "debugging-distributed-systems": {
+          "blocks": [
+            "En production, une requête utilisateur peut traverser API gateway, auth, service de commande, paiement et base de données.",
+            "On ne peut souvent pas savoir ce qui s’est passé en ne regardant qu’un seul endroit. D’où l’importance de l’observabilité.",
+            "Application réelle: API lentes, traçage des échecs de requêtes, debug de microservices."
+          ]
+        },
+        "third-party-api-uncertainty": {
+          "blocks": [
+            "Les API de livraison, passerelles de paiement, fournisseurs SMS et services de change sont hors de votre contrôle.",
+            "Vous ne connaissez pas totalement leur comportement interne, donc il faut coder de manière défensive.",
+            "Application réelle: logistique, paiements, notifications, fournisseurs d’authentification."
+          ]
+        },
+        "rolling-out-risky-features-safely": {
+          "blocks": [
+            "Parfois, on n’est pas certain du comportement en production d’un nouveau checkout, moteur de recommandation ou logique de recherche.",
+            "Au lieu de tout miser sur la certitude, on utilise des feature flags pour déployer progressivement.",
+            "Application réelle: rollouts progressifs, tests A/B, lancement de refonte, migrations backend risquées."
+          ]
+        },
+        "idempotent-webhooks": {
+          "blocks": [
+            "Dans les systèmes réels, le même webhook peut être livré deux fois, ou des événements peuvent arriver dans le désordre.",
+            "Si votre système suppose des conditions idéales, il finira par casser.",
+            "Les bons systèmes acceptent cette incertitude et se protègent contre elle.",
+            "Application réelle: traitement des paiements, abonnements, exécution de commandes, workflows orientés événements."
+          ]
+        },
+        "final-thought": {
+          "blocks": [
+            "Pour quelqu’un qui a grandi en étant comparé à Darwin, je n’aurais jamais imaginé que ses idées résonneraient autant avec mon métier de développeur. Et pourtant, j’y suis: je travaille sur des systèmes que je n’ai pas commencés, je résous des problèmes que je ne peux pas toujours expliquer complètement, et j’avance quand même. Ce qui définit un développeur solide, c’est la capacité à concevoir avec cette réalité en tête: des systèmes observables, testables et résilients. Dans ce sens, la perspective de Darwin reste pertinente: le progrès ne vient pas d’une compréhension totale, mais d’une itération disciplinée dans les limites de ce que l’on sait."
+          ]
+        }
+      }
     }
   }
 }

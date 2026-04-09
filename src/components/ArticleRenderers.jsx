@@ -101,6 +101,29 @@ export function BlockRenderer({
         </p>
       );
 
+    case 'list-item':
+      return (
+        <p
+          key={blockIndex}
+          className="text-body dark:text-text-secondary-dark pl-5 relative"
+        >
+          <span aria-hidden="true" className="absolute left-0 top-0">
+            •
+          </span>
+          {renderInlineArticleLinks(translatedValue)}
+        </p>
+      );
+
+    case 'blockquote':
+      return (
+        <blockquote
+          key={blockIndex}
+          className="text-body italic border-l-2 border-current/40 pl-4 py-1 dark:text-text-secondary-dark"
+        >
+          {renderInlineArticleLinks(translatedValue)}
+        </blockquote>
+      );
+
     default:
       return (
         <p key={blockIndex} className="text-body dark:text-text-secondary-dark">

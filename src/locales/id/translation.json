@@ -986,6 +986,112 @@
           ]
         }
       }
+    },
+    "from-classroom-jokes-to-code-what-being-darwin-taught-me-about-software": {
+      "title": "Dari Candaan Kelas ke Kode: Apa yang Nama “Darwin” Ajarkan tentang Software",
+      "preview": "Tumbuh dengan nama Darwin mengajarkan saya pelajaran penting: engineer kuat bukan menghapus ketidakpastian, tapi merancang sistem yang aman di dalamnya.",
+      "toc": {
+        "from-name-to-mindset": "Dari Nama ke Mindset",
+        "software-is-built-on-unknowns": "Software Dibangun di Atas Hal yang Tidak Diketahui",
+        "what-senior-developers-actually-do": "Apa yang Sebenarnya Dilakukan Developer Senior",
+        "real-world-scenarios": "5 Skenario Dunia Nyata",
+        "legacy-code-you-didnt-write": "1. Legacy Code yang Bukan Kamu Tulis",
+        "debugging-distributed-systems": "2. Debugging Sistem Terdistribusi",
+        "third-party-api-uncertainty": "3. Ketidakpastian API Pihak Ketiga",
+        "rolling-out-risky-features-safely": "4. Merilis Fitur Berisiko dengan Aman",
+        "idempotent-webhooks": "5. Webhook Idempoten",
+        "final-thought": "Penutup"
+      },
+      "headings": {
+        "from-name-to-mindset": "Dari Nama ke Mindset",
+        "software-is-built-on-unknowns": "Software Dibangun di Atas Hal yang Tidak Diketahui",
+        "what-senior-developers-actually-do": "Apa yang Sebenarnya Dilakukan Developer Senior",
+        "real-world-scenarios": "5 Skenario Dunia Nyata",
+        "legacy-code-you-didnt-write": "1. Legacy Code yang Bukan Kamu Tulis",
+        "debugging-distributed-systems": "2. Debugging Sistem Terdistribusi",
+        "third-party-api-uncertainty": "3. Ketidakpastian API Pihak Ketiga",
+        "rolling-out-risky-features-safely": "4. Merilis Fitur Berisiko dengan Aman",
+        "idempotent-webhooks": "5. Webhook Idempoten",
+        "final-thought": "Penutup"
+      },
+      "sections": {
+        "from-name-to-mindset": {
+          "blocks": [
+            "Sebagai orang yang tumbuh dengan nama Darwin, saya sebenarnya tidak punya banyak pilihan. Nama itu datang dengan paket candaan. Setiap kali Charles Darwin disebut di kelas, saya sudah tahu apa yang akan terjadi. Kepala teman-teman pelan-pelan menoleh ke saya, seolah saya punya hubungan langsung dengan teori evolusi.",
+            "Candaan itu jadi rutinitas dari SD sampai SMA. Di satu titik, saya belajar untuk menerimanya.",
+            "Ironisnya, salah satu ide Darwin justru menempel sampai sekarang. Bukan karena biologi, tapi karena sangat mirip dengan kehidupan developer.",
+            "\"Misteri tentang awal mula tidak bisa kita pecahkan; untuk saya pribadi, saya cukup menjadi agnostik.\"",
+            "Awalnya terdengar filosofis. Tapi di software engineering, ini terasa sangat praktis. Hampir tiap hari."
+          ]
+        },
+        "software-is-built-on-unknowns": {
+          "blocks": [
+            "Secara teori, sistem itu logis dan deterministik. Secara praktik, sistem penuh ketidakpastian. Kita bekerja dengan:",
+            "Kode yang bukan kita tulis.",
+            "Keputusan yang konteksnya tidak sepenuhnya kita pahami.",
+            "Sistem yang berevolusi selama bertahun-tahun.",
+            "Perilaku yang hanya muncul di production.",
+            "Kita tidak selalu dapat awal cerita yang rapi. Seringnya kita mewarisi bagian tengahnya."
+          ]
+        },
+        "what-senior-developers-actually-do": {
+          "blocks": [
+            "Ada miskonsepsi bahwa engineer senior “tahu semuanya”. Faktanya tidak. Yang benar-benar mereka lakukan adalah:",
+            "Mengurangi ketidakpastian bila memungkinkan.",
+            "Merancang sistem yang tahan terhadap hal tidak diketahui.",
+            "Memvalidasi asumsi lewat testing dan observability.",
+            "Tidak berpura-pura paham sepenuhnya terhadap hal yang belum dipahami.",
+            "Menjadi senior bukan soal kepastian.",
+            "Ini soal tetap bisa bergerak dengan aman tanpa kepastian itu."
+          ]
+        },
+        "real-world-scenarios": {
+          "blocks": [
+            "Berikut lima skenario nyata ketika ketidakpastian tidak bisa dihindari, dan engineering yang baik jadi pembeda."
+          ]
+        },
+        "legacy-code-you-didnt-write": {
+          "blocks": [
+            "Kasus yang sering terjadi adalah mewarisi logika pricing, billing, atau payroll yang sudah tidak benar-benar dipahami siapa pun.",
+            "Langkah aman bukan langsung rewrite. Langkah aman adalah menjaga perilaku saat ini dengan test, lalu memperbaiki secara bertahap.",
+            "Aplikasi nyata: diskon e-commerce, aturan payroll, sistem invoicing."
+          ]
+        },
+        "debugging-distributed-systems": {
+          "blocks": [
+            "Di production, satu request user bisa melewati API gateway, layanan auth, order, payment, sampai database.",
+            "Sering kali kita tidak bisa tahu apa yang terjadi hanya dari satu titik. Itulah kenapa observability penting.",
+            "Aplikasi nyata: API lambat, tracing kegagalan request, debugging microservices."
+          ]
+        },
+        "third-party-api-uncertainty": {
+          "blocks": [
+            "API pengiriman, payment gateway, provider SMS, dan layanan kurs berada di luar kontrol kita.",
+            "Karena perilaku internalnya tidak sepenuhnya kita tahu, kita harus menulis kode defensif.",
+            "Aplikasi nyata: logistik, pembayaran, notifikasi, provider autentikasi."
+          ]
+        },
+        "rolling-out-risky-features-safely": {
+          "blocks": [
+            "Kadang kita tidak benar-benar yakin bagaimana checkout baru, recommendation engine, atau logic search akan berperilaku di production.",
+            "Daripada bertaruh pada kepastian, gunakan feature flag untuk rollout bertahap.",
+            "Aplikasi nyata: staged rollout, A/B test, peluncuran redesign, migrasi backend berisiko."
+          ]
+        },
+        "idempotent-webhooks": {
+          "blocks": [
+            "Dalam sistem nyata, webhook yang sama bisa terkirim dua kali, atau event datang tidak berurutan.",
+            "Jika sistem mengasumsikan kondisi ideal, cepat atau lambat akan rusak.",
+            "Sistem yang baik menerima ketidakpastian itu dan menyiapkan perlindungan.",
+            "Aplikasi nyata: proses pembayaran, subscription, order fulfillment, workflow berbasis event."
+          ]
+        },
+        "final-thought": {
+          "blocks": [
+            "Sebagai orang yang sejak kecil sering dibandingkan dengan Darwin, saya tidak pernah menyangka idenya akan terasa relevan dalam pekerjaan saya sebagai developer. Tapi nyatanya, saya bekerja dengan sistem yang bukan saya mulai, menyelesaikan masalah yang tidak selalu bisa saya jelaskan sepenuhnya, dan tetap maju. Developer yang kuat bukan yang selalu yakin, tapi yang mampu mendesain dengan kondisi itu: sistem yang observable, testable, dan resilient. Dalam arti itu, perspektif Darwin masih relevan sampai sekarang; progres datang bukan dari pemahaman yang lengkap, tetapi dari iterasi disiplin dalam batas pengetahuan kita."
+          ]
+        }
+      }
     }
   }
 }

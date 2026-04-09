@@ -986,6 +986,112 @@
           ]
         }
       }
+    },
+    "from-classroom-jokes-to-code-what-being-darwin-taught-me-about-software": {
+      "title": "Das piadas da sala ao código: o que ser “Darwin” me ensinou sobre software",
+      "preview": "Crescer com o nome Darwin me ensinou algo prático: bons engenheiros não eliminam a incerteza, eles projetam sistemas seguros mesmo com ela.",
+      "toc": {
+        "from-name-to-mindset": "De um nome para um mindset",
+        "software-is-built-on-unknowns": "Software é construído sobre incertezas",
+        "what-senior-developers-actually-do": "O que desenvolvedores seniores realmente fazem",
+        "real-world-scenarios": "5 cenários do mundo real",
+        "legacy-code-you-didnt-write": "1. Código legado que você não escreveu",
+        "debugging-distributed-systems": "2. Debug de sistemas distribuídos",
+        "third-party-api-uncertainty": "3. Incerteza em APIs de terceiros",
+        "rolling-out-risky-features-safely": "4. Lançando recursos arriscados com segurança",
+        "idempotent-webhooks": "5. Webhooks idempotentes",
+        "final-thought": "Pensamento final"
+      },
+      "headings": {
+        "from-name-to-mindset": "De um nome para um mindset",
+        "software-is-built-on-unknowns": "Software é construído sobre incertezas",
+        "what-senior-developers-actually-do": "O que desenvolvedores seniores realmente fazem",
+        "real-world-scenarios": "5 cenários do mundo real",
+        "legacy-code-you-didnt-write": "1. Código legado que você não escreveu",
+        "debugging-distributed-systems": "2. Debug de sistemas distribuídos",
+        "third-party-api-uncertainty": "3. Incerteza em APIs de terceiros",
+        "rolling-out-risky-features-safely": "4. Lançando recursos arriscados com segurança",
+        "idempotent-webhooks": "5. Webhooks idempotentes",
+        "final-thought": "Pensamento final"
+      },
+      "sections": {
+        "from-name-to-mindset": {
+          "blocks": [
+            "Como alguém que cresceu com o nome Darwin, eu não tinha muita escolha: meu nome já vinha com piadas embutidas. Sempre que Charles Darwin era mencionado na sala, eu já sentia o que vinha. As cabeças viravam devagar para mim, como se eu tivesse algo a ver com a teoria da evolução.",
+            "Isso virou uma piada recorrente do ensino fundamental ao médio. Em algum momento, eu simplesmente aprendi a assumir.",
+            "Ironicamente, uma das ideias dele ficou comigo. Não por causa da biologia, mas porque ela espelha muito a vida de quem desenvolve software.",
+            "“O mistério do começo é insolúvel para nós; eu, por minha parte, devo me contentar em permanecer agnóstico.”",
+            "No começo parece filosófico. Mas em engenharia de software soa extremamente prático. Quase todos os dias."
+          ]
+        },
+        "software-is-built-on-unknowns": {
+          "blocks": [
+            "Na teoria, sistemas são lógicos e determinísticos. Na prática, são cheios de desconhecidos. Trabalhamos com:",
+            "Código que não foi escrito por nós.",
+            "Decisões cujo contexto não entendemos totalmente.",
+            "Sistemas que evoluíram por anos.",
+            "Comportamentos que só aparecem em produção.",
+            "Nem sempre recebemos um começo limpo. Muitas vezes herdamos o meio da história."
+          ]
+        },
+        "what-senior-developers-actually-do": {
+          "blocks": [
+            "Existe a ideia de que engenheiros seniores “sabem tudo”. Eles não sabem. O que realmente fazem é:",
+            "Reduzir incerteza onde for possível.",
+            "Projetar sistemas que tolerem o desconhecido.",
+            "Validar suposições com testes e observabilidade.",
+            "Evitar fingir que entendem totalmente o que ainda não entendem.",
+            "Engenharia sênior não é sobre certeza.",
+            "É sobre operar com segurança mesmo sem ela."
+          ]
+        },
+        "real-world-scenarios": {
+          "blocks": [
+            "Aqui estão cinco cenários reais em que a incerteza faz parte do trabalho e a boa engenharia muda o resultado."
+          ]
+        },
+        "legacy-code-you-didnt-write": {
+          "blocks": [
+            "Um caso comum na prática é herdar lógica de preço, faturamento ou folha que ninguém entende por completo.",
+            "A jogada segura não é reescrever tudo imediatamente. A jogada segura é preservar o comportamento atual com testes e evoluir ao redor.",
+            "Aplicação real: descontos em e-commerce, regras de folha, sistemas de faturamento."
+          ]
+        },
+        "debugging-distributed-systems": {
+          "blocks": [
+            "Em produção, uma única requisição pode passar por API gateway, autenticação, pedidos, pagamentos e banco de dados.",
+            "Muitas vezes você não descobre o que aconteceu olhando só um ponto. Por isso observabilidade importa.",
+            "Aplicação real: APIs lentas, rastreamento de falhas, debug de microsserviços."
+          ]
+        },
+        "third-party-api-uncertainty": {
+          "blocks": [
+            "APIs de frete, gateways de pagamento, provedores de SMS e serviços de câmbio estão fora do seu controle.",
+            "Como você não conhece totalmente o comportamento interno deles, precisa programar de forma defensiva.",
+            "Aplicação real: logística, pagamentos, notificações, provedores de autenticação."
+          ]
+        },
+        "rolling-out-risky-features-safely": {
+          "blocks": [
+            "Às vezes não há certeza de como um novo checkout, motor de recomendação ou lógica de busca vai se comportar em produção.",
+            "Em vez de apostar tudo na certeza, use feature flags para rollout gradual.",
+            "Aplicação real: lançamentos em etapas, testes A/B, releases de redesign, migrações backend arriscadas."
+          ]
+        },
+        "idempotent-webhooks": {
+          "blocks": [
+            "Em sistemas reais, o mesmo webhook pode chegar duas vezes, ou eventos podem chegar fora de ordem.",
+            "Se seu sistema assume condições ideais, ele vai quebrar em algum momento.",
+            "Bons sistemas aceitam essa incerteza e se protegem contra ela.",
+            "Aplicação real: processamento de pagamentos, assinaturas, fulfillment de pedidos, fluxos orientados a eventos."
+          ]
+        },
+        "final-thought": {
+          "blocks": [
+            "Para alguém que cresceu sendo comparado ao Darwin, eu nunca imaginei que as ideias dele fariam tanto sentido no meu trabalho como desenvolvedor. E aqui estou: lidando com sistemas que não comecei, resolvendo problemas que nem sempre consigo explicar por completo e ainda assim avançando. O que define um bom desenvolvedor é projetar com isso em mente: sistemas observáveis, testáveis e resilientes. Nesse sentido, a perspectiva de Darwin continua atual: progresso não vem de compreensão total, mas de iteração disciplinada dentro dos limites do que sabemos."
+          ]
+        }
+      }
     }
   }
 }

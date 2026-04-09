@@ -986,6 +986,112 @@
           ]
         }
       }
+    },
+    "from-classroom-jokes-to-code-what-being-darwin-taught-me-about-software": {
+      "title": "从课堂玩笑到代码: “Darwin”这个名字教会我的软件思维",
+      "preview": "以 Darwin 这个名字长大，让我学会了一个软件工程真相: 强工程师不是消灭不确定性，而是在不确定中安全设计。",
+      "toc": {
+        "from-name-to-mindset": "从名字到思维方式",
+        "software-is-built-on-unknowns": "软件建立在未知之上",
+        "what-senior-developers-actually-do": "资深开发者真正做的事",
+        "real-world-scenarios": "5 个真实场景",
+        "legacy-code-you-didnt-write": "1. 你没写过的遗留代码",
+        "debugging-distributed-systems": "2. 分布式系统调试",
+        "third-party-api-uncertainty": "3. 第三方 API 的不确定性",
+        "rolling-out-risky-features-safely": "4. 安全发布高风险功能",
+        "idempotent-webhooks": "5. 幂等 Webhook",
+        "final-thought": "最后的想法"
+      },
+      "headings": {
+        "from-name-to-mindset": "从名字到思维方式",
+        "software-is-built-on-unknowns": "软件建立在未知之上",
+        "what-senior-developers-actually-do": "资深开发者真正做的事",
+        "real-world-scenarios": "5 个真实场景",
+        "legacy-code-you-didnt-write": "1. 你没写过的遗留代码",
+        "debugging-distributed-systems": "2. 分布式系统调试",
+        "third-party-api-uncertainty": "3. 第三方 API 的不确定性",
+        "rolling-out-risky-features-safely": "4. 安全发布高风险功能",
+        "idempotent-webhooks": "5. 幂等 Webhook",
+        "final-thought": "最后的想法"
+      },
+      "sections": {
+        "from-name-to-mindset": {
+          "blocks": [
+            "作为一个从小就叫 Darwin 的人，我几乎没有选择权。这个名字自带笑点。每次课堂上提到查尔斯·达尔文，我都知道要来了。大家会慢慢把头转向我，仿佛进化论和我本人有直接关系。",
+            "这个梗从小学一路持续到高中。后来我学会了把它当成自己的标签。",
+            "讽刺的是，他的一条观点一直留在我心里。不是因为生物学，而是因为它太像开发者的日常。",
+            "“起源之谜对我们而言无法彻底求解；就我而言，我愿意保持不可知。”",
+            "最初听起来像哲学，但放在软件工程里，它非常实用，而且几乎每天都在发生。"
+          ]
+        },
+        "software-is-built-on-unknowns": {
+          "blocks": [
+            "理论上系统是逻辑且确定的。现实里系统充满未知。我们每天都在处理这些东西。",
+            "不是你写的代码。",
+            "你并未完全理解背景的历史决策。",
+            "多年演化而来的系统结构。",
+            "只在生产环境出现的行为。",
+            "你并不总能从故事开头开始，很多时候你接手的是中段。"
+          ]
+        },
+        "what-senior-developers-actually-do": {
+          "blocks": [
+            "很多人误以为资深工程师“什么都知道”。其实不是。他们真正做的是下面这些。",
+            "在可能的地方降低不确定性。",
+            "设计能容纳未知的系统。",
+            "通过测试和可观测性验证假设。",
+            "不假装自己完全理解其实并未理解的东西。",
+            "资深工程能力不在于绝对确定。",
+            "而在于不确定时依然能安全运行。"
+          ]
+        },
+        "real-world-scenarios": {
+          "blocks": [
+            "下面 5 个真实场景里，不确定性是常态，而工程方法决定结果。"
+          ]
+        },
+        "legacy-code-you-didnt-write": {
+          "blocks": [
+            "现实中很常见的一种情况是接手没人再完全理解的定价、计费或薪资逻辑。",
+            "最稳妥的做法不是立刻重写，而是先用测试固定现有行为，再围绕它渐进改进。",
+            "现实应用: 电商折扣、薪资规则、开票系统。"
+          ]
+        },
+        "debugging-distributed-systems": {
+          "blocks": [
+            "在生产环境中，一次用户请求可能会经过 API 网关、认证服务、订单服务、支付服务和数据库。",
+            "只看一个地方通常无法还原真相，这就是可观测性重要的原因。",
+            "现实应用: 慢 API 排查、请求失败链路追踪、微服务调试。"
+          ]
+        },
+        "third-party-api-uncertainty": {
+          "blocks": [
+            "物流 API、支付网关、短信服务、汇率服务都不在你的控制范围内。",
+            "你无法完全知道它们内部如何运作，所以代码必须防御性设计。",
+            "现实应用: 物流、支付、通知、认证服务商集成。"
+          ]
+        },
+        "rolling-out-risky-features-safely": {
+          "blocks": [
+            "新的结账流程、推荐引擎或搜索逻辑在生产环境会如何表现，往往无法提前完全确定。",
+            "与其把希望押在“确定性”上，不如通过 feature flag 安全灰度。",
+            "现实应用: 分阶段发布、A/B 测试、改版上线、高风险后端迁移。"
+          ]
+        },
+        "idempotent-webhooks": {
+          "blocks": [
+            "在真实系统中，同一个 webhook 可能重复送达，事件也可能乱序到达。",
+            "如果系统假设环境永远理想，迟早会出问题。",
+            "好的系统会接受这种不确定性，并提前做好防护。",
+            "现实应用: 支付处理、订阅系统、订单履约、事件驱动流程。"
+          ]
+        },
+        "final-thought": {
+          "blocks": [
+            "从小总被拿去和达尔文比较的我，从未想过他的视角会和我的开发工作如此贴近。但现实就是这样: 我在维护并非由我开始的系统，解决有时无法完全解释的问题，同时仍在持续向前。优秀开发者的关键，不是“全知”，而是能按这种现实去设计系统: 让系统可观测、可测试、具备韧性。从这个意义上说，达尔文的观点今天依然成立。进步不是来自“完全理解”，而是来自在认知边界内持续、克制、纪律化的迭代。"
+          ]
+        }
+      }
     }
   }
 }
