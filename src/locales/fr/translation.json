@@ -51,6 +51,9 @@
   "articleDetail": {
     "notFound": "Article non trouvé"
   },
+  "articleMeta": {
+    "readingTime": "{{minutes}} min de lecture"
+  },
   "errors": {
     "projectNotFound": "Projet non trouvé",
     "articleNotFound": "Article non trouvé"

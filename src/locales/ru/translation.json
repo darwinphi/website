@@ -51,6 +51,9 @@
   "articleDetail": {
     "notFound": "Статья не найдена"
   },
+  "articleMeta": {
+    "readingTime": "{{minutes}} мин чтения"
+  },
   "errors": {
     "projectNotFound": "Проект не найден",
     "articleNotFound": "Статья не найдена"

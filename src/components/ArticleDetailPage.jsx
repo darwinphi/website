@@ -2,6 +2,10 @@ import { articles } from '../data/articles';
 import { useTranslation } from 'react-i18next';
 import { SectionRenderer } from './ArticleRenderers';
 import PageLayout from './PageLayout';
+import {
+  formatArticleReadingTime,
+  getArticleReadingTimeMinutes,
+} from '../utils/articleReadingTime';
 
 function ArticleDetailPage({ articleId, onBack }) {
   const { t, i18n } = useTranslation();
@@ -31,7 +35,12 @@ function ArticleDetailPage({ articleId, onBack }) {
         })}
       </h1>
       <p className="text-body opacity-50 dark:text-text-secondary-dark">
-        {article.date}
+        {article.date} ·{' '}
+        {formatArticleReadingTime(
+          t,
+          getArticleReadingTimeMinutes(article),
+          i18n.resolvedLanguage || i18n.language,
+        )}
       </p>
       <div className="flex flex-wrap gap-2">
         {article.tags.map((tag) => (

@@ -1,6 +1,10 @@
 import { articles } from '../data/articles';
 import { useTranslation } from 'react-i18next';
 import PageLayout from './PageLayout';
+import {
+  formatArticleReadingTime,
+  getArticleReadingTimeMinutes,
+} from '../utils/articleReadingTime';
 
 function ArticlesPage({ onSelectArticle, onBack }) {
   const { t, i18n } = useTranslation();
@@ -22,7 +26,12 @@ function ArticlesPage({ onSelectArticle, onBack }) {
         <div key={article.id}>
           <div className={`${index === 0 ? '' : 'pt-6'} pb-6`}>
             <p className="text-body opacity-50 mb-1 dark:text-text-secondary-dark">
-              {article.date}
+              {article.date} ·{' '}
+              {formatArticleReadingTime(
+                t,
+                getArticleReadingTimeMinutes(article),
+                i18n.resolvedLanguage || i18n.language,
+              )}
             </p>
             <h2 className="text-body font-medium mb-3 dark:text-text-primary-dark">
               {t(`articleContent.${article.id}.title`, {

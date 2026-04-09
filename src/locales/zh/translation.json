@@ -51,6 +51,9 @@
   "articleDetail": {
     "notFound": "文章未找到"
   },
+  "articleMeta": {
+    "readingTime": "阅读约 {{minutes}} 分钟"
+  },
   "errors": {
     "projectNotFound": "项目未找到",
     "articleNotFound": "文章未找到"

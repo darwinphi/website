@@ -51,6 +51,9 @@
   "articleDetail": {
     "notFound": "아티클을 찾을 수 없습니다"
   },
+  "articleMeta": {
+    "readingTime": "{{minutes}}분 읽기"
+  },
   "articleContent": {
     "stop-using-microservices-wrong-teams-not-code": {
       "title": "마이크로서비스를 잘못 쓰는 일을 멈추세요 - 핵심은 코드가 아니라 팀입니다",

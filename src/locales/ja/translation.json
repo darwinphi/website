@@ -51,6 +51,9 @@
   "articleDetail": {
     "notFound": "記事が見つかりません"
   },
+  "articleMeta": {
+    "readingTime": "{{minutes}}分で読めます"
+  },
   "errors": {
     "projectNotFound": "プロジェクトが見つかりません",
     "articleNotFound": "記事が見つかりません"

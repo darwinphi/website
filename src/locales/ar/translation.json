@@ -51,6 +51,15 @@
   "articleDetail": {
     "notFound": "المقال غير موجود"
   },
+  "articleMeta": {
+    "readingTime": "مدة القراءة: {{count}} دقيقة",
+    "readingTime_zero": "مدة القراءة: أقل من دقيقة",
+    "readingTime_one": "مدة القراءة: دقيقة واحدة",
+    "readingTime_two": "مدة القراءة: دقيقتان",
+    "readingTime_few": "مدة القراءة: {{count}} دقائق",
+    "readingTime_many": "مدة القراءة: {{count}} دقيقة",
+    "readingTime_other": "مدة القراءة: {{count}} دقيقة"
+  },
   "articleContent": {
     "stop-using-microservices-wrong-teams-not-code": {
       "title": "التوقف عن استخدام الخدمات الصغيرة بشكل خاطئ - فالأمر يتعلق بالفرق، وليس بالرمز",

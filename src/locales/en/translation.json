@@ -51,6 +51,9 @@
   "articleDetail": {
     "notFound": "Article not found"
   },
+  "articleMeta": {
+    "readingTime": "{{minutes}} min read"
+  },
   "articleContent": {
     "stop-using-microservices-wrong-teams-not-code": {
       "title": "Stop Using Microservices Wrong - It is About Teams, Not Code",
