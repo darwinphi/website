@@ -21,7 +21,7 @@ function ArticleDetailRoute({ onBack }) {
   return <ArticleDetailPage articleId={articleId} onBack={onBack} />;
 }
 
-function MainContent({ handleNavigation, handleBack }) {
+function MainContent({ handleNavigation }) {
   const { t, i18n } = useTranslation();
   const location = useLocation();
 
@@ -57,17 +57,19 @@ function MainContent({ handleNavigation, handleBack }) {
                     onSelectProject={(projectId) =>
                       handleNavigation(`/projects/${projectId}`)
                     }
-                    onBack={handleBack}
+                    onBack={() => handleNavigation('/')}
                   />
                 }
               />
               <Route
                 path="/projects/:projectId"
-                element={<ProjectDetailRoute onBack={handleBack} />}
+                element={
+                  <ProjectDetailRoute onBack={() => handleNavigation('/projects')} />
+                }
               />
               <Route
                 path="/about"
-                element={<AboutPage onBack={handleBack} />}
+                element={<AboutPage onBack={() => handleNavigation('/')} />}
               />
               <Route
                 path="/articles"
@@ -76,13 +78,15 @@ function MainContent({ handleNavigation, handleBack }) {
                     onSelectArticle={(articleId) =>
                       handleNavigation(`/articles/${articleId}`)
                     }
-                    onBack={handleBack}
+                    onBack={() => handleNavigation('/')}
                   />
                 }
               />
               <Route
                 path="/articles/:articleId"
-                element={<ArticleDetailRoute onBack={handleBack} />}
+                element={
+                  <ArticleDetailRoute onBack={() => handleNavigation('/articles')} />
+                }
               />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>{' '}

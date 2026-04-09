@@ -6,6 +6,7 @@ import PageLayout from './PageLayout';
 function ArticleDetailPage({ articleId, onBack }) {
   const { t } = useTranslation();
   const article = articles.find((a) => a.id === articleId);
+  const backToArticlesLabel = t('buttons.backToArticles');
   const translatedSections = t(`articleContent.${articleId}.sections`, {
     returnObjects: true,
     defaultValue: {},
@@ -86,34 +87,52 @@ function ArticleDetailPage({ articleId, onBack }) {
   );
 
   return (
-    <PageLayout
-      heading={heading}
-      onBack={onBack}
-      backButtonLabel={t('buttons.backToArticles')}
-    >
-      <div className="flex flex-col gap-6">
-        {article.sections.map((section, index) => (
-          <SectionRenderer
-            key={index}
-            section={section}
-            index={index}
-            article={article}
-            translatedSections={translatedSections}
-          />
-        ))}
+    <div className="flex-1 flex flex-col">
+      <PageLayout
+        heading={heading}
+        onBack={onBack}
+        backButtonLabel={backToArticlesLabel}
+      >
+        <div className="flex flex-col gap-6">
+          {article.sections.map((section, index) => (
+            <SectionRenderer
+              key={index}
+              section={section}
+              index={index}
+              article={article}
+              translatedSections={translatedSections}
+            />
+          ))}
 
-        {/* Back to top */}
-        <div className="flex justify-end pt-4 pb-8">
+          {/* Back to top */}
+          <div className="flex justify-end pt-4 pb-8">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
+            >
+              {t('buttons.backToTop')}
+              <i className="ri-arrow-up-line transition-transform duration-200 group-hover:-translate-y-1 group-active:-translate-y-1" />
+            </button>
+          </div>
+        </div>
+      </PageLayout>
+
+      {/* Bottom back button aligned with the left column */}
+      <div className="py-4">
+        <div
+          className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 mx-auto"
+          style={{ maxWidth: 'calc(var(--max-width-reading) * 1.5)' }}
+        >
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
+            onClick={onBack}
+            className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark w-fit"
           >
-            {t('buttons.backToTop')}
-            <i className="ri-arrow-up-line transition-transform duration-200 group-hover:-translate-y-1 group-active:-translate-y-1" />
+            <i className="ri-arrow-left-line transition-transform duration-200 group-hover:-translate-x-1 group-active:-translate-x-1" />
+            {backToArticlesLabel}
           </button>
         </div>
       </div>
-    </PageLayout>
+    </div>
   );
 }
 

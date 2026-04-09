@@ -21,11 +21,6 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleBack = () => {
-    navigate(-1);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   // Handle backspace/delete key for back navigation
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -77,7 +72,6 @@ function App() {
 
       <MainContent
         handleNavigation={handleNavigation}
-        handleBack={handleBack}
       />
 
       <Footer />
