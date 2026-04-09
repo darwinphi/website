@@ -1,4 +1,46 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+
+function renderInlineArticleLinks(text) {
+  if (typeof text !== 'string') {
+    return text;
+  }
+
+  const articleLinkPattern = /\[([^\]]+)\]\(article:([^)]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = articleLinkPattern.exec(text)) !== null) {
+    const [fullMatch, label, articleId] = match;
+
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+
+    parts.push(
+      <Link
+        key={`${articleId}-${match.index}`}
+        to={`/articles/${articleId}`}
+        className="underline underline-offset-2 hover:opacity-60 transition-opacity"
+      >
+        {label}
+      </Link>,
+    );
+
+    lastIndex = match.index + fullMatch.length;
+  }
+
+  if (parts.length === 0) {
+    return text;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
 
 export function BlockRenderer({
   block,
@@ -14,6 +56,11 @@ export function BlockRenderer({
   )
     ? translatedSections[section.id].blocks
     : [];
+  const translatedAllBlocks = Array.isArray(
+    translatedSections?.[section.id]?.blocksAll,
+  )
+    ? translatedSections[section.id].blocksAll
+    : null;
 
   const translatedBlockIndex =
     section.blocks
@@ -21,9 +68,10 @@ export function BlockRenderer({
       .filter((entry) => entry.type !== 'code').length - 1;
 
   const translatedValue =
-    block.type === 'code'
+    translatedAllBlocks?.[blockIndex] ||
+    (block.type === 'code'
       ? block.value
-      : translatedBlocks[translatedBlockIndex] || block.value;
+      : translatedBlocks[translatedBlockIndex] || block.value);
 
   switch (block.type) {
     case 'code':
@@ -49,14 +97,14 @@ export function BlockRenderer({
           key={blockIndex}
           className="text-body font-semibold mt-2 dark:text-text-primary-dark"
         >
-          {translatedValue}
+          {renderInlineArticleLinks(translatedValue)}
         </p>
       );
 
     default:
       return (
         <p key={blockIndex} className="text-body dark:text-text-secondary-dark">
-          {translatedValue}
+          {renderInlineArticleLinks(translatedValue)}
         </p>
       );
   }

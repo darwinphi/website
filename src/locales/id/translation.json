@@ -158,6 +158,136 @@
     }
   },
   "articleContent": {
+    "stop-using-microservices-wrong-teams-not-code": {
+      "title": "Berhenti Menggunakan Microservices dengan Cara yang Salah - Ini tentang Tim, Bukan Kode",
+      "preview": "Microservices bukan trik untuk mengatur kode. Ini adalah alat untuk menskalakan tim, dan memakainya terlalu dini biasanya justru memperburuk sistem.",
+      "toc": {
+        "why-worse": "Mengapa Microservices Sering Membuat Segalanya Lebih Buruk",
+        "hidden-cost": "Biaya Tersembunyi dari Microservices",
+        "solo-developer": "Skenario 1: Developer Solo (Kasus Terburuk)",
+        "small-team": "Skenario 2: Tim Kecil (Tetap Menyakitkan)",
+        "realization": "Kesadaran Utamanya: Ini Bukan Soal Kode",
+        "single-team": "Satu Tim",
+        "multiple-teams": "Banyak Tim",
+        "when-makes-sense": "Kapan Microservices Benar-Benar Masuk Akal",
+        "what-instead": "Apa yang Sebaiknya Anda Lakukan",
+        "tldr": "TL;DR"
+      },
+      "headings": {
+        "why-worse": "Mengapa Microservices Sering Membuat Segalanya Lebih Buruk",
+        "hidden-cost": "Biaya Tersembunyi dari Microservices",
+        "solo-developer": "Skenario 1: Developer Solo (Kasus Terburuk)",
+        "small-team": "Skenario 2: Tim Kecil (Tetap Menyakitkan)",
+        "realization": "Kesadaran Utamanya: Ini Bukan Soal Kode",
+        "single-team": "Satu Tim",
+        "multiple-teams": "Banyak Tim",
+        "when-makes-sense": "Kapan Microservices Benar-Benar Masuk Akal",
+        "what-instead": "Apa yang Sebaiknya Anda Lakukan",
+        "tldr": "TL;DR"
+      },
+      "sections": {
+        "why-worse": {
+          "blocksAll": [
+            "Microservices telah menjadi arsitektur default bagi banyak developer, terutama mereka yang terpengaruh oleh sistem berskala besar di perusahaan seperti Netflix atau Amazon. Janjinya memang terdengar menarik: skalabilitas lebih baik, modularitas lebih rapi, dan sistem yang mencerminkan domain dunia nyata.",
+            "Namun di sinilah banyak tim keliru.",
+            "Sebagian besar developer mengadopsi microservices terlalu cepat, sebelum benar-benar membutuhkannya. Mereka memperlakukan microservices sebagai upgrade teknis, bukan trade-off arsitektur. Kalau dilihat lebih dekat, ini biasanya berasal dari serangkaian kesalahpahaman umum tentang microservices. Lihat: [The Biggest Misconceptions About Microservices](article:biggest-misconceptions-about-microservices).",
+            "Alih-alih membuat sistem lebih baik, microservices sering membuatnya lebih lambat, lebih sulit di-debug, dan jauh lebih rapuh. Aplikasi yang tadinya sederhana tiba-tiba berubah menjadi sistem terdistribusi."
+          ]
+        },
+        "hidden-cost": {
+          "blocksAll": [
+            "Microservices tidak mengurangi kompleksitas. Mereka hanya mendistribusikannya.",
+            "Dalam arsitektur monolith, kompleksitas sebagian besar terkandung di dalam satu proses. Komunikasi antarkomponen cepat, dapat diprediksi, dan mudah dipahami. Anda berurusan dengan pemanggilan fungsi, shared memory, dan satu unit deployment.",
+            "Tetapi ketika Anda berpindah ke microservices, kompleksitas itu tidak hilang. Ia menyebar ke jaringan.",
+            "Sekarang setiap interaksi antar komponen menjadi panggilan jaringan, dan jaringan pada dasarnya tidak andal.",
+            "Sekarang Anda harus menghadapi:",
+            "Latensi yang bisa memperlambat request pengguna.",
+            "Kegagalan parsial ketika satu service bekerja tetapi service lain tidak.",
+            "Mekanisme retry yang dapat menimbulkan aksi ganda.",
+            "Timeout yang harus disetel dengan hati-hati.",
+            "Debugging terdistribusi di banyak log dan sistem.",
+            "Tantangan konsistensi data di beberapa database terpisah.",
+            "Apa yang dulu merupakan operasi lokal sederhana sekarang berubah menjadi masalah koordinasi antar sistem independen.",
+            "Dalam monolith, kebanyakan hal tetap sederhana dan lokal:",
+            "+------------------------------+\n|         Aplikasi             |\n|------------------------------|\n| Auth | Billing | Users | API |\n| Orders | Notifikasi | UI     |\n+------------------------------+\n               |\n            Database",
+            "Dalam microservices, sistem yang sama menjadi terdistribusi:",
+            "+---------+    +----------+    +----------+\n|  Auth   |    |  Users   |    |  Orders  |\n+---------+    +----------+    +----------+\n     |              |               |\n     v              v               v\n DB(Auth)      DB(Users)      DB(Orders)\n\n         \\        |        /\n          \\       |       /\n           +------------------+\n           |   API Gateway    |\n           +------------------+"
+          ]
+        },
+        "solo-developer": {
+          "blocksAll": [
+            "Jika Anda developer solo, microservices hampir selalu merupakan ide yang buruk.",
+            "Dalam monolith, alur kerja Anda sederhana dan efisien. Anda memanggil fungsi, fungsi berjalan, lalu lanjut. Semuanya lokal, dapat diprediksi, dan mudah di-debug.",
+            "Namun dalam setup microservices, pemanggilan fungsi yang sama berubah menjadi request jaringan. Tiba-tiba Anda harus berurusan dengan urusan infrastruktur, bukan sekadar logika bisnis.",
+            "Sebuah panggilan createUser() sederhana sekarang mencakup:",
+            "Latensi jaringan, kegagalan request, logika retry, penanganan timeout, dan logging lintas service.",
+            "Alih-alih fokus membangun fitur, Anda justru menghabiskan waktu mengelola kompleksitas sistem terdistribusi. Itu overhead yang sangat besar untuk satu orang developer.",
+            "Dalam monolith:",
+            "[ App ] -> createUser()",
+            "Dalam microservices:",
+            "[ Service A ] -> network -> [ Service B ]",
+            "Panggilan fungsi sederhana berubah menjadi masalah sistem terdistribusi."
+          ]
+        },
+        "small-team": {
+          "blocksAll": [
+            "Bahkan dengan tim kecil, microservices tetap bisa lebih banyak membawa kerugian daripada manfaat.",
+            "Pada tahap ini, batas antar tim biasanya belum jelas. Developer sering bekerja di banyak bagian sistem, dan tanggung jawab cenderung saling tumpang tindih. Memperkenalkan microservices dalam situasi seperti ini menciptakan batas buatan yang tidak sesuai dengan cara tim benar-benar bekerja.",
+            "Alih-alih mengurangi koordinasi, Anda justru menambahkannya.",
+            "Sekarang developer harus:",
+            "Menyelaraskan kontrak API antar service, mengelola versioning dan kompatibilitas ke belakang, menangani dependensi lintas service, dan menyinkronkan deployment di banyak service.",
+            "Apa yang dulu hanya refactor internal kini menjadi negosiasi lintas tim, bahkan jika timnya hanya terdiri dari dua atau tiga orang."
+          ]
+        },
+        "realization": {
+          "blocksAll": [
+            "Inilah wawasan penting yang sering terlewat.",
+            "Microservices bukan tentang mengatur kode. Microservices adalah tentang mengatur tim.",
+            "Struktur arsitektur Anda seharusnya mencerminkan struktur organisasi Anda. Gagasan ini sangat terkait dengan Conway's Law: sistem cenderung mencerminkan pola komunikasi tim yang membangunnya.",
+            "Jika Anda hanya punya satu tim, monolith sering menjadi arsitektur yang paling efisien. Semua orang bekerja di codebase yang sama, berbagi konteks, dan bergerak cepat.",
+            "Tetapi ketika ada beberapa tim yang bekerja secara mandiri, microservices mulai masuk akal. Setiap tim bisa memiliki satu service, deploy secara independen, dan mengembangkan bagiannya tanpa memblokir tim lain.",
+            "Dengan kata lain, microservices adalah solusi scaling untuk organisasi, bukan sekadar aplikasi."
+          ]
+        },
+        "single-team": {
+          "blocksAll": [
+            "[ Tim ]\n    |\n    v\n[ Monolith ]"
+          ]
+        },
+        "multiple-teams": {
+          "blocksAll": [
+            "[Tim A]   [Tim B]   [Tim C]\n   |          |          |\n   v          v          v\n[Service A] [Service B] [Service C]"
+          ]
+        },
+        "when-makes-sense": {
+          "blocksAll": [
+            "        +-------------------+\n        |    API Gateway    |\n        +-------------------+\n          /       |       \\\n         v        v        v\n    [Users]   [Orders]  [Payments]\n       |          |          |\n    Tim A      Tim B      Tim C",
+            "Microservices benar-benar bersinar ketika Anda memiliki batas tim yang jelas dan kompleksitas organisasi yang cukup untuk membenarkannya.",
+            "Jika Anda punya banyak tim dan masing-masing bertanggung jawab atas domain yang berbeda seperti users, orders, atau payments, microservices memungkinkan tim-tim tersebut beroperasi secara otonom.",
+            "Mereka bisa deploy secara independen, menskalakan service sesuai permintaan, memilih teknologi yang cocok untuk domain mereka, dan menghindari saling mengganggu.",
+            "Pada tahap ini, overhead dari sistem terdistribusi menjadi trade-off yang layak karena memungkinkan skala tim. Tanpa konteks ini, microservices hanyalah kompleksitas yang tidak perlu."
+          ]
+        },
+        "what-instead": {
+          "blocksAll": [
+            "/modules\n  /users\n  /billing\n  /auth\n  /orders",
+            "Mulailah dengan modular monolith.",
+            "Pendekatan ini memberi Anda yang terbaik dari dua dunia: kesederhanaan dan struktur.",
+            "Atur codebase Anda ke dalam modul yang jelas seperti users, billing, auth, dan orders, tetapi tetap simpan semuanya dalam satu aplikasi. Dengan begitu Anda bisa mempertahankan komunikasi lokal yang cepat, menghindari kompleksitas jaringan, dan mudah melakukan refactor saat pemahaman domain Anda berkembang.",
+            "Saat sistem dan tim Anda tumbuh, modul-modul ini bisa berkembang secara alami menjadi service terpisah bila diperlukan. Namun Anda tidak dipaksa masuk ke kompleksitas itu terlalu cepat.",
+            "Anggap saja begini: microservices nanti, kalau memang perlu."
+          ]
+        },
+        "tldr": {
+          "blocksAll": [
+            "Microservices sering membuat segalanya lebih buruk di tahap awal.",
+            "Mereka membawa kompleksitas terdistribusi.",
+            "Mereka hanya masuk akal untuk banyak tim.",
+            "Mulailah dengan modular monolith."
+          ]
+        }
+      }
+    },
     "biggest-misconceptions-about-microservices": {
       "title": "8 Kesalahpahaman Terbesar Tentang Microservices",
       "preview": "Microservices sering dipilih karena alasan yang keliru. Berikut delapan kesalahpahaman paling umum dan pola yang menghubungkan semuanya.",
@@ -251,7 +381,8 @@
           "blocks": [
             "Kesalahpahaman ini berasal dari satu miskonsepsi yang sama. Developer sering memperlakukan microservices sebagai cara untuk memperbaiki organisasi kode.",
             "Padahal, microservices pada dasarnya adalah alat organisasi. Ia dirancang untuk mendukung struktur tim, ownership, dan scaling pada level organisasi.",
-            "Saat kondisi itu tidak ada, microservices justru membawa lebih banyak masalah daripada solusi."
+            "Saat kondisi itu tidak ada, microservices justru membawa lebih banyak masalah daripada solusi.",
+            "Jika Anda ingin penjelasan yang lebih dalam tentang ide ini, baca: [Berhenti Menggunakan Microservices dengan Cara yang Salah - Ini tentang Tim, Bukan Kode](article:stop-using-microservices-wrong-teams-not-code)."
           ]
         }
       }

@@ -158,6 +158,136 @@
     }
   },
   "articleContent": {
+    "stop-using-microservices-wrong-teams-not-code": {
+      "title": "Pare de usar microservices do jeito errado - A questao e o time, nao o codigo",
+      "preview": "Microservices nao sao um truque de organizacao de codigo. Eles sao uma ferramenta para escalar times, e usalos cedo demais geralmente piora o sistema.",
+      "toc": {
+        "why-worse": "Por que microservices costumam piorar as coisas",
+        "hidden-cost": "O custo oculto dos microservices",
+        "solo-developer": "Cenario 1: desenvolvedor solo (pior caso)",
+        "small-team": "Cenario 2: time pequeno (ainda doloroso)",
+        "realization": "A realizacao: nao e sobre codigo",
+        "single-team": "Time unico",
+        "multiple-teams": "Varios times",
+        "when-makes-sense": "Quando microservices realmente fazem sentido",
+        "what-instead": "O que voce deveria fazer em vez disso",
+        "tldr": "TL;DR"
+      },
+      "headings": {
+        "why-worse": "Por que microservices costumam piorar as coisas",
+        "hidden-cost": "O custo oculto dos microservices",
+        "solo-developer": "Cenario 1: desenvolvedor solo (pior caso)",
+        "small-team": "Cenario 2: time pequeno (ainda doloroso)",
+        "realization": "A realizacao: nao e sobre codigo",
+        "single-team": "Time unico",
+        "multiple-teams": "Varios times",
+        "when-makes-sense": "Quando microservices realmente fazem sentido",
+        "what-instead": "O que voce deveria fazer em vez disso",
+        "tldr": "TL;DR"
+      },
+      "sections": {
+        "why-worse": {
+          "blocksAll": [
+            "Microservices se tornaram a arquitetura padrao para muitos desenvolvedores, especialmente os influenciados por sistemas de larga escala em empresas como Netflix ou Amazon. A promessa parece convincente: melhor escalabilidade, modularidade mais limpa e sistemas que refletem dominios do mundo real.",
+            "Mas e exatamente aqui que muitos times erram.",
+            "A maioria dos desenvolvedores adota microservices cedo demais, antes de realmente precisar deles. Eles tratam microservices como um upgrade tecnico, e nao como um trade-off arquitetural. Se voce olhar com atencao, isso normalmente vem de uma serie de mal-entendidos comuns sobre microservices. Veja: [The Biggest Misconceptions About Microservices](article:biggest-misconceptions-about-microservices).",
+            "Em vez de melhorar os sistemas, microservices muitas vezes os tornam mais lentos, mais dificeis de depurar e significativamente mais frageis. O que antes era uma aplicacao direta vira um sistema distribuido da noite para o dia."
+          ]
+        },
+        "hidden-cost": {
+          "blocksAll": [
+            "Microservices nao reduzem a complexidade. Eles a redistribuem.",
+            "Em uma arquitetura monolitica, a complexidade fica em grande parte contida dentro de um unico processo. A comunicacao entre componentes e rapida, previsivel e facil de entender. Voce esta lidando com chamadas de funcao, memoria compartilhada e uma unica unidade de deploy.",
+            "Mas quando voce migra para microservices, essa mesma complexidade nao desaparece. Ela se espalha pela rede.",
+            "Agora toda interacao entre componentes vira uma chamada de rede, e redes sao inerentemente pouco confiaveis.",
+            "Agora voce precisa lidar com:",
+            "Latencia que pode deixar requisicoes de usuario mais lentas.",
+            "Falhas parciais em que um servico funciona e outro nao.",
+            "Mecanismos de retry que podem introduzir acoes duplicadas.",
+            "Timeouts que precisam ser ajustados com cuidado.",
+            "Debug distribuido entre varios logs e sistemas.",
+            "Desafios de consistencia de dados entre bancos separados.",
+            "O que antes era uma operacao local simples agora e um problema de coordenacao entre sistemas independentes.",
+            "Num monolito, a maioria das coisas continua simples e local:",
+            "+------------------------------+\n|         Aplicacao            |\n|------------------------------|\n| Auth | Billing | Usuarios | API |\n| Pedidos | Notificacoes | UI |\n+------------------------------+\n               |\n            Banco de dados",
+            "Em microservices, esse mesmo sistema passa a ser distribuido:",
+            "+---------+    +----------+    +-----------+\n|  Auth   |    | Usuarios |    |  Pedidos  |\n+---------+    +----------+    +-----------+\n     |              |               |\n     v              v               v\n DB(Auth)      DB(Usuarios)    DB(Pedidos)\n\n         \\        |        /\n          \\       |       /\n           +------------------+\n           |   API Gateway    |\n           +------------------+"
+          ]
+        },
+        "solo-developer": {
+          "blocksAll": [
+            "Se voce e um desenvolvedor solo, microservices quase sempre sao uma ma ideia.",
+            "Num monolito, seu fluxo de trabalho e simples e eficiente. Voce chama uma funcao, ela executa, e voce segue em frente. Tudo e local, previsivel e facil de depurar.",
+            "Mas em um setup com microservices, essa mesma chamada de funcao vira uma requisicao de rede. De repente, voce esta lidando com preocupacoes de infraestrutura em vez de apenas logica de negocio.",
+            "Uma chamada simples para createUser() agora envolve:",
+            "Latencia de rede, falhas de requisicao, logica de retry, tratamento de timeout e logging entre servicos.",
+            "Em vez de focar em construir funcionalidades, voce passa tempo gerenciando a complexidade de sistemas distribuidos. Isso e um overhead enorme para uma unica pessoa.",
+            "Num monolito:",
+            "[ App ] -> createUser()",
+            "Em microservices:",
+            "[ Servico A ] -> rede -> [ Servico B ]",
+            "Uma chamada de funcao simples vira um problema de sistemas distribuidos."
+          ]
+        },
+        "small-team": {
+          "blocksAll": [
+            "Mesmo com um time pequeno, microservices ainda podem causar mais dano do que beneficio.",
+            "Nesse estagio, as fronteiras entre times normalmente nao estao bem definidas. Desenvolvedores costumam trabalhar em varias partes do sistema, e as responsabilidades tendem a se sobrepor. Introduzir microservices nesse ambiente cria fronteiras artificiais que nao combinam com a forma como o time realmente opera.",
+            "Em vez de reduzir coordenacao, voce a aumenta.",
+            "Agora os desenvolvedores precisam:",
+            "Coordenar contratos de API entre servicos, gerenciar versionamento e compatibilidade retroativa, lidar com dependencias entre servicos e sincronizar deploys em varios servicos.",
+            "O que antes era um refactor interno vira uma negociacao entre times, mesmo que os times sejam apenas duas ou tres pessoas."
+          ]
+        },
+        "realization": {
+          "blocksAll": [
+            "Esse e o insight principal que a maioria das pessoas perde.",
+            "Microservices nao sao sobre organizar codigo. Eles sao sobre organizar times.",
+            "A estrutura da sua arquitetura deve refletir a estrutura da sua organizacao. Essa ideia esta intimamente ligada a Lei de Conway: sistemas tendem a espelhar os padroes de comunicacao dos times que os constroem.",
+            "Se voce tem um unico time, um monolito geralmente e a arquitetura mais eficiente. Todo mundo trabalha na mesma codebase, compartilha contexto e se move rapido.",
+            "Mas quando varios times trabalham de forma independente, microservices comecam a fazer sentido. Cada time pode ser dono de um servico, fazer deploy de forma independente e evoluir sua parte do sistema sem bloquear os outros.",
+            "Em outras palavras, microservices sao uma solucao de escala para organizacoes, nao apenas para aplicacoes."
+          ]
+        },
+        "single-team": {
+          "blocksAll": [
+            "[ Time ]\n    |\n    v\n[ Monolito ]"
+          ]
+        },
+        "multiple-teams": {
+          "blocksAll": [
+            "[Time A]   [Time B]   [Time C]\n    |         |         |\n    v         v         v\n[Servico A] [Servico B] [Servico C]"
+          ]
+        },
+        "when-makes-sense": {
+          "blocksAll": [
+            "        +-------------------+\n        |    API Gateway    |\n        +-------------------+\n          /       |       \\\n         v        v        v\n   [Usuarios] [Pedidos] [Pagamentos]\n       |         |           |\n    Time A    Time B      Time C",
+            "Microservices brilham quando voce tem fronteiras claras entre times e complexidade organizacional suficiente para justifica-los.",
+            "Se voce tem varios times, cada um responsavel por um dominio distinto, como usuarios, pedidos ou pagamentos, microservices permitem que esses times operem de forma autonoma.",
+            "Eles podem fazer deploy de forma independente, escalar servicos conforme a demanda, escolher tecnologias adequadas ao dominio e evitar atrapalhar uns aos outros.",
+            "Nesse ponto, o overhead de sistemas distribuidos vira um trade-off valido porque permite escalar times. Sem esse contexto, microservices sao apenas complexidade desnecessaria."
+          ]
+        },
+        "what-instead": {
+          "blocksAll": [
+            "/modulos\n  /usuarios\n  /billing\n  /auth\n  /pedidos",
+            "Comece com um monolito modular.",
+            "Essa abordagem oferece o melhor dos dois mundos: simplicidade e estrutura.",
+            "Organize sua codebase em modulos claros como usuarios, billing, auth e pedidos, mas mantenha tudo dentro de uma unica aplicacao. Isso permite comunicacao local rapida, evita complexidade de rede e facilita refactors conforme seu entendimento do dominio evolui.",
+            "Conforme seu sistema e seu time crescem, esses modulos podem evoluir naturalmente para servicos separados, se necessario. Mas voce nao se obriga a entrar nessa complexidade cedo demais.",
+            "Pense nisso como microservices depois, se necessario."
+          ]
+        },
+        "tldr": {
+          "blocksAll": [
+            "Microservices costumam piorar as coisas no inicio.",
+            "Eles introduzem complexidade distribuida.",
+            "Eles so fazem sentido para varios times.",
+            "Comece com um monolito modular."
+          ]
+        }
+      }
+    },
     "biggest-misconceptions-about-microservices": {
       "title": "Os 8 maiores equívocos sobre microservices",
       "preview": "Microservices costumam ser escolhidos pelos motivos errados. Aqui estão os oito equívocos mais comuns e o padrão que conecta todos eles.",
@@ -251,7 +381,8 @@
           "blocks": [
             "Esses equívocos nascem de um mal-entendido em comum. Desenvolvedores frequentemente tratam microservices como uma forma de melhorar a organização do código.",
             "Na realidade, microservices são principalmente uma ferramenta organizacional. Eles foram pensados para apoiar estrutura de times, ownership e escala no nível da organização.",
-            "Quando essas condições não existem, microservices introduzem mais problemas do que resolvem."
+            "Quando essas condições não existem, microservices introduzem mais problemas do que resolvem.",
+            "Se voce quiser um aprofundamento dessa ideia, leia: [Pare de usar microservices do jeito errado - A questao e o time, nao o codigo](article:stop-using-microservices-wrong-teams-not-code)."
           ]
         }
       }

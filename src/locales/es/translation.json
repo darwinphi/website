@@ -158,6 +158,136 @@
     }
   },
   "articleContent": {
+    "stop-using-microservices-wrong-teams-not-code": {
+      "title": "Deja de usar microservicios mal - Se trata de equipos, no de código",
+      "preview": "Los microservicios no son un truco para organizar código. Son una herramienta para escalar equipos, y usarlos demasiado pronto suele empeorar los sistemas.",
+      "toc": {
+        "why-worse": "Por qué los microservicios suelen empeorar las cosas",
+        "hidden-cost": "El costo oculto de los microservicios",
+        "solo-developer": "Escenario 1: desarrollador en solitario (el peor caso)",
+        "small-team": "Escenario 2: equipo pequeño (sigue siendo doloroso)",
+        "realization": "La realización: no se trata del código",
+        "single-team": "Un solo equipo",
+        "multiple-teams": "Varios equipos",
+        "when-makes-sense": "Cuándo los microservicios sí tienen sentido",
+        "what-instead": "Qué deberías hacer en su lugar",
+        "tldr": "TL;DR"
+      },
+      "headings": {
+        "why-worse": "Por qué los microservicios suelen empeorar las cosas",
+        "hidden-cost": "El costo oculto de los microservicios",
+        "solo-developer": "Escenario 1: desarrollador en solitario (el peor caso)",
+        "small-team": "Escenario 2: equipo pequeño (sigue siendo doloroso)",
+        "realization": "La realización: no se trata del código",
+        "single-team": "Un solo equipo",
+        "multiple-teams": "Varios equipos",
+        "when-makes-sense": "Cuándo los microservicios sí tienen sentido",
+        "what-instead": "Qué deberías hacer en su lugar",
+        "tldr": "TL;DR"
+      },
+      "sections": {
+        "why-worse": {
+          "blocksAll": [
+            "Los microservicios se han convertido en la arquitectura por defecto para muchos desarrolladores, especialmente para quienes están influidos por sistemas a gran escala de empresas como Netflix o Amazon. La promesa suena convincente: mejor escalabilidad, modularidad más limpia y sistemas que reflejan dominios del mundo real.",
+            "Pero aquí es donde muchos equipos se equivocan.",
+            "La mayoría de los desarrolladores adoptan microservicios demasiado pronto, antes de necesitarlos de verdad. Tratan los microservicios como una mejora técnica y no como una compensación arquitectónica. Si lo miras de cerca, esto suele venir de una serie de malentendidos comunes sobre los microservicios. Ver: [The Biggest Misconceptions About Microservices](article:biggest-misconceptions-about-microservices).",
+            "En lugar de mejorar los sistemas, los microservicios suelen volverlos más lentos, más difíciles de depurar y mucho más frágiles. Lo que antes era una aplicación sencilla se convierte de la noche a la mañana en un sistema distribuido."
+          ]
+        },
+        "hidden-cost": {
+          "blocksAll": [
+            "Los microservicios no reducen la complejidad. La redistribuyen.",
+            "En una arquitectura monolítica, la complejidad se mantiene en gran parte dentro de un solo proceso. La comunicación entre componentes es rápida, predecible y fácil de razonar. Trabajas con llamadas de función, memoria compartida y una sola unidad de despliegue.",
+            "Pero cuando pasas a microservicios, esa complejidad no desaparece. Se reparte por la red.",
+            "Ahora cada interacción entre componentes se convierte en una llamada de red, y las redes son inherentemente poco confiables.",
+            "Ahora tienes que lidiar con:",
+            "Latencia que puede ralentizar las solicitudes de los usuarios.",
+            "Fallos parciales donde un servicio funciona y otro no.",
+            "Mecanismos de reintento que pueden introducir acciones duplicadas.",
+            "Timeouts que deben ajustarse con mucho cuidado.",
+            "Depuración distribuida entre múltiples logs y sistemas.",
+            "Desafíos de consistencia de datos entre bases de datos separadas.",
+            "Lo que antes era una operación local simple ahora es un problema de coordinación entre sistemas independientes.",
+            "En un monolito, la mayoría de las cosas siguen siendo simples y locales:",
+            "+------------------------------+\n|         Aplicacion           |\n|------------------------------|\n| Auth | Facturacion | Usuarios | API |\n| Pedidos | Notificaciones | UI |\n+------------------------------+\n               |\n            Base de datos",
+            "En microservicios, ese mismo sistema pasa a estar distribuido:",
+            "+---------+    +----------+    +-----------+\n|  Auth   |    | Usuarios |    | Pedidos   |\n+---------+    +----------+    +-----------+\n     |              |               |\n     v              v               v\n DB(Auth)      DB(Usuarios)   DB(Pedidos)\n\n         \\        |        /\n          \\       |       /\n           +------------------+\n           |  API Gateway     |\n           +------------------+"
+          ]
+        },
+        "solo-developer": {
+          "blocksAll": [
+            "Si trabajas solo, los microservicios casi siempre son una mala idea.",
+            "En un monolito, tu flujo de trabajo es simple y eficiente. Llamas a una función, se ejecuta y sigues adelante. Todo es local, predecible y fácil de depurar.",
+            "Pero en una configuración con microservicios, esa misma llamada a función se convierte en una solicitud de red. De repente, estás lidiando con infraestructura en lugar de solo lógica de negocio.",
+            "Una llamada simple a createUser() ahora implica:",
+            "Latencia de red, fallos de solicitud, lógica de reintento, manejo de timeouts y logging entre servicios.",
+            "En vez de concentrarte en construir funcionalidades, terminas gestionando complejidad de sistemas distribuidos. Eso es una sobrecarga enorme para una sola persona.",
+            "En un monolito:",
+            "[ App ] -> createUser()",
+            "En microservicios:",
+            "[ Servicio A ] -> red -> [ Servicio B ]",
+            "Una llamada de función sencilla se convierte en un problema de sistemas distribuidos."
+          ]
+        },
+        "small-team": {
+          "blocksAll": [
+            "Incluso con un equipo pequeño, los microservicios pueden hacer más daño que bien.",
+            "En esta etapa, los límites del equipo normalmente no están bien definidos. Los desarrolladores suelen trabajar en varias partes del sistema y las responsabilidades se solapan. Introducir microservicios en ese entorno crea límites artificiales que no encajan con cómo opera realmente el equipo.",
+            "En lugar de reducir coordinación, la aumentas.",
+            "Ahora los desarrolladores tienen que:",
+            "Coordinar contratos de API entre servicios, gestionar versionado y compatibilidad hacia atrás, manejar dependencias entre servicios y sincronizar despliegues en varios servicios.",
+            "Lo que antes era un refactor interno se convierte en una negociación entre equipos, aunque esos equipos sean solo dos o tres personas."
+          ]
+        },
+        "realization": {
+          "blocksAll": [
+            "Esta es la idea clave que la mayoría pasa por alto.",
+            "Los microservicios no se tratan de organizar código. Se tratan de organizar equipos.",
+            "La estructura de tu arquitectura debería reflejar la estructura de tu organización. Esta idea está muy relacionada con la Ley de Conway: los sistemas tienden a reflejar los patrones de comunicación de los equipos que los construyen.",
+            "Si tienes un solo equipo, un monolito suele ser la arquitectura más eficiente. Todos trabajan en el mismo código, comparten contexto y avanzan rápido.",
+            "Pero cuando tienes varios equipos trabajando de forma independiente, los microservicios empiezan a tener sentido. Cada equipo puede ser dueño de un servicio, desplegar de forma independiente y evolucionar su parte del sistema sin bloquear a los demás.",
+            "En otras palabras, los microservicios son una solución de escalado para organizaciones, no solo para aplicaciones."
+          ]
+        },
+        "single-team": {
+          "blocksAll": [
+            "[ Equipo ]\n    |\n    v\n[ Monolito ]"
+          ]
+        },
+        "multiple-teams": {
+          "blocksAll": [
+            "[Equipo A] [Equipo B] [Equipo C]\n    |         |         |\n    v         v         v\n[Servicio A] [Servicio B] [Servicio C]"
+          ]
+        },
+        "when-makes-sense": {
+          "blocksAll": [
+            "        +-------------------+\n        |   API Gateway     |\n        +-------------------+\n          /       |       \\\n         v        v        v\n   [Usuarios] [Pedidos] [Pagos]\n       |          |         |\n    Equipo A   Equipo B  Equipo C",
+            "Los microservicios brillan cuando tienes límites claros entre equipos y suficiente complejidad organizacional como para justificarlos.",
+            "Si tienes varios equipos, cada uno responsable de un dominio distinto como usuarios, pedidos o pagos, los microservicios permiten que esos equipos operen con autonomía.",
+            "Pueden desplegar de forma independiente, escalar sus servicios según la demanda, elegir tecnologías adecuadas para su dominio y evitar estorbarse entre sí.",
+            "En este punto, la sobrecarga de los sistemas distribuidos se convierte en una compensación razonable porque permite escalar a los equipos. Sin este contexto, los microservicios son solo complejidad innecesaria."
+          ]
+        },
+        "what-instead": {
+          "blocksAll": [
+            "/modulos\n  /usuarios\n  /facturacion\n  /auth\n  /pedidos",
+            "Empieza con un monolito modular.",
+            "Este enfoque te da lo mejor de ambos mundos: simplicidad y estructura.",
+            "Organiza tu base de código en módulos claros como usuarios, facturación, auth y pedidos, pero mantén todo dentro de una sola aplicación. Eso te permite conservar una comunicación local rápida, evitar complejidad de red y refactorizar a medida que evoluciona tu entendimiento del dominio.",
+            "A medida que tu sistema y tu equipo crezcan, estos módulos pueden evolucionar naturalmente hacia servicios separados si hace falta. Pero no te obligas a asumir esa complejidad antes de tiempo.",
+            "Piénsalo como microservicios más adelante, si de verdad son necesarios."
+          ]
+        },
+        "tldr": {
+          "blocksAll": [
+            "Los microservicios suelen empeorar las cosas al principio.",
+            "Introducen complejidad distribuida.",
+            "Solo tienen sentido para múltiples equipos.",
+            "Empieza con un monolito modular."
+          ]
+        }
+      }
+    },
     "biggest-misconceptions-about-microservices": {
       "title": "Los 8 mayores conceptos erróneos sobre los microservicios",
       "preview": "Los microservicios suelen elegirse por las razones equivocadas. Aquí están los ocho conceptos erróneos más comunes y el patrón que los conecta.",
@@ -251,7 +381,8 @@
           "blocks": [
             "Estos conceptos erróneos nacen de un mismo malentendido. Los desarrolladores suelen tratar los microservicios como una forma de mejorar la organización del código.",
             "En realidad, los microservicios son principalmente una herramienta organizacional. Están diseñados para apoyar la estructura de equipos, la propiedad y el escalado a nivel organizacional.",
-            "Cuando esas condiciones no existen, los microservicios introducen más problemas de los que resuelven."
+            "Cuando esas condiciones no existen, los microservicios introducen más problemas de los que resuelven.",
+            "Si quieres un desglose más profundo de esta idea, lee: [Deja de usar microservicios mal - Se trata de equipos, no de código](article:stop-using-microservices-wrong-teams-not-code)."
           ]
         }
       }

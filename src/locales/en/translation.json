@@ -52,6 +52,136 @@
     "notFound": "Article not found"
   },
   "articleContent": {
+    "stop-using-microservices-wrong-teams-not-code": {
+      "title": "Stop Using Microservices Wrong - It is About Teams, Not Code",
+      "preview": "Microservices are not a code organization trick. They are a team-scaling tool, and using them too early usually makes systems worse.",
+      "toc": {
+        "why-worse": "Why Microservices Often Make Things Worse",
+        "hidden-cost": "The Hidden Cost of Microservices",
+        "solo-developer": "Scenario 1: Solo Developer (Worst Case)",
+        "small-team": "Scenario 2: Small Team (Still Painful)",
+        "realization": "The Realization: It's Not About Code",
+        "single-team": "Single Team",
+        "multiple-teams": "Multiple Teams",
+        "when-makes-sense": "When Microservices Actually Make Sense",
+        "what-instead": "What You Should Do Instead",
+        "tldr": "TL;DR"
+      },
+      "headings": {
+        "why-worse": "Why Microservices Often Make Things Worse",
+        "hidden-cost": "The Hidden Cost of Microservices",
+        "solo-developer": "Scenario 1: Solo Developer (Worst Case)",
+        "small-team": "Scenario 2: Small Team (Still Painful)",
+        "realization": "The Realization: It's Not About Code",
+        "single-team": "Single Team",
+        "multiple-teams": "Multiple Teams",
+        "when-makes-sense": "When Microservices Actually Make Sense",
+        "what-instead": "What You Should Do Instead",
+        "tldr": "TL;DR"
+      },
+      "sections": {
+        "why-worse": {
+          "blocksAll": [
+            "Microservices have become the default architecture for many developers, especially those influenced by large-scale systems at companies like Netflix or Amazon. The promise sounds compelling: better scalability, cleaner modularity, and systems that mirror real-world domains.",
+            "But this is where many teams go wrong.",
+            "Most developers adopt microservices far too early, before they actually need them. They treat microservices as a technical upgrade rather than an architectural trade-off. If you look closely, this usually comes from a set of common misunderstandings about microservices. See: [The Biggest Misconceptions About Microservices](article:biggest-misconceptions-about-microservices).",
+            "Instead of making systems better, microservices often make them slower, harder to debug, and significantly more fragile. What was once a straightforward application becomes a distributed system overnight."
+          ]
+        },
+        "hidden-cost": {
+          "blocksAll": [
+            "Microservices do not reduce complexity. They redistribute it.",
+            "In a monolithic architecture, complexity is mostly contained within a single process. Communication between components is fast, predictable, and easy to reason about. You are dealing with function calls, shared memory, and a single deployment unit.",
+            "But once you move to microservices, that same complexity does not disappear. It spreads across the network.",
+            "Now every interaction between components becomes a network call, and networks are inherently unreliable.",
+            "You now have to deal with:",
+            "Latency that can slow down user requests.",
+            "Partial failures where one service works but another does not.",
+            "Retry mechanisms that can introduce duplicate actions.",
+            "Timeouts that must be tuned carefully.",
+            "Distributed debugging across multiple logs and systems.",
+            "Data consistency challenges across separate databases.",
+            "What used to be a simple local operation is now a coordination problem between independent systems.",
+            "In a monolith, most things stay simple and local:",
+            "+------------------------------+\n|         Application          |\n|------------------------------|\n| Auth | Billing | Users | API |\n| Orders | Notifications | UI  |\n+------------------------------+\n               |\n            Database",
+            "In microservices, that same system becomes distributed:",
+            "+---------+    +----------+    +----------+\n|  Auth   |    |  Users   |    |  Orders  |\n+---------+    +----------+    +----------+\n     |              |               |\n     v              v               v\n DB(Auth)      DB(Users)      DB(Orders)\n\n         \\        |        /\n          \\       |       /\n           +------------------+\n           |   API Gateway    |\n           +------------------+"
+          ]
+        },
+        "solo-developer": {
+          "blocksAll": [
+            "If you are a solo developer, microservices are almost always a bad idea.",
+            "In a monolith, your workflow is simple and efficient. You call a function, it executes, and you move on. Everything is local, predictable, and easy to debug.",
+            "But in a microservices setup, that same function call becomes a network request. Suddenly, you are dealing with infrastructure concerns instead of just business logic.",
+            "A simple createUser() call now involves:",
+            "Network latency, request failures, retry logic, timeout handling, and logging across services.",
+            "Instead of focusing on building features, you are spending time managing distributed systems complexity. That is a massive overhead for a single developer.",
+            "In a monolith:",
+            "[ App ] -> createUser()",
+            "In microservices:",
+            "[ Service A ] -> network -> [ Service B ]",
+            "A simple function call becomes a distributed systems problem."
+          ]
+        },
+        "small-team": {
+          "blocksAll": [
+            "Even with a small team, microservices can still cause more harm than good.",
+            "At this stage, team boundaries are usually not well-defined. Developers often work across multiple parts of the system, and responsibilities tend to overlap. Introducing microservices in this environment creates artificial boundaries that do not match how the team actually operates.",
+            "Instead of reducing coordination, you increase it.",
+            "Now developers need to:",
+            "Coordinate API contracts between services, manage versioning and backward compatibility, handle cross-service dependencies, and synchronize deployments across multiple services.",
+            "What used to be an internal refactor becomes a cross-team negotiation, even if the teams are only two or three people."
+          ]
+        },
+        "realization": {
+          "blocksAll": [
+            "This is the key insight most people miss.",
+            "Microservices are not about organizing code. They are about organizing teams.",
+            "The structure of your architecture should reflect the structure of your organization. This idea is closely related to Conway's Law: systems tend to mirror the communication patterns of the teams that build them.",
+            "If you have a single team, a monolith is often the most efficient architecture. Everyone works in the same codebase, shares context, and moves quickly.",
+            "But when you have multiple teams working independently, microservices start to make sense. Each team can own a service, deploy independently, and evolve its part of the system without blocking others.",
+            "In other words, microservices are a scaling solution for organizations, not just applications."
+          ]
+        },
+        "single-team": {
+          "blocksAll": [
+            "[ Team ]\n    |\n    v\n[ Monolith ]"
+          ]
+        },
+        "multiple-teams": {
+          "blocksAll": [
+            "[Team A]   [Team B]   [Team C]\n    |         |         |\n    v         v         v\n[Service A] [Service B] [Service C]"
+          ]
+        },
+        "when-makes-sense": {
+          "blocksAll": [
+            "        +-------------------+\n        |    API Gateway    |\n        +-------------------+\n          /       |       \\\n         v        v        v\n    [Users]   [Orders]  [Payments]\n       |          |          |\n    Team A     Team B     Team C",
+            "Microservices shine when you have clear team boundaries and enough organizational complexity to justify them.",
+            "If you have multiple teams, each responsible for a distinct domain such as users, orders, or payments, microservices allow those teams to operate autonomously.",
+            "They can deploy independently, scale services based on demand, choose technologies suited to their domain, and avoid stepping on each other's toes.",
+            "At this stage, the overhead of distributed systems becomes a worthwhile trade-off because it enables team scalability. Without this context, microservices are just unnecessary complexity."
+          ]
+        },
+        "what-instead": {
+          "blocksAll": [
+            "/modules\n  /users\n  /billing\n  /auth\n  /orders",
+            "Start with a modular monolith.",
+            "This approach gives you the best of both worlds: simplicity and structure.",
+            "Organize your codebase into clear modules such as users, billing, auth, and orders, but keep everything within a single application. This lets you maintain fast local communication, avoid network-related complexity, and refactor as your understanding of the domain evolves.",
+            "As your system and team grow, these modules can naturally evolve into separate services if needed. But you are not forced into that complexity prematurely.",
+            "Think of it as microservices later, if necessary."
+          ]
+        },
+        "tldr": {
+          "blocksAll": [
+            "Microservices often make things worse early.",
+            "They introduce distributed complexity.",
+            "They only make sense for multiple teams.",
+            "Start with a modular monolith."
+          ]
+        }
+      }
+    },
     "biggest-misconceptions-about-microservices": {
       "title": "The 8 Biggest Misconceptions About Microservices",
       "preview": "Microservices are often chosen for the wrong reasons. Here are the eight most common misconceptions and the pattern that connects them.",
@@ -145,7 +275,8 @@
           "blocks": [
             "These misconceptions stem from a common misunderstanding. Developers often treat microservices as a way to improve code organization.",
             "In reality, microservices are primarily an organizational tool. They are designed to support team structure, ownership, and scaling at the organizational level.",
-            "When those conditions are not present, microservices introduce more problems than they solve."
+            "When those conditions are not present, microservices introduce more problems than they solve.",
+            "If you want a deeper breakdown of this idea, read: [Stop Using Microservices Wrong - It is About Teams, Not Code](article:stop-using-microservices-wrong-teams-not-code)."
           ]
         }
       }
