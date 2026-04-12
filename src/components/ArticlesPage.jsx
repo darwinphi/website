@@ -2,10 +2,7 @@ import { articles } from '../data/articles';
 import { useTranslation } from 'react-i18next';
 import Icon from './Icon';
 import PageLayout from './PageLayout';
-import {
-  formatArticleReadingTime,
-  getArticleReadingTimeMinutes,
-} from '../utils/articleReadingTime';
+import { formatArticleReadingTime } from '../utils/articleReadingTime';
 
 function ArticlesPage({ onSelectArticle, onBack }) {
   const { t, i18n } = useTranslation();
@@ -30,7 +27,7 @@ function ArticlesPage({ onSelectArticle, onBack }) {
               {article.date} ·{' '}
               {formatArticleReadingTime(
                 t,
-                getArticleReadingTimeMinutes(article),
+                article.readingTimeMinutes,
                 i18n.resolvedLanguage || i18n.language,
               )}
             </p>

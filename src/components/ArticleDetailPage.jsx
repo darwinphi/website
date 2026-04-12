@@ -1,22 +1,58 @@
-import { articles } from '../data/articles';
+import { useEffect, useState } from 'react';
+import { articles, loadArticleContent } from '../data/articles';
 import { useTranslation } from 'react-i18next';
 import Icon from './Icon';
 import { SectionRenderer } from './ArticleRenderers';
 import PageLayout from './PageLayout';
-import {
-  formatArticleReadingTime,
-  getArticleReadingTimeMinutes,
-} from '../utils/articleReadingTime';
+import { formatArticleReadingTime } from '../utils/articleReadingTime';
 
 function ArticleDetailPage({ articleId, onBack }) {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
   const article = articles.find((a) => a.id === articleId);
+  const [articleContent, setArticleContent] = useState(null);
+  const [contentError, setContentError] = useState(null);
   const backToArticlesLabel = t('buttons.backToArticles');
   const translatedSections = t(`articleContent.${articleId}.sections`, {
     returnObjects: true,
     defaultValue: {},
   });
+
+  useEffect(() => {
+    if (!article) {
+      setArticleContent(null);
+      setContentError(null);
+      return;
+    }
+
+    let isCancelled = false;
+
+    setArticleContent(null);
+    setContentError(null);
+
+    loadArticleContent(articleId)
+      .then((content) => {
+        if (isCancelled) {
+          return;
+        }
+
+        if (!content) {
+          setContentError(new Error(`Missing article content for "${articleId}"`));
+          return;
+        }
+
+        setArticleContent(content);
+      })
+      .catch((error) => {
+        if (!isCancelled) {
+          setContentError(error);
+        }
+      });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [article, articleId]);
 
   if (!article) {
     return (
@@ -26,6 +62,10 @@ function ArticleDetailPage({ articleId, onBack }) {
         </p>
       </div>
     );
+  }
+
+  if (contentError) {
+    throw contentError;
   }
 
   const heading = (
@@ -39,7 +79,7 @@ function ArticleDetailPage({ articleId, onBack }) {
         {article.date} ·{' '}
         {formatArticleReadingTime(
           t,
-          getArticleReadingTimeMinutes(article),
+          article.readingTimeMinutes,
           i18n.resolvedLanguage || i18n.language,
         )}
       </p>
@@ -105,15 +145,21 @@ function ArticleDetailPage({ articleId, onBack }) {
         backButtonLabel={backToArticlesLabel}
       >
         <div className="flex flex-col gap-6">
-          {article.sections.map((section, index) => (
-            <SectionRenderer
-              key={index}
-              section={section}
-              index={index}
-              article={article}
-              translatedSections={translatedSections}
-            />
-          ))}
+          {articleContent ? (
+            articleContent.sections.map((section, index) => (
+              <SectionRenderer
+                key={index}
+                section={section}
+                index={index}
+                article={article}
+                translatedSections={translatedSections}
+              />
+            ))
+          ) : (
+            <p className="text-body opacity-60 dark:text-text-secondary-dark">
+              Loading article...
+            </p>
+          )}
 
           {/* Back to top */}
           <div className="flex justify-end pt-4 pb-8">
