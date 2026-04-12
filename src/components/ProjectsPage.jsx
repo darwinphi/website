@@ -1,5 +1,6 @@
 import { projects } from '../data/projects';
 import { useTranslation } from 'react-i18next';
+import Icon from './Icon';
 import PageLayout from './PageLayout';
 
 function ProjectsPage({ onSelectProject, onBack }) {
@@ -34,11 +35,12 @@ function ProjectsPage({ onSelectProject, onBack }) {
                   {t(`projects.${project.translationKey}.description`)}
                 </p>
               </div>
-              <i
-                className={`text-body shrink-0 transition-transform duration-200 ${
+              <Icon
+                name={isRtl ? 'arrow-left' : 'arrow-right'}
+                className={`text-body transition-transform duration-200 ${
                   isRtl
-                    ? 'ri-arrow-left-line group-hover:-translate-x-1 group-active:-translate-x-1'
-                    : 'ri-arrow-right-line group-hover:translate-x-1 group-active:translate-x-1'
+                    ? 'group-hover:-translate-x-1 group-active:-translate-x-1'
+                    : 'group-hover:translate-x-1 group-active:translate-x-1'
                 }`}
               />
             </div>

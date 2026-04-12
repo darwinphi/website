@@ -1,15 +1,27 @@
+import { lazy, Suspense } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import ErrorBoundary from './ErrorBoundary';
 import AnimatedHeroText from './AnimatedHeroText';
-import ProjectsPage from './ProjectsPage';
-import ProjectDetailPage from './ProjectDetailPage';
-import AboutPage from './AboutPage';
-import ArticlesPage from './ArticlesPage';
-import ArticleDetailPage from './ArticleDetailPage';
-import NotFoundPage from './NotFoundPage';
+
+const ProjectsPage = lazy(() => import('./ProjectsPage'));
+const ProjectDetailPage = lazy(() => import('./ProjectDetailPage'));
+const AboutPage = lazy(() => import('./AboutPage'));
+const ArticlesPage = lazy(() => import('./ArticlesPage'));
+const ArticleDetailPage = lazy(() => import('./ArticleDetailPage'));
+const NotFoundPage = lazy(() => import('./NotFoundPage'));
+
+function RouteLoadingFallback() {
+  return (
+    <div className="flex-1 flex items-center justify-center py-16">
+      <p className="text-body opacity-60 dark:text-text-secondary-dark">
+        Loading...
+      </p>
+    </div>
+  );
+}
 
 function ProjectDetailRoute({ onBack }) {
   const { projectId } = useParams();
@@ -37,60 +49,66 @@ function MainContent({ handleNavigation }) {
           className="flex-1 flex flex-col"
         >
           <ErrorBoundary>
-            <Routes location={location}>
-              <Route
-                path="/"
-                element={
-                  <div className="flex-1 flex items-center justify-center">
-                    <AnimatedHeroText
-                      text={t('pages.home.heroText')}
-                      lang={i18n.resolvedLanguage || i18n.language}
-                      className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
+            <Suspense fallback={<RouteLoadingFallback />}>
+              <Routes location={location}>
+                <Route
+                  path="/"
+                  element={
+                    <div className="flex-1 flex items-center justify-center">
+                      <AnimatedHeroText
+                        text={t('pages.home.heroText')}
+                        lang={i18n.resolvedLanguage || i18n.language}
+                        className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
+                      />
+                    </div>
+                  }
+                />
+                <Route
+                  path="/projects"
+                  element={
+                    <ProjectsPage
+                      onSelectProject={(projectId) =>
+                        handleNavigation(`/projects/${projectId}`)
+                      }
+                      onBack={() => handleNavigation('/')}
                     />
-                  </div>
-                }
-              />
-              <Route
-                path="/projects"
-                element={
-                  <ProjectsPage
-                    onSelectProject={(projectId) =>
-                      handleNavigation(`/projects/${projectId}`)
-                    }
-                    onBack={() => handleNavigation('/')}
-                  />
-                }
-              />
-              <Route
-                path="/projects/:projectId"
-                element={
-                  <ProjectDetailRoute onBack={() => handleNavigation('/projects')} />
-                }
-              />
-              <Route
-                path="/about"
-                element={<AboutPage onBack={() => handleNavigation('/')} />}
-              />
-              <Route
-                path="/articles"
-                element={
-                  <ArticlesPage
-                    onSelectArticle={(articleId) =>
-                      handleNavigation(`/articles/${articleId}`)
-                    }
-                    onBack={() => handleNavigation('/')}
-                  />
-                }
-              />
-              <Route
-                path="/articles/:articleId"
-                element={
-                  <ArticleDetailRoute onBack={() => handleNavigation('/articles')} />
-                }
-              />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>{' '}
-          </ErrorBoundary>{' '}
+                  }
+                />
+                <Route
+                  path="/projects/:projectId"
+                  element={
+                    <ProjectDetailRoute
+                      onBack={() => handleNavigation('/projects')}
+                    />
+                  }
+                />
+                <Route
+                  path="/about"
+                  element={<AboutPage onBack={() => handleNavigation('/')} />}
+                />
+                <Route
+                  path="/articles"
+                  element={
+                    <ArticlesPage
+                      onSelectArticle={(articleId) =>
+                        handleNavigation(`/articles/${articleId}`)
+                      }
+                      onBack={() => handleNavigation('/')}
+                    />
+                  }
+                />
+                <Route
+                  path="/articles/:articleId"
+                  element={
+                    <ArticleDetailRoute
+                      onBack={() => handleNavigation('/articles')}
+                    />
+                  }
+                />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Suspense>
+          </ErrorBoundary>
         </motion.div>
       </AnimatePresence>
     </main>

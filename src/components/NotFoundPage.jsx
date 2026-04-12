@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Icon from './Icon';
 
 function NotFoundPage() {
   const navigate = useNavigate();
@@ -29,11 +30,12 @@ function NotFoundPage() {
         onClick={() => navigate('/')}
         className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
       >
-        <i
+        <Icon
+          name={isRtl ? 'arrow-right' : 'arrow-left'}
           className={`transition-transform duration-200 ${
             isRtl
-              ? 'ri-arrow-right-line group-hover:translate-x-1 group-active:translate-x-1'
-              : 'ri-arrow-left-line group-hover:-translate-x-1 group-active:-translate-x-1'
+              ? 'group-hover:translate-x-1 group-active:translate-x-1'
+              : 'group-hover:-translate-x-1 group-active:-translate-x-1'
           }`}
         />
         {t('buttons.backToHome')}

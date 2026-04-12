@@ -1,5 +1,6 @@
 import { projects } from '../data/projects';
 import { useTranslation } from 'react-i18next';
+import Icon from './Icon';
 import PageLayout from './PageLayout';
 
 function ProjectDetailPage({ projectId, onBack }) {
@@ -30,7 +31,7 @@ function ProjectDetailPage({ projectId, onBack }) {
           className="w-full md:w-fit inline-flex items-center justify-center md:justify-start gap-2 px-4 py-4 md:py-3 rounded border border-current text-base md:text-body hover:opacity-60 transition-opacity bg-primary-bg/50 dark:bg-border-dark/50 dark:text-text-primary-dark"
         >
           {t('buttons.visitProject')}
-          <i className="ri-external-link-line text-sm" />
+          <Icon name="external-link" className="text-sm" />
         </a>
       )}
     </div>
@@ -110,7 +111,10 @@ function ProjectDetailPage({ projectId, onBack }) {
             className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
           >
             {t('buttons.backToTop')}
-            <i className="ri-arrow-up-line transition-transform duration-200 group-hover:-translate-y-1 group-active:-translate-y-1" />
+            <Icon
+              name="arrow-up"
+              className="transition-transform duration-200 group-hover:-translate-y-1 group-active:-translate-y-1"
+            />
           </button>
         </div>
       </div>

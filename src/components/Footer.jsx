@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import Icon from './Icon';
 
 const socialLinks = [
   { key: 'social.github', href: 'https://github.com/darwinphi' },
@@ -82,10 +83,9 @@ function Footer() {
                 {t(key)}
               </motion.span>
             </AnimatePresence>
-            <i
-              className={`transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45 ${
-                isRtl ? 'ri-arrow-left-up-line' : 'ri-arrow-right-up-line'
-              }`}
+            <Icon
+              name={isRtl ? 'arrow-up-left' : 'arrow-up-right'}
+              className="transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45"
             />
           </motion.a>
         ))}

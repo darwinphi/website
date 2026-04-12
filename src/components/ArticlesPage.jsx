@@ -1,5 +1,6 @@
 import { articles } from '../data/articles';
 import { useTranslation } from 'react-i18next';
+import Icon from './Icon';
 import PageLayout from './PageLayout';
 import {
   formatArticleReadingTime,
@@ -49,11 +50,12 @@ function ArticlesPage({ onSelectArticle, onBack }) {
               aria-label={`${t('buttons.continueReading')}: ${t(`articleContent.${article.id}.title`, { defaultValue: article.title })}`}
             >
               {t('buttons.continueReading')}
-              <i
+              <Icon
+                name={isRtl ? 'arrow-left' : 'arrow-right'}
                 className={`transition-transform duration-200 ${
                   isRtl
-                    ? 'ri-arrow-left-line group-hover:-translate-x-1 group-active:-translate-x-1'
-                    : 'ri-arrow-right-line group-hover:translate-x-1 group-active:translate-x-1'
+                    ? 'group-hover:-translate-x-1 group-active:-translate-x-1'
+                    : 'group-hover:translate-x-1 group-active:translate-x-1'
                 }`}
               />
             </button>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IMAGE_ZOOM } from '../constants/ui';
+import Icon from './Icon';
 
 function AboutPage({ onBack }) {
   const { t, i18n } = useTranslation();
@@ -119,11 +120,12 @@ function AboutPage({ onBack }) {
             onClick={onBack}
             className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark w-fit"
           >
-            <i
+            <Icon
+              name={isRtl ? 'arrow-right' : 'arrow-left'}
               className={`transition-transform duration-200 ${
                 isRtl
-                  ? 'ri-arrow-right-line group-hover:translate-x-1 group-active:translate-x-1'
-                  : 'ri-arrow-left-line group-hover:-translate-x-1 group-active:-translate-x-1'
+                  ? 'group-hover:translate-x-1 group-active:translate-x-1'
+                  : 'group-hover:-translate-x-1 group-active:-translate-x-1'
               }`}
             />
             {t('buttons.backToHome')}

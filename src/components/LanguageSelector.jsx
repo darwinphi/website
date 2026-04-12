@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { supportedLanguages } from '../i18n/config';
+import { ensureLanguageLoaded, supportedLanguages } from '../i18n/config';
 import { AnimatePresence, motion } from 'framer-motion';
+import Icon from './Icon';
 
 function LanguageSelector() {
   const { i18n } = useTranslation();
@@ -16,8 +17,10 @@ function LanguageSelector() {
     supportedLanguages[0];
   const activeLanguageCode = currentLanguage.code;
 
-  const handleLanguageChange = (langCode) => {
-    i18n.changeLanguage(langCode);
+  const handleLanguageChange = async (langCode) => {
+    const normalizedLanguage = await ensureLanguageLoaded(langCode);
+    await i18n.changeLanguage(normalizedLanguage);
+    window.localStorage.setItem('i18nextLng', normalizedLanguage);
     setIsOpen(false);
   };
 
@@ -51,7 +54,7 @@ function LanguageSelector() {
       >
         <span>{currentLanguage.flag}</span>
         <span className="text-xs">{currentLanguage.code.toUpperCase()}</span>
-        <i className="ri-arrow-down-s-line text-xs" />
+        <Icon name="arrow-down" className="text-xs" />
       </button>
 
       <AnimatePresence>

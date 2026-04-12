@@ -22,7 +22,8 @@ export class ErrorBoundary extends Component {
             Something went wrong
           </h1>
           <p className="text-body opacity-60 dark:text-text-secondary-dark max-w-md text-center">
-            We're sorry for the inconvenience. Please try refreshing the page.
+            We&apos;re sorry for the inconvenience. Please try refreshing the
+            page.
           </p>
           <button
             onClick={() => window.location.reload()}

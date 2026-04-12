@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Icon from './Icon';
 
 export default function DarkModeToggle() {
   const [isDark, setIsDark] = useState(false);
@@ -69,24 +70,28 @@ export default function DarkModeToggle() {
       transition={{ duration: 0.2 }}
     >
       <div className="relative w-6 h-6 flex items-center justify-center">
-        <motion.i
+        <motion.span
           key="sun"
           initial={{ opacity: isDark ? 0 : 1, rotate: isDark ? -90 : 0 }}
           animate={{ opacity: isDark ? 0 : 1, rotate: isDark ? -90 : 0 }}
           exit={{ opacity: 0, rotate: 90 }}
           transition={{ duration: 0.3 }}
-          className="ri-sun-line absolute text-lg"
+          className="absolute text-lg"
           style={{ pointerEvents: 'none' }}
-        />
-        <motion.i
+        >
+          <Icon name="sun" />
+        </motion.span>
+        <motion.span
           key="moon"
           initial={{ opacity: isDark ? 1 : 0, rotate: isDark ? 0 : 90 }}
           animate={{ opacity: isDark ? 1 : 0, rotate: isDark ? 0 : 90 }}
           exit={{ opacity: 0, rotate: -90 }}
           transition={{ duration: 0.3 }}
-          className="ri-moon-line absolute text-lg"
+          className="absolute text-lg"
           style={{ pointerEvents: 'none' }}
-        />
+        >
+          <Icon name="moon" />
+        </motion.span>
       </div>
     </motion.button>
   );

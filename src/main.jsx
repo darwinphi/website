@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import './i18n/config';
+import { i18nReady } from './i18n/config';
 import App from './App.jsx';
 
 // GitHub Pages SPA: restore redirect path forwarded by 404.html
@@ -12,10 +12,18 @@ if (redirect) {
   window.history.replaceState(null, '', redirect);
 }
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>,
-);
+const root = createRoot(document.getElementById('root'));
+
+i18nReady
+  .catch((error) => {
+    console.error('Failed to initialize translations:', error);
+  })
+  .finally(() => {
+    root.render(
+      <StrictMode>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </StrictMode>,
+    );
+  });

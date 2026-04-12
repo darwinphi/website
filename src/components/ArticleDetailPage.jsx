@@ -1,5 +1,6 @@
 import { articles } from '../data/articles';
 import { useTranslation } from 'react-i18next';
+import Icon from './Icon';
 import { SectionRenderer } from './ArticleRenderers';
 import PageLayout from './PageLayout';
 import {
@@ -121,7 +122,10 @@ function ArticleDetailPage({ articleId, onBack }) {
               className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark"
             >
               {t('buttons.backToTop')}
-              <i className="ri-arrow-up-line transition-transform duration-200 group-hover:-translate-y-1 group-active:-translate-y-1" />
+              <Icon
+                name="arrow-up"
+                className="transition-transform duration-200 group-hover:-translate-y-1 group-active:-translate-y-1"
+              />
             </button>
           </div>
         </div>
@@ -137,11 +141,12 @@ function ArticleDetailPage({ articleId, onBack }) {
             onClick={onBack}
             className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark w-fit"
           >
-            <i
+            <Icon
+              name={isRtl ? 'arrow-right' : 'arrow-left'}
               className={`transition-transform duration-200 ${
                 isRtl
-                  ? 'ri-arrow-right-line group-hover:translate-x-1 group-active:translate-x-1'
-                  : 'ri-arrow-left-line group-hover:-translate-x-1 group-active:-translate-x-1'
+                  ? 'group-hover:translate-x-1 group-active:translate-x-1'
+                  : 'group-hover:-translate-x-1 group-active:-translate-x-1'
               }`}
             />
             {backToArticlesLabel}

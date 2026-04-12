@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import DarkModeToggle from './DarkModeToggle';
+import Icon from './Icon';
 import LanguageSelector from './LanguageSelector';
 
 const springTransition = { type: 'spring', stiffness: 400, damping: 30 };
@@ -138,10 +139,9 @@ function Navbar({ handleNavigation, isMenuOpen, setIsMenuOpen }) {
                     {label}
                   </motion.span>
                 </AnimatePresence>
-                <i
-                  className={`transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45 ${
-                    isRtl ? 'ri-arrow-left-up-line' : 'ri-arrow-right-up-line'
-                  }`}
+                <Icon
+                  name={isRtl ? 'arrow-up-left' : 'arrow-up-right'}
+                  className="transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45"
                 />
               </motion.button>
             );
@@ -228,12 +228,9 @@ function Navbar({ handleNavigation, isMenuOpen, setIsMenuOpen }) {
                     variants={navItemVariants}
                   >
                     {label}
-                    <i
-                      className={`transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45 ${
-                        isRtl
-                          ? 'ri-arrow-left-up-line'
-                          : 'ri-arrow-right-up-line'
-                      }`}
+                    <Icon
+                      name={isRtl ? 'arrow-up-left' : 'arrow-up-right'}
+                      className="transition-transform duration-200 group-hover:rotate-45 group-active:rotate-45"
                     />
                   </motion.button>
                 );
