@@ -94,11 +94,11 @@ function AboutPage({ onBack }) {
     setCursorPos({ x, y });
   };
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = () => {
     touchStartTime.current = Date.now();
   };
 
-  const handleTouchEnd = (e) => {
+  const handleTouchEnd = () => {
     const touchDuration = Date.now() - touchStartTime.current;
     // If touch duration is less than 300ms, consider it a tap
     if (touchDuration < 300) {

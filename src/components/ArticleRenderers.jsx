@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 function renderInlineArticleLinks(text) {
@@ -42,15 +41,12 @@ function renderInlineArticleLinks(text) {
   return parts;
 }
 
-export function BlockRenderer({
+function BlockRenderer({
   block,
   blockIndex,
   section,
-  article,
   translatedSections,
 }) {
-  const { t } = useTranslation();
-
   const translatedBlocks = Array.isArray(
     translatedSections?.[section.id]?.blocks,
   )
@@ -175,7 +171,6 @@ export function SectionRenderer({
               block={block}
               blockIndex={blockIndex}
               section={section}
-              article={article}
               translatedSections={translatedSections}
             />
           ))}
