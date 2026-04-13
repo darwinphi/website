@@ -81,6 +81,22 @@
     hanging-punctuation: first last;
   }
 
+  .hero-inline-link {
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.14em;
+    text-decoration-color: color-mix(in srgb, currentColor 68%, transparent);
+    transition:
+      opacity 220ms ease,
+      text-decoration-color 220ms ease;
+  }
+
+  .hero-inline-link:hover {
+    opacity: 0.72;
+    text-decoration-color: currentColor;
+  }
+
   .hero-copy:lang(ja),
   .hero-copy:lang(ko),
   .hero-copy:lang(zh),

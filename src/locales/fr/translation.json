@@ -23,7 +23,7 @@
   },
   "pages": {
     "home": {
-      "heroText": "Basé à la Perle d'Orient (Manille, Philippines). Je suis un développeur Full-Stack créant des expériences web modernes. Vous avez une idée et souhaitez vous connecter? Collaborons."
+      "heroText": "Basé à la Perle d'Orient (Manille, Philippines). Je suis un développeur Full-Stack qui crée des expériences web modernes. Vous avez une idée en tête ou souhaitez échanger ? [Collaborons](href:mailto:darwinmanalophi@gmail.com), ou découvrez mes [Projets](route:/projects) et [Articles](route:/articles)."
     },
     "projects": {
       "title": "Projets Notables et Études de Cas"

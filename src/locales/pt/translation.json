@@ -23,7 +23,7 @@
   },
   "pages": {
     "home": {
-      "heroText": "Baseado na Pérola do Oriente (Manila, Filipinas). Sou um desenvolvedor Full-Stack construindo experiências web modernas. Tem uma ideia e quer colaborar? Vamos trabalhar juntos."
+      "heroText": "Baseado na Pérola do Oriente (Manila, Filipinas). Sou um desenvolvedor Full-Stack criando experiências web modernas. Tem uma ideia em mente ou quer se conectar? [Vamos colaborar](href:mailto:darwinmanalophi@gmail.com), ou explore meus [Projetos](route:/projects) e [Artigos](route:/articles)."
     },
     "projects": {
       "title": "Projetos de Destaque e Estudos de Caso"

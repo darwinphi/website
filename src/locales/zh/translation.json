@@ -23,7 +23,7 @@
   },
   "pages": {
     "home": {
-      "heroText": "坐落在东方明珠（菲律宾马尼拉）。我是一名全栈开发者，专注于构建现代网络体验。有想法想要合作？让我们一起协作。"
+      "heroText": "我常驻东方明珠马尼拉（菲律宾）。我是一名全栈开发者，专注于打造现代化网页体验。如果你有想法，或只是想交流，欢迎[一起合作](href:mailto:darwinmanalophi@gmail.com)，或者看看我的[项目](route:/projects)与[文章](route:/articles)。"
     },
     "projects": {
       "title": "代表性项目与案例研究"

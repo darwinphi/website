@@ -13,6 +13,20 @@ const ArticlesPage = lazy(() => import('./ArticlesPage'));
 const ArticleDetailPage = lazy(() => import('./ArticleDetailPage'));
 const NotFoundPage = lazy(() => import('./NotFoundPage'));
 
+const heroRoleByLanguage = {
+  ar: 'مطور فل ستاك',
+  de: 'Full-Stack-Entwickler',
+  en: 'Full-Stack Developer',
+  es: 'desarrollador Full-Stack',
+  fr: 'développeur Full-Stack',
+  id: 'pengembang Full-Stack',
+  ja: 'フルスタック開発者',
+  ko: '풀스택 개발자',
+  pt: 'desenvolvedor Full-Stack',
+  ru: 'full-stack разработчик',
+  zh: '全栈开发者',
+};
+
 function RouteLoadingFallback() {
   return (
     <div className="flex-1 flex items-center justify-center py-16">
@@ -36,6 +50,9 @@ function ArticleDetailRoute({ onBack }) {
 function MainContent({ handleNavigation }) {
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const resolvedLanguage = i18n.resolvedLanguage || i18n.language;
+  const baseLanguage = resolvedLanguage.split('-')[0];
+  const heroRole = heroRoleByLanguage[baseLanguage];
 
   return (
     <main className="flex-1 flex flex-col">
@@ -57,7 +74,11 @@ function MainContent({ handleNavigation }) {
                     <div className="flex-1 flex items-center justify-center">
                       <AnimatedHeroText
                         text={t('pages.home.heroText')}
-                        lang={i18n.resolvedLanguage || i18n.language}
+                        highlight={heroRole}
+                        highlightClassName="font-bold"
+                        highlightTo="/about"
+                        linkClassName="hero-inline-link font-bold"
+                        lang={resolvedLanguage}
                         className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
                       />
                     </div>

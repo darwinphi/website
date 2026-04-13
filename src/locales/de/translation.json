@@ -23,7 +23,7 @@
   },
   "pages": {
     "home": {
-      "heroText": "Ansässig in der Perle des Ostens (Manila, Philippinen). Ich bin ein Full-Stack-Entwickler, der moderne Web-Erfahrungen entwickelt. Haben Sie eine Idee und möchten Sie sich connecten? Lassen Sie uns zusammenarbeiten."
+      "heroText": "Ansässig in der Perle des Ostens (Manila, Philippinen). Ich bin ein Full-Stack-Entwickler, der moderne Web-Erlebnisse entwickelt. Haben Sie eine Idee oder möchten Sie sich austauschen? [Lassen Sie uns zusammenarbeiten](href:mailto:darwinmanalophi@gmail.com) oder meine [Projekte](route:/projects) und [Artikel](route:/articles) entdecken."
     },
     "projects": {
       "title": "Ausgewaehlte Projekte & Fallstudien"
