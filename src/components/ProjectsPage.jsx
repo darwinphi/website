@@ -18,6 +18,7 @@ function ProjectsPage({ onSelectProject, onBack }) {
       heading={heading}
       onBack={onBack}
       backButtonLabel={t('buttons.backToHome')}
+      surfaceVariant="plain"
     >
       {projects.map((project, index) => (
         <div key={project.id}>

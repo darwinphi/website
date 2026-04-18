@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IMAGE_ZOOM } from '../constants/ui';
 import Icon from './Icon';
+import PageSurface from './PageSurface';
 
 function AboutPage({ onBack }) {
   const { t, i18n } = useTranslation();
@@ -109,7 +110,12 @@ function AboutPage({ onBack }) {
   };
 
   return (
-    <div className="flex-1 flex flex-col">
+    <PageSurface
+      variant="edge-grid"
+      fade="soft"
+      className="flex-1 flex flex-col"
+      contentClassName="flex flex-1 flex-col"
+    >
       {/* Back button - aligned to about section */}
       <div className="py-4 flex justify-center">
         <div
@@ -242,7 +248,7 @@ function AboutPage({ onBack }) {
           </div>
         </div>
       </div>
-    </div>
+    </PageSurface>
   );
 }
 

@@ -143,6 +143,7 @@ function ArticleDetailPage({ articleId, onBack }) {
         heading={heading}
         onBack={onBack}
         backButtonLabel={backToArticlesLabel}
+        surfaceVariant="plain"
       >
         <div className="flex flex-col gap-6">
           {articleContent ? (

@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import ErrorBoundary from './ErrorBoundary';
 import AnimatedHeroText from './AnimatedHeroText';
+import PageSurface from './PageSurface';
 
 const ProjectsPage = lazy(() => import('./ProjectsPage'));
 const ProjectDetailPage = lazy(() => import('./ProjectDetailPage'));
@@ -71,17 +72,24 @@ function MainContent({ handleNavigation }) {
                 <Route
                   path="/"
                   element={
-                    <div className="flex-1 flex items-center justify-center">
-                      <AnimatedHeroText
-                        text={t('pages.home.heroText')}
-                        highlight={heroRole}
-                        highlightClassName="font-bold"
-                        highlightTo="/about"
-                        linkClassName="hero-inline-link font-bold"
-                        lang={resolvedLanguage}
-                        className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
-                      />
-                    </div>
+                    <PageSurface
+                      variant="hero"
+                      fade="center"
+                      className="flex-1 flex items-center justify-center overflow-hidden"
+                      contentClassName="home-hero-copy flex w-full justify-center"
+                    >
+                      <div className="flex w-full justify-center">
+                        <AnimatedHeroText
+                          text={t('pages.home.heroText')}
+                          highlight={heroRole}
+                          highlightClassName="font-bold"
+                          highlightTo="/about"
+                          linkClassName="hero-inline-link font-bold"
+                          lang={resolvedLanguage}
+                          className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
+                        />
+                      </div>
+                    </PageSurface>
                   }
                 />
                 <Route

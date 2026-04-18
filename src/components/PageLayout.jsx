@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import Icon from './Icon';
+import PageSurface from './PageSurface';
 
 /**
  * PageLayout Component
@@ -14,12 +15,19 @@ export default function PageLayout({
   onBack,
   children,
   backButtonLabel,
+  surfaceVariant = 'edge-grid',
+  surfaceFade = 'soft',
 }) {
   const { i18n } = useTranslation();
   const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
 
   return (
-    <div className="flex-1 flex flex-col">
+    <PageSurface
+      variant={surfaceVariant}
+      fade={surfaceFade}
+      className="flex-1 flex flex-col"
+      contentClassName="flex flex-1 flex-col"
+    >
       {/* Back button - aligned to left column */}
       <div className="py-4">
         <div
@@ -62,6 +70,6 @@ export default function PageLayout({
           </div>
         </div>
       </div>
-    </div>
+    </PageSurface>
   );
 }

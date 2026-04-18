@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Icon from './Icon';
+import PageSurface from './PageSurface';
 
 function NotFoundPage() {
   const navigate = useNavigate();
@@ -8,7 +9,12 @@ function NotFoundPage() {
   const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-center gap-1 py-16">
+    <PageSurface
+      variant="edge-grid"
+      fade="center"
+      className="flex-1"
+      contentClassName="flex flex-1 flex-col items-center justify-center gap-1 py-16"
+    >
       {/* Illustration with blended gray glow */}
       <div className="relative flex items-center justify-center">
         <div
@@ -40,7 +46,7 @@ function NotFoundPage() {
         />
         {t('buttons.backToHome')}
       </button>
-    </div>
+    </PageSurface>
   );
 }
 

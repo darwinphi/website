@@ -19,6 +19,7 @@ function ArticlesPage({ onSelectArticle, onBack }) {
       heading={heading}
       onBack={onBack}
       backButtonLabel={t('buttons.backToHome')}
+      surfaceVariant="plain"
     >
       {articles.map((article, index) => (
         <div key={article.id}>

@@ -42,6 +42,7 @@ function ProjectDetailPage({ projectId, onBack }) {
       heading={heading}
       onBack={onBack}
       backButtonLabel={t('buttons.backToProjects')}
+      surfaceVariant="plain"
     >
       <div className="flex flex-col gap-8">
         {/* About the Client */}
