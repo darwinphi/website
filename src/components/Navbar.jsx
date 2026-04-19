@@ -68,14 +68,27 @@ const navLinks = [
   { key: 'nav.about', path: '/about' },
 ];
 
-function Navbar({ handleNavigation, isMenuOpen, setIsMenuOpen }) {
+function Navbar({
+  handleNavigation,
+  isMenuOpen,
+  setIsMenuOpen,
+  isHomePage = false,
+}) {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
+  const headerClassName = [
+    'sticky top-0 z-50 py-6 flex items-center justify-between gap-6 dark:text-text-primary-dark',
+    isHomePage
+      ? 'navbar-home'
+      : 'bg-primary-bg dark:bg-primary-bg-dark',
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <>
       <motion.header
-        className="sticky top-0 z-50 py-6 flex items-center justify-between gap-6 bg-primary-bg dark:bg-primary-bg-dark dark:text-text-primary-dark"
+        className={headerClassName}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}

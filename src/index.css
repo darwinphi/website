@@ -82,6 +82,111 @@
     isolation: isolate;
   }
 
+  .app-shell {
+    position: relative;
+  }
+
+  .app-shell__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-backdrop {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .home-backdrop::before,
+  .home-backdrop::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .home-backdrop::before {
+    background:
+      radial-gradient(
+        circle at 26% 61%,
+        rgba(71, 186, 255, 0.94) 0,
+        rgba(71, 186, 255, 0.88) 15%,
+        rgba(71, 186, 255, 0.48) 31%,
+        rgba(71, 186, 255, 0.16) 44%,
+        rgba(71, 186, 255, 0) 60%
+      ),
+      radial-gradient(
+        circle at 63% 31%,
+        rgba(255, 210, 92, 0.74) 0,
+        rgba(255, 210, 92, 0.56) 10%,
+        rgba(255, 210, 92, 0.18) 24%,
+        rgba(255, 210, 92, 0) 36%
+      ),
+      radial-gradient(
+        circle at 70% 40%,
+        rgba(255, 114, 19, 0.9) 0,
+        rgba(255, 114, 19, 0.78) 12%,
+        rgba(255, 114, 19, 0.38) 24%,
+        rgba(255, 114, 19, 0.12) 34%,
+        rgba(255, 114, 19, 0) 45%
+      ),
+      radial-gradient(
+        circle at 83% 53%,
+        rgba(182, 237, 255, 0.56) 0,
+        rgba(182, 237, 255, 0.2) 15%,
+        rgba(182, 237, 255, 0) 28%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.16) 0%,
+        rgba(255, 255, 255, 0.02) 48%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    filter: blur(clamp(54px, 8vw, 110px)) saturate(112%);
+    transform: scale(1.1);
+    opacity: 0.92;
+  }
+
+  .home-backdrop::after {
+    background-image:
+      radial-gradient(rgba(255, 255, 255, 0.18) 0.7px, transparent 0.9px),
+      radial-gradient(rgba(0, 0, 0, 0.08) 0.7px, transparent 1px);
+    background-position: 0 0, 17px 19px;
+    background-size: 24px 24px, 29px 29px;
+    mix-blend-mode: soft-light;
+    opacity: 0.36;
+  }
+
+  .navbar-home {
+    position: sticky;
+    left: 50%;
+    width: 100vw;
+    box-sizing: border-box;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-inline: max(2rem, calc((100vw - 80rem) / 2 + 2rem));
+    background: transparent;
+  }
+
+  .navbar-home::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--color-primary-bg) 76%, transparent) 0%,
+        color-mix(in srgb, var(--color-primary-bg) 58%, transparent) 56%,
+        transparent 100%
+      );
+    backdrop-filter: blur(10px) saturate(110%);
+    -webkit-backdrop-filter: blur(10px) saturate(110%);
+    mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.84) 72%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.84) 72%, transparent 100%);
+  }
+
   .page-surface__content {
     position: relative;
     z-index: 1;
@@ -92,7 +197,7 @@
   }
 
   .page-surface__grid {
-    opacity: 0.95;
+    opacity: 0.46;
   }
 
   .page-surface__grid::before,
@@ -248,6 +353,55 @@
       linear-gradient(to bottom, var(--color-grid-dark) 1px, transparent 1px);
   }
 
+  .dark .home-backdrop::before {
+    background:
+      radial-gradient(
+        circle at 28% 60%,
+        rgba(37, 128, 255, 0.38) 0,
+        rgba(37, 128, 255, 0.34) 16%,
+        rgba(37, 128, 255, 0.18) 32%,
+        rgba(37, 128, 255, 0.06) 44%,
+        rgba(37, 128, 255, 0) 60%
+      ),
+      radial-gradient(
+        circle at 63% 31%,
+        rgba(255, 196, 90, 0.26) 0,
+        rgba(255, 196, 90, 0.2) 10%,
+        rgba(255, 196, 90, 0.06) 22%,
+        rgba(255, 196, 90, 0) 34%
+      ),
+      radial-gradient(
+        circle at 70% 40%,
+        rgba(255, 119, 31, 0.42) 0,
+        rgba(255, 119, 31, 0.34) 12%,
+        rgba(255, 119, 31, 0.16) 24%,
+        rgba(255, 119, 31, 0.05) 34%,
+        rgba(255, 119, 31, 0) 45%
+      ),
+      radial-gradient(
+        circle at 82% 52%,
+        rgba(131, 212, 255, 0.16) 0,
+        rgba(131, 212, 255, 0.06) 12%,
+        rgba(131, 212, 255, 0) 26%
+      );
+    filter: blur(clamp(60px, 9vw, 124px)) saturate(95%);
+    opacity: 0.72;
+  }
+
+  .dark .home-backdrop::after {
+    opacity: 0.18;
+  }
+
+  .dark .navbar-home::before {
+    background:
+      linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--color-primary-bg-dark) 72%, transparent) 0%,
+        color-mix(in srgb, var(--color-primary-bg-dark) 50%, transparent) 56%,
+        transparent 100%
+      );
+  }
+
   .dark .page-surface__grid::after {
     background: none;
     opacity: 0;
@@ -257,6 +411,45 @@
 @media (max-width: 768px) {
   .page-surface--hero {
     min-height: clamp(28rem, 70vh, 42rem);
+  }
+
+  .home-backdrop::before {
+    background:
+      radial-gradient(
+        circle at 38% 65%,
+        rgba(71, 186, 255, 0.86) 0,
+        rgba(71, 186, 255, 0.76) 18%,
+        rgba(71, 186, 255, 0.34) 34%,
+        rgba(71, 186, 255, 0.1) 46%,
+        rgba(71, 186, 255, 0) 60%
+      ),
+      radial-gradient(
+        circle at 66% 34%,
+        rgba(255, 205, 99, 0.6) 0,
+        rgba(255, 205, 99, 0.38) 12%,
+        rgba(255, 205, 99, 0.08) 24%,
+        rgba(255, 205, 99, 0) 34%
+      ),
+      radial-gradient(
+        circle at 70% 43%,
+        rgba(255, 118, 24, 0.82) 0,
+        rgba(255, 118, 24, 0.62) 13%,
+        rgba(255, 118, 24, 0.22) 24%,
+        rgba(255, 118, 24, 0.06) 34%,
+        rgba(255, 118, 24, 0) 44%
+      ),
+      radial-gradient(
+        circle at 82% 56%,
+        rgba(181, 238, 255, 0.48) 0,
+        rgba(181, 238, 255, 0.12) 14%,
+        rgba(181, 238, 255, 0) 28%
+      );
+    filter: blur(clamp(46px, 12vw, 82px)) saturate(108%);
+    transform: scale(1.04);
+  }
+
+  .home-backdrop::after {
+    opacity: 0.3;
   }
 
   .page-surface--fade-center .page-surface__grid::before {

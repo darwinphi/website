@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import MainContent from './components/MainContent';
 import Navbar from './components/Navbar';
@@ -9,7 +9,10 @@ import { getLanguageDirection } from './i18n/config';
 function App() {
   const { i18n } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isAtmospherePage =
+    location.pathname === '/' || location.pathname === '/about';
 
   useEffect(() => {
     const activeLanguage = i18n.resolvedLanguage || i18n.language || 'en';
@@ -67,18 +70,29 @@ function App() {
   }, [isMenuOpen]);
 
   return (
-    <div className="min-h-screen flex flex-col px-8 max-w-7xl mx-auto w-full">
-      <Navbar
-        handleNavigation={handleNavigation}
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-      />
+    <div
+      className={[
+        'app-shell min-h-screen flex flex-col px-8 max-w-7xl mx-auto w-full',
+        isAtmospherePage ? 'app-shell--home' : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
+      {isAtmospherePage && <div aria-hidden="true" className="home-backdrop" />}
+      <div className="app-shell__content flex min-h-screen flex-col">
+        <Navbar
+          handleNavigation={handleNavigation}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+          isHomePage={isAtmospherePage}
+        />
 
-      <MainContent
-        handleNavigation={handleNavigation}
-      />
+        <MainContent
+          handleNavigation={handleNavigation}
+        />
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 }
