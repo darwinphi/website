@@ -61,6 +61,7 @@
   "projects": {
     "globeTelecom": {
       "name": "Globe Telecoms Plattform für Rechnungszustellung und -speicherung",
+      "role": "Full-Stack-Entwickler",
       "description": "Globe Telecom ist einer der größten Telekommunikationsanbieter auf den Philippinen und bietet Millionen von Kunden Mobilfunk-, Breitband- und Unternehmensdienste an. Globe investiert kontinuierlich in die Modernisierung seiner internen Systeme, um die betriebliche Effizienz und die Servicebereitstellung zu verbessern.",
       "aboutClient": "Globe Telecom ist einer der größten Telekommunikationsanbieter auf den Philippinen und bietet Millionen von Kunden Mobilfunk-, Breitband- und Unternehmensdienste an. Globe investiert kontinuierlich in die Modernisierung seiner internen Systeme, um die betriebliche Effizienz und die Servicebereitstellung zu verbessern.",
       "problem": "Das bestehende Abrechnungssystem war stark auf manuell ausgeführte Skripte angewiesen, um Rechnungszusammenfassungen zu erstellen, Datensätze zu speichern und E-Mails zu versenden. Dieser Ansatz führte zu Ineffizienzen, erhöhte das Risiko menschlicher Fehler und machte das System schwer skalierbar und wartbar.",
@@ -83,6 +84,7 @@
     },
     "chongHuaHospital": {
       "name": "Ärzte-Rekrutierungsportal des Chong Hua Hospital",
+      "role": "Frontend-Entwickler",
       "description": "Das Chong Hua Hospital ist eine führende private Gesundheitseinrichtung mit Sitz in Cebu City, Philippinen, und verfügt über mehr als ein Jahrhundert Erfahrung in der Bereitstellung hochwertiger medizinischer Leistungen. Im Zuge seiner fortlaufenden digitalen Transformation investiert das Krankenhaus in Technologielösungen zur Verbesserung interner Prozesse und der betrieblichen Effizienz.",
       "aboutClient": "Das Chong Hua Hospital ist eine führende private Gesundheitseinrichtung mit Sitz in Cebu City, Philippinen, und verfügt über mehr als ein Jahrhundert Erfahrung in der Bereitstellung hochwertiger medizinischer Leistungen. Im Zuge seiner fortlaufenden digitalen Transformation investiert das Krankenhaus in Technologielösungen zur Verbesserung interner Prozesse und der betrieblichen Effizienz.",
       "problem": "Der Rekrutierungsprozess für Ärzte war stark von der manuellen Einreichung und Bearbeitung von Dokumenten abhängig. Das führte zu längeren Bearbeitungszeiten, einer höheren administrativen Belastung und einer fragmentierten Erfahrung für Bewerber und Mitarbeitende.",
@@ -102,6 +104,7 @@
     },
     "jollibeeKidsParty": {
       "name": "Jollibee Kids Party",
+      "role": "Full-Stack-Entwickler",
       "description": "Jollibee ist die größte Fast-Food-Kette der Philippinen und eine weltweit bekannte Marke, die für ihr familienorientiertes Restauranterlebnis bekannt ist. Besonders bekannt ist sie für ihren Kids-Party-Service in den Filialen, mit dem Familien Geburtstage und besondere Anlässe feiern können. Da sich die Erwartungen der Kunden hin zu mehr digitalem Komfort entwickeln, investiert Jollibee weiterhin in die Modernisierung seiner kundenorientierten Plattformen.",
       "aboutClient": "Jollibee ist die größte Fast-Food-Kette der Philippinen und eine weltweit bekannte Marke, die für ihr familienorientiertes Restauranterlebnis bekannt ist. Besonders bekannt ist sie für ihren Kids-Party-Service in den Filialen, mit dem Familien Geburtstage und besondere Anlässe feiern können. Da sich die Erwartungen der Kunden hin zu mehr digitalem Komfort entwickeln, investiert Jollibee weiterhin in die Modernisierung seiner kundenorientierten Plattformen.",
       "problem": "Der Buchungsprozess für Kinderpartys bot noch kein vollständig optimiertes digitales Erlebnis und hatte Einschränkungen bei Anpassungsmöglichkeiten, Buchungsabläufen und der Inhaltsverwaltung. Das führte zu Reibung für Nutzer bei der Eventplanung sowie zu Ineffizienzen für interne Teams, die Buchungen und Konfigurationen verwalten.",
@@ -124,6 +127,7 @@
     },
     "konsultaMd": {
       "name": "KonsultaMD",
+      "role": "Backend-Entwickler",
       "description": "KonsultaMD ist ein führender Telehealth-Dienst auf den Philippinen, der rund um die Uhr Zugang zu lizenzierten Ärzten per Telefon und über digitale Plattformen bietet. Ziel ist es, die Gesundheitsversorgung zugänglicher zu machen, insbesondere für unterversorgte und abgelegene Gemeinden. Während der COVID-19-Pandemie verzeichnete KonsultaMD ein schnelles Wachstum, als die Nachfrage nach medizinischen Fernkonsultationen anstieg.",
       "aboutClient": "KonsultaMD ist ein führender Telehealth-Dienst auf den Philippinen, der rund um die Uhr Zugang zu lizenzierten Ärzten per Telefon und über digitale Plattformen bietet. Ziel ist es, die Gesundheitsversorgung zugänglicher zu machen, insbesondere für unterversorgte und abgelegene Gemeinden. Während der COVID-19-Pandemie verzeichnete KonsultaMD ein schnelles Wachstum, als die Nachfrage nach medizinischen Fernkonsultationen anstieg.",
       "problem": "Auf dem Höhepunkt der Pandemie waren die Gesundheitssysteme überlastet, und Patienten hatten aufgrund von Lockdowns und Sicherheitsbedenken nur eingeschränkten Zugang zu persönlichen Konsultationen. KonsultaMD musste seine Plattform daher schnell skalieren.",
@@ -143,6 +147,7 @@
     },
     "shoreSuite": {
       "name": "Shore Suite",
+      "role": "Junior-Backend-Entwickler",
       "description": "Shore Suite ist eine Hotelmanagement-Plattform, die Hospitality-Abläufe wie Zimmerbuchungen, Kundenverwaltung und tägliche administrative Prozesse vereinfachen soll. Das System unterstützt Hotels dabei, ihre betriebliche Effizienz zu verbessern und durch digitale Lösungen erstklassige Gästeerlebnisse zu bieten.",
       "aboutClient": "Shore Suite ist eine Hotelmanagement-Plattform, die Hospitality-Abläufe wie Zimmerbuchungen, Kundenverwaltung und tägliche administrative Prozesse vereinfachen soll. Das System unterstützt Hotels dabei, ihre betriebliche Effizienz zu verbessern und durch digitale Lösungen erstklassige Gästeerlebnisse zu bieten.",
       "problem": "Traditionelle Hotelmanagement-Prozesse basierten häufig auf fragmentierten Systemen oder manuellen Workflows, was zu Umständlichkeiten bei Zimmerreservierungen, der Verwaltung von Kundendaten und der operativen Koordination führte. Dadurch wurden Buchungsprozesse langsamer, das Risiko menschlicher Fehler höher und die Skalierung des Betriebs erschwert.",

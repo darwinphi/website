@@ -61,6 +61,7 @@
   "projects": {
     "globeTelecom": {
       "name": "Plateforme de Livraison et de Stockage des Factures de Globe Telecom",
+      "role": "Développeur Full Stack",
       "description": "Globe Telecom est l'un des plus grands fournisseurs de télécommunications aux Philippines et propose des services mobiles, haut débit et entreprise à des millions de clients. Globe continue d'investir dans la modernisation de ses systèmes internes afin d'améliorer l'efficacité opérationnelle et la qualité de service.",
       "aboutClient": "Globe Telecom est l'un des plus grands fournisseurs de télécommunications aux Philippines et propose des services mobiles, haut débit et entreprise à des millions de clients. Globe continue d'investir dans la modernisation de ses systèmes internes afin d'améliorer l'efficacité opérationnelle et la qualité de service.",
       "problem": "Le système de facturation existant reposait fortement sur des scripts exécutés manuellement pour générer des résumés de facture, stocker des enregistrements et envoyer des e-mails. Cette approche introduisait des inefficacités, augmentait le risque d'erreur humaine et rendait le système difficile à faire évoluer et à maintenir.",
@@ -83,10 +84,11 @@
     },
     "chongHuaHospital": {
       "name": "Portail de Recrutement des Médecins de l'Hôpital Chong Hua",
+      "role": "Développeur front-end",
       "description": "L'hôpital Chong Hua est un établissement de santé privé de premier plan basé à Cebu City, aux Philippines, avec plus d'un siècle d'expérience dans la prestation de services médicaux de qualité. Dans le cadre de sa transformation numérique continue, l'hôpital investit dans des solutions technologiques pour améliorer les processus internes et l'efficacité opérationnelle.",
       "aboutClient": "L'hôpital Chong Hua est un établissement de santé privé de premier plan basé à Cebu City, aux Philippines, avec plus d'un siècle d'expérience dans la prestation de services médicaux de qualité. Dans le cadre de sa transformation numérique continue, l'hôpital investit dans des solutions technologiques pour améliorer les processus internes et l'efficacité opérationnelle.",
       "problem": "Le processus de recrutement des médecins dépendait fortement de la soumission et du traitement manuels des documents. Cela entraînait des délais de traitement plus longs, une charge administrative accrue et une expérience fragmentée pour les candidats comme pour le personnel.",
-      "solution": "En tant que développeur Front-End, j'ai contribué à la création d'un portail de recrutement en ligne qui a numérisé le processus de soumission des documents.",
+      "solution": "En tant que développeur front-end, j'ai contribué à la création d'un portail de recrutement en ligne qui a numérisé le processus de soumission des documents.",
       "keyContributions": [
         "Développement d'interfaces conviviales pour les candidatures de médecins ;",
         "Mise en place de workflows structurés pour les formulaires et le téléversement de documents ;",
@@ -102,6 +104,7 @@
     },
     "jollibeeKidsParty": {
       "name": "Jollibee Kids Party",
+      "role": "Développeur Full Stack",
       "description": "Jollibee est la plus grande chaîne de restauration rapide des Philippines et une marque reconnue mondialement pour son expérience de restauration orientée famille. Elle est particulièrement connue pour son service Kids Party en magasin, qui permet aux familles de célébrer anniversaires et occasions spéciales. À mesure que les attentes des clients évoluent vers davantage de confort numérique, Jollibee continue d'investir dans la modernisation de ses plateformes destinées aux clients.",
       "aboutClient": "Jollibee est la plus grande chaîne de restauration rapide des Philippines et une marque reconnue mondialement pour son expérience de restauration orientée famille. Elle est particulièrement connue pour son service Kids Party en magasin, qui permet aux familles de célébrer anniversaires et occasions spéciales. À mesure que les attentes des clients évoluent vers davantage de confort numérique, Jollibee continue d'investir dans la modernisation de ses plateformes destinées aux clients.",
       "problem": "Le processus de réservation des fêtes d'enfants ne proposait pas encore une expérience numérique pleinement optimisée, avec des limites au niveau de la personnalisation, des workflows de réservation et de la gestion de contenu. Cela créait des frictions pour les utilisateurs qui planifiaient un événement, ainsi que des inefficacités pour les équipes internes chargées des réservations et des configurations.",
@@ -124,10 +127,11 @@
     },
     "konsultaMd": {
       "name": "KonsultaMD",
+      "role": "Développeur back-end",
       "description": "KonsultaMD est un service majeur de télésanté aux Philippines qui offre un accès 24 h/24 et 7 j/7 à des médecins agréés par téléphone et via des plateformes numériques. Il vise à rendre les soins de santé plus accessibles, en particulier pour les communautés éloignées et mal desservies. Pendant la pandémie de COVID-19, KonsultaMD a connu une croissance rapide face à la demande croissante de consultations médicales à distance.",
       "aboutClient": "KonsultaMD est un service majeur de télésanté aux Philippines qui offre un accès 24 h/24 et 7 j/7 à des médecins agréés par téléphone et via des plateformes numériques. Il vise à rendre les soins de santé plus accessibles, en particulier pour les communautés éloignées et mal desservies. Pendant la pandémie de COVID-19, KonsultaMD a connu une croissance rapide face à la demande croissante de consultations médicales à distance.",
       "problem": "Au plus fort de la pandémie, les systèmes de santé étaient débordés et les patients avaient un accès limité aux consultations physiques en raison des confinements et des préoccupations de sécurité. KonsultaMD devait faire évoluer rapidement sa plateforme.",
-      "solution": "En tant que développeur Back-End, j'ai contribué à la mise en place d'une plateforme de téléconsultation évolutive et résiliente afin de répondre à la demande de services de santé virtuels.",
+      "solution": "En tant que développeur back-end, j'ai contribué à la mise en place d'une plateforme de téléconsultation évolutive et résiliente afin de répondre à la demande de services de santé virtuels.",
       "keyContributions": [
         "Conception et mise en œuvre d'API pour centraliser et optimiser la communication des données ;",
         "Développement et optimisation de services back-end capables de gérer une forte concurrence et des pics de trafic ;",
@@ -143,10 +147,11 @@
     },
     "shoreSuite": {
       "name": "Shore Suite",
+      "role": "Développeur junior back-end",
       "description": "Shore Suite est une plateforme de gestion hôtelière conçue pour rationaliser les opérations d'hospitalité, notamment les réservations de chambres, la gestion des clients et les processus administratifs quotidiens. Le système aide les hôtels à améliorer leur efficacité opérationnelle et à offrir des expériences haut de gamme à leurs clients grâce à des solutions numériques.",
       "aboutClient": "Shore Suite est une plateforme de gestion hôtelière conçue pour rationaliser les opérations d'hospitalité, notamment les réservations de chambres, la gestion des clients et les processus administratifs quotidiens. Le système aide les hôtels à améliorer leur efficacité opérationnelle et à offrir des expériences haut de gamme à leurs clients grâce à des solutions numériques.",
       "problem": "Les processus traditionnels de gestion hôtelière reposaient souvent sur des systèmes fragmentés ou des workflows manuels, ce qui entraînait des difficultés dans les réservations de chambres, la gestion des données clients et la coordination opérationnelle. Cela se traduisait par des réservations plus lentes, un risque accru d'erreur humaine et des difficultés à faire évoluer les opérations.",
-      "solution": "En tant que développeur Junior Back-End, j'ai joué un rôle important dans la construction des API cœur du système de gestion hôtelière. Cela a constitué ma base en ingénierie back-end et m'a permis d'acquérir une expérience pratique des technologies modernes et des schémas d'architecture.",
+      "solution": "En tant que développeur junior back-end, j'ai joué un rôle important dans la construction des API cœur du système de gestion hôtelière. Cela a constitué ma base en ingénierie back-end et m'a permis d'acquérir une expérience pratique des technologies modernes et des schémas d'architecture.",
       "keyContributions": [
         "Développement d'API robustes pour prendre en charge les réservations de chambres, la gestion des clients et les workflows opérationnels ;",
         "Contribution à une architecture microservices afin d'améliorer la modularité et l'évolutivité du système ; et,",

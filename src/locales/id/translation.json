@@ -61,6 +61,7 @@
   "projects": {
     "globeTelecom": {
       "name": "Platform Pengiriman dan Penyimpanan Tagihan Globe Telecom",
+      "role": "Full Stack Developer",
       "description": "Globe Telecom adalah salah satu penyedia telekomunikasi terbesar di Filipina yang menawarkan layanan seluler, broadband, dan enterprise kepada jutaan pelanggan. Globe terus berinvestasi dalam modernisasi sistem internalnya untuk meningkatkan efisiensi operasional dan kualitas layanan.",
       "aboutClient": "Globe Telecom adalah salah satu penyedia telekomunikasi terbesar di Filipina yang menawarkan layanan seluler, broadband, dan enterprise kepada jutaan pelanggan. Globe terus berinvestasi dalam modernisasi sistem internalnya untuk meningkatkan efisiensi operasional dan kualitas layanan.",
       "problem": "Sistem penagihan yang ada sangat bergantung pada skrip yang dijalankan secara manual untuk membuat ringkasan tagihan, menyimpan catatan, dan mengirim email. Pendekatan ini menimbulkan inefisiensi, meningkatkan risiko kesalahan manusia, dan membuat sistem sulit diskalakan serta dipelihara.",
@@ -83,10 +84,11 @@
     },
     "chongHuaHospital": {
       "name": "Portal Rekrutmen Dokter Chong Hua Hospital",
+      "role": "Frontend Developer",
       "description": "Chong Hua Hospital adalah institusi layanan kesehatan swasta terkemuka yang berbasis di Cebu City, Filipina, dengan pengalaman lebih dari satu abad dalam memberikan layanan medis berkualitas. Sebagai bagian dari transformasi digital yang berkelanjutan, rumah sakit ini berinvestasi pada solusi teknologi untuk meningkatkan proses internal dan efisiensi operasional.",
       "aboutClient": "Chong Hua Hospital adalah institusi layanan kesehatan swasta terkemuka yang berbasis di Cebu City, Filipina, dengan pengalaman lebih dari satu abad dalam memberikan layanan medis berkualitas. Sebagai bagian dari transformasi digital yang berkelanjutan, rumah sakit ini berinvestasi pada solusi teknologi untuk meningkatkan proses internal dan efisiensi operasional.",
       "problem": "Proses rekrutmen dokter sangat bergantung pada pengajuan dan penanganan dokumen secara manual. Hal ini menyebabkan waktu pemrosesan lebih lambat, peningkatan beban administratif, dan pengalaman yang terfragmentasi bagi pelamar maupun staf.",
-      "solution": "Sebagai Front-End Developer, saya berkontribusi dengan membangun portal rekrutmen online yang mendigitalisasi proses pengumpulan dokumen.",
+      "solution": "Sebagai Frontend Developer, saya berkontribusi dengan membangun portal rekrutmen online yang mendigitalisasi proses pengumpulan dokumen.",
       "keyContributions": [
         "Mengembangkan antarmuka yang ramah pengguna untuk aplikasi dokter;",
         "Menerapkan alur unggah dokumen dan formulir yang terstruktur;",
@@ -102,6 +104,7 @@
     },
     "jollibeeKidsParty": {
       "name": "Jollibee Kids Party",
+      "role": "Full Stack Developer",
       "description": "Jollibee adalah jaringan restoran cepat saji terbesar di Filipina dan merek yang diakui secara global karena pengalaman bersantap yang berorientasi pada keluarga. Jollibee terutama dikenal melalui layanan Kids Party di gerainya yang memungkinkan keluarga merayakan ulang tahun dan momen spesial. Seiring ekspektasi pelanggan bergeser ke kenyamanan digital, Jollibee terus berinvestasi dalam memodernisasi platform yang berhadapan langsung dengan pelanggan.",
       "aboutClient": "Jollibee adalah jaringan restoran cepat saji terbesar di Filipina dan merek yang diakui secara global karena pengalaman bersantap yang berorientasi pada keluarga. Jollibee terutama dikenal melalui layanan Kids Party di gerainya yang memungkinkan keluarga merayakan ulang tahun dan momen spesial. Seiring ekspektasi pelanggan bergeser ke kenyamanan digital, Jollibee terus berinvestasi dalam memodernisasi platform yang berhadapan langsung dengan pelanggan.",
       "problem": "Proses pemesanan pesta anak belum memiliki pengalaman digital yang sepenuhnya optimal, dengan keterbatasan pada kustomisasi, alur pemesanan, dan pengelolaan konten. Hal ini menimbulkan friksi bagi pengguna saat merencanakan acara dan ketidakefisienan bagi tim internal yang mengelola pemesanan serta konfigurasi.",
@@ -124,10 +127,11 @@
     },
     "konsultaMd": {
       "name": "KonsultaMD",
+      "role": "Backend Developer",
       "description": "KonsultaMD adalah layanan telehealth terkemuka di Filipina yang menyediakan akses 24/7 ke dokter berlisensi melalui telepon dan platform digital. Layanan ini bertujuan membuat layanan kesehatan lebih mudah diakses, terutama bagi komunitas terpencil dan kurang terlayani. Selama pandemi COVID-19, KonsultaMD mengalami pertumbuhan pesat seiring meningkatnya permintaan untuk konsultasi medis jarak jauh.",
       "aboutClient": "KonsultaMD adalah layanan telehealth terkemuka di Filipina yang menyediakan akses 24/7 ke dokter berlisensi melalui telepon dan platform digital. Layanan ini bertujuan membuat layanan kesehatan lebih mudah diakses, terutama bagi komunitas terpencil dan kurang terlayani. Selama pandemi COVID-19, KonsultaMD mengalami pertumbuhan pesat seiring meningkatnya permintaan untuk konsultasi medis jarak jauh.",
       "problem": "Pada puncak pandemi, sistem kesehatan kewalahan dan pasien menghadapi keterbatasan akses ke konsultasi fisik akibat lockdown dan kekhawatiran keamanan. KonsultaMD perlu meningkatkan skala platformnya dengan cepat.",
-      "solution": "Sebagai Back-End Developer, saya berkontribusi membangun platform telekonsultasi yang skalabel dan tangguh untuk memenuhi permintaan layanan kesehatan virtual.",
+      "solution": "Sebagai Backend Developer, saya berkontribusi membangun platform telekonsultasi yang skalabel dan tangguh untuk memenuhi permintaan layanan kesehatan virtual.",
       "keyContributions": [
         "Merancang dan mengimplementasikan API untuk memusatkan dan mengoptimalkan komunikasi data;",
         "Membangun dan mengoptimalkan layanan back-end untuk menangani konkurensi tinggi dan lonjakan trafik;",
@@ -143,10 +147,11 @@
     },
     "shoreSuite": {
       "name": "Shore Suite",
+      "role": "Junior Backend Developer",
       "description": "Shore Suite adalah platform manajemen hotel yang dirancang untuk merapikan operasional hospitality seperti pemesanan kamar, pengelolaan pelanggan, dan proses administratif harian. Sistem ini membantu hotel meningkatkan efisiensi operasional dan menghadirkan pengalaman tamu yang unggul melalui solusi digital.",
       "aboutClient": "Shore Suite adalah platform manajemen hotel yang dirancang untuk merapikan operasional hospitality seperti pemesanan kamar, pengelolaan pelanggan, dan proses administratif harian. Sistem ini membantu hotel meningkatkan efisiensi operasional dan menghadirkan pengalaman tamu yang unggul melalui solusi digital.",
       "problem": "Proses manajemen hotel tradisional sering bergantung pada sistem yang terfragmentasi atau alur kerja manual, sehingga menimbulkan kendala dalam reservasi kamar, pengelolaan data pelanggan, dan koordinasi operasional. Hal ini menyebabkan proses pemesanan lebih lambat, risiko kesalahan manusia meningkat, dan operasional sulit diskalakan.",
-      "solution": "Sebagai Junior Back-End Developer, saya memegang peran penting dalam membangun API inti yang menggerakkan sistem manajemen hotel. Ini menjadi fondasi saya dalam backend engineering dan membantu saya memperoleh pengalaman langsung dengan teknologi modern serta pola arsitektur.",
+      "solution": "Sebagai Junior Backend Developer, saya memegang peran penting dalam membangun API inti yang menggerakkan sistem manajemen hotel. Ini menjadi fondasi saya dalam backend engineering dan membantu saya memperoleh pengalaman langsung dengan teknologi modern serta pola arsitektur.",
       "keyContributions": [
         "Mengembangkan API yang andal untuk mendukung pemesanan kamar, pengelolaan pelanggan, dan alur kerja operasional;",
         "Berkontribusi pada arsitektur microservices untuk meningkatkan modularitas dan skalabilitas sistem; dan,",

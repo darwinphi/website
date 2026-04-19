@@ -61,6 +61,7 @@
   "projects": {
     "globeTelecom": {
       "name": "Plataforma de Entrega e Armazenamento de Faturas da Globe Telecom",
+      "role": "Desenvolvedor Full Stack",
       "description": "A Globe Telecom é uma das maiores provedoras de telecomunicações das Filipinas, oferecendo serviços móveis, de banda larga e corporativos para milhões de clientes. A Globe continua investindo na modernização de seus sistemas internos para melhorar a eficiência operacional e a entrega de serviços.",
       "aboutClient": "A Globe Telecom é uma das maiores provedoras de telecomunicações das Filipinas, oferecendo serviços móveis, de banda larga e corporativos para milhões de clientes. A Globe continua investindo na modernização de seus sistemas internos para melhorar a eficiência operacional e a entrega de serviços.",
       "problem": "O sistema de faturamento existente dependia fortemente de scripts executados manualmente para gerar resumos de faturas, armazenar registros e enviar e-mails. Essa abordagem introduzia ineficiências, aumentava o risco de erro humano e tornava o sistema difícil de escalar e manter.",
@@ -83,10 +84,11 @@
     },
     "chongHuaHospital": {
       "name": "Portal de Recrutamento de Médicos do Hospital Chong Hua",
+      "role": "Desenvolvedor Frontend",
       "description": "O Hospital Chong Hua é uma importante instituição privada de saúde com sede em Cebu City, Filipinas, com mais de um século de experiência na prestação de serviços médicos de qualidade. Como parte de sua transformação digital contínua, o hospital investe em soluções tecnológicas para melhorar processos internos e eficiência operacional.",
       "aboutClient": "O Hospital Chong Hua é uma importante instituição privada de saúde com sede em Cebu City, Filipinas, com mais de um século de experiência na prestação de serviços médicos de qualidade. Como parte de sua transformação digital contínua, o hospital investe em soluções tecnológicas para melhorar processos internos e eficiência operacional.",
       "problem": "O processo de recrutamento de médicos dependia fortemente do envio e do manuseio manual de documentos. Isso resultava em tempos de processamento mais lentos, aumento da carga administrativa e uma experiência fragmentada tanto para candidatos quanto para equipes internas.",
-      "solution": "Como Desenvolvedor Front-End, contribuí construindo um portal de recrutamento online que digitalizou o processo de envio de documentos.",
+      "solution": "Como Desenvolvedor Frontend, contribuí construindo um portal de recrutamento online que digitalizou o processo de envio de documentos.",
       "keyContributions": [
         "Desenvolvi interfaces fáceis de usar para inscrições médicas;",
         "Implementei fluxos estruturados de upload de documentos e formulários;",
@@ -102,6 +104,7 @@
     },
     "jollibeeKidsParty": {
       "name": "Jollibee Kids Party",
+      "role": "Desenvolvedor Full Stack",
       "description": "A Jollibee é a maior rede de fast-food das Filipinas e uma marca reconhecida globalmente por sua experiência gastronômica voltada para a família. Ela é especialmente conhecida pelo serviço Kids Party em loja, que permite às famílias celebrarem aniversários e ocasiões especiais. À medida que as expectativas dos clientes evoluem para mais conveniência digital, a Jollibee continua investindo na modernização de suas plataformas voltadas ao cliente.",
       "aboutClient": "A Jollibee é a maior rede de fast-food das Filipinas e uma marca reconhecida globalmente por sua experiência gastronômica voltada para a família. Ela é especialmente conhecida pelo serviço Kids Party em loja, que permite às famílias celebrarem aniversários e ocasiões especiais. À medida que as expectativas dos clientes evoluem para mais conveniência digital, a Jollibee continua investindo na modernização de suas plataformas voltadas ao cliente.",
       "problem": "O processo de reserva de festas infantis ainda não oferecia uma experiência digital totalmente otimizada, com limitações em personalização, fluxos de reserva e gestão de conteúdo. Isso gerava atrito para usuários que tentavam planejar eventos e ineficiências para as equipes internas que gerenciavam reservas e configurações.",
@@ -124,10 +127,11 @@
     },
     "konsultaMd": {
       "name": "KonsultaMD",
+      "role": "Desenvolvedor Backend",
       "description": "KonsultaMD é um serviço líder de telemedicina nas Filipinas que oferece acesso 24/7 a médicos licenciados por telefone e plataformas digitais. Seu objetivo é tornar a saúde mais acessível, especialmente para comunidades remotas e carentes de atendimento. Durante a pandemia de COVID-19, a KonsultaMD teve um rápido crescimento à medida que aumentava a demanda por consultas médicas remotas.",
       "aboutClient": "KonsultaMD é um serviço líder de telemedicina nas Filipinas que oferece acesso 24/7 a médicos licenciados por telefone e plataformas digitais. Seu objetivo é tornar a saúde mais acessível, especialmente para comunidades remotas e carentes de atendimento. Durante a pandemia de COVID-19, a KonsultaMD teve um rápido crescimento à medida que aumentava a demanda por consultas médicas remotas.",
       "problem": "No auge da pandemia, os sistemas de saúde estavam sobrecarregados e os pacientes tinham acesso limitado a consultas presenciais devido aos lockdowns e às preocupações com segurança. A KonsultaMD precisava escalar sua plataforma rapidamente.",
-      "solution": "Como Desenvolvedor Back-End, contribuí para construir uma plataforma de teleconsulta escalável e resiliente para atender à demanda por serviços virtuais de saúde.",
+      "solution": "Como Desenvolvedor Backend, contribuí para construir uma plataforma de teleconsulta escalável e resiliente para atender à demanda por serviços virtuais de saúde.",
       "keyContributions": [
         "Projetei e implementei APIs para centralizar e otimizar a comunicação de dados;",
         "Construí e otimizei serviços de back-end para lidar com alta concorrência e picos de tráfego;",
@@ -143,10 +147,11 @@
     },
     "shoreSuite": {
       "name": "Shore Suite",
+      "role": "Desenvolvedor Júnior Backend",
       "description": "Shore Suite é uma plataforma de gestão hoteleira criada para simplificar operações de hospitalidade, incluindo reservas de quartos, gestão de clientes e processos administrativos do dia a dia. O sistema ajuda hotéis a melhorar a eficiência operacional e oferecer experiências de alto nível aos hóspedes por meio de soluções digitais.",
       "aboutClient": "Shore Suite é uma plataforma de gestão hoteleira criada para simplificar operações de hospitalidade, incluindo reservas de quartos, gestão de clientes e processos administrativos do dia a dia. O sistema ajuda hotéis a melhorar a eficiência operacional e oferecer experiências de alto nível aos hóspedes por meio de soluções digitais.",
       "problem": "Os processos tradicionais de gestão hoteleira frequentemente dependiam de sistemas fragmentados ou fluxos manuais, o que causava dificuldades em reservas de quartos, tratamento de dados de clientes e coordenação operacional. Isso resultava em processos de reserva mais lentos, maior risco de erro humano e dificuldade para escalar as operações.",
-      "solution": "Como Desenvolvedor Júnior Back-End, desempenhei um papel importante na construção das APIs centrais que impulsionavam o sistema de gestão hoteleira. Isso serviu como base da minha formação em engenharia back-end e me ajudou a ganhar experiência prática com tecnologias modernas e padrões arquiteturais.",
+      "solution": "Como Desenvolvedor Júnior Backend, desempenhei um papel importante na construção das APIs centrais que impulsionavam o sistema de gestão hoteleira. Isso serviu como base da minha formação em engenharia back-end e me ajudou a ganhar experiência prática com tecnologias modernas e padrões arquiteturais.",
       "keyContributions": [
         "Desenvolvi APIs robustas para dar suporte a reservas de quartos, gestão de clientes e fluxos operacionais;",
         "Contribuí para uma arquitetura de microserviços a fim de melhorar a modularidade e a escalabilidade do sistema; e,",

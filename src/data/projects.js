@@ -3,6 +3,7 @@ export const projects = [
     id: 'globe-telecom',
     translationKey: 'globeTelecom',
     name: `Globe Telecom's Bill Delivery & Storage Platform`,
+    role: 'Full Stack Developer',
     link: null,
     description:
       'Globe Telecom is one of the largest telecommunications providers in the Philippines, offering mobile, broadband, and enterprise services to millions of customers. Globe continuously invests in modernizing its internal systems to improve operational efficiency and service delivery.',
@@ -32,6 +33,7 @@ export const projects = [
     id: 'chong-hua-hospital',
     translationKey: 'chongHuaHospital',
     name: `Chong Hua Hospital's Doctors Recruitment Portal`,
+    role: 'Frontend Developer',
     link: 'https://chonghua.com.ph/',
     description:
       'Chong Hua Hospital is a leading private healthcare institution based in Cebu City, Philippines, with over a century of experience in delivering quality medical services. As part of its continuous digital transformation, the hospital invests in technology solutions to improve internal processes and operational efficiency.',
@@ -40,7 +42,7 @@ export const projects = [
     problem:
       'The recruitment process for doctors relied heavily on manual submission and handling of documents. This resulted in slower processing times, increase of administrative workload, and a fragmented experience for both applicants and staff.',
     solution:
-      'As a Front-End Developer, I contributed by building an online recruitment portal that digitized the document submission process.',
+      'As a Frontend Developer, I contributed by building an online recruitment portal that digitized the document submission process.',
     keyContributions: [
       'Developed user-friendly interfaces for doctor applications;',
       'Implemented structured document upload and form workflows;',
@@ -58,6 +60,7 @@ export const projects = [
     id: 'jollibee-kids-party',
     translationKey: 'jollibeeKidsParty',
     name: 'Jollibee Kids Party',
+    role: 'Full Stack Developer',
     link: 'https://party.jollibee.com.ph/',
     description:
       "Jollibee is the largest fast-food chain in the Philippines and a globally recognized brand known for its family-oriented dining experience. It is primarily recognized for its in-store Kids Party service which allows families to celebrate birthdays and special occasions. As customers' expectations shift toward digital convenience, Jollibee continues to invest in modernizing its customer-facing platforms.",
@@ -86,6 +89,7 @@ export const projects = [
     id: 'konsultamd',
     translationKey: 'konsultaMd',
     name: 'KonsultaMD',
+    role: 'Backend Developer',
     link: 'https://konsulta.md/',
     description:
       'KonsultaMD is a leading Telehealth service in the Philippines that provides 24/7 access to licensed doctors through phone and digital platforms. It aims to make healthcare more accessible, especially for underserved and remote communities. During the COVID-19 pandemic, KonsultaMD experienced rapid growth as demand for remote medical consultations arose.',
@@ -94,7 +98,7 @@ export const projects = [
     problem:
       'At the peak of the pandemic, healthcare systems were overwhelmed, and patients faced limited access to physical consultations due to lockdowns and safety concerns. KonsultaMD needed to rapidly scale its platform.',
     solution:
-      'As a Back-End Developer, I contributed to building a scalable and resilient Teleconsultation platform to suffice the demand for virtual healthcare services.',
+      'As a Backend Developer, I contributed to building a scalable and resilient Teleconsultation platform to suffice the demand for virtual healthcare services.',
     keyContributions: [
       'Designed and implemented APIs to centralize and optimize data communication;',
       'Built and optimized back-end services to handle high concurrency and traffic spikes;',
@@ -112,6 +116,7 @@ export const projects = [
     id: 'shore-suite',
     translationKey: 'shoreSuite',
     name: 'Shore Suite',
+    role: 'Junior Backend Developer',
     link: 'https://web.facebook.com/shoresuite',
     description:
       'Shore Suite is a hotel management platform designed to streamline hospitality operations which include room bookings, customer management, and day-to-day administrative processes. The system supports hotels in improving operational efficiency and delivering topnotch guest experiences through digital solutions.',
@@ -120,7 +125,7 @@ export const projects = [
     problem:
       'Traditional hotel management processes often relied on fragmented systems or manual workflows, leading to inconveniences in room reservations, customer data handling, and operational coordination. This resulted in slower booking processes, increased risk of human error, and difficulty scaling operations.',
     solution:
-      'As a Junior Back-End Developer, I played a vital role to building the core APIs that powered the hotel management system. This served as my foundation in back-end engineering that helped me gain hands-on experience in modern technologies and architectural patterns.',
+      'As a Junior Backend Developer, I played a vital role to building the core APIs that powered the hotel management system. This served as my foundation in backend engineering that helped me gain hands-on experience in modern technologies and architectural patterns.',
     keyContributions: [
       'Developed robust APIs to support room booking, customer management, and operational workflows;',
       'Contributed to a MicroServices Architecture setup to improve system modularity and scalability; and,',
