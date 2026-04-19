@@ -23,8 +23,17 @@ function ArticlesPage({ onSelectArticle, onBack }) {
     >
       {articles.map((article, index) => (
         <div key={article.id}>
-          <div className={`${index === 0 ? '' : 'pt-6'} pb-6`}>
-            <p className="text-body opacity-50 mb-1 dark:text-text-secondary-dark">
+          <button
+            onClick={() => onSelectArticle(article.id)}
+            className={`${index === 0 ? '' : 'pt-7'} pb-7 w-full text-left group cursor-pointer transition-opacity duration-200 hover:opacity-90 focus-visible:opacity-90`}
+            aria-label={`${t('buttons.continueReading')}: ${t(`articleContent.${article.id}.title`, { defaultValue: article.title })}`}
+          >
+            <h2 className="text-[1.02rem] leading-snug font-medium mb-1 text-current transition-opacity duration-200 group-hover:opacity-80 group-focus-visible:opacity-80 dark:text-text-primary-dark md:text-[1.08rem]">
+              {t(`articleContent.${article.id}.title`, {
+                defaultValue: article.title,
+              })}
+            </h2>
+            <p className="text-[0.82em] opacity-45 mb-3 dark:text-text-secondary-dark">
               {article.date} ·{' '}
               {formatArticleReadingTime(
                 t,
@@ -32,34 +41,27 @@ function ArticlesPage({ onSelectArticle, onBack }) {
                 i18n.resolvedLanguage || i18n.language,
               )}
             </p>
-            <h2 className="text-body font-medium mb-3 dark:text-text-primary-dark">
-              {t(`articleContent.${article.id}.title`, {
-                defaultValue: article.title,
-              })}
-            </h2>
-            <p className="text-body opacity-60 mb-4 dark:text-text-secondary-dark">
+            <p className="text-body opacity-60 mb-5 line-clamp-3 max-w-[58ch] dark:text-text-secondary-dark">
               {t(`articleContent.${article.id}.preview`, {
                 defaultValue: article.preview,
               })}
             </p>
-            <button
-              onClick={() => onSelectArticle(article.id)}
-              className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-0.5 group cursor-pointer dark:text-text-primary-dark"
-              aria-label={`${t('buttons.continueReading')}: ${t(`articleContent.${article.id}.title`, { defaultValue: article.title })}`}
-            >
-              {t('buttons.continueReading')}
-              <Icon
-                name={isRtl ? 'arrow-left' : 'arrow-right'}
-                className={`transition-transform duration-200 ${
-                  isRtl
-                    ? 'group-hover:-translate-x-1 group-active:-translate-x-1'
-                    : 'group-hover:translate-x-1 group-active:translate-x-1'
-                }`}
-              />
-            </button>
-          </div>
+            <div className="flex items-center pt-1">
+              <span className="text-body inline-flex items-center gap-1 transition-opacity duration-200 group-hover:opacity-85 group-focus-visible:opacity-85 dark:text-text-primary-dark">
+                {t('buttons.continueReading')}
+                <Icon
+                  name={isRtl ? 'arrow-left' : 'arrow-right'}
+                  className={`transition-transform duration-200 ${
+                    isRtl
+                      ? 'group-hover:-translate-x-1 group-active:-translate-x-1 group-focus-visible:-translate-x-1'
+                      : 'group-hover:translate-x-1 group-active:translate-x-1 group-focus-visible:translate-x-1'
+                  }`}
+                />
+              </span>
+            </div>
+          </button>
           {index < articles.length - 1 && (
-            <div className="h-px bg-current opacity-20" />
+            <div className="border-t border-dotted border-current opacity-12" />
           )}
         </div>
       ))}
