@@ -49,7 +49,8 @@
     "notFound": "Проект не найден"
   },
   "articleDetail": {
-    "notFound": "Статья не найдена"
+    "notFound": "Статья не найдена",
+    "loading": "Загрузка статьи..."
   },
   "articleMeta": {
     "readingTime": "{{minutes}} мин чтения"

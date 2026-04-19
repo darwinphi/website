@@ -49,7 +49,8 @@
     "notFound": "Proyek tidak ditemukan"
   },
   "articleDetail": {
-    "notFound": "Artikel tidak ditemukan"
+    "notFound": "Artikel tidak ditemukan",
+    "loading": "Memuat artikel..."
   },
   "articleMeta": {
     "readingTime": "{{minutes}} menit baca"

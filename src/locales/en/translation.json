@@ -49,7 +49,8 @@
     "notFound": "Project not found"
   },
   "articleDetail": {
-    "notFound": "Article not found"
+    "notFound": "Article not found",
+    "loading": "Loading article..."
   },
   "articleMeta": {
     "readingTime": "{{minutes}} min read"

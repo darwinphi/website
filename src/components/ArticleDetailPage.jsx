@@ -69,13 +69,13 @@ function ArticleDetailPage({ articleId, onBack }) {
   }
 
   const heading = (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3 sm:gap-4">
       <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
         {t(`articleContent.${article.id}.title`, {
           defaultValue: article.title,
         })}
       </h1>
-      <p className="text-body opacity-50 dark:text-text-secondary-dark">
+      <p className="text-[0.92em] opacity-45 dark:text-text-secondary-dark">
         {article.date} ·{' '}
         {formatArticleReadingTime(
           t,
@@ -83,13 +83,13 @@ function ArticleDetailPage({ articleId, onBack }) {
           i18n.resolvedLanguage || i18n.language,
         )}
       </p>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 pt-0.5">
         {article.tags.map((tag) => (
           <span
             key={tag}
-            className="text-body opacity-60 border border-current rounded-full px-3 py-0.5 dark:text-text-secondary-dark"
+            className="rounded-full border border-current/18 bg-black/[0.03] px-3 py-1 text-[0.78rem] opacity-70 dark:border-white/10 dark:bg-white/[0.04] dark:text-text-secondary-dark"
             style={{
-              fontSize: 'clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)',
+              fontSize: 'clamp(0.75rem, 0.72rem + 0.16vw, 0.84rem)',
             }}
           >
             #{tag}
@@ -99,39 +99,41 @@ function ArticleDetailPage({ articleId, onBack }) {
 
       {/* Table of Contents */}
       {article.toc && article.toc.length > 0 && (
-        <nav className="flex flex-col gap-0.5 mt-2 pt-4 border-t border-current opacity-80">
+        <nav className="mt-2 border-t border-dotted border-current/20 pt-4 dark:border-white/10">
           <p
-            className="font-medium mb-2 dark:text-text-primary-dark"
+            className="mb-2 font-medium opacity-80 dark:text-text-primary-dark"
             style={{
               fontSize: 'clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)',
             }}
           >
             {t('pages.articles.tableOfContents')}
           </p>
-          {article.toc.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById(item.id)
-                  ?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className={`block leading-snug py-0.5 hover:opacity-60 transition-opacity dark:text-text-secondary-dark ${
-                item.isGroup
-                  ? 'font-medium mt-2 dark:text-text-primary-dark'
-                  : 'opacity-60 pl-3'
-              }`}
-              style={{
-                fontSize: 'clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)',
-              }}
-            >
-              {t(`articleContent.${article.id}.toc.${item.id}`, {
-                defaultValue: item.label,
-              })}
-            </a>
-          ))}
+          <div className="flex flex-col gap-1">
+            {article.toc.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById(item.id)
+                    ?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className={`block leading-snug py-0.5 transition-opacity hover:opacity-65 dark:text-text-secondary-dark ${
+                  item.isGroup
+                    ? 'mt-2 font-medium opacity-80 first:mt-0 dark:text-text-primary-dark'
+                    : 'pl-3 opacity-55'
+                }`}
+                style={{
+                  fontSize: 'clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)',
+                }}
+              >
+                {t(`articleContent.${article.id}.toc.${item.id}`, {
+                  defaultValue: item.label,
+                })}
+              </a>
+            ))}
+          </div>
         </nav>
       )}
     </div>
@@ -158,7 +160,7 @@ function ArticleDetailPage({ articleId, onBack }) {
             ))
           ) : (
             <p className="text-body opacity-60 dark:text-text-secondary-dark">
-              Loading article...
+              {t('articleDetail.loading')}
             </p>
           )}
 
@@ -178,28 +180,6 @@ function ArticleDetailPage({ articleId, onBack }) {
         </div>
       </PageLayout>
 
-      {/* Bottom back button aligned with the left column */}
-      <div className="py-4">
-        <div
-          className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 mx-auto"
-          style={{ maxWidth: 'calc(var(--max-width-reading) * 1.5)' }}
-        >
-          <button
-            onClick={onBack}
-            className="text-body hover:opacity-60 transition-opacity inline-flex items-center gap-1 group cursor-pointer dark:text-text-primary-dark w-fit"
-          >
-            <Icon
-              name={isRtl ? 'arrow-right' : 'arrow-left'}
-              className={`transition-transform duration-200 ${
-                isRtl
-                  ? 'group-hover:translate-x-1 group-active:translate-x-1'
-                  : 'group-hover:-translate-x-1 group-active:-translate-x-1'
-              }`}
-            />
-            {backToArticlesLabel}
-          </button>
-        </div>
-      </div>
     </div>
   );
 }

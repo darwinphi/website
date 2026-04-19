@@ -49,7 +49,8 @@
     "notFound": "プロジェクトが見つかりません"
   },
   "articleDetail": {
-    "notFound": "記事が見つかりません"
+    "notFound": "記事が見つかりません",
+    "loading": "記事を読み込んでいます..."
   },
   "articleMeta": {
     "readingTime": "{{minutes}}分で読めます"

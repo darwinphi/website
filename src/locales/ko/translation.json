@@ -49,7 +49,8 @@
     "notFound": "프로젝트를 찾을 수 없습니다"
   },
   "articleDetail": {
-    "notFound": "아티클을 찾을 수 없습니다"
+    "notFound": "아티클을 찾을 수 없습니다",
+    "loading": "아티클을 불러오는 중..."
   },
   "articleMeta": {
     "readingTime": "{{minutes}}분 읽기"

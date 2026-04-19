@@ -49,7 +49,8 @@
     "notFound": "项目未找到"
   },
   "articleDetail": {
-    "notFound": "文章未找到"
+    "notFound": "文章未找到",
+    "loading": "正在加载文章..."
   },
   "articleMeta": {
     "readingTime": "阅读约 {{minutes}} 分钟"
