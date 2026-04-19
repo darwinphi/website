@@ -417,39 +417,40 @@
     background:
       radial-gradient(
         circle at 38% 65%,
-        rgba(71, 186, 255, 0.86) 0,
-        rgba(71, 186, 255, 0.76) 18%,
-        rgba(71, 186, 255, 0.34) 34%,
-        rgba(71, 186, 255, 0.1) 46%,
+        rgba(71, 186, 255, 0.92) 0,
+        rgba(71, 186, 255, 0.84) 18%,
+        rgba(71, 186, 255, 0.42) 34%,
+        rgba(71, 186, 255, 0.14) 46%,
         rgba(71, 186, 255, 0) 60%
       ),
       radial-gradient(
         circle at 66% 34%,
-        rgba(255, 205, 99, 0.6) 0,
-        rgba(255, 205, 99, 0.38) 12%,
-        rgba(255, 205, 99, 0.08) 24%,
-        rgba(255, 205, 99, 0) 34%
+        rgba(255, 205, 99, 0.68) 0,
+        rgba(255, 205, 99, 0.48) 12%,
+        rgba(255, 205, 99, 0.12) 24%,
+        rgba(255, 205, 99, 0) 36%
       ),
       radial-gradient(
         circle at 70% 43%,
-        rgba(255, 118, 24, 0.82) 0,
-        rgba(255, 118, 24, 0.62) 13%,
-        rgba(255, 118, 24, 0.22) 24%,
-        rgba(255, 118, 24, 0.06) 34%,
-        rgba(255, 118, 24, 0) 44%
+        rgba(255, 118, 24, 0.88) 0,
+        rgba(255, 118, 24, 0.72) 13%,
+        rgba(255, 118, 24, 0.3) 24%,
+        rgba(255, 118, 24, 0.08) 34%,
+        rgba(255, 118, 24, 0) 46%
       ),
       radial-gradient(
         circle at 82% 56%,
-        rgba(181, 238, 255, 0.48) 0,
-        rgba(181, 238, 255, 0.12) 14%,
+        rgba(181, 238, 255, 0.56) 0,
+        rgba(181, 238, 255, 0.16) 14%,
         rgba(181, 238, 255, 0) 28%
       );
-    filter: blur(clamp(46px, 12vw, 82px)) saturate(108%);
-    transform: scale(1.04);
+    filter: blur(clamp(52px, 12vw, 92px)) saturate(110%);
+    transform: scale(1.08);
+    opacity: 0.96;
   }
 
   .home-backdrop::after {
-    opacity: 0.3;
+    opacity: 0.34;
   }
 
   .page-surface--fade-center .page-surface__grid::before {
