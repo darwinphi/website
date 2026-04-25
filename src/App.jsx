@@ -72,7 +72,7 @@ function App() {
   return (
     <div
       className={[
-        'app-shell min-h-screen flex flex-col px-8 max-w-7xl mx-auto w-full',
+        'app-shell min-h-screen flex flex-col px-8 mx-auto w-full',
         isAtmospherePage ? 'app-shell--home' : '',
       ]
         .filter(Boolean)

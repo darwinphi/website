@@ -78,7 +78,7 @@ function MainContent({ handleNavigation }) {
                       className="flex-1 flex items-center justify-center overflow-hidden"
                       contentClassName="home-hero-copy flex w-full justify-center"
                     >
-                      <div className="flex w-full justify-center">
+                      <div className="home-hero-copy__inner flex w-full justify-center">
                         <AnimatedHeroText
                           text={t('pages.home.heroText')}
                           highlight={heroRole}
@@ -86,7 +86,7 @@ function MainContent({ handleNavigation }) {
                           highlightTo="/about"
                           linkClassName="hero-inline-link font-bold"
                           lang={resolvedLanguage}
-                          className="text-heading leading-tight font-normal max-w-225 dark:text-text-primary-dark"
+                          className="text-heading leading-tight font-normal dark:text-text-primary-dark"
                         />
                       </div>
                     </PageSurface>

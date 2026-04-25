@@ -31,8 +31,8 @@ export default function PageLayout({
       {/* Back button - aligned to left column */}
       <div className="py-4">
         <div
-          className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 mx-auto"
-          style={{ maxWidth: 'calc(var(--max-width-reading) * 1.5)' }}
+          className="page-layout-grid w-full mx-auto"
+          style={{ maxWidth: 'var(--max-width-page-layout)' }}
         >
           <button
             onClick={onBack}
@@ -54,17 +54,17 @@ export default function PageLayout({
       {/* Main content area */}
       <div className="flex-1 flex items-start py-8">
         <div
-          className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 mx-auto"
-          style={{ maxWidth: 'calc(var(--max-width-reading) * 1.5)' }}
+          className="page-layout-grid w-full mx-auto"
+          style={{ maxWidth: 'var(--max-width-page-layout)' }}
         >
           {/* Left column: Heading (sticky on desktop) */}
-          <div className="flex flex-col gap-4 items-start md:col-span-1 lg:col-span-1 md:sticky md:top-24 lg:sticky lg:top-24 md:self-start lg:self-start md:max-h-[calc(100vh-7rem)] md:overflow-y-auto md:pr-2">
+          <div className="flex flex-col gap-4 items-start md:sticky md:top-24 md:self-start md:max-h-[calc(100vh-7rem)] md:overflow-y-auto md:pr-2">
             {heading}
           </div>
 
           {/* Right column: Content */}
-          <div className="flex flex-col md:col-span-1 lg:col-span-2">
-            <div style={{ maxWidth: 'var(--max-width-reading)' }}>
+          <div className="flex flex-col">
+            <div style={{ maxWidth: 'var(--max-width-page-content)' }}>
               {children}
             </div>
           </div>
