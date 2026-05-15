@@ -9,14 +9,14 @@ export default function DarkModeToggle() {
   const THEME_TRANSITION_DURATION_MS = 280;
 
   useEffect(() => {
-    // Initialize: check for stored preference first, then system preference
+    // Initialize: honor stored preference, otherwise default to light mode.
     const storedPreference = localStorage.getItem('darkMode');
     let shouldBeDark;
 
     if (storedPreference !== null) {
       shouldBeDark = storedPreference === 'true';
     } else {
-      shouldBeDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      shouldBeDark = false;
     }
 
     setIsDark(shouldBeDark);
