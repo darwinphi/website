@@ -60,6 +60,31 @@
     "articleNotFound": "Artikel tidak ditemukan"
   },
   "projects": {
+    "globeOnehub": {
+      "name": "Globe Business OneHub",
+      "role": "Senior Backend Engineer",
+      "description": "Globe Business menyediakan solusi konektivitas, komunikasi, dan digital bagi perusahaan. OneHub memberi pelanggannya portal terpusat untuk mengelola akun, informasi tagihan, pengguna, dan kebutuhan dukungan.",
+      "aboutClient": "Globe Telecom adalah salah satu penyedia telekomunikasi utama di Filipina. Melalui Globe Business, perusahaan ini menyediakan solusi konektivitas, komunikasi, dan digital bagi perusahaan. OneHub memberi pelanggan Globe Business portal terpusat untuk mengelola akun, informasi tagihan, pengguna, dan kebutuhan dukungan.",
+      "problem": "Pelanggan korporat memerlukan cara yang lebih sederhana untuk mengakses informasi tagihan dan meminta bantuan tanpa harus berpindah-pindah di antara saluran yang terpisah. OneHub membutuhkan integrasi yang aman dan andal dengan Bill Delivery & Storage Platform (BDSP) milik Globe, serta cara terstruktur untuk mencatat masalah portal dan membuatnya terlihat oleh tim dukungan pelanggan.",
+      "solution": "Sebagai Senior Backend Engineer, saya merancang dan mengimplementasikan integrasi backend yang menghubungkan OneHub dengan BDSP dan Helpdesk. Solusi ini memungkinkan pengguna korporat yang berwenang untuk melihat daftar, membuka, dan mengunduh tagihan, sekaligus menyediakan saluran langsung untuk melaporkan masalah teknis dan akun pada portal. Saya menangani seluruh siklus integrasi, mulai dari arsitektur dan implementasi hingga pengujian, rilis produksi, dan dukungan operasional.",
+      "keyContributions": [
+        "Merancang integrasi layanan dan kontrak API antara OneHub dan BDSP;",
+        "Mengimplementasikan alur kerja backend untuk melihat daftar, membuka, dan mengunduh tagihan korporat;",
+        "Menerapkan kontrol otorisasi agar pengguna hanya dapat mengakses tagihan yang terkait dengan organisasi dan akun yang diizinkan;",
+        "Mengubah data tagihan dari sistem hulu menjadi kontrak yang stabil bagi konsumen OneHub;",
+        "Menambahkan ketahanan dan penanganan kesalahan untuk respons sistem hulu yang lambat, tidak tersedia, atau tidak konsisten;",
+        "Merancang dan membangun integrasi Helpdesk untuk melaporkan masalah login, pemuatan halaman, tampilan, undangan, notifikasi email, dan informasi yang hilang;",
+        "Mengembangkan alur laporan harian terjadwal yang memberi tim dukungan Globe visibilitas atas masalah yang dikirimkan;",
+        "Mendukung pengujian, kesiapan produksi, deployment, pemecahan masalah, dan pengoperasian integrasi secara berkelanjutan."
+      ],
+      "impact": [
+        "Memungkinkan pelanggan korporat memperoleh informasi dan dokumen tagihan melalui portal layanan mandiri terpusat;",
+        "Membangun saluran terstruktur untuk melaporkan dan melacak masalah terkait portal;",
+        "Meningkatkan visibilitas tim dukungan melalui laporan masalah harian yang otomatis;",
+        "Melindungi informasi tagihan sensitif melalui kontrol akses tingkat akun dan organisasi;",
+        "Menciptakan batas integrasi yang lebih andal antara OneHub dan sistem tagihan serta dukungannya."
+      ]
+    },
     "globeTelecom": {
       "name": "Platform Pengiriman dan Penyimpanan Tagihan Globe Telecom",
       "role": "Full Stack Developer",

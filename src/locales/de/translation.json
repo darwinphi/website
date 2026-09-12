@@ -60,6 +60,31 @@
     "articleNotFound": "Artikel nicht gefunden"
   },
   "projects": {
+    "globeOnehub": {
+      "name": "Globe Business OneHub",
+      "role": "Senior Backend Engineer",
+      "description": "Globe Business bietet Unternehmen Konnektivitäts-, Kommunikations- und digitale Lösungen. OneHub stellt Kunden ein zentrales Portal zur Verwaltung von Konten, Rechnungsinformationen, Benutzern und Supportanliegen bereit.",
+      "aboutClient": "Globe Telecom ist einer der führenden Telekommunikationsanbieter auf den Philippinen. Über Globe Business bietet das Unternehmen Firmenkunden Konnektivitäts-, Kommunikations- und digitale Lösungen. OneHub stellt Globe-Business-Kunden ein zentrales Portal zur Verwaltung von Konten, Rechnungsinformationen, Benutzern und Supportanliegen bereit.",
+      "problem": "Firmenkunden benötigten einen einfacheren Weg, auf Rechnungsinformationen zuzugreifen und Unterstützung anzufordern, ohne zwischen getrennten Kanälen wechseln zu müssen. OneHub erforderte eine sichere und zuverlässige Integration mit Globes Bill Delivery & Storage Platform (BDSP) sowie einen strukturierten Weg, Portalprobleme zu erfassen und für die Kundensupportteams sichtbar zu machen.",
+      "solution": "Als Senior Backend Engineer entwarf und implementierte ich die Backend-Integrationen, die OneHub mit BDSP und Helpdesk verbinden. Die Lösung ermöglichte autorisierten Firmenkunden, Rechnungen aufzulisten, anzusehen und herunterzuladen, und bot ihnen zugleich einen direkten Kanal zur Meldung technischer und kontobezogener Portalprobleme. Ich verantwortete den gesamten Integrationslebenszyklus von Architektur und Implementierung über Tests und Produktivsetzung bis zum operativen Support.",
+      "keyContributions": [
+        "Entwarf die Serviceintegration und API-Verträge zwischen OneHub und BDSP;",
+        "Implementierte Backend-Abläufe zum Auflisten, Anzeigen und Herunterladen von Firmenrechnungen;",
+        "Implementierte Autorisierungskontrollen, sodass Benutzer nur auf Rechnungen ihrer freigegebenen Organisationen und Konten zugreifen konnten;",
+        "Überführte vorgelagerte Rechnungsdaten in stabile Verträge für OneHub-Nutzer;",
+        "Ergänzte Ausfallsicherheit und Fehlerbehandlung für langsame, nicht verfügbare oder inkonsistente Antworten vorgelagerter Systeme;",
+        "Entwarf und entwickelte die Helpdesk-Integration zur Meldung von Anmelde-, Seitenlade-, Anzeige-, Einladungs-, E-Mail-Benachrichtigungs- und Informationsproblemen;",
+        "Entwickelte einen geplanten täglichen Berichtsablauf, der Globe-Supportteams Einblick in eingereichte Anliegen gab;",
+        "Unterstützte Tests, Produktionsvorbereitung, Bereitstellung, Fehlerbehebung und den laufenden Betrieb der Integrationen."
+      ],
+      "impact": [
+        "Ermöglichte Firmenkunden den Abruf von Rechnungsinformationen und Dokumenten über ein zentrales Self-Service-Portal;",
+        "Schuf einen strukturierten Kanal zur Meldung und Nachverfolgung von Portalproblemen;",
+        "Verbesserte die Transparenz für den Support durch automatisierte tägliche Problemberichte;",
+        "Schützte sensible Rechnungsinformationen durch Zugriffssteuerung auf Konto- und Organisationsebene;",
+        "Schuf zuverlässigere Grenzen zwischen OneHub und den angebundenen Rechnungs- und Supportsystemen."
+      ]
+    },
     "globeTelecom": {
       "name": "Globe Telecoms Plattform für Rechnungszustellung und -speicherung",
       "role": "Full-Stack-Entwickler",

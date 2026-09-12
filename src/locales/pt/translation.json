@@ -60,6 +60,31 @@
     "articleNotFound": "Artigo não encontrado"
   },
   "projects": {
+    "globeOnehub": {
+      "name": "Globe Business OneHub",
+      "role": "Engenheiro Backend Sênior",
+      "description": "A Globe Business oferece às empresas soluções de conectividade, comunicação e transformação digital. O OneHub fornece aos clientes um portal centralizado para gerenciar contas, informações de cobrança, usuários e necessidades de suporte.",
+      "aboutClient": "A Globe Telecom é uma das principais operadoras de telecomunicações das Filipinas. Por meio da Globe Business, oferece às empresas soluções de conectividade, comunicação e transformação digital. O OneHub fornece aos clientes da Globe Business um portal centralizado para gerenciar contas, informações de cobrança, usuários e necessidades de suporte.",
+      "problem": "Os clientes corporativos precisavam de uma maneira mais simples de acessar informações de cobrança e solicitar ajuda sem navegar por canais desconectados. O OneHub precisava de uma integração segura e confiável com a Bill Delivery & Storage Platform (BDSP) da Globe, além de uma forma estruturada de registrar problemas do portal e torná-los visíveis para as equipes de atendimento ao cliente.",
+      "solution": "Como Engenheiro Backend Sênior, projetei e implementei as integrações de backend que conectam o OneHub à BDSP e ao Helpdesk. A solução permitiu que usuários corporativos autorizados listassem, visualizassem e baixassem faturas, além de oferecer um canal direto para relatar problemas técnicos e de conta no portal. Fui responsável por todo o ciclo de vida da integração, desde a arquitetura e implementação até os testes, a entrada em produção e o suporte operacional.",
+      "keyContributions": [
+        "Projetei a integração de serviços e os contratos de API entre o OneHub e a BDSP;",
+        "Implementei fluxos de backend para listar, visualizar e baixar faturas corporativas;",
+        "Apliquei controles de autorização para que os usuários acessassem somente as faturas associadas às organizações e contas permitidas;",
+        "Transformei dados de cobrança dos sistemas de origem em contratos estáveis para os consumidores do OneHub;",
+        "Adicionei resiliência e tratamento de erros para respostas lentas, indisponíveis ou inconsistentes dos sistemas de origem;",
+        "Projetei e desenvolvi a integração com o Helpdesk para relatar problemas de login, carregamento de página, exibição, convite, notificação por e-mail e informações ausentes;",
+        "Desenvolvi um fluxo agendado de relatórios diários que deu às equipes de suporte da Globe visibilidade sobre as ocorrências enviadas;",
+        "Apoiei testes, preparação para produção, implantação, solução de problemas e operação contínua das integrações."
+      ],
+      "impact": [
+        "Permitiu que clientes corporativos obtivessem informações e documentos de cobrança por meio de um portal de autoatendimento centralizado;",
+        "Estabeleceu um canal estruturado para relatar e acompanhar problemas relacionados ao portal;",
+        "Melhorou a visibilidade do suporte por meio de relatórios diários automatizados de ocorrências;",
+        "Protegeu informações confidenciais de cobrança por meio de controles de acesso no nível da conta e da organização;",
+        "Criou limites mais confiáveis entre o OneHub e seus sistemas de cobrança e suporte."
+      ]
+    },
     "globeTelecom": {
       "name": "Plataforma de Entrega e Armazenamento de Faturas da Globe Telecom",
       "role": "Desenvolvedor Full Stack",

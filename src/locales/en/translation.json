@@ -997,6 +997,31 @@
     "articleNotFound": "Article not found"
   },
   "projects": {
+    "globeOnehub": {
+      "name": "Globe Business OneHub",
+      "role": "Senior Backend Engineer",
+      "description": "Globe Business serves enterprises with connectivity, communications, and digital solutions. OneHub gives its customers a centralized portal for managing accounts, billing information, users, and support needs.",
+      "aboutClient": "Globe Telecom is a major telecommunications provider in the Philippines. Through Globe Business, it serves enterprises with connectivity, communications, and digital solutions. OneHub gives Globe Business customers a centralized portal for managing accounts, billing information, users, and support needs.",
+      "problem": "Corporate customers needed a simpler way to access billing information and request assistance without navigating disconnected channels. OneHub required secure and reliable integration with Globe's Bill Delivery & Storage Platform (BDSP), along with a structured way to capture portal issues and make them visible to customer support teams.",
+      "solution": "As a Senior Backend Engineer, I designed and implemented the backend integrations connecting OneHub with BDSP and Helpdesk. The solution enabled authorized corporate users to list, view, and download bills while giving customers a direct channel for reporting technical and account-related portal issues. I owned the integration lifecycle from architecture and implementation through testing, production release, and operational support.",
+      "keyContributions": [
+        "Designed the service integration and API contracts between OneHub and BDSP;",
+        "Implemented backend workflows for listing, viewing, and downloading corporate bills;",
+        "Applied authorization controls so users could access only bills associated with their permitted organization and accounts;",
+        "Transformed upstream billing data into stable contracts for OneHub consumers;",
+        "Added resilience and error handling for slow, unavailable, or inconsistent upstream responses;",
+        "Designed and built the Helpdesk integration for reporting login, page-loading, display, invitation, email-notification, and missing-information issues;",
+        "Developed a scheduled daily reporting workflow that gave Globe support teams visibility into submitted concerns; and,",
+        "Supported testing, production readiness, deployment, troubleshooting, and ongoing operation of the integrations."
+      ],
+      "impact": [
+        "Enabled corporate customers to retrieve billing information and documents through a centralized self-service portal;",
+        "Established a structured channel for reporting and tracking portal-related concerns;",
+        "Improved support visibility through automated daily issue reporting;",
+        "Protected sensitive billing information through account- and organization-level access controls; and,",
+        "Created more reliable boundaries between OneHub and its billing and support systems."
+      ]
+    },
     "globeTelecom": {
       "name": "Globe Telecom's Bill Delivery & Storage Platform",
       "role": "Full Stack Developer",
