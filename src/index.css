@@ -385,42 +385,14 @@
   }
 
   .dark .home-backdrop::before {
-    background:
-      radial-gradient(
-        circle at 28% 60%,
-        rgba(37, 128, 255, 0.38) 0,
-        rgba(37, 128, 255, 0.34) 16%,
-        rgba(37, 128, 255, 0.18) 32%,
-        rgba(37, 128, 255, 0.06) 44%,
-        rgba(37, 128, 255, 0) 60%
-      ),
-      radial-gradient(
-        circle at 63% 31%,
-        rgba(255, 196, 90, 0.26) 0,
-        rgba(255, 196, 90, 0.2) 10%,
-        rgba(255, 196, 90, 0.06) 22%,
-        rgba(255, 196, 90, 0) 34%
-      ),
-      radial-gradient(
-        circle at 70% 40%,
-        rgba(255, 119, 31, 0.42) 0,
-        rgba(255, 119, 31, 0.34) 12%,
-        rgba(255, 119, 31, 0.16) 24%,
-        rgba(255, 119, 31, 0.05) 34%,
-        rgba(255, 119, 31, 0) 45%
-      ),
-      radial-gradient(
-        circle at 82% 52%,
-        rgba(131, 212, 255, 0.16) 0,
-        rgba(131, 212, 255, 0.06) 12%,
-        rgba(131, 212, 255, 0) 26%
-      );
-    filter: blur(clamp(60px, 9vw, 124px)) saturate(95%);
-    opacity: 0.72;
+    background: none;
+    filter: none;
+    opacity: 0;
   }
 
   .dark .home-backdrop::after {
-    opacity: 0.18;
+    background-image: none;
+    opacity: 0;
   }
 
   .dark .navbar-home::before {
