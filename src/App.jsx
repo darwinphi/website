@@ -11,8 +11,7 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isAtmospherePage =
-    location.pathname === '/' || location.pathname === '/about';
+  const isAtmospherePage = location.pathname === '/';
 
   useEffect(() => {
     const activeLanguage = i18n.resolvedLanguage || i18n.language || 'en';

@@ -172,7 +172,7 @@ function AboutPage({ onBack }) {
             >
               {/* Grayscale base image */}
               <img
-                src="/img/profile-picture-v3.jpg"
+                src="/img/darwin-photo.png"
                 alt="Profile picture"
                 className={`w-full rounded-lg select-none`}
                 draggable="false"
@@ -204,7 +204,7 @@ function AboutPage({ onBack }) {
               {(isHovering || isTouching || isTapped) && (
                 <img
                   ref={imgRef}
-                  src="/img/profile-picture-v3.jpg"
+                  src="/img/darwin-photo.png"
                   alt="Profile picture color"
                   className="w-full rounded-lg absolute inset-0 select-none"
                   draggable="false"
