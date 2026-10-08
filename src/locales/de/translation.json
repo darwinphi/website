@@ -34,10 +34,10 @@
     },
     "about": {
       "title": "Über mich",
-      "bio1": "Ich bin Absolvent der Adamson University mit einem Bachelorabschluss in Informationstechnologie. Ich begann meine Karriere als Frontend-Entwickler bei Shore Suite, aber die Dinge nahmen eine unerwartete Wendung—als jemand aus dem Team kündigte, übernahm ich Backend-Arbeiten. So wurde ich zum Full-Stack-Entwickler.",
-      "bio2": "In den letzten 8+ Jahren war jede Herausforderung eine Gelegenheit, etwas Neues zu lernen (manchmal auf die harte Tour, aber es funktioniert!). Dadurch habe ich konsequent meine Vielseitigkeit beim Aufbau und Wartung skalierbarer Webanwendungen von Frontend bis Backend unter Beweis gestellt. Ich habe auch eine starke Problemlösungsmentalität und die Fähigkeit entwickelt, auch bei schwierigen Situationen effektiv zu bleiben.",
-      "bio3": "Ich arbeite derzeit an externen Projekten mit NCS Philippinen, wo ich reale Probleme löse und mich an sich ändernde Anforderungen anpasse.",
-      "bio4": "Außerhalb der Arbeit stelle ich sicher, dass ich qualitativ hochwertige Zeit mit meinen Lieben verbringe. Ich mag auch Handyspiele, Sport (besonders Fußball!) und gelegentlich Pickleball und Badminton (dann essen gehen!) spielen, um aktiv zu bleiben."
+      "bio1": "Ich bin Full-Stack-Entwickler mit über 8 Jahren Erfahrung und einem Bachelor in Informationstechnologie von der Adamson University. Angefangen habe ich mit Frontend-Arbeit bei Shore Suite. Als ein Kollege das Team verließ, habe ich beim Backend ausgeholfen, dabei gelernt und schließlich beides übernommen.",
+      "bio2": "Seitdem habe ich Webanwendungen entwickelt und gepflegt, Fehler gesucht und auch aus Dingen gelernt, die nicht gleich funktioniert haben. Zurzeit arbeite ich mit <ncs>NCS Philippines</ncs> an externen Projekten. Dabei gibt es immer ein neues Problem zu lösen oder eine neue Anforderung zu klären.",
+      "bio3": "In letzter Zeit beschäftige ich mich mehr mit Agentic Engineering und nutze KI-Coding-Agenten im Arbeitsalltag, um schneller zu lernen und neue Ansätze auszuprobieren. Es gibt immer etwas Neues zu lernen. Zum Glück komme ich inzwischen schneller auf den neuesten Stand.",
+      "bio4": "Außerhalb der Arbeit verbringe ich gerne Zeit mit meinen Liebsten, spiele Handyspiele und schaue Sport, besonders Fußball."
     }
   },
   "projectDetail": {

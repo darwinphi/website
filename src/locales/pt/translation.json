@@ -34,10 +34,10 @@
     },
     "about": {
       "title": "Sobre Mim",
-      "bio1": "Sou formado pela Universidade de Adamson com um bacharelado em Tecnologia da Informação. Comecei minha carreira como Desenvolvedor Front-end na Shore Suite, mas as coisas tomaram um rumo inesperado—quando alguém da equipe saiu, assumi o trabalho back-end. Assim me tornei um desenvolvedor Full-Stack.",
-      "bio2": "Nos últimos 8+ anos, cada desafio foi uma oportunidade de aprender algo novo (às vezes da forma difícil, mas funciona!). Por meio disso, demonstrei consistentemente minha versatilidade construindo e mantendo aplicações web escaláveis do front-end ao back-end. Também cultivei uma forte mentalidade de resolução de problemas e a capacidade de permanecer efetivo mesmo quando as coisas ficam bagunçadas.",
-      "bio3": "Atualmente estou colaborando em projetos externos com NCS Filipinas, onde me esforço em resolver problemas do mundo real e me adaptar a requisitos em evolução.",
-      "bio4": "Fora do trabalho, garanto passar tempo de qualidade com meus entes queridos. Também gosto de jogar jogos mobile, assistir esportes (especialmente futebol!), e ocasionalmente jogar pickleball e badminton (depois comer fora!) para me manter ativo."
+      "bio1": "Sou desenvolvedor full-stack com mais de 8 anos de experiência e bacharelado em Tecnologia da Informação pela Adamson University. Comecei trabalhando com front-end na Shore Suite. Quando um colega saiu da equipe, ajudei com o back-end, fui aprendendo na prática e acabei trabalhando com os dois.",
+      "bio2": "Desde então, passei bastante tempo criando e mantendo aplicações web, descobrindo por que as coisas dão errado e aprendendo com alguns tropeços. Atualmente trabalho em projetos externos com a <ncs>NCS Philippines</ncs>, onde sempre há um problema novo para resolver ou um requisito para entender.",
+      "bio3": "Ultimamente tenho me interessado mais por engenharia com agentes de IA. Uso agentes de programação no dia a dia para aprender mais rápido e testar novas abordagens. Sempre aparece algo novo para aprender. Pelo menos agora consigo acompanhar as mudanças mais rápido.",
+      "bio4": "Fora do trabalho, gosto de passar tempo com as pessoas que amo, jogar no celular e assistir a esportes, principalmente futebol."
     }
   },
   "projectDetail": {

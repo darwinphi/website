@@ -34,10 +34,10 @@
     },
     "about": {
       "title": "Tentang Saya",
-      "bio1": "Saya lulus dengan gelar Sarjana Ilmu Komputer dari Universitas Adamson. Awalnya saya memulai karir sebagai Pengembang Front-end di Shore Suite, tetapi ada kejutan tak terduga ketika seseorang di tim mengundurkan diri—jadi saya mengambil alih pekerjaan back-end. Itulah cara saya menjadi pengembang Full-Stack.",
-      "bio2": "Selama lebih dari 8 tahun, setiap tantangan adalah kesempatan untuk mempelajari sesuatu yang baru (kadang dengan cara yang sulit, tetapi berhasil!). Melalui ini, saya secara konsisten menunjukkan keserbagunaan saya dengan membangun dan memelihara aplikasi web yang dapat diskalakan dari front-end hingga back-end. Saya juga telah mengembangkan pemikiran pemecahan masalah yang kuat dan kemampuan untuk tetap efektif bahkan ketika hal-hal menjadi berantakan.",
-      "bio3": "Saat ini saya berkolaborasi dalam proyek eksternal dengan NCS Filipina, di mana saya berkembang menyelesaikan masalah dunia nyata dan beradaptasi dengan persyaratan yang terus berkembang.",
-      "bio4": "Di luar pekerjaan, saya memastikan untuk menghabiskan waktu berkualitas dengan orang-orang terkasih. Saya juga menyukai bermain game mobile, menonton olahraga (terutama sepak bola!), dan sesekali bermain pikbola dan bulu tangkis (lalu makan di luar!) untuk tetap aktif."
+      "bio1": "Saya seorang full-stack developer dengan pengalaman lebih dari 8 tahun dan gelar sarjana Teknologi Informasi dari Adamson University. Saya mulai mengerjakan front-end di Shore Suite. Saat seorang rekan keluar dari tim, saya ikut membantu pekerjaan back-end, belajar sambil jalan, dan akhirnya menangani keduanya.",
+      "bio2": "Sejak itu, saya banyak membangun dan memelihara aplikasi web, mencari tahu penyebab masalah, dan belajar dari hal-hal yang tidak langsung berjalan mulus. Saat ini saya mengerjakan proyek eksternal bersama <ncs>NCS Philippines</ncs>. Selalu ada masalah baru yang harus dipecahkan atau kebutuhan yang perlu dipahami.",
+      "bio3": "Belakangan ini saya makin tertarik dengan agentic engineering. Saya memakai agen AI untuk coding dalam pekerjaan sehari-hari agar bisa belajar lebih cepat dan mencoba cara-cara baru. Selalu ada hal baru yang perlu dipelajari. Untungnya, sekarang saya bisa lebih cepat mengikutinya.",
+      "bio4": "Di luar pekerjaan, saya suka menghabiskan waktu bersama orang-orang terdekat, bermain game di ponsel, dan menonton olahraga, terutama sepak bola."
     }
   },
   "projectDetail": {

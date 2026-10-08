@@ -34,10 +34,10 @@
     },
     "about": {
       "title": "À Propos de moi",
-      "bio1": "J'ai obtenu une licence en Technologie de l'Information de l'Université Adamson. J'ai commencé ma carrière en tant que développeur Front-end chez Shore Suite, mais les choses ont pris une tournure inattendue—quand quelqu'un de l'équipe a démissionné, j'ai repris le travail back-end. C'est ainsi que je suis devenu développeur Full-Stack.",
-      "bio2": "Au cours des 8+ dernières années, chaque défi a été une opportunité d'apprendre quelque chose de nouveau (parfois de la manière difficile, mais cela fonctionne!). Grâce à cela, j'ai constamment démontré ma polyvalence en construisant et en maintenant des applications web évolutives du front-end au back-end. J'ai également développé un esprit de résolution de problèmes solide et la capacité à rester efficace même quand les choses deviennent désordonnées.",
-      "bio3": "Je collabore actuellement sur des projets externes avec NCS Philippines, où je m'efforce de résoudre des problèmes du monde réel et de m'adapter aux exigences en évolution.",
-      "bio4": "En dehors du travail, j'assure de passer du temps de qualité avec mes proches. J'aime aussi jouer à des jeux mobiles, regarder des sports (particulièrement le football!), et occasionnellement jouer au pickleball et au badminton (puis aller manger!) pour rester actif."
+      "bio1": "Je suis développeur full-stack avec plus de 8 ans d’expérience et un diplôme en technologies de l’information d’Adamson University. J’ai commencé par le front-end chez Shore Suite. Quand un collègue a quitté l’équipe, j’ai donné un coup de main sur le back-end, appris sur le tas et fini par travailler sur les deux.",
+      "bio2": "Depuis, j’ai passé pas mal de temps à créer et à entretenir des applications web, à chercher l’origine des bugs et à apprendre aussi de ce qui n’a pas marché du premier coup. Je travaille actuellement sur des projets externes avec <ncs>NCS Philippines</ncs>, où il y a toujours un nouveau problème à résoudre ou une nouvelle demande à comprendre.",
+      "bio3": "Ces derniers temps, je m’intéresse davantage à l’ingénierie avec des agents IA. J’utilise des agents de programmation au quotidien pour apprendre plus vite et essayer de nouvelles approches. Il y a toujours quelque chose de nouveau à découvrir. Heureusement, j’arrive maintenant à suivre le rythme plus facilement.",
+      "bio4": "En dehors du travail, j’aime passer du temps avec mes proches, jouer sur mobile et regarder du sport, surtout du football."
     }
   },
   "projectDetail": {

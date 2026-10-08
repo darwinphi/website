@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { IMAGE_ZOOM } from '../constants/ui';
 import Icon from './Icon';
 import PageSurface from './PageSurface';
@@ -235,7 +235,17 @@ function AboutPage({ onBack }) {
             </p>
 
             <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">
-              {t('pages.about.bio2')}
+              <Trans
+                i18nKey="pages.about.bio2"
+                components={{
+                  ncs: (
+                    <a
+                      href="https://www.ncs.co/en-ph/"
+                      className="underline decoration-dotted underline-offset-4 hover:opacity-60 transition-opacity"
+                    />
+                  ),
+                }}
+              />
             </p>
 
             <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">

@@ -34,10 +34,10 @@
     },
     "about": {
       "title": "Acerca de Mí",
-      "bio1": "Me gradué con una licenciatura en Tecnología de la Información de la Universidad de Adamson. Comencé mi carrera como Desarrollador Front-end en Shore Suite, pero las cosas tomaron un giro inesperado cuando alguien del equipo renunció, así que asumí el trabajo back-end. Así fue cómo me convertí en desarrollador Full-Stack.",
-      "bio2": "En los más de 8 años, cada desafío ha sido una oportunidad para aprender algo nuevo (¡a veces de la manera difícil, pero funciona!). A través de esto, he demostrado consistentemente mi versatilidad construyendo y manteniendo aplicaciones web escalables de front-end a back-end. También he cultivado una mentalidad fuerte de resolución de problemas y la capacidad de mantenerme efectivo incluso cuando las cosas se ponen desordenadas.",
-      "bio3": "Actualmente estoy colaborando en proyectos externos con NCS Filipinas, donde prospero resolviendo problemas del mundo real y adaptándome a requisitos en evolución.",
-      "bio4": "Fuera del trabajo, me aseguro de pasar tiempo de calidad con mis seres queridos. También disfruto jugando videojuegos móviles, viendo deportes (¡especialmente fútbol!) y ocasionalmente jugando pickleball y bádminton (¡y luego salir a comer!) para mantenerme activo."
+      "bio1": "Soy desarrollador full-stack con más de 8 años de experiencia y una licenciatura en Tecnología de la Información por Adamson University. Empecé trabajando en front-end en Shore Suite. Cuando un compañero dejó el equipo, eché una mano con el back-end, fui aprendiendo sobre la marcha y acabé trabajando en ambos.",
+      "bio2": "Desde entonces, he pasado mucho tiempo creando y manteniendo aplicaciones web, averiguando por qué fallan las cosas y aprendiendo de algún que otro tropiezo. Actualmente trabajo en proyectos externos con <ncs>NCS Philippines</ncs>, donde siempre hay un problema nuevo que resolver o un requisito que entender.",
+      "bio3": "Últimamente me interesa cada vez más la ingeniería con agentes de IA. Uso agentes de programación en mi trabajo diario para aprender más rápido y probar nuevas formas de hacer las cosas. Siempre hay algo nuevo que aprender. Por suerte, ahora me lleva menos tiempo ponerme al día.",
+      "bio4": "Fuera del trabajo, me gusta pasar tiempo con mis seres queridos, jugar en el móvil y ver deportes, sobre todo fútbol."
     }
   },
   "projectDetail": {
