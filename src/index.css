@@ -821,6 +821,18 @@
     opacity: 0.34;
   }
 
+  /* These responsive rules are unlayered, so their dark-mode overrides
+     must share the same cascade priority as the mobile backdrop. */
+  .dark .home-backdrop::before {
+    background: none;
+    filter: none;
+    opacity: 0;
+  }
+
+  .dark .home-backdrop::after {
+    opacity: 0;
+  }
+
   .page-surface--fade-center .page-surface__grid::before {
     mask-image:
       radial-gradient(

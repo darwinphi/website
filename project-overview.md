@@ -10,6 +10,7 @@ React 19, React Router 7, Vite 6, Tailwind CSS 4, Framer Motion, and i18next. Ro
 
 ## Homepage interactions
 
+- Dark mode uses a neutral background at every screen size, including phones and tablets. The blue and orange backdrop remains available in light mode.
 - Hero copy separates the introduction and invitation to connect into two paragraphs with a modest gap, and contains translated inline links to the about, projects, and articles pages. Desktop copy flows normally; balanced invitation wrapping and grouping of the two cat links apply only on mobile (640 px or less).
 - The Manila location wraps naturally between words on narrow screens. Hover or keyboard focus on only the translated country name ("Philippines" in English) fades a waving Philippine flag into its letters over 250 ms; Manila does not trigger the effect. A stationary SVG text mask matches the original font and baseline while the cloth moves behind the letters; no flag floats above the text. Touch retains ordinary text, reduced motion uses a static fill, and normal text remains the loading/error fallback. Rendering pauses offscreen, in hidden tabs, and after the exit fade.
 - A small orange tabby hangs from the articles link's dashed underline. Its 32-frame transparent sprite sheet has 16 idle poses and 16 play poses, with a subtle continuous sway between pose changes; pointer entry or keyboard focus triggers one playful tug with a 6 px dip and diminishing rebounds. The cat follows the underline's center throughout the bounce.
