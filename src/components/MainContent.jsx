@@ -15,7 +15,7 @@ const ArticleDetailPage = lazy(() => import('./ArticleDetailPage'));
 const NotFoundPage = lazy(() => import('./NotFoundPage'));
 
 const heroRoleByLanguage = {
-  ar: 'مطور فل ستاك',
+  ar: 'مطور واجهات أمامية وخلفية',
   de: 'Full-Stack-Entwickler',
   en: 'Full-Stack Developer',
   es: 'desarrollador Full-Stack',
@@ -24,8 +24,22 @@ const heroRoleByLanguage = {
   ja: 'フルスタック開発者',
   ko: '풀스택 개발자',
   pt: 'desenvolvedor Full-Stack',
-  ru: 'full-stack разработчик',
+  ru: 'full-stack-разработчик',
   zh: '全栈开发者',
+};
+
+const heroLocationByLanguage = {
+  ar: 'مانيلا، الفلبين',
+  de: 'Manila auf den Philippinen',
+  en: 'Manila, Philippines',
+  es: 'Manila, Filipinas',
+  fr: 'Manille, aux Philippines',
+  id: 'Manila, Filipina',
+  ja: 'フィリピンのマニラ',
+  ko: '필리핀 마닐라',
+  pt: 'Manila, nas Filipinas',
+  ru: 'Маниле, Филиппины',
+  zh: '菲律宾马尼拉',
 };
 
 function RouteLoadingFallback() {
@@ -81,6 +95,7 @@ function MainContent({ handleNavigation }) {
                       <div className="home-hero-copy__inner flex w-full justify-center">
                         <AnimatedHeroText
                           text={t('pages.home.heroText')}
+                          location={heroLocationByLanguage[baseLanguage]}
                           highlight={heroRole}
                           highlightClassName="font-bold"
                           highlightTo="/about"

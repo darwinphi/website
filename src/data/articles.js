@@ -510,9 +510,8 @@ export const articles = [
   }
 ];
 
-const articleContentLoaders = import.meta.glob('./article-content/*.js');
-
 export async function loadArticleContent(articleId) {
+  const articleContentLoaders = import.meta.glob('./article-content/*.js');
   const loader = articleContentLoaders[`./article-content/${articleId}.js`];
 
   if (!loader) {

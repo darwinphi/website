@@ -23,7 +23,7 @@
   },
   "pages": {
     "home": {
-      "heroText": "Berbasis di Mutiara Timur (Manila, Filipina). Saya adalah pengembang Full-Stack yang membangun pengalaman web modern. Punya ide atau ingin terhubung? [Mari berkolaborasi](href:mailto:darwinmanalophi@gmail.com), atau jelajahi [Proyek](route:/projects) dan [Artikel](route:/articles) saya."
+      "heroText": "Berbasis di Manila, Filipina. Saya adalah pengembang Full-Stack yang merancang pengalaman digital dengan cermat untuk berbagai industri seperti perhotelan, kesehatan, telekomunikasi, dan lainnya. Ingin berdiskusi? [Mari berkolaborasi](href:mailto:darwinmanalophi@gmail.com) atau jelajahi [proyek](route:/projects) dan [artikel](route:/articles) saya."
     },
     "projects": {
       "title": "Proyek Unggulan & Studi Kasus"

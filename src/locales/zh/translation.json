@@ -23,7 +23,7 @@
   },
   "pages": {
     "home": {
-      "heroText": "我常驻东方明珠马尼拉（菲律宾）。我是一名全栈开发者，专注于打造现代化网页体验。如果你有想法，或只是想交流，欢迎[一起合作](href:mailto:darwinmanalophi@gmail.com)，或者看看我的[项目](route:/projects)与[文章](route:/articles)。"
+      "heroText": "我常驻菲律宾马尼拉，是一名全栈开发者，为酒店、医疗、通信等各行各业打造精心设计的数字体验。想交流一下吗？欢迎[联系我，一起合作](href:mailto:darwinmanalophi@gmail.com)，或者看看我的[项目](route:/projects)和[文章](route:/articles)。"
     },
     "projects": {
       "title": "代表性项目与案例研究"

@@ -23,7 +23,7 @@
   },
   "pages": {
     "home": {
-      "heroText": "Based in the Pearl of the Orient Seas (Manila, Philippines). I'm a Full-Stack Developer building modern web experiences. Have an idea in mind or want to connect? Let's [collaborate](href:mailto:darwinmanalophi@gmail.com), or explore my [Projects](route:/projects) and [Articles](route:/articles)."
+      "heroText": "Based in Manila, Philippines. I'm a Full-Stack Developer crafting thoughtful digital experiences across industries like hospitality, healthcare, telecommunications, and beyond. Want to connect? Let's [collaborate](href:mailto:darwinmanalophi@gmail.com), or explore my [projects](route:/projects) and [articles](route:/articles)."
     },
     "projects": {
       "title": "Notable Projects & Case Studies"

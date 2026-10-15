@@ -23,7 +23,7 @@
   },
   "pages": {
     "home": {
-      "heroText": "Basado en la Perla de Oriente (Manila, Filipinas). Soy un desarrollador Full-Stack que crea experiencias web modernas. ¿Tienes una idea en mente o quieres conectar? [Colaboremos](href:mailto:darwinmanalophi@gmail.com), o explora mis [Proyectos](route:/projects) y [Artículos](route:/articles)."
+      "heroText": "Vivo en Manila, Filipinas. Soy un desarrollador Full-Stack que crea experiencias digitales diseñadas con cuidado para sectores como la hostelería, la salud, las telecomunicaciones y muchos más. ¿Hablamos? [Colaboremos](href:mailto:darwinmanalophi@gmail.com) o explora mis [proyectos](route:/projects) y [artículos](route:/articles)."
     },
     "projects": {
       "title": "Proyectos Destacados y Casos de Estudio"

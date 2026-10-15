@@ -23,7 +23,7 @@
   },
   "pages": {
     "home": {
-      "heroText": "フィリピンのマニラを拠点に活動しています。モダンなウェブ体験をつくるフルスタック開発者です。アイデアがある方も、まずはつながりたい方も、ぜひご連絡ください。[一緒に取り組む](href:mailto:darwinmanalophi@gmail.com)か、私の[プロジェクト](route:/projects)や[記事](route:/articles)をご覧ください。"
+      "heroText": "フィリピンのマニラを拠点に活動しています。宿泊・接客サービス、医療、通信など、さまざまな業界で、細部まで考え抜いたデジタル体験をつくるフルスタック開発者です。お仕事のご相談や情報交換など、お気軽に[ご連絡ください](href:mailto:darwinmanalophi@gmail.com)。私の[プロジェクト](route:/projects)や[記事](route:/articles)もご覧ください。"
     },
     "projects": {
       "title": "注目のプロジェクト & ケーススタディ"

@@ -346,6 +346,46 @@
     hanging-punctuation: first last;
   }
 
+  .hero-location {
+    position: relative;
+    white-space: nowrap;
+    border-radius: 0.125em;
+  }
+
+  .hero-location:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  .hero-location__flag {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 0.1em);
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    line-height: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 250ms ease-out;
+  }
+
+  .hero-location__flag-cloth {
+    display: block;
+    width: 1.9em;
+    height: 1.14em;
+  }
+
+  .hero-location:hover .hero-location__flag,
+  .hero-location:focus-visible .hero-location__flag {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-location__flag {
+      transition: none;
+    }
+  }
+
   .hero-inline-link {
     text-decoration-line: underline;
     text-decoration-style: dashed;

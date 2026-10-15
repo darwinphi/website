@@ -23,7 +23,7 @@
   },
   "pages": {
     "home": {
-      "heroText": "Ansässig in der Perle des Ostens (Manila, Philippinen). Ich bin ein Full-Stack-Entwickler, der moderne Web-Erlebnisse entwickelt. Haben Sie eine Idee oder möchten Sie sich austauschen? [Lassen Sie uns zusammenarbeiten](href:mailto:darwinmanalophi@gmail.com) oder meine [Projekte](route:/projects) und [Artikel](route:/articles) entdecken."
+      "heroText": "Ich lebe in Manila auf den Philippinen. Als Full-Stack-Entwickler gestalte ich durchdachte digitale Erlebnisse für Branchen wie das Gastgewerbe, das Gesundheitswesen, die Telekommunikation und viele weitere. Möchten Sie sich austauschen? [Lassen Sie uns zusammenarbeiten](href:mailto:darwinmanalophi@gmail.com) oder schauen Sie sich meine [Projekte](route:/projects) und [Artikel](route:/articles) an."
     },
     "projects": {
       "title": "Ausgewaehlte Projekte & Fallstudien"

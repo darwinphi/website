@@ -1,11 +1,13 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import WavingFlag from './WavingFlag';
 
 const inlineLinkPattern = /\[([^\]]+)\]\((route:(\/[^)]+)|href:([^)]+))\)/g;
 
 export default function AnimatedHeroText({
   text,
+  location,
   highlight,
   highlightClassName = '',
   highlightTo,
@@ -14,7 +16,10 @@ export default function AnimatedHeroText({
   className = '',
   lang = 'en',
 }) {
-  function renderHighlightedText(value, keyPrefix) {
+  const [locationHovered, setLocationHovered] = useState(false);
+  const [locationFocused, setLocationFocused] = useState(false);
+
+  function renderRoleText(value, keyPrefix) {
     const highlightIndex = highlight ? value.indexOf(highlight) : -1;
 
     if (highlightIndex < 0) {
@@ -42,6 +47,34 @@ export default function AnimatedHeroText({
           <span className={highlightClassName}>{highlight}</span>
         )}
         {value.slice(highlightIndex + highlight.length)}
+      </Fragment>
+    );
+  }
+
+  function renderHighlightedText(value, keyPrefix) {
+    const locationIndex = location ? value.indexOf(location) : -1;
+
+    if (locationIndex < 0) {
+      return renderRoleText(value, keyPrefix);
+    }
+
+    return (
+      <Fragment key={keyPrefix}>
+        {renderRoleText(value.slice(0, locationIndex), `${keyPrefix}-before`)}
+        <span
+          className="hero-location"
+          tabIndex={0}
+          onMouseEnter={() => setLocationHovered(true)}
+          onMouseLeave={() => setLocationHovered(false)}
+          onFocus={() => setLocationFocused(true)}
+          onBlur={() => setLocationFocused(false)}
+        >
+          {location}
+          <span className="hero-location__flag" aria-hidden="true">
+            <WavingFlag active={locationHovered || locationFocused} />
+          </span>
+        </span>
+        {renderRoleText(value.slice(locationIndex + location.length), `${keyPrefix}-after`)}
       </Fragment>
     );
   }
