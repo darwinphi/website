@@ -23,7 +23,9 @@
   },
   "pages": {
     "home": {
-      "heroText": "Ich lebe in Manila auf den Philippinen. Als Full-Stack-Entwickler gestalte ich durchdachte digitale Erlebnisse für Branchen wie das Gastgewerbe, das Gesundheitswesen, die Telekommunikation und viele weitere. Möchten Sie sich austauschen? [Lassen Sie uns zusammenarbeiten](href:mailto:darwinmanalophi@gmail.com) oder schauen Sie sich meine [Projekte](route:/projects) und [Artikel](route:/articles) an."
+      "heroText": "Ich lebe in Manila auf den Philippinen. Als Full-Stack-Entwickler gestalte ich durchdachte digitale Erlebnisse für Branchen wie das Gastgewerbe, das Gesundheitswesen, die Telekommunikation und viele weitere.\n\nMöchten Sie sich austauschen? [Lassen Sie uns zusammenarbeiten](href:mailto:darwinmanalophi@gmail.com) oder schauen Sie sich meine [Projekte](route:/projects) und [Artikel](route:/articles) an.",
+      "heroLinksPrefix": "meine ",
+      "heroLinksSuffix": " an."
     },
     "projects": {
       "title": "Ausgewaehlte Projekte & Fallstudien"

@@ -23,7 +23,9 @@
   },
   "pages": {
     "home": {
-      "heroText": "Based in Manila, Philippines. I'm a Full-Stack Developer crafting thoughtful digital experiences across industries like hospitality, healthcare, telecommunications, and beyond. Want to connect? Let's [collaborate](href:mailto:darwinmanalophi@gmail.com), or explore my [projects](route:/projects) and [articles](route:/articles)."
+      "heroText": "Based in Manila, Philippines. I'm a Full-Stack Developer crafting thoughtful digital experiences across industries like hospitality, healthcare, telecommunications, and beyond.\n\nWant to connect? Let's [collaborate](href:mailto:darwinmanalophi@gmail.com), or explore my [projects](route:/projects) and [articles](route:/articles).",
+      "heroLinksPrefix": "my ",
+      "heroLinksSuffix": "."
     },
     "projects": {
       "title": "Notable Projects & Case Studies"

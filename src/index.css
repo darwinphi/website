@@ -346,43 +346,96 @@
     hanging-punctuation: first last;
   }
 
+  .hero-copy > p {
+    margin: 0;
+  }
+
+  .hero-copy > p + p {
+    margin-block-start: 0.65em;
+  }
+
+  .hero-copy > p:has(.cat-underline-link) {
+    padding-block-end: var(--hero-cat-bottom-clearance, 50px);
+  }
+
+  .hero-cat-links {
+    white-space: normal;
+    font-size: inherit;
+    hanging-punctuation: none;
+  }
+
+  .hero-cat-links__pair {
+    display: inline;
+  }
+
   .hero-location {
-    position: relative;
-    white-space: nowrap;
+    white-space: normal;
+    hyphens: none;
     border-radius: 0.125em;
   }
 
-  .hero-location:focus-visible {
+  .hero-location__anchor {
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: baseline;
+  }
+
+  .hero-location__anchor:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 3px;
   }
 
-  .hero-location__flag {
+  .hero-location__baseline {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: baseline;
+  }
+
+  .hero-location__flag-fill {
     position: absolute;
-    left: 50%;
-    bottom: calc(100% + 0.1em);
-    transform: translateX(-50%);
-    font-size: 0.7em;
-    line-height: 1;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
     pointer-events: none;
     opacity: 0;
     transition: opacity 250ms ease-out;
   }
 
-  .hero-location__flag-cloth {
-    display: block;
-    width: 1.9em;
-    height: 1.14em;
+  .hero-location__mask-text {
+    font: inherit;
+    letter-spacing: inherit;
   }
 
-  .hero-location:hover .hero-location__flag,
-  .hero-location:focus-visible .hero-location__flag {
+  .hero-location__country {
+    opacity: 1;
+    transition: opacity 250ms ease-out;
+  }
+
+  .hero-location__anchor[data-flag-active='true'] .hero-location__country {
+    opacity: 0;
+  }
+
+  .hero-location__anchor[data-flag-active='true'] .hero-location__flag-fill {
     opacity: 1;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-location__flag {
+    .hero-location__flag-fill,
+    .hero-location__country {
       transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .hero-location__anchor[data-flag-active='true'] .hero-location__country {
+      opacity: 1;
+    }
+
+    .hero-location__flag-fill {
+      display: none;
     }
   }
 
@@ -400,6 +453,278 @@
   .hero-inline-link:hover {
     opacity: 0.72;
     text-decoration-color: currentColor;
+  }
+
+  .cat-underline-link {
+    --cat-width: 32px;
+    --cat-height: 40px;
+    --cat-sprite: url('/img/orange-tabby-hanging-sprites-v2.png');
+    --cat-background-size: 800% 375.757576%;
+    --cat-rest-position: 0% 0%;
+    --cat-rest-transform: translateX(2.585120%);
+    --cat-idle-frames: articles-cat-idle;
+    --cat-play-frames: articles-cat-play;
+    --cat-idle-motion: articles-cat-sway;
+    --cat-play-motion: articles-cat-tug;
+    --cat-idle-duration: 1.92s;
+    --cat-play-duration: 1.28s;
+    display: inline-block;
+    position: relative;
+    padding-block-end: var(--cat-clearance, 0px);
+    white-space: nowrap;
+    hyphens: none;
+  }
+
+  .cat-underline-link--shorthair {
+    --cat-width: 40px;
+    --cat-height: 36px;
+    --cat-sprite: url('/img/gray-british-shorthair-hanging-sprites.png');
+    --cat-background-size: 800% 432.682927%;
+    --cat-rest-position: 0% 6.451613%;
+    --cat-rest-transform: translateX(-7.722661%);
+    --cat-idle-frames: projects-cat-idle;
+    --cat-play-frames: projects-cat-play;
+    --cat-idle-motion: projects-cat-rock;
+    --cat-play-motion: projects-cat-bounce;
+    --cat-idle-duration: 2.4s;
+    --cat-play-duration: 1.6s;
+  }
+
+  .cat-underline-link--shorthair .cat-underline-link__underline,
+  .cat-underline-link--tabby .cat-underline-link__underline {
+    top: -4px;
+    height: 16px;
+  }
+
+  .cat-underline-link--ready {
+    text-decoration: none;
+  }
+
+  .cat-underline-link__label {
+    display: inline-block;
+    position: relative;
+  }
+
+  .cat-underline-link__decoration {
+    position: absolute;
+    top: calc(100% - 0.1em);
+    inset-inline: 0;
+    height: calc(var(--cat-height) + 4px);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .cat-underline-link__underline {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 8px;
+    overflow: visible;
+    opacity: 0.68;
+  }
+
+  .cat-underline-link__cat {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: var(--cat-width);
+    height: var(--cat-height);
+    margin-left: calc(var(--cat-width) / -2);
+    transform-origin: 50% 2px;
+    animation: var(--cat-idle-motion) var(--cat-idle-duration) ease-in-out infinite;
+  }
+
+  .cat-underline-link__sprite {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: var(--cat-sprite);
+    background-size: var(--cat-background-size);
+    background-position: var(--cat-rest-position);
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    transform: var(--cat-rest-transform);
+    animation: var(--cat-idle-frames) var(--cat-idle-duration) steps(1, end) infinite;
+  }
+
+  .cat-underline-link__decoration[data-playing='true'] .cat-underline-link__sprite {
+    animation: var(--cat-play-frames) var(--cat-play-duration) steps(1, end) 1;
+  }
+
+  .cat-underline-link__decoration[data-playing='true'] .cat-underline-link__cat {
+    animation: var(--cat-play-motion) var(--cat-play-duration) ease-in-out 1;
+  }
+
+  .cat-underline-link__decoration[data-running='false'] .cat-underline-link__sprite,
+  .cat-underline-link__decoration[data-running='false'] .cat-underline-link__cat {
+    animation-play-state: paused;
+  }
+
+  /* Register the 32 poses to the same paw anchor. Explicit sampling windows
+     exclude neighboring tails and compensate for uneven transparent gutters. */
+  @keyframes articles-cat-idle {
+    0% { background-position: 0.000000% 0.000000%; background-size: 800% 375.757576%; transform: translateX(2.585120%); }
+    6.25% { background-position: 14.267700% 0.000000%; background-size: 800% 375.757576%; transform: translateX(5.863808%); }
+    12.5% { background-position: 28.823635% 0.000000%; background-size: 800% 375.757576%; transform: translateX(4.350567%); }
+    18.75% { background-position: 43.379571% 0.000000%; background-size: 800% 375.757576%; transform: translateX(4.854981%); }
+    25% { background-position: 57.647271% 0.000000%; background-size: 800% 375.757576%; transform: translateX(3.846154%); }
+    31.25% { background-position: 72.419384% 0.000000%; background-size: 800% 375.757576%; transform: translateX(4.854981%); }
+    37.5% { background-position: 87.335615% 0.000000%; background-size: 800% 375.757576%; transform: translateX(9.899117%); }
+    43.75% { background-position: 101.243019% 0.000000%; background-size: 800% 375.757576%; transform: translateX(7.377049%); }
+    50% { background-position: 0.000000% 35.869565%; background-size: 800% 387.500000%; transform: translateX(2.585120%); }
+    56.25% { background-position: 14.267700% 35.869565%; background-size: 800% 387.500000%; transform: translateX(5.863808%); }
+    62.5% { background-position: 28.823635% 35.869565%; background-size: 800% 387.500000%; transform: translateX(4.350567%); }
+    68.75% { background-position: 43.379571% 35.869565%; background-size: 800% 387.500000%; transform: translateX(4.854981%); }
+    75% { background-position: 57.647271% 35.869565%; background-size: 800% 387.500000%; transform: translateX(3.846154%); }
+    81.25% { background-position: 72.419384% 35.869565%; background-size: 800% 387.500000%; transform: translateX(4.854981%); }
+    87.5% { background-position: 87.335615% 35.869565%; background-size: 800% 387.500000%; transform: translateX(9.899117%); }
+    93.75% { background-position: 101.243019% 35.869565%; background-size: 800% 387.500000%; transform: translateX(7.377049%); }
+    100% { background-position: 0.000000% 0.000000%; background-size: 800% 375.757576%; transform: translateX(2.585120%); }
+  }
+
+  @keyframes articles-cat-play {
+    0% { background-position: 0.000000% 69.892473%; background-size: 800% 400.000000%; transform: translateX(2.585120%); }
+    6.25% { background-position: 14.267700% 69.892473%; background-size: 800% 400.000000%; transform: translateX(5.863808%); }
+    12.5% { background-position: 28.823635% 69.892473%; background-size: 800% 400.000000%; transform: translateX(4.350567%); }
+    18.75% { background-position: 43.379571% 69.892473%; background-size: 800% 400.000000%; transform: translateX(4.854981%); }
+    25% { background-position: 57.647271% 69.892473%; background-size: 800% 400.000000%; transform: translateX(3.846154%); }
+    31.25% { background-position: 72.419384% 69.892473%; background-size: 800% 400.000000%; transform: translateX(4.854981%); }
+    37.5% { background-position: 87.335615% 69.892473%; background-size: 800% 400.000000%; transform: translateX(9.899117%); }
+    43.75% { background-position: 101.243019% 69.892473%; background-size: 800% 400.000000%; transform: translateX(7.377049%); }
+    50% { background-position: 0.000000% 100.000000%; background-size: 800% 442.857143%; transform: translateX(2.585120%); }
+    56.25% { background-position: 14.267700% 100.000000%; background-size: 800% 442.857143%; transform: translateX(5.863808%); }
+    62.5% { background-position: 28.823635% 100.000000%; background-size: 800% 442.857143%; transform: translateX(4.350567%); }
+    68.75% { background-position: 43.379571% 100.000000%; background-size: 800% 442.857143%; transform: translateX(4.854981%); }
+    75% { background-position: 57.647271% 100.000000%; background-size: 800% 442.857143%; transform: translateX(3.846154%); }
+    81.25% { background-position: 72.419384% 100.000000%; background-size: 800% 442.857143%; transform: translateX(4.854981%); }
+    87.5% { background-position: 87.335615% 100.000000%; background-size: 800% 442.857143%; transform: translateX(9.899117%); }
+    93.75% { background-position: 101.243019% 100.000000%; background-size: 800% 442.857143%; transform: translateX(7.377049%); }
+    100% { background-position: 0.000000% 0.000000%; background-size: 800% 375.757576%; transform: translateX(2.585120%); }
+  }
+
+  @keyframes articles-cat-sway {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-1.5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(1.5deg); }
+  }
+
+  @keyframes articles-cat-tug {
+    0%, 100% { transform: translateY(0); }
+    37.5% { transform: translateY(6px); }
+    56% { transform: translateY(-3px); }
+    72% { transform: translateY(2px); }
+    84% { transform: translateY(-1px); }
+    93% { transform: translateY(0.5px); }
+  }
+
+  /* Four-paw gray-cat poses use fixed 221.75 x 205 px source windows. */
+  @keyframes projects-cat-idle {
+    0% { background-position: 0.000000% 6.451613%; transform: translateX(-7.722661%); }
+    6.25% { background-position: 14.285714% 6.451613%; transform: translateX(-7.722661%); }
+    12.5% { background-position: 28.571429% 6.451613%; transform: translateX(-7.722661%); }
+    18.75% { background-position: 42.857143% 6.451613%; transform: translateX(-7.722661%); }
+    25% { background-position: 57.142857% 6.451613%; transform: translateX(-7.722661%); }
+    31.25% { background-position: 71.428571% 6.451613%; transform: translateX(-7.722661%); }
+    37.5% { background-position: 85.714286% 6.451613%; transform: translateX(-7.722661%); }
+    43.75% { background-position: 100.000000% 6.451613%; transform: translateX(-7.722661%); }
+    50% { background-position: 0.000000% 39.589443%; transform: translateX(-7.722661%); }
+    56.25% { background-position: 14.285714% 39.589443%; transform: translateX(-7.722661%); }
+    62.5% { background-position: 28.571429% 39.589443%; transform: translateX(-7.722661%); }
+    68.75% { background-position: 42.857143% 39.589443%; transform: translateX(-7.722661%); }
+    75% { background-position: 57.142857% 39.589443%; transform: translateX(-7.722661%); }
+    81.25% { background-position: 71.428571% 39.589443%; transform: translateX(-7.722661%); }
+    87.5% { background-position: 85.714286% 39.589443%; transform: translateX(-7.722661%); }
+    93.75% { background-position: 100.000000% 39.589443%; transform: translateX(-7.722661%); }
+    100% { background-position: 0.000000% 6.451613%; transform: translateX(-7.722661%); }
+  }
+
+  @keyframes projects-cat-play {
+    0% { background-position: 0.000000% 71.847507%; transform: translateX(-7.722661%); }
+    6.25% { background-position: 14.285714% 71.847507%; transform: translateX(-7.722661%); }
+    12.5% { background-position: 28.571429% 71.847507%; transform: translateX(-7.722661%); }
+    18.75% { background-position: 42.857143% 71.847507%; transform: translateX(-7.722661%); }
+    25% { background-position: 57.142857% 71.847507%; transform: translateX(-7.722661%); }
+    31.25% { background-position: 71.428571% 71.847507%; transform: translateX(-7.722661%); }
+    37.5% { background-position: 85.714286% 71.847507%; transform: translateX(-7.722661%); }
+    43.75% { background-position: 100.000000% 71.847507%; transform: translateX(-7.722661%); }
+    50% { background-position: 0.000000% 103.225806%; transform: translateX(-7.722661%); }
+    56.25% { background-position: 14.285714% 103.225806%; transform: translateX(-7.722661%); }
+    62.5% { background-position: 28.571429% 103.225806%; transform: translateX(-7.722661%); }
+    68.75% { background-position: 42.857143% 103.225806%; transform: translateX(-7.722661%); }
+    75% { background-position: 57.142857% 103.225806%; transform: translateX(-7.722661%); }
+    81.25% { background-position: 71.428571% 103.225806%; transform: translateX(-7.722661%); }
+    87.5% { background-position: 85.714286% 103.225806%; transform: translateX(-7.722661%); }
+    93.75% { background-position: 100.000000% 103.225806%; transform: translateX(-7.722661%); }
+    100% { background-position: 0.000000% 6.451613%; transform: translateX(-7.722661%); }
+  }
+
+  @keyframes projects-cat-rock {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.75deg); }
+    75% { transform: rotate(-0.75deg); }
+  }
+
+  /* Match the underline's center displacement: a deep dip, then diminishing
+     rebounds. Grip and line move together rather than sliding apart. */
+  @keyframes projects-cat-bounce {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(7px); }
+    43% { transform: translateY(-4px); }
+    59% { transform: translateY(3px); }
+    73% { transform: translateY(-1px); }
+    86% { transform: translateY(1px); }
+  }
+
+  .cat-underline-link__decoration[data-reduced-motion='true'] .cat-underline-link__sprite,
+  .cat-underline-link__decoration[data-reduced-motion='true'] .cat-underline-link__cat {
+    animation: none;
+    background-position: var(--cat-rest-position);
+  }
+
+  .cat-underline-link__decoration[data-reduced-motion='true'] .cat-underline-link__sprite {
+    transform: var(--cat-rest-transform);
+  }
+
+  @media (max-width: 640px) {
+    .home-hero-copy {
+      padding-inline: 0;
+    }
+
+    .hero-copy > p:has(.cat-underline-link) {
+      text-wrap: balance;
+    }
+
+    .hero-cat-links__pair {
+      display: inline-block;
+      max-inline-size: 100%;
+      vertical-align: baseline;
+    }
+
+    .cat-underline-link {
+      --cat-width: 26px;
+      --cat-height: 33px;
+    }
+
+    .cat-underline-link--shorthair {
+      --cat-width: 32px;
+      --cat-height: 29px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cat-underline-link__sprite,
+    .cat-underline-link__cat,
+    .cat-underline-link__decoration[data-playing='true'] .cat-underline-link__sprite,
+    .cat-underline-link__decoration[data-playing='true'] .cat-underline-link__cat {
+      animation: none;
+      background-position: var(--cat-rest-position);
+    }
+
+    .cat-underline-link__sprite {
+      transform: var(--cat-rest-transform);
+    }
   }
 
   .hero-copy:lang(ja),

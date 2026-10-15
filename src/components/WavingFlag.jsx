@@ -1,128 +1,213 @@
-import { useEffect, useRef } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
+import { useInView } from 'framer-motion';
 
-function createFlagTexture() {
-  const texture = document.createElement('canvas');
-  texture.width = 240;
-  texture.height = 120;
-  const context = texture.getContext('2d');
-  context.fillStyle = '#0038a8';
-  context.fillRect(0, 0, 240, 60);
-  context.fillStyle = '#ce1126';
-  context.fillRect(0, 60, 240, 60);
-  context.fillStyle = '#fff';
-  context.beginPath();
-  context.moveTo(0, 0);
-  context.lineTo(104, 60);
-  context.lineTo(0, 120);
-  context.fill();
-  context.fillStyle = '#fcd116';
+const STRIPS = 60;
+const FADE_MS = 250;
+const STRIP_INDICES = Array.from({ length: STRIPS }, (_, index) => index);
 
-  // Eight rays and three stars stay part of the cloth as it bends.
-  context.save();
-  context.translate(35, 60);
-  for (let ray = 0; ray < 8; ray += 1) {
-    context.save();
-    context.rotate(ray * Math.PI / 4);
-    context.beginPath();
-    context.moveTo(7, -2);
-    context.lineTo(17, -1);
-    context.lineTo(19, 0);
-    context.lineTo(17, 1);
-    context.lineTo(7, 2);
-    context.fill();
-    context.restore();
-  }
-  context.beginPath();
-  context.arc(0, 0, 9, 0, Math.PI * 2);
-  context.fill();
-  context.restore();
-
-  for (const [x, y, angle] of [[12, 16, -Math.PI / 2], [12, 104, Math.PI / 2], [83, 60, 0]]) {
-    context.beginPath();
-    for (let point = 0; point < 10; point += 1) {
-      const radius = point % 2 === 0 ? 6 : 2.5;
-      const direction = angle + point * Math.PI / 5;
-      const px = x + Math.cos(direction) * radius;
-      const py = y + Math.sin(direction) * radius;
-      if (point === 0) context.moveTo(px, py);
-      else context.lineTo(px, py);
-    }
-    context.closePath();
-    context.fill();
-  }
-  return texture;
+function starPoints(x, y, angle) {
+  return Array.from({ length: 10 }, (_, point) => {
+    const radius = point % 2 === 0 ? 6 : 2.5;
+    const direction = angle + point * Math.PI / 5;
+    return `${x + Math.cos(direction) * radius},${y + Math.sin(direction) * radius}`;
+  }).join(' ');
 }
 
-function drawFlag(canvas, texture, time, reducedMotion) {
-  const context = canvas.getContext('2d');
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  context.save();
-  context.scale(canvas.width / 140, canvas.height / 84);
-
-  const strips = 60;
-  const width = 120;
-  const height = 60;
+// Deform only the cloth. The outer text mask never moves with these strips.
+function drawFlag(group, bounds, time, reducedMotion) {
   const wind = 0.8 + Math.sin(time * 0.6) * 0.12;
-  const wave = (u) => reducedMotion ? 0 : (
-    // Travelling waves grow toward the free edge; the hoist stays fixed.
-    Math.pow(u, 1.25) * wind * (
-      Math.sin(u * 8 - time * 3.2) * 5
-      + Math.sin(u * 13 - time * 4.7 + 0.8) * 1.3
-    )
+  const wave = (u) => reducedMotion ? 0 : Math.pow(u, 1.25) * wind * (
+    Math.sin(u * 8 - time * 3.2) * 5
+    + Math.sin(u * 13 - time * 4.7 + 0.8) * 1.3
   );
-  let x = 8;
-  for (let strip = 0; strip < strips; strip += 1) {
-    const u = strip / strips;
-    const nextU = (strip + 1) / strips;
+  let x = 0;
+  for (const [index, strip] of [...group.children].entries()) {
+    const u = index / STRIPS;
+    const nextU = (index + 1) / STRIPS;
     const z = wave(u);
     const nextZ = wave(nextU);
-    const slope = (nextZ - z) / (width / strips);
-    // Foreshorten each fold rather than stretching the entire flag sideways.
-    const sliceWidth = (width / strips) / Math.sqrt(1 + slope * slope);
-    const top = 10 + z + u * u * 1.5;
-    const nextTop = 10 + nextZ + nextU * nextU * 1.5;
+    const slope = (nextZ - z) / 2;
+    const width = 2 / Math.sqrt(1 + slope * slope);
+    const top = z + u * u * 1.5;
+    const nextTop = nextZ + nextU * nextU * 1.5;
     const flutter = reducedMotion ? 0 : Math.sin(u * 8 - time * 3.2 + 0.5) * u * 0.025;
-    const sliceHeight = height * (1 + flutter);
-    context.save();
-    context.transform(1, (nextTop - top) / sliceWidth, 0, sliceHeight / height, x, top);
-    // A tiny overlap prevents seams between the deformed texture strips.
-    context.drawImage(texture, u * texture.width, 0, texture.width / strips, texture.height,
-      0, 0, sliceWidth + 0.3, height);
-    const shade = Math.min(0.23, Math.abs(slope) * 0.25);
-    context.fillStyle = slope > 0 ? `rgba(0,0,0,${shade})` : `rgba(255,255,255,${shade * 0.6})`;
-    context.fillRect(0, 0, sliceWidth + 0.3, height);
-    context.restore();
-    x += sliceWidth;
+    strip.setAttribute('transform', `matrix(1 ${(nextTop - top) / width} 0 ${1 + flutter} ${x} ${top})`);
+    strip.firstElementChild.setAttribute('width', width + 0.3);
+    const shade = strip.lastElementChild;
+    shade.setAttribute('width', width + 0.3);
+    shade.setAttribute('fill', slope > 0 ? '#000' : '#fff');
+    shade.setAttribute('opacity', Math.min(0.23, Math.abs(slope) * 0.25) * (slope > 0 ? 1 : 0.6));
+    x += width;
   }
-  context.restore();
+  // Overscan covers the letter edges at every wave phase. Normalize the
+  // foreshortened width so the free edge can never uncover the final letter.
+  const padX = bounds.width * 0.04;
+  const padY = bounds.height * 0.25;
+  group.setAttribute('transform', `translate(${bounds.x - padX} ${bounds.y - padY}) scale(${(bounds.width + padX * 2) / x} ${(bounds.height + padY * 2) / 60})`);
 }
 
-export default function WavingFlag({ active }) {
-  const canvasRef = useRef(null);
+export default function WavingFlag({ active = false, text, lang }) {
+  const id = useId().replace(/[^a-zA-Z0-9_-]/g, '');
+  const rootRef = useRef(null);
+  const sourceRef = useRef(null);
+  const baselineRef = useRef(null);
+  const svgRef = useRef(null);
+  const maskTextRef = useRef(null);
+  const clothRef = useRef(null);
+  const boundsRef = useRef(null);
   const elapsedRef = useRef(0);
-  const reducedMotion = useReducedMotion();
+  const touchRef = useRef(false);
+  const inView = useInView(rootRef);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const enabled = active || hovered || focused;
+  const [ready, setReady] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  );
+  const [tabVisible, setTabVisible] = useState(() => !document.hidden);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const texture = createFlagTexture();
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updatePreference = () => setReducedMotion(preference.matches);
+    const updateVisibility = () => setTabVisible(!document.hidden);
+    preference.addEventListener('change', updatePreference);
+    document.addEventListener('visibilitychange', updateVisibility);
+    return () => {
+      preference.removeEventListener('change', updatePreference);
+      document.removeEventListener('visibilitychange', updateVisibility);
+    };
+  }, []);
+
+  useLayoutEffect(() => {
+    let disposed = false;
+    const root = rootRef.current;
+    function measure() {
+      if (disposed) return;
+      try {
+        const box = root.getBoundingClientRect();
+        const width = sourceRef.current.getBoundingClientRect().width;
+        if (width <= 0 || box.height <= 0) {
+          setReady(false);
+          return;
+        }
+        const baseline = baselineRef.current.getBoundingClientRect().top - box.top;
+        const rtl = getComputedStyle(root).direction === 'rtl';
+        const maskText = maskTextRef.current;
+        svgRef.current.setAttribute('viewBox', `0 0 ${box.width} ${box.height}`);
+        maskText.setAttribute('x', rtl ? width : 0);
+        maskText.setAttribute('y', baseline);
+        maskText.setAttribute('direction', rtl ? 'rtl' : 'ltr');
+        maskText.setAttribute('textLength', width);
+        const bounds = maskText.getBBox();
+        if (bounds.width <= 0 || bounds.height <= 0) {
+          setReady(false);
+          return;
+        }
+        boundsRef.current = bounds;
+        drawFlag(clothRef.current, bounds, elapsedRef.current, reducedMotion);
+        setReady(true);
+      } catch {
+        setReady(false);
+      }
+    }
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(root);
+    document.fonts.ready.then(measure);
+    document.fonts.addEventListener('loadingdone', measure);
+    return () => {
+      disposed = true;
+      observer.disconnect();
+      document.fonts.removeEventListener('loadingdone', measure);
+    };
+  }, [text, lang, reducedMotion]);
+
+  useEffect(() => {
+    if (!ready || !inView || !tabVisible) return;
     let frame;
     let previous;
     const started = performance.now();
-    const animate = (now) => {
-      if (previous !== undefined && !document.hidden) {
-        elapsedRef.current += Math.min(now - previous, 40) / 1000;
-      }
+    function animate(now) {
+      if (previous !== undefined) elapsedRef.current += Math.min(now - previous, 40) / 1000;
       previous = now;
-      drawFlag(canvas, texture, elapsedRef.current, reducedMotion);
-      // Keep waving during the fade out, then stop rendering while hidden.
-      if (!reducedMotion && (active || now - started < 250)) {
+      try {
+        drawFlag(clothRef.current, boundsRef.current, elapsedRef.current, reducedMotion);
+      } catch {
+        setReady(false);
+        return;
+      }
+      // Continue through the exit fade, then leave the hidden SVG still.
+      if (!reducedMotion && (enabled || now - started < FADE_MS)) {
         frame = requestAnimationFrame(animate);
       }
-    };
+    }
     frame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frame);
-  }, [active, reducedMotion]);
+  }, [enabled, ready, inView, tabVisible, reducedMotion]);
 
-  return <canvas ref={canvasRef} className="hero-location__flag-cloth" width={280} height={168} aria-hidden="true" />;
+  return (
+    <span
+      ref={rootRef}
+      className="hero-location__anchor"
+      lang={lang}
+      tabIndex={0}
+      onPointerEnter={(event) => {
+        if (event.pointerType !== 'touch') setHovered(true);
+      }}
+      onPointerLeave={() => setHovered(false)}
+      onPointerDown={(event) => {
+        touchRef.current = event.pointerType === 'touch';
+        if (touchRef.current) {
+          setHovered(false);
+          setFocused(false);
+        }
+      }}
+      onFocus={(event) => setFocused(!touchRef.current && event.currentTarget.matches(':focus-visible'))}
+      onKeyDown={() => {
+        touchRef.current = false;
+        setFocused(true);
+      }}
+      onBlur={() => setFocused(false)}
+      data-flag-active={Boolean(enabled && ready)}
+      data-flag-ready={ready}
+      data-flag-running={Boolean(enabled && ready && inView && tabVisible && !reducedMotion)}
+    >
+      <span ref={sourceRef} className="hero-location__country">{text}</span>
+      <span ref={baselineRef} className="hero-location__baseline" aria-hidden="true" />
+      <svg ref={svgRef} className="hero-location__flag-fill" aria-hidden="true" focusable="false">
+        <defs>
+          <g id={`${id}-art`}>
+            <path fill="#0038a8" d="M0 0h240v60H0z" />
+            <path fill="#ce1126" d="M0 60h240v60H0z" />
+            <path fill="#fff" d="M0 0 104 60 0 120Z" />
+            <g fill="#fcd116">
+              <circle cx="35" cy="60" r="9" />
+              {Array.from({ length: 8 }, (_, ray) => (
+                <path key={ray} d="M42 58 52 59 54 60 52 61 42 62Z" transform={`rotate(${ray * 45} 35 60)`} />
+              ))}
+              {[[12, 16, -Math.PI / 2], [12, 104, Math.PI / 2], [83, 60, 0]].map(([x, y, angle]) => (
+                <polygon key={y} points={starPoints(x, y, angle)} />
+              ))}
+            </g>
+          </g>
+          <mask id={`${id}-letters`} maskUnits="userSpaceOnUse" x="-4" y="-4" width="120%" height="140%" style={{ maskType: 'alpha' }}>
+            <text ref={maskTextRef} fill="#fff" textAnchor="start" lengthAdjust="spacingAndGlyphs" className="hero-location__mask-text">{text}</text>
+          </mask>
+        </defs>
+        <g mask={`url(#${id}-letters)`}>
+          <g ref={clothRef}>
+            {STRIP_INDICES.map((index) => (
+              <g key={index}>
+                <svg viewBox={`${index * 4} 0 4 120`} width="2.3" height="60" preserveAspectRatio="none">
+                  <use href={`#${id}-art`} />
+                </svg>
+                <rect width="2.3" height="60" opacity="0" />
+              </g>
+            ))}
+          </g>
+        </g>
+      </svg>
+    </span>
+  );
 }

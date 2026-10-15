@@ -1,13 +1,18 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import WavingFlag from './WavingFlag';
+import CatUnderlineLink from './CatUnderlineLink';
+import useCatLinkClearance from '../hooks/useCatLinkClearance';
 
 const inlineLinkPattern = /\[([^\]]+)\]\((route:(\/[^)]+)|href:([^)]+))\)/g;
 
 export default function AnimatedHeroText({
   text,
   location,
+  locationFlagAnchor,
+  linkPhrasePrefix = '',
+  linkPhraseSuffix = '',
   highlight,
   highlightClassName = '',
   highlightTo,
@@ -16,8 +21,8 @@ export default function AnimatedHeroText({
   className = '',
   lang = 'en',
 }) {
-  const [locationHovered, setLocationHovered] = useState(false);
-  const [locationFocused, setLocationFocused] = useState(false);
+  const heroRef = useRef(null);
+  useCatLinkClearance(heroRef, text);
 
   function renderRoleText(value, keyPrefix) {
     const highlightIndex = highlight ? value.indexOf(highlight) : -1;
@@ -58,21 +63,21 @@ export default function AnimatedHeroText({
       return renderRoleText(value, keyPrefix);
     }
 
+    // Attach the flag to the translated country name, independently of word
+    // order, while keeping the rest of the location free to wrap.
+    const flagAnchor = locationFlagAnchor && location.includes(locationFlagAnchor)
+      ? locationFlagAnchor
+      : location;
+    const anchorIndex = location.indexOf(flagAnchor);
+    const anchorEnd = anchorIndex + flagAnchor.length;
+
     return (
       <Fragment key={keyPrefix}>
         {renderRoleText(value.slice(0, locationIndex), `${keyPrefix}-before`)}
-        <span
-          className="hero-location"
-          tabIndex={0}
-          onMouseEnter={() => setLocationHovered(true)}
-          onMouseLeave={() => setLocationHovered(false)}
-          onFocus={() => setLocationFocused(true)}
-          onBlur={() => setLocationFocused(false)}
-        >
-          {location}
-          <span className="hero-location__flag" aria-hidden="true">
-            <WavingFlag active={locationHovered || locationFocused} />
-          </span>
+        <span className="hero-location">
+          {location.slice(0, anchorIndex)}
+          <WavingFlag text={location.slice(anchorIndex, anchorEnd)} lang={lang} />
+          {location.slice(anchorEnd)}
         </span>
         {renderRoleText(value.slice(locationIndex + location.length), `${keyPrefix}-after`)}
       </Fragment>
@@ -102,7 +107,16 @@ export default function AnimatedHeroText({
 
       if (routeDescriptor.startsWith('route:')) {
         parts.push(
-          <Link
+          (routeTo === '/articles' || routeTo === '/projects') ? (
+            <CatUnderlineLink
+              key={`link-${routeTo}-${match.index}`}
+              to={routeTo}
+              cat={routeTo === '/projects' ? 'shorthair' : 'tabby'}
+              className={linkClassName}
+            >
+              {label}
+            </CatUnderlineLink>
+          ) : <Link
             key={`link-${routeTo}-${match.index}`}
             to={routeTo}
             className={linkClassName}
@@ -135,18 +149,48 @@ export default function AnimatedHeroText({
       );
     }
 
+    // Preserve the translated phrase while letting it wrap at the same size
+    // as the surrounding copy. Individual link labels remain unbroken.
+    const projectIndex = parts.findIndex((part) => part?.props?.to === '/projects');
+    const articleIndex = parts.findIndex((part) => part?.props?.to === '/articles');
+    if (projectIndex >= 0 && articleIndex > projectIndex) {
+      const pairParts = parts.slice(projectIndex, articleIndex + 1);
+      const linkedPhrase = [];
+      const before = parts[projectIndex - 1];
+      const after = parts[articleIndex + 1];
+      if (linkPhrasePrefix && typeof before === 'string' && before.endsWith(linkPhrasePrefix)) {
+        parts[projectIndex - 1] = before.slice(0, -linkPhrasePrefix.length);
+        linkedPhrase.unshift(linkPhrasePrefix);
+      }
+      if (linkPhraseSuffix && typeof after === 'string' && after.startsWith(linkPhraseSuffix)) {
+        parts[articleIndex + 1] = after.slice(linkPhraseSuffix.length);
+        pairParts.push(linkPhraseSuffix);
+      }
+      linkedPhrase.push(
+        <span className="hero-cat-links__pair" key="project-article-pair">{pairParts}</span>,
+      );
+      parts.splice(
+        projectIndex,
+        articleIndex - projectIndex + 1,
+        <span className="hero-cat-links" key="project-article-links">{linkedPhrase}</span>,
+      );
+    }
+
     return parts;
   }
 
   return (
-    <motion.p
+    <motion.div
+      ref={heroRef}
       className={`hero-copy ${className}`.trim()}
       lang={lang}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: 'easeInOut' }}
     >
-      {renderHeroContent(text)}
-    </motion.p>
+      {(typeof text === 'string' ? text.split(/\n\s*\n/) : [text]).map(
+        (paragraph, index) => <p key={index}>{renderHeroContent(paragraph)}</p>,
+      )}
+    </motion.div>
   );
 }

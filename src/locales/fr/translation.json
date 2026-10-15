@@ -23,7 +23,9 @@
   },
   "pages": {
     "home": {
-      "heroText": "Je suis développeur Full-Stack basé à Manille, aux Philippines. Je conçois des expériences numériques soignées pour des secteurs comme l’hôtellerie, la santé, les télécommunications et bien d’autres. Vous souhaitez échanger ? [Collaborons](href:mailto:darwinmanalophi@gmail.com) ou découvrez mes [projets](route:/projects) et [articles](route:/articles)."
+      "heroText": "Je suis développeur Full-Stack basé à Manille, aux Philippines. Je conçois des expériences numériques soignées pour des secteurs comme l’hôtellerie, la santé, les télécommunications et bien d’autres.\n\nVous souhaitez échanger ? [Collaborons](href:mailto:darwinmanalophi@gmail.com) ou découvrez mes [projets](route:/projects) et [articles](route:/articles).",
+      "heroLinksPrefix": "mes ",
+      "heroLinksSuffix": "."
     },
     "projects": {
       "title": "Projets Notables et Études de Cas"
