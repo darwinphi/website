@@ -37,6 +37,8 @@ React 19, React Router 7, Vite 6, Tailwind CSS 4, Framer Motion, and i18next. Ro
 
 The homepage interaction, portrait/language performance improvements, and Epilogue/Lora typography are implemented locally. No new dependencies, copy changes, or route changes were required. The typography update passes the production build and full lint, with browser checks of desktop and mobile layouts, light and dark themes, and Arabic and Japanese reading fallbacks. For future interaction changes, also run the local website-i18n-sync validator and browser checks covering keyboard navigation, motion preferences, and asset failure.
 
+Dependency security was checked on October 22, 2026. The lockfile refresh updates Vite to 6.4.5, brace-expansion to 1.1.21, and source-map-js to 1.2.2 within the existing package ranges. A clean `npm ci` reports zero vulnerabilities; production build and lint pass. Production browser checks cover the homepage, project and article lists and details, About, all 11 language bundles, Arabic RTL, mobile navigation, dark mode, article contents links, and code blocks. Seven stale GitHub alerts were dismissed with default-branch lockfile evidence: five packages are absent and the remaining nanoid/PostCSS versions are already patched.
+
 ## Next steps and constraints
 
 Review the homepage interaction before committing or publishing. Keep decoration non-interactive and hidden from assistive technology; preserve link navigation and translated labels. Future sprite replacements must retain the eight-column, four-row frame layout, their respective source-window settings in CSS, and consistent paw contact positions.
