@@ -17,14 +17,6 @@ function AboutPage({ onBack }) {
   const touchStartTime = useRef(null);
 
   useEffect(() => {
-    // Small delay to ensure animation registers
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 50);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
     if (!isTapped) return;
 
     const handleClickOutside = (e) => {
@@ -172,27 +164,23 @@ function AboutPage({ onBack }) {
             >
               {/* Grayscale base image */}
               <img
-                src="/img/darwin-photo.png"
+                src="/img/darwin-photo.webp"
                 alt="Profile picture"
-                className={`w-full rounded-lg select-none`}
+                width={768}
+                height={752}
+                className="block w-full h-auto rounded-lg select-none transition-[transform,opacity] duration-150 ease-out motion-reduce:transition-none"
                 draggable="false"
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
                 decoding="async"
+                onLoad={() => setIsLoaded(true)}
                 style={{
                   backgroundColor: 'rgba(0, 0, 0, 0.03)',
                   filter: 'grayscale(100%) opacity(0.85)',
                   transform: isHovering
                     ? `scale(${IMAGE_ZOOM.ZOOM_SCALE})`
-                    : isLoaded
-                      ? 'scale(1)'
-                      : 'scale(1.2)',
+                    : 'scale(1)',
                   opacity: isLoaded ? 1 : 0,
-                  transition:
-                    isHovering || isTouching
-                      ? 'transform 0.2s ease-out, opacity 1.2s ease-out'
-                      : !isLoaded
-                        ? 'transform 1.0s ease-out, opacity 1.2s ease-out'
-                        : 'transform 0.3s ease-out, opacity 1.2s ease-out',
                   transformOrigin:
                     isLoaded && (isHovering || isTouching)
                       ? `${cursorPos.x}px ${cursorPos.y}px`
@@ -204,11 +192,13 @@ function AboutPage({ onBack }) {
               {(isHovering || isTouching || isTapped) && (
                 <img
                   ref={imgRef}
-                  src="/img/darwin-photo.png"
+                  src="/img/darwin-photo.webp"
                   alt="Profile picture color"
-                  className="w-full rounded-lg absolute inset-0 select-none"
+                  width={768}
+                  height={752}
+                  className="w-full h-auto rounded-lg absolute inset-0 select-none transition-[transform,opacity] duration-150 ease-out motion-reduce:transition-none"
                   draggable="false"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   style={{
                     backgroundColor: 'rgba(0, 0, 0, 0.03)',
@@ -218,9 +208,6 @@ function AboutPage({ onBack }) {
                         ? `scale(${IMAGE_ZOOM.ZOOM_SCALE})`
                         : 'scale(1)',
                     opacity: isLoaded ? 1 : 0,
-                    transition: isLoaded
-                      ? 'opacity 1.2s ease-out, transform 0.2s ease-out'
-                      : 'none',
                     transformOrigin: `${cursorPos.x}px ${cursorPos.y}px`,
                   }}
                 />
@@ -236,6 +223,7 @@ function AboutPage({ onBack }) {
 
             <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">
               <Trans
+                t={t}
                 i18nKey="pages.about.bio2"
                 components={{
                   ncs: (

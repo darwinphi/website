@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ensureLanguageLoaded, supportedLanguages } from '../i18n/config';
+import {
+  ensureLanguageLoaded,
+  prefetchLanguages,
+  supportedLanguages,
+} from '../i18n/config';
 import { AnimatePresence, motion } from 'framer-motion';
 import Icon from './Icon';
 
@@ -16,6 +20,12 @@ function LanguageSelector() {
     ) ??
     supportedLanguages[0];
   const activeLanguageCode = currentLanguage.code;
+
+  useEffect(() => {
+    if (isOpen) {
+      void prefetchLanguages();
+    }
+  }, [isOpen]);
 
   const handleLanguageChange = async (langCode) => {
     const normalizedLanguage = await ensureLanguageLoaded(langCode);

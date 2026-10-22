@@ -23,6 +23,7 @@ const supportedLanguageCodes = new Set(
 const DEFAULT_LANGUAGE = 'en';
 const LANGUAGE_STORAGE_KEY = 'i18nextLng';
 const RTL_LANGUAGES = new Set(['ar']);
+const pendingLanguageLoads = new Map();
 
 function getBaseLanguage(languageCode) {
   return (languageCode || '').toLowerCase().split('-')[0];
@@ -91,17 +92,33 @@ export async function ensureLanguageLoaded(languageCode) {
     return normalizedLanguage;
   }
 
-  const { translation } = await importLanguageBundle(normalizedLanguage);
+  if (!pendingLanguageLoads.has(normalizedLanguage)) {
+    const pendingLoad = importLanguageBundle(normalizedLanguage)
+      .then(({ translation }) => {
+        i18n.addResourceBundle(
+          normalizedLanguage,
+          'translation',
+          translation,
+          true,
+          true,
+        );
+        return normalizedLanguage;
+      })
+      .finally(() => {
+        pendingLanguageLoads.delete(normalizedLanguage);
+      });
 
-  i18n.addResourceBundle(
-    normalizedLanguage,
-    'translation',
-    translation,
-    true,
-    true,
+    pendingLanguageLoads.set(normalizedLanguage, pendingLoad);
+  }
+
+  return pendingLanguageLoads.get(normalizedLanguage);
+}
+
+export function prefetchLanguages() {
+  // A failed speculative load must not interrupt the menu or other languages.
+  return Promise.allSettled(
+    supportedLanguages.map(({ code }) => ensureLanguageLoaded(code)),
   );
-
-  return normalizedLanguage;
 }
 
 const initialLanguage = detectInitialLanguage();

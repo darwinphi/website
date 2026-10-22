@@ -8,6 +8,12 @@ Personal portfolio at darwinmanalo.com, presenting projects, technical articles,
 
 React 19, React Router 7, Vite 6, Tailwind CSS 4, Framer Motion, and i18next. Routes, translation bundles, and article bodies load on demand. Static assets live in `public/img`. GitHub Actions builds and deploys the site to GitHub Pages.
 
+## Loading and language changes
+
+- The About portrait uses a 768 × 752 WebP, loaded eagerly with high fetch priority and explicit dimensions to reserve space. A 150 ms fade begins when the image loads; reduced motion disables the transition. The hover and touch zoom use the same image, and the original PNG remains as the source asset.
+- Page transitions are keyed by pathname and language. Language changes retain the original page fade and slide transitions and replay the homepage text entrance animation, as requested. The optimized portrait retains its shorter fade.
+- Opening the language menu prefetches missing translation bundles in the background. Selection shares any in-flight load, and loaded bundles are reused throughout the visit. Background failures are isolated and failed loads can be attempted again. Startup still loads only English and the detected language.
+
 ## Homepage interactions
 
 - Dark mode uses a neutral background at every screen size, including phones and tablets. The blue and orange backdrop remains available in light mode.
@@ -22,7 +28,7 @@ React 19, React Router 7, Vite 6, Tailwind CSS 4, Framer Motion, and i18next. Ro
 
 ## Status and validation
 
-The homepage interaction is implemented locally. No new dependencies, copy changes, or route changes were required. Validate changes with the production build, targeted lint, the local website-i18n-sync validator, and browser checks covering responsive layouts, themes, languages, keyboard navigation, motion preferences, and asset failure.
+The homepage interaction and portrait/language performance improvements are implemented locally. No new dependencies, copy changes, or route changes were required. Validate changes with the production build, targeted lint, the local website-i18n-sync validator, and browser checks covering responsive layouts, themes, languages, keyboard navigation, motion preferences, and asset failure.
 
 ## Next steps and constraints
 
