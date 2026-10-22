@@ -11,7 +11,7 @@ React 19, React Router 7, Vite 6, Tailwind CSS 4, Framer Motion, and i18next. Ro
 ## Typography
 
 - Epilogue is the default for the homepage introduction, navigation, labels, and headings. The introduction uses regular weight with semibold emphasis; page and content headings use semibold.
-- Latin homepage text uses `-0.015em` letter spacing and large page/article headings use `-0.02em`. Smaller titles, navigation, Lora reading text, and scripts rendered with fallback fonts keep their existing spacing.
+- Latin homepage text uses `-0.035em` letter spacing and large page/article headings use `-0.04em`. Smaller titles, navigation, Lora reading text, and scripts rendered with fallback fonts keep their existing spacing.
 - Lora is used for biography paragraphs, project descriptions and case-study prose, and article paragraphs, lists, and quotations. Reading text scales from 16 to 18 px with relaxed line spacing. Code retains its monospace font.
 - Epilogue and Lora are self-hosted as variable WOFF2 subsets in `public/fonts`, with their Open Font License notices. `src/fonts.css` declares the subsets with `font-display: swap`, and the common Epilogue Latin subset is preloaded. Noto Sans Arabic retains its Google Fonts loading. Arabic, Japanese, Korean, and Chinese reading text uses the sans-serif fallback stack because Lora covers Latin and Cyrillic scripts.
 
