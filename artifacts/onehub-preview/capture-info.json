@@ -1,0 +1,21 @@
+{
+  "source": "https://onehub.globe.com.ph/",
+  "capturedAt": "2026-10-22T18:26:33.474Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "resolution": {
+    "width": 1920,
+    "height": 1080
+  },
+  "fps": 60,
+  "duration": 13.5,
+  "maxScroll": 1508,
+  "files": [
+    "onehub-scroll.mp4",
+    "onehub-scroll-loop.mp4",
+    "onehub-cover.png"
+  ],
+  "loopDuration": 14
+}
