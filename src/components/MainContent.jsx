@@ -99,9 +99,9 @@ function MainContent({ handleNavigation }) {
                           linkPhraseSuffix={t('pages.home.heroLinksSuffix')}
                           location={heroLocationByLanguage[baseLanguage]}
                           highlight={heroRole}
-                          highlightClassName="font-bold"
+                          highlightClassName="font-semibold"
                           highlightTo="/about"
-                          linkClassName="hero-inline-link font-bold"
+                          linkClassName="hero-inline-link font-semibold"
                           lang={resolvedLanguage}
                           className="text-heading leading-tight font-normal dark:text-text-primary-dark"
                         />

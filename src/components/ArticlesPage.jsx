@@ -9,7 +9,7 @@ function ArticlesPage({ onSelectArticle, onBack }) {
   const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
 
   const heading = (
-    <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
+    <h1 className="text-heading leading-tight font-semibold dark:text-text-primary-dark">
       {t('pages.articles.title')}
     </h1>
   );
@@ -28,7 +28,7 @@ function ArticlesPage({ onSelectArticle, onBack }) {
             className={`${index === 0 ? '' : 'pt-7'} pb-7 w-full text-left group cursor-pointer transition-opacity duration-200 hover:opacity-90 focus-visible:opacity-90`}
             aria-label={`${t('buttons.continueReading')}: ${t(`articleContent.${article.id}.title`, { defaultValue: article.title })}`}
           >
-            <h2 className="text-[1.02rem] leading-snug font-medium mb-1 text-current transition-opacity duration-200 group-hover:opacity-80 group-focus-visible:opacity-80 dark:text-text-primary-dark md:text-[1.08rem]">
+            <h2 className="text-[1.02rem] leading-snug font-semibold mb-1 text-current transition-opacity duration-200 group-hover:opacity-80 group-focus-visible:opacity-80 dark:text-text-primary-dark md:text-[1.08rem]">
               {t(`articleContent.${article.id}.title`, {
                 defaultValue: article.title,
               })}
@@ -41,7 +41,7 @@ function ArticlesPage({ onSelectArticle, onBack }) {
                 i18n.resolvedLanguage || i18n.language,
               )}
             </p>
-            <p className="text-body opacity-60 mb-5 line-clamp-3 max-w-[58ch] dark:text-text-secondary-dark">
+            <p className="font-serif text-reading leading-relaxed opacity-60 mb-5 line-clamp-3 max-w-[58ch] dark:text-text-secondary-dark">
               {t(`articleContent.${article.id}.preview`, {
                 defaultValue: article.preview,
               })}

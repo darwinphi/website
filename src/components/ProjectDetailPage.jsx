@@ -23,7 +23,7 @@ function ProjectDetailPage({ projectId, onBack }) {
 
   const heading = (
     <div className="flex flex-col gap-4 sm:gap-5">
-      <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
+      <h1 className="text-heading leading-tight font-semibold dark:text-text-primary-dark">
         {t(`projects.${tKey}.name`)}
       </h1>
       <p className="text-[0.84em] tracking-[0.02em] opacity-45 dark:text-text-secondary-dark">
@@ -44,8 +44,8 @@ function ProjectDetailPage({ projectId, onBack }) {
   );
 
   const sectionTitleClass =
-    'mb-3 text-[0.9em] font-medium tracking-[0.02em] opacity-85 dark:text-text-primary-dark';
-  const sectionBodyClass = 'text-body dark:text-text-secondary-dark';
+    'mb-3 text-[0.9em] font-semibold tracking-[0.02em] opacity-85 dark:text-text-primary-dark';
+  const sectionBodyClass = 'font-serif text-reading leading-relaxed dark:text-text-secondary-dark';
   const listItemClass =
     'relative pl-5 before:absolute before:left-0 before:top-[0.72em] before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full before:bg-current before:opacity-35';
 

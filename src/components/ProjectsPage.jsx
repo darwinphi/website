@@ -8,7 +8,7 @@ function ProjectsPage({ onSelectProject, onBack }) {
   const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
 
   const heading = (
-    <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
+    <h1 className="text-heading leading-tight font-semibold dark:text-text-primary-dark">
       {t('pages.projects.title')}
     </h1>
   );
@@ -29,7 +29,7 @@ function ProjectsPage({ onSelectProject, onBack }) {
           >
             <div className="flex items-start justify-between gap-5">
               <div className="flex-1">
-                <h2 className="text-[1.02rem] leading-snug font-medium mb-1 text-current transition-opacity duration-200 group-hover:opacity-80 group-focus-visible:opacity-80 dark:text-text-primary-dark md:text-[1.08rem]">
+                <h2 className="text-[1.02rem] leading-snug font-semibold mb-1 text-current transition-opacity duration-200 group-hover:opacity-80 group-focus-visible:opacity-80 dark:text-text-primary-dark md:text-[1.08rem]">
                   {t(`projects.${project.translationKey}.name`)}
                 </h2>
                 <p className="text-[0.79em] tracking-[0.02em] opacity-40 mb-2.5 dark:text-text-secondary-dark">
@@ -37,7 +37,7 @@ function ProjectsPage({ onSelectProject, onBack }) {
                     defaultValue: project.role,
                   })}
                 </p>
-                <p className="text-body opacity-60 max-w-[60ch] dark:text-text-secondary-dark">
+                <p className="font-serif text-reading leading-relaxed opacity-60 max-w-[60ch] dark:text-text-secondary-dark">
                   {t(`projects.${project.translationKey}.description`)}
                 </p>
               </div>

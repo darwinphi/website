@@ -1,9 +1,11 @@
 @import 'tailwindcss';
+@import './fonts.css';
 
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: 'DM Sans', 'Noto Sans Arabic', sans-serif;
+  --font-sans: 'Epilogue', 'Noto Sans Arabic', system-ui, sans-serif;
+  --font-serif: 'Lora', 'Noto Sans Arabic', Georgia, serif;
   --color-primary-bg: #f5f3ee;
   --color-text-primary: #252422;
   --color-accent: #a65337;
@@ -14,8 +16,11 @@
   --color-grid-light: rgba(100, 85, 66, 0.14);
   --color-grid-dark: rgba(194, 201, 216, 0.08);
   --text-body: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+  --text-reading: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
   --text-heading: clamp(1.75rem, 1.3804rem + 1.8478vw, 2.8125rem);
   --text-project-title: clamp(2.5rem, 1.8rem + 3.5vw, 4.5rem);
+  --tracking-heading: -0.02em;
+  --tracking-hero: -0.015em;
   --max-width-shell: 1440px;
   --max-width-hero: 1180px;
   --max-width-page-layout: 72rem;
@@ -66,6 +71,17 @@
     color: var(--color-text-primary);
   }
 
+  /* Lora covers Latin and Cyrillic; keep other scripts in the UI fallback stack. */
+  :where(html:lang(ar), html:lang(ja), html:lang(ko), html:lang(zh)) {
+    --font-serif: var(--font-sans);
+  }
+
+  /* Tighten only the Latin display text set in Epilogue. */
+  :where(html:lang(ar), html:lang(ja), html:lang(ko), html:lang(zh), html:lang(ru)) {
+    --tracking-heading: normal;
+    --tracking-hero: normal;
+  }
+
   /* Keep code/script content LTR even inside RTL pages. */
   [dir='rtl'] pre,
   [dir='rtl'] code,
@@ -83,6 +99,10 @@
 }
 
 @layer components {
+  h1.text-heading {
+    letter-spacing: var(--tracking-heading);
+  }
+
   .page-surface {
     position: relative;
     isolation: isolate;
@@ -278,6 +298,7 @@
   .home-hero-copy .hero-copy {
     position: relative;
     width: min(100%, var(--max-width-hero));
+    letter-spacing: var(--tracking-hero);
   }
 
   .hero-copy {

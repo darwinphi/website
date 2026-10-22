@@ -137,7 +137,7 @@ function AboutPage({ onBack }) {
           style={{ maxWidth: 'var(--max-width-reading)' }}
         >
           {/* Heading */}
-          <h1 className="text-heading leading-tight font-normal text-center mb-12 dark:text-text-primary-dark">
+          <h1 className="text-heading leading-tight font-semibold text-center mb-12 dark:text-text-primary-dark">
             {t('pages.about.title')}
           </h1>
 
@@ -217,11 +217,11 @@ function AboutPage({ onBack }) {
 
           {/* Content */}
           <div className="flex flex-col gap-6">
-            <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">
+            <p className="font-serif text-reading leading-relaxed opacity-80 dark:text-text-secondary-dark">
               {t('pages.about.bio1')}
             </p>
 
-            <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">
+            <p className="font-serif text-reading leading-relaxed opacity-80 dark:text-text-secondary-dark">
               <Trans
                 t={t}
                 i18nKey="pages.about.bio2"
@@ -236,11 +236,11 @@ function AboutPage({ onBack }) {
               />
             </p>
 
-            <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">
+            <p className="font-serif text-reading leading-relaxed opacity-80 dark:text-text-secondary-dark">
               {t('pages.about.bio3')}
             </p>
 
-            <p className="text-body leading-relaxed opacity-80 dark:text-text-secondary-dark">
+            <p className="font-serif text-reading leading-relaxed opacity-80 dark:text-text-secondary-dark">
               {t('pages.about.bio4')}
             </p>
           </div>

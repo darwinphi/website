@@ -8,7 +8,6 @@ import { formatArticleReadingTime } from '../utils/articleReadingTime';
 
 function ArticleDetailPage({ articleId, onBack }) {
   const { t, i18n } = useTranslation();
-  const isRtl = i18n.dir(i18n.resolvedLanguage || i18n.language) === 'rtl';
   const article = articles.find((a) => a.id === articleId);
   const [articleContent, setArticleContent] = useState(null);
   const [contentError, setContentError] = useState(null);
@@ -70,7 +69,7 @@ function ArticleDetailPage({ articleId, onBack }) {
 
   const heading = (
     <div className="flex flex-col gap-3 sm:gap-4">
-      <h1 className="text-heading leading-tight font-normal dark:text-text-primary-dark">
+      <h1 className="text-heading leading-tight font-semibold dark:text-text-primary-dark">
         {t(`articleContent.${article.id}.title`, {
           defaultValue: article.title,
         })}

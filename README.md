@@ -132,7 +132,7 @@ The custom domain is:
 ## Styling notes 🎨
 
 - Tailwind CSS 4 is configured through `src/index.css`
-- Google Fonts are loaded in `index.html`
+- Epilogue and Lora are self-hosted in `public/fonts` and declared in `src/fonts.css`; Noto Sans Arabic loads through Google Fonts in `index.html`
 - Icons are rendered through `src/components/Icon.jsx`
 
 ## Performance work ⚡

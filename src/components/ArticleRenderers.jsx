@@ -105,7 +105,7 @@ function BlockRenderer({
       return (
         <p
           key={blockIndex}
-          className="text-body dark:text-text-secondary-dark relative"
+          className="font-serif text-reading leading-relaxed dark:text-text-secondary-dark relative"
           style={{ paddingInlineStart: '1.25rem' }}
         >
           <span
@@ -123,7 +123,7 @@ function BlockRenderer({
       return (
         <blockquote
           key={blockIndex}
-          className="text-body italic border-current/40 py-1 dark:text-text-secondary-dark"
+          className="font-serif text-reading leading-relaxed italic border-current/40 py-1 dark:text-text-secondary-dark"
           style={{
             borderInlineStartWidth: '2px',
             borderInlineStartStyle: 'solid',
@@ -136,7 +136,7 @@ function BlockRenderer({
 
     default:
       return (
-        <p key={blockIndex} className="text-body dark:text-text-secondary-dark">
+        <p key={blockIndex} className="font-serif text-reading leading-relaxed dark:text-text-secondary-dark">
           {renderInlineArticleLinks(translatedValue)}
         </p>
       );
@@ -156,7 +156,7 @@ export function SectionRenderer({
       {section.heading && (
         <h2
           className={`text-body mb-3 dark:text-text-primary-dark ${
-            section.isGroupLabel ? 'font-bold opacity-50' : 'font-bold'
+            section.isGroupLabel ? 'font-semibold opacity-50' : 'font-semibold'
           }`}
         >
           {t(`articleContent.${article.id}.headings.${section.id}`, {

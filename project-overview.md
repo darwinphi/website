@@ -8,6 +8,13 @@ Personal portfolio at darwinmanalo.com, presenting projects, technical articles,
 
 React 19, React Router 7, Vite 6, Tailwind CSS 4, Framer Motion, and i18next. Routes, translation bundles, and article bodies load on demand. Static assets live in `public/img`. GitHub Actions builds and deploys the site to GitHub Pages.
 
+## Typography
+
+- Epilogue is the default for the homepage introduction, navigation, labels, and headings. The introduction uses regular weight with semibold emphasis; page and content headings use semibold.
+- Latin homepage text uses `-0.015em` letter spacing and large page/article headings use `-0.02em`. Smaller titles, navigation, Lora reading text, and scripts rendered with fallback fonts keep their existing spacing.
+- Lora is used for biography paragraphs, project descriptions and case-study prose, and article paragraphs, lists, and quotations. Reading text scales from 16 to 18 px with relaxed line spacing. Code retains its monospace font.
+- Epilogue and Lora are self-hosted as variable WOFF2 subsets in `public/fonts`, with their Open Font License notices. `src/fonts.css` declares the subsets with `font-display: swap`, and the common Epilogue Latin subset is preloaded. Noto Sans Arabic retains its Google Fonts loading. Arabic, Japanese, Korean, and Chinese reading text uses the sans-serif fallback stack because Lora covers Latin and Cyrillic scripts.
+
 ## Loading and language changes
 
 - The About portrait uses a 768 × 752 WebP, loaded eagerly with high fetch priority and explicit dimensions to reserve space. A 150 ms fade begins when the image loads; reduced motion disables the transition. The hover and touch zoom use the same image, and the original PNG remains as the source asset.
@@ -28,7 +35,7 @@ React 19, React Router 7, Vite 6, Tailwind CSS 4, Framer Motion, and i18next. Ro
 
 ## Status and validation
 
-The homepage interaction and portrait/language performance improvements are implemented locally. No new dependencies, copy changes, or route changes were required. Validate changes with the production build, targeted lint, the local website-i18n-sync validator, and browser checks covering responsive layouts, themes, languages, keyboard navigation, motion preferences, and asset failure.
+The homepage interaction, portrait/language performance improvements, and Epilogue/Lora typography are implemented locally. No new dependencies, copy changes, or route changes were required. The typography update passes the production build and full lint, with browser checks of desktop and mobile layouts, light and dark themes, and Arabic and Japanese reading fallbacks. For future interaction changes, also run the local website-i18n-sync validator and browser checks covering keyboard navigation, motion preferences, and asset failure.
 
 ## Next steps and constraints
 
