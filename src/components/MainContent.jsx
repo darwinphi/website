@@ -42,20 +42,6 @@ const heroLocationByLanguage = {
   zh: '菲律宾马尼拉',
 };
 
-const heroCountryByLanguage = {
-  ar: 'الفلبين',
-  de: 'Philippinen',
-  en: 'Philippines',
-  es: 'Filipinas',
-  fr: 'Philippines',
-  id: 'Filipina',
-  ja: 'フィリピン',
-  ko: '필리핀',
-  pt: 'Filipinas',
-  ru: 'Филиппины',
-  zh: '菲律宾',
-};
-
 function RouteLoadingFallback() {
   return (
     <div className="flex-1 flex items-center justify-center py-16">
@@ -112,7 +98,6 @@ function MainContent({ handleNavigation }) {
                           linkPhrasePrefix={t('pages.home.heroLinksPrefix')}
                           linkPhraseSuffix={t('pages.home.heroLinksSuffix')}
                           location={heroLocationByLanguage[baseLanguage]}
-                          locationFlagAnchor={heroCountryByLanguage[baseLanguage]}
                           highlight={heroRole}
                           highlightClassName="font-bold"
                           highlightTo="/about"

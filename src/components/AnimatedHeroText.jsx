@@ -1,7 +1,6 @@
 import { Fragment, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import WavingFlag from './WavingFlag';
 import CatUnderlineLink from './CatUnderlineLink';
 import useCatLinkClearance from '../hooks/useCatLinkClearance';
 
@@ -10,7 +9,6 @@ const inlineLinkPattern = /\[([^\]]+)\]\((route:(\/[^)]+)|href:([^)]+))\)/g;
 export default function AnimatedHeroText({
   text,
   location,
-  locationFlagAnchor,
   linkPhrasePrefix = '',
   linkPhraseSuffix = '',
   highlight,
@@ -63,22 +61,10 @@ export default function AnimatedHeroText({
       return renderRoleText(value, keyPrefix);
     }
 
-    // Attach the flag to the translated country name, independently of word
-    // order, while keeping the rest of the location free to wrap.
-    const flagAnchor = locationFlagAnchor && location.includes(locationFlagAnchor)
-      ? locationFlagAnchor
-      : location;
-    const anchorIndex = location.indexOf(flagAnchor);
-    const anchorEnd = anchorIndex + flagAnchor.length;
-
     return (
       <Fragment key={keyPrefix}>
         {renderRoleText(value.slice(0, locationIndex), `${keyPrefix}-before`)}
-        <span className="hero-location">
-          {location.slice(0, anchorIndex)}
-          <WavingFlag text={location.slice(anchorIndex, anchorEnd)} lang={lang} />
-          {location.slice(anchorEnd)}
-        </span>
+        <span className="hero-location">{location}</span>
         {renderRoleText(value.slice(locationIndex + location.length), `${keyPrefix}-after`)}
       </Fragment>
     );

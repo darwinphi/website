@@ -77,7 +77,6 @@ function App() {
         .filter(Boolean)
         .join(' ')}
     >
-      {isAtmospherePage && <div aria-hidden="true" className="home-backdrop" />}
       <div className="app-shell__content flex min-h-screen flex-col">
         <Navbar
           handleNavigation={handleNavigation}

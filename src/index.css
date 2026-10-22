@@ -4,12 +4,14 @@
 
 @theme {
   --font-sans: 'DM Sans', 'Noto Sans Arabic', sans-serif;
-  --color-primary-bg: #e6e7df;
+  --color-primary-bg: #f5f3ee;
+  --color-text-primary: #252422;
+  --color-accent: #a65337;
   --color-primary-bg-dark: #1a1a1a;
   --color-text-primary-dark: #f5f5f5;
   --color-text-secondary-dark: #d0d0d0;
   --color-border-dark: #333333;
-  --color-grid-light: rgba(102, 107, 92, 0.14);
+  --color-grid-light: rgba(100, 85, 66, 0.14);
   --color-grid-dark: rgba(194, 201, 216, 0.08);
   --text-body: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
   --text-heading: clamp(1.75rem, 1.3804rem + 1.8478vw, 2.8125rem);
@@ -58,10 +60,10 @@
   }
 
   body {
-    background-color: #e6e7df;
+    background-color: var(--color-primary-bg);
     font-family: var(--font-sans);
     font-size: var(--text-body);
-    color: inherit;
+    color: var(--color-text-primary);
   }
 
   /* Keep code/script content LTR even inside RTL pages. */
@@ -94,73 +96,6 @@
   .app-shell__content {
     position: relative;
     z-index: 1;
-  }
-
-  .home-backdrop {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-  }
-
-  .home-backdrop::before,
-  .home-backdrop::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-  }
-
-  .home-backdrop::before {
-    background:
-      radial-gradient(
-        circle at 26% 61%,
-        rgba(71, 186, 255, 0.94) 0,
-        rgba(71, 186, 255, 0.88) 15%,
-        rgba(71, 186, 255, 0.48) 31%,
-        rgba(71, 186, 255, 0.16) 44%,
-        rgba(71, 186, 255, 0) 60%
-      ),
-      radial-gradient(
-        circle at 63% 31%,
-        rgba(255, 210, 92, 0.74) 0,
-        rgba(255, 210, 92, 0.56) 10%,
-        rgba(255, 210, 92, 0.18) 24%,
-        rgba(255, 210, 92, 0) 36%
-      ),
-      radial-gradient(
-        circle at 70% 40%,
-        rgba(255, 114, 19, 0.9) 0,
-        rgba(255, 114, 19, 0.78) 12%,
-        rgba(255, 114, 19, 0.38) 24%,
-        rgba(255, 114, 19, 0.12) 34%,
-        rgba(255, 114, 19, 0) 45%
-      ),
-      radial-gradient(
-        circle at 83% 53%,
-        rgba(182, 237, 255, 0.56) 0,
-        rgba(182, 237, 255, 0.2) 15%,
-        rgba(182, 237, 255, 0) 28%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.16) 0%,
-        rgba(255, 255, 255, 0.02) 48%,
-        rgba(255, 255, 255, 0) 100%
-      );
-    filter: blur(clamp(54px, 8vw, 110px)) saturate(112%);
-    transform: scale(1.1);
-    opacity: 0.92;
-  }
-
-  .home-backdrop::after {
-    background-image:
-      radial-gradient(rgba(255, 255, 255, 0.18) 0.7px, transparent 0.9px),
-      radial-gradient(rgba(0, 0, 0, 0.08) 0.7px, transparent 1px);
-    background-position: 0 0, 17px 19px;
-    background-size: 24px 24px, 29px 29px;
-    mix-blend-mode: soft-light;
-    opacity: 0.36;
   }
 
   .navbar-home {
@@ -326,7 +261,12 @@
     opacity: 0;
   }
 
+  html:not(.dark) .page-surface--hero .page-surface__grid {
+    opacity: 0.32;
+  }
+
   .home-hero-copy {
+    --hero-link-active: var(--color-accent);
     padding-inline: clamp(1.5rem, 5vw, 4.5rem);
   }
 
@@ -374,71 +314,6 @@
     border-radius: 0.125em;
   }
 
-  .hero-location__anchor {
-    display: inline-block;
-    position: relative;
-    white-space: nowrap;
-    vertical-align: baseline;
-  }
-
-  .hero-location__anchor:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
-  }
-
-  .hero-location__baseline {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    vertical-align: baseline;
-  }
-
-  .hero-location__flag-fill {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 250ms ease-out;
-  }
-
-  .hero-location__mask-text {
-    font: inherit;
-    letter-spacing: inherit;
-  }
-
-  .hero-location__country {
-    opacity: 1;
-    transition: opacity 250ms ease-out;
-  }
-
-  .hero-location__anchor[data-flag-active='true'] .hero-location__country {
-    opacity: 0;
-  }
-
-  .hero-location__anchor[data-flag-active='true'] .hero-location__flag-fill {
-    opacity: 1;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .hero-location__flag-fill,
-    .hero-location__country {
-      transition: none;
-    }
-  }
-
-  @media (forced-colors: active) {
-    .hero-location__anchor[data-flag-active='true'] .hero-location__country {
-      opacity: 1;
-    }
-
-    .hero-location__flag-fill {
-      display: none;
-    }
-  }
-
   .hero-inline-link {
     text-decoration-line: underline;
     text-decoration-style: dashed;
@@ -446,13 +321,23 @@
     text-underline-offset: 0.14em;
     text-decoration-color: color-mix(in srgb, currentColor 68%, transparent);
     transition:
-      opacity 220ms ease,
-      text-decoration-color 220ms ease;
+      color 150ms ease-out,
+      text-decoration-color 150ms ease-out;
   }
 
-  .hero-inline-link:hover {
-    opacity: 0.72;
+  .hero-inline-link:hover,
+  .hero-inline-link:focus-visible {
+    color: var(--hero-link-active);
     text-decoration-color: currentColor;
+  }
+
+  .hero-inline-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  .dark .home-hero-copy {
+    --hero-link-active: var(--color-text-primary-dark);
   }
 
   .cat-underline-link {
@@ -749,17 +634,6 @@
       linear-gradient(to bottom, var(--color-grid-dark) 1px, transparent 1px);
   }
 
-  .dark .home-backdrop::before {
-    background: none;
-    filter: none;
-    opacity: 0;
-  }
-
-  .dark .home-backdrop::after {
-    background-image: none;
-    opacity: 0;
-  }
-
   .dark .navbar-home::before {
     background:
       linear-gradient(
@@ -779,58 +653,6 @@
 @media (max-width: 768px) {
   .page-surface--hero {
     min-height: clamp(28rem, 70vh, 42rem);
-  }
-
-  .home-backdrop::before {
-    background:
-      radial-gradient(
-        circle at 38% 65%,
-        rgba(71, 186, 255, 0.92) 0,
-        rgba(71, 186, 255, 0.84) 18%,
-        rgba(71, 186, 255, 0.42) 34%,
-        rgba(71, 186, 255, 0.14) 46%,
-        rgba(71, 186, 255, 0) 60%
-      ),
-      radial-gradient(
-        circle at 66% 34%,
-        rgba(255, 205, 99, 0.68) 0,
-        rgba(255, 205, 99, 0.48) 12%,
-        rgba(255, 205, 99, 0.12) 24%,
-        rgba(255, 205, 99, 0) 36%
-      ),
-      radial-gradient(
-        circle at 70% 43%,
-        rgba(255, 118, 24, 0.88) 0,
-        rgba(255, 118, 24, 0.72) 13%,
-        rgba(255, 118, 24, 0.3) 24%,
-        rgba(255, 118, 24, 0.08) 34%,
-        rgba(255, 118, 24, 0) 46%
-      ),
-      radial-gradient(
-        circle at 82% 56%,
-        rgba(181, 238, 255, 0.56) 0,
-        rgba(181, 238, 255, 0.16) 14%,
-        rgba(181, 238, 255, 0) 28%
-      );
-    filter: blur(clamp(52px, 12vw, 92px)) saturate(110%);
-    transform: scale(1.08);
-    opacity: 0.96;
-  }
-
-  .home-backdrop::after {
-    opacity: 0.34;
-  }
-
-  /* These responsive rules are unlayered, so their dark-mode overrides
-     must share the same cascade priority as the mobile backdrop. */
-  .dark .home-backdrop::before {
-    background: none;
-    filter: none;
-    opacity: 0;
-  }
-
-  .dark .home-backdrop::after {
-    opacity: 0;
   }
 
   .page-surface--fade-center .page-surface__grid::before {
