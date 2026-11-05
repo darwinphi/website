@@ -1,8 +1,5 @@
-import { Fragment, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { Fragment, useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import CatUnderlineLink from './CatUnderlineLink';
-import useCatLinkClearance from '../hooks/useCatLinkClearance';
 
 const inlineLinkPattern = /\[([^\]]+)\]\((route:(\/[^)]+)|href:([^)]+))\)/g;
 
@@ -20,7 +17,94 @@ export default function AnimatedHeroText({
   lang = 'en',
 }) {
   const heroRef = useRef(null);
-  useCatLinkClearance(heroRef, text);
+
+  useLayoutEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+
+    const hero = heroRef.current;
+    const cleanups = [];
+    let startDelay = 0;
+
+    hero.querySelectorAll('p').forEach((paragraph, paragraphIndex) => {
+      const bounds = paragraph.getBoundingClientRect();
+      const range = document.createRange();
+      range.selectNodeContents(paragraph);
+      const lines = [];
+      for (const rect of range.getClientRects()) {
+        if (!rect.width || !rect.height) continue;
+        const top = rect.top - bounds.top;
+        const bottom = rect.bottom - bounds.top;
+        const line = lines.find((item) => Math.abs(item.top - top) < 2);
+        if (line) line.bottom = Math.max(line.bottom, bottom);
+        else lines.push({ top, bottom });
+      }
+      lines.sort((a, b) => a.top - b.top);
+      if (!lines.length) return;
+
+      if (paragraphIndex > 0) {
+        const animation = paragraph.animate(
+          [
+            { opacity: 0, transform: 'translateY(24px)' },
+            { opacity: 1, transform: 'translateY(0)' },
+          ],
+          { duration: 1500, delay: startDelay, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', fill: 'both' },
+        );
+        const restore = () => animation.cancel();
+        animation.onfinish = restore;
+        cleanups.push(restore);
+        startDelay += 1500;
+        return;
+      }
+
+      const wipe = paragraphIndex === 0;
+      const duration = wipe ? 900 : 1100;
+      const stagger = wipe ? 100 : 140;
+      const total = startDelay + duration + (lines.length - 1) * stagger;
+      const direction = getComputedStyle(paragraph).direction === 'rtl' ? 'right' : 'left';
+      paragraph.style.maskImage = lines.map(() => wipe
+        ? 'linear-gradient(#000, #000)'
+        : 'radial-gradient(ellipse closest-side, #000 99%, transparent 100%)').join(', ');
+      paragraph.style.maskRepeat = 'no-repeat';
+      const keyframes = Array.from({ length: 61 }, (_, frame) => {
+        const time = total * frame / 60;
+        return {
+          maskSize: lines.map((line, index) => {
+            const progress = Math.max(0, Math.min(1, (time - startDelay - index * stagger) / duration));
+            const eased = 1 - (1 - progress) ** 3;
+            const height = line.bottom - line.top + 4;
+            return wipe ? `${eased * 100}% ${height}px` : `${eased * 150}% ${height * eased * 1.5}px`;
+          }).join(', '),
+          maskPosition: lines.map((line, index) => {
+            const progress = Math.max(0, Math.min(1, (time - startDelay - index * stagger) / duration));
+            const eased = 1 - (1 - progress) ** 3;
+            const height = line.bottom - line.top + 4;
+            return wipe
+              ? `${direction} ${line.top - 2}px`
+              : `center ${line.top - 2 + height / 2 - height * eased * 0.75}px`;
+          }).join(', '),
+        };
+      });
+      const animation = paragraph.animate(keyframes, { duration: total, fill: 'both' });
+      const clearMask = () => {
+        paragraph.style.removeProperty('mask-image');
+        paragraph.style.removeProperty('mask-repeat');
+        paragraph.style.removeProperty('mask-position');
+        animation.cancel();
+      };
+      animation.onfinish = clearMask;
+      cleanups.push(clearMask);
+      startDelay = total;
+    });
+
+    const showText = () => cleanups.forEach((cleanup) => cleanup());
+    window.addEventListener('resize', showText, { once: true });
+    hero.addEventListener('focusin', showText, { once: true });
+    return () => {
+      window.removeEventListener('resize', showText);
+      hero.removeEventListener('focusin', showText);
+      showText();
+    };
+  }, [text, lang]);
 
   function renderRoleText(value, keyPrefix) {
     const highlightIndex = highlight ? value.indexOf(highlight) : -1;
@@ -93,16 +177,7 @@ export default function AnimatedHeroText({
 
       if (routeDescriptor.startsWith('route:')) {
         parts.push(
-          (routeTo === '/articles' || routeTo === '/projects') ? (
-            <CatUnderlineLink
-              key={`link-${routeTo}-${match.index}`}
-              to={routeTo}
-              cat={routeTo === '/projects' ? 'shorthair' : 'tabby'}
-              className={linkClassName}
-            >
-              {label}
-            </CatUnderlineLink>
-          ) : <Link
+          <Link
             key={`link-${routeTo}-${match.index}`}
             to={routeTo}
             className={linkClassName}
@@ -166,17 +241,14 @@ export default function AnimatedHeroText({
   }
 
   return (
-    <motion.div
+    <div
       ref={heroRef}
       className={`hero-copy ${className}`.trim()}
       lang={lang}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.2, ease: 'easeInOut' }}
     >
       {(typeof text === 'string' ? text.split(/\n\s*\n/) : [text]).map(
         (paragraph, index) => <p key={index}>{renderHeroContent(paragraph)}</p>,
       )}
-    </motion.div>
+    </div>
   );
 }
